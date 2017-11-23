@@ -1,0 +1,94 @@
+\documentclass[11pt,fleqn]{book} % Default font size and left-justified equations
+
+\usepackage[top=3cm,bottom=3cm,left=3.2cm,right=3.2cm,headsep=10pt,letterpaper]{geometry} % Page margins
+
+\usepackage{xcolor} % Required for specifying colors by name
+\definecolor{ocre}{RGB}{52,177,201} % Define the orange color used for highlighting throughout the book
+
+% Font Settings
+\usepackage{avant} % Use the Avantgarde font for headings
+%\usepackage{times} % Use the Times font for headings
+\usepackage{mathptmx} % Use the Adobe Times Roman as the default text font together with math symbols from the Sym­bol, Chancery and Com­puter Modern fonts
+
+\usepackage{microtype} % Slightly tweak font spacing for aesthetics
+\usepackage[utf8]{inputenc} % Required for including letters with accents
+\usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
+
+% Bibliography
+\usepackage[style=alphabetic,sorting=nyt,sortcites=true,autopunct=true,babel=hyphen,hyperref=true,abbreviate=false,backref=true,backend=biber]{biblatex}
+\addbibresource{bibliography.bib} % BibTeX bibliography file
+\defbibheading{bibempty}{}
+
+\input{structure} % Insert the commands.tex file which contains the majority of the structure behind the template
+
+\begin{document}
+
+
+%	TITELSEITE
+
+
+\begingroup
+\thispagestyle{empty}
+\AddToShipoutPicture*{\put(0,0){\includegraphics[scale=0.37]{head1.jpg}}} % Image background
+\centering
+\vspace*{5cm}
+\par\normalfont\fontsize{35}{35}\sffamily\selectfont
+\textbf{{\color{white} Neuronale Netzwerke und Clusteringverfahren für die Analyse von Geodaten}}\\
+{\LARGE {\color{white}Lehrstuhl für Geoinformatik}}\par
+\vspace*{1cm}
+{\Huge {\color{white} Robin Bially}}\par % Author name
+\endgroup
+
+
+\newpage
+~\vfill
+\thispagestyle{empty}
+
+%Hier kann ich Github und Downloads hin schreiben
+\noindent \textsc{https://git.overleaf.com/12290910twntpfhdkbjy}\\ % URL
+
+\noindent Projektarbeit unter der Betreuung von PD Dr. Dr.-Ing. Wilfried Linder von 11.2017 - 09.2018 als Vorbereitung der sich anschließenden Masterarbeit.\\ 
+
+\noindent \textit{Fertigstellung, August 2018} 
+
+%	Inhaltsverzeichnis
+\chapterimage{head8.jpg} % Table of contents heading image
+\tableofcontents % Print the table of contents itself
+
+%\cleardoublepage
+
+\pagestyle{fancy} % Print headers again
+
+\chapter{Motivation}
+\chapter{Geodaten}
+\section{Definition}
+\section{Gestalt von Geodaten}
+\section{Georeferenzierung}
+\section{Qualitätsmerkmale}
+\section{Geoinformationssysteme}
+\section{Beispiele}
+\subsection{Google Maps}
+\subsection{Normbasierte Austauschschnittstelle (NAS)}
+\subsection{Geoobjekte}
+\subsection{Mobile Mapping}
+\section{Algorithmen in der Geoinformatik}
+
+\section{Verschiedene Arten und ihre Anwendungszwecke}
+\section{Beschaffung von Geodaten}
+\chapter{Geoanalyse}
+\section{Beispiele}
+\section{Offene Probleme}
+\chapter{Neuronale Netzwerke}
+\section{Anwendungszwecke}
+\section{Tensorflow}
+\section{Anwendung auf Satellitendaten}
+
+
+\chapter{Clusteringverfahren}
+\section{Probabilistisches und Possibilistisches Clustering}
+\section{CVI}
+\chapter{Forschungsbedarf}
+\section{Ausblick - Mein Thema für die Masterarbeit}
+
+\vfill
+\end{document}

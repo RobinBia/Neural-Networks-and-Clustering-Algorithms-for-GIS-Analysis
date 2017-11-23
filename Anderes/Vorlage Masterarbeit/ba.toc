@@ -1,0 +1,10 @@
+\select@language {ngerman}
+\contentsline {section}{\numberline {1}De Bello Gallico}{1}{section.1}
+\contentsline {subsection}{\numberline {1.1}Gallia est omnis divisa}{1}{subsection.1.1}
+\contentsline {subsection}{\numberline {1.2}Apud Helvetios longe}{1}{subsection.1.2}
+\contentsline {section}{\numberline {2}De Bello Hispaniensi}{3}{section.2}
+\contentsline {section}{\numberline {3}Weiteres Kapitel}{4}{section.3}
+\contentsline {subsection}{\numberline {3.1}Unterkapitel}{4}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Unterkapitel}{4}{subsection.3.2}
+\contentsline {section}{Abbildungsverzeichnis}{5}{section*.4}
+\contentsline {section}{Tabellenverzeichnis}{5}{section*.5}
