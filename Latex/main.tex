@@ -25,8 +25,6 @@
 
 
 %	TITELSEITE
-
-
 \begingroup
 \thispagestyle{empty}
 \AddToShipoutPicture*{\put(0,0){\includegraphics[scale=0.37]{head1.jpg}}} % Image background
@@ -45,7 +43,7 @@
 \thispagestyle{empty}
 
 %Hier kann ich Github und Downloads hin schreiben
-\noindent \textsc{https://git.overleaf.com/12290910twntpfhdkbjy}\\ % URL
+\noindent \textsc{https://github.com/RobinBia/Projektarbeit-Geoinformatik.git}\\ % URL
 
 \noindent Projektarbeit unter der Betreuung von PD Dr. Dr.-Ing. Wilfried Linder von 11.2017 - 09.2018 als Vorbereitung der sich anschließenden Masterarbeit.\\ 
 
@@ -60,14 +58,76 @@
 \pagestyle{fancy} % Print headers again
 
 \chapter{Motivation}
-\chapter{Geodaten}
-\section{Definition}
-\section{Gestalt von Geodaten}
-\section{Georeferenzierung}
+\chapter{Geodaten und Geoinformation}
+\section{Definition und Gestalt von Geodaten}
+Geodaten sind digitale Informationen, welche Sachdaten mit Geometriedaten\footnote{https://www.hdm-stuttgart.de/~riekert/lehre gis.pdf} (und Chronometriedaten) vereinen , z.B. \{Luftdruck 1 bar, Ort Düsseldorf, Datum 26.11.2017\}. 
+Die räumliche Information kann in unterschiedlichen Formen vorliegen, z.B. symbolisch als Ortsname oder Postleitzahl, aber auch als mathematisch atomare Referenz auf Positionen der Erde mittels Koordinaten. Diese können in unterschiedlichster Dimensionalität vorliegen:
+\begin{itemize}
+\item Kugelkoordinaten mit Bezug auf jeden Punkt im Volumen der Erde als
+Geoid oder Rotationsellipsoid (3D)
+\item
+Gauß-Krüger oder geografische Koordinaten mit Bezug auf die Oberfläche der Erde ohne Berücksichtigung von Höhenunterschieden (2D)
+\item 
+2D-Koordinaten mit einer zusätzlichen Sachinformation für die Höhe über dem Geoiden (2.5D).
+\end{itemize}
+\section{Geografische Koordinaten}
+Ein geeignetes und weit verbreitetes Koordinatensystem zur verzerrungsarmen Darstellung sind die Geografischen Koordinaten. 
+Abbruch der Arbeit an dieser Stelle, da Relevanzzweifel....
+
 \section{Qualitätsmerkmale}
+Ein wichtiger Forschungszweig ist die automatische Beurteilung von Qualitätsmerkmalen von Geodaten hinsichtlich einer bestimmten Fragestellung.
+Ein geeignetes Maß ist die gewichtete Summe verschiedener Datenmerkmale, welche in der aktuellen ISO-Norm \textit{ISO 19157:2013}\footnote{https://www.iso.org/standard/32575.html} spezifiziert sind. Die folgende Auflistung ist eine informelle Beschreibung der oben genannten Norm durch Fragestellungen und Beispiele:
+
+
+\begin{itemize}
+\item \textbf{Vollständigkeit}
+\begin{itemize}
+\item \textbf{Datenüberschuss} -
+Enthält der Datensatz mehr Objekte und Beziehungen als angegeben?
+\item \textbf{Datenmangel} - Enthält der Datensatz weniger Objekte und Beziehungen als angegeben?
+\end{itemize}
+\item \textbf{Logische Konsistenz}
+\begin{itemize}
+\item \textbf{Konzeptuelle Konsistenz} - 
+Wurde die Gestalt des Datenmodells bei Aktualisierungen nicht verändert?
+\item \textbf{Wertekonsistenz} - Sind alle Werte sinnvoll?
+\item \textbf{Formatkonsistenz} Passen die Daten zu angegebenen physikalischen Einheiten?
+\item \textbf{Topologische Konsistenz} 
+Bleiben topologische Beziehungen bei Änderungen des Datensatzes bestehen (Der botanische Garten befindet sich im Umkreis von 1km von der HHU)?
+\item \textbf{Geometrische Konsistenz} - Ist der digitalisierte Datensatz geometrisch sinnvoll und widerspruchsfrei?
+\end{itemize}
+\item \textbf{Positionsgenauigkeit}
+\begin{itemize}
+\item
+\textbf{Äußere Genauigkeit} - Wie gut stimmen die Koordinatenwerte des Datensatzes mit den wahren Koordinaten überein?
+\item \textbf{Innere Genauigkeit} - Wie gut stimmen die relativen Positionen von Objekten zueinander mit den wahren relativen Positionen überein?
+\item \textbf{Rasterdatengenauigkeit} - Wie gut stimmen die Rasterdatenpositionswerte mit den wahren Werten überein?
+\end{itemize}
+\item \textbf{Zeitliche Genauigkeit}
+\begin{itemize}
+\item
+\textbf{Genauigkeit von Zeitmessungen} - 
+Wie genau ist die Zeitangabe (minutengenau, taggenau)?
+\item \textbf{Zeitliche Konsistenz} - Ist die Reihenfolge der Ereignisse korrekt?
+\item
+\textbf{Zeitliche Gültigkeit} - Ist der Datensatz in Bezug auf das geforderte Zeitformat korrekt?
+\end{itemize}
+\item \textbf{Thematische Genauigkeit}
+\begin{itemize}
+\item
+\textbf{Richtigkeit der Klassifikation} - Stimmen Objekte, oder ihre Attribute mit den zugewiesenen Klassen überein, z. B. Zuordnung zu Fluss, statt zu Weg
+\item \textbf{Richtigkeit nichtquantitativer Attribute} - Beispiel: Ist das Grundstück wirklich eine Bananenplantage?
+\item \textbf{Genauigkeit quantitativer Attribute} - Beispiel: Ist die Fläche des Grundstücks korrekt?
+\end{itemize}
+\end{itemize}
+
+Viele der oben genannten Punkte lassen einen subjektiven Spielraum für die Bewertung zu. Sowohl Skalierungen als auch Gewichtungen sind nicht eindeutig definiert, was einen Vergleich verschiedener Datensätze erschwert. Aus diesem Grund ist eine algorithmische Interpretation in Kombination mit verfahren der künstlichen Intelligenz hilfreich. So ließe sich aus der Norm ein universeller und allgemeingültiger Indikator zur Bewertung der Datenqualität ermitteln.
+
+
+\section{Georeferenzierung}
 \section{Geoinformationssysteme}
-\section{Beispiele}
-\subsection{Google Maps}
+\subsection{Beispiele}
+Google Maps
 \subsection{Normbasierte Austauschschnittstelle (NAS)}
 \subsection{Geoobjekte}
 \subsection{Mobile Mapping}
@@ -75,18 +135,28 @@
 
 \section{Verschiedene Arten und ihre Anwendungszwecke}
 \section{Beschaffung von Geodaten}
+
 \chapter{Geoanalyse}
 \section{Beispiele}
 \section{Offene Probleme}
+
 \chapter{Neuronale Netzwerke}
 \section{Anwendungszwecke}
+\subsection{Vorhersage von Städtewachstum}
 \section{Tensorflow}
 \section{Anwendung auf Satellitendaten}
 
 
 \chapter{Clusteringverfahren}
 \section{Probabilistisches und Possibilistisches Clustering}
+\subsection{FCM und PFCM}
+\subsection{Vorraussetzungen für die Anwendung auf Geodaten}
+\subsection{Eigener Algoritmus (noch ohne Name)}
 \section{CVI}
+\subsection{NPC}
+\subsection{FHV}
+\subsection{Otsu-Binarisierung}
+\subsection{VAT-Algorithmus}
 \chapter{Forschungsbedarf}
 \section{Ausblick - Mein Thema für die Masterarbeit}
 

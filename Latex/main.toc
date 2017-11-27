@@ -4,55 +4,69 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {1}Motivation}{5}{chapter.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {2}Geodaten}{7}{chapter.2}
+\contentsline {chapter}{\numberline {2}Geodaten und Geoinformation}{7}{chapter.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.1}Definition}{7}{section.2.1}
+\contentsline {section}{\numberline {2.1}Definition und Gestalt von Geodaten}{7}{section.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.2}Gestalt von Geodaten}{7}{section.2.2}
+\contentsline {section}{\numberline {2.2}Geografische Koordinaten}{7}{section.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.3}Georeferenzierung}{7}{section.2.3}
+\contentsline {section}{\numberline {2.3}Qualit\IeC {\"a}tsmerkmale}{7}{section.2.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.4}Qualit\IeC {\"a}tsmerkmale}{7}{section.2.4}
+\contentsline {section}{\numberline {2.4}Georeferenzierung}{9}{section.2.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.5}Geoinformationssysteme}{7}{section.2.5}
+\contentsline {section}{\numberline {2.5}Geoinformationssysteme}{9}{section.2.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.6}Beispiele}{7}{section.2.6}
+\contentsline {section}{\numberline {2.6}Beispiele}{9}{section.2.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.6.1}Google Maps}{7}{subsection.2.6.1}
+\contentsline {subsection}{\numberline {2.6.1}Google Maps}{9}{subsection.2.6.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.6.2}Normbasierte Austauschschnittstelle (NAS)}{7}{subsection.2.6.2}
+\contentsline {subsection}{\numberline {2.6.2}Normbasierte Austauschschnittstelle (NAS)}{9}{subsection.2.6.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.6.3}Geoobjekte}{7}{subsection.2.6.3}
+\contentsline {subsection}{\numberline {2.6.3}Geoobjekte}{9}{subsection.2.6.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.6.4}Mobile Mapping}{7}{subsection.2.6.4}
+\contentsline {subsection}{\numberline {2.6.4}Mobile Mapping}{9}{subsection.2.6.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.7}Algorithmen in der Geoinformatik}{7}{section.2.7}
+\contentsline {section}{\numberline {2.7}Algorithmen in der Geoinformatik}{9}{section.2.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.8}Verschiedene Arten und ihre Anwendungszwecke}{7}{section.2.8}
+\contentsline {section}{\numberline {2.8}Verschiedene Arten und ihre Anwendungszwecke}{9}{section.2.8}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.9}Beschaffung von Geodaten}{7}{section.2.9}
+\contentsline {section}{\numberline {2.9}Beschaffung von Geodaten}{9}{section.2.9}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {3}Geoanalyse}{9}{chapter.3}
+\contentsline {chapter}{\numberline {3}Geoanalyse}{11}{chapter.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.1}Beispiele}{9}{section.3.1}
+\contentsline {section}{\numberline {3.1}Beispiele}{11}{section.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.2}Offene Probleme}{9}{section.3.2}
+\contentsline {section}{\numberline {3.2}Offene Probleme}{11}{section.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {4}Neuronale Netzwerke}{11}{chapter.4}
+\contentsline {chapter}{\numberline {4}Neuronale Netzwerke}{13}{chapter.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.1}Anwendungszwecke}{11}{section.4.1}
+\contentsline {section}{\numberline {4.1}Anwendungszwecke}{13}{section.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.2}Tensorflow}{11}{section.4.2}
+\contentsline {section}{\numberline {4.2}Tensorflow}{13}{section.4.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.3}Anwendung auf Satellitendaten}{11}{section.4.3}
+\contentsline {section}{\numberline {4.3}Anwendung auf Satellitendaten}{13}{section.4.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {5}Clusteringverfahren}{13}{chapter.5}
+\contentsline {chapter}{\numberline {5}Clusteringverfahren}{15}{chapter.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.1}Probabilistisches und Possibilistisches Clustering}{13}{section.5.1}
+\contentsline {section}{\numberline {5.1}Probabilistisches und Possibilistisches Clustering}{15}{section.5.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.2}CVI}{13}{section.5.2}
+\contentsline {subsection}{\numberline {5.1.1}FCM und PFCM}{15}{subsection.5.1.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {6}Forschungsbedarf}{15}{chapter.6}
+\contentsline {subsection}{\numberline {5.1.2}Vorraussetzungen f\IeC {\"u}r die Anwendung auf Geodaten}{15}{subsection.5.1.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.1}Ausblick - Mein Thema f\IeC {\"u}r die Masterarbeit}{15}{section.6.1}
+\contentsline {subsection}{\numberline {5.1.3}Eigener Algoritmus (noch ohne Name)}{15}{subsection.5.1.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.2}CVI}{15}{section.5.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.2.1}NPC}{15}{subsection.5.2.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.2.2}FHV}{15}{subsection.5.2.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.2.3}Otsu-Binarisierung}{15}{subsection.5.2.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.2.4}VAT-Algorithmus}{15}{subsection.5.2.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {6}Forschungsbedarf}{17}{chapter.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {6.1}Ausblick - Mein Thema f\IeC {\"u}r die Masterarbeit}{17}{section.6.1}
 \contentsfinish 
