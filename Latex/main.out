@@ -4,31 +4,39 @@
 \BOOKMARK [1][-]{section.2.2}{Geografische Koordinaten}{chapter.2}% 4
 \BOOKMARK [1][-]{section.2.3}{Qualit\344tsmerkmale}{chapter.2}% 5
 \BOOKMARK [1][-]{section.2.4}{Georeferenzierung}{chapter.2}% 6
-\BOOKMARK [1][-]{section.2.5}{Geoinformationssysteme}{chapter.2}% 7
-\BOOKMARK [1][-]{section.2.6}{Beispiele}{chapter.2}% 8
-\BOOKMARK [2][-]{subsection.2.6.1}{Google Maps}{section.2.6}% 9
-\BOOKMARK [2][-]{subsection.2.6.2}{Normbasierte Austauschschnittstelle \(NAS\)}{section.2.6}% 10
-\BOOKMARK [2][-]{subsection.2.6.3}{Geoobjekte}{section.2.6}% 11
-\BOOKMARK [2][-]{subsection.2.6.4}{Mobile Mapping}{section.2.6}% 12
-\BOOKMARK [1][-]{section.2.7}{Algorithmen in der Geoinformatik}{chapter.2}% 13
-\BOOKMARK [1][-]{section.2.8}{Verschiedene Arten und ihre Anwendungszwecke}{chapter.2}% 14
-\BOOKMARK [1][-]{section.2.9}{Beschaffung von Geodaten}{chapter.2}% 15
-\BOOKMARK [0][-]{chapter.3}{Geoanalyse}{}% 16
-\BOOKMARK [1][-]{section.3.1}{Beispiele}{chapter.3}% 17
-\BOOKMARK [1][-]{section.3.2}{Offene Probleme}{chapter.3}% 18
-\BOOKMARK [0][-]{chapter.4}{Neuronale Netzwerke}{}% 19
-\BOOKMARK [1][-]{section.4.1}{Anwendungszwecke}{chapter.4}% 20
-\BOOKMARK [1][-]{section.4.2}{Tensorflow}{chapter.4}% 21
-\BOOKMARK [1][-]{section.4.3}{Anwendung auf Satellitendaten}{chapter.4}% 22
-\BOOKMARK [0][-]{chapter.5}{Clusteringverfahren}{}% 23
-\BOOKMARK [1][-]{section.5.1}{Probabilistisches und Possibilistisches Clustering}{chapter.5}% 24
-\BOOKMARK [2][-]{subsection.5.1.1}{FCM und PFCM}{section.5.1}% 25
-\BOOKMARK [2][-]{subsection.5.1.2}{Vorraussetzungen f\374r die Anwendung auf Geodaten}{section.5.1}% 26
-\BOOKMARK [2][-]{subsection.5.1.3}{Eigener Algoritmus \(noch ohne Name\)}{section.5.1}% 27
-\BOOKMARK [1][-]{section.5.2}{CVI}{chapter.5}% 28
-\BOOKMARK [2][-]{subsection.5.2.1}{NPC}{section.5.2}% 29
-\BOOKMARK [2][-]{subsection.5.2.2}{FHV}{section.5.2}% 30
-\BOOKMARK [2][-]{subsection.5.2.3}{Otsu-Binarisierung}{section.5.2}% 31
-\BOOKMARK [2][-]{subsection.5.2.4}{VAT-Algorithmus}{section.5.2}% 32
-\BOOKMARK [0][-]{chapter.6}{Forschungsbedarf}{}% 33
-\BOOKMARK [1][-]{section.6.1}{Ausblick - Mein Thema f\374r die Masterarbeit}{chapter.6}% 34
+\BOOKMARK [2][-]{subsection.2.4.1}{Definition}{section.2.4}% 7
+\BOOKMARK [2][-]{subsection.2.4.2}{Adresskodierung}{section.2.4}% 8
+\BOOKMARK [2][-]{subsection.2.4.3}{Geotagging}{section.2.4}% 9
+\BOOKMARK [2][-]{subsection.2.4.4}{Kartenkalibrierung}{section.2.4}% 10
+\BOOKMARK [2][-]{subsection.2.4.5}{Rektifizierung}{section.2.4}% 11
+\BOOKMARK [2][-]{subsection.2.4.6}{Bestimmung einer Transformationsvorschrift}{section.2.4}% 12
+\BOOKMARK [1][-]{section.2.5}{Geoinformationssysteme}{chapter.2}% 13
+\BOOKMARK [2][-]{subsection.2.5.1}{Geoobjekte}{section.2.5}% 14
+\BOOKMARK [2][-]{subsection.2.5.2}{Modellierung von Geoobjekten}{section.2.5}% 15
+\BOOKMARK [2][-]{subsection.2.5.3}{Rastermodell}{section.2.5}% 16
+\BOOKMARK [2][-]{subsection.2.5.4}{Vektormodell}{section.2.5}% 17
+\BOOKMARK [2][-]{subsection.2.5.5}{Mobile Mapping}{section.2.5}% 18
+\BOOKMARK [1][-]{section.2.6}{Algorithmen in der Geoinformatik}{chapter.2}% 19
+\BOOKMARK [1][-]{section.2.7}{Verschiedene Arten und ihre Anwendungszwecke}{chapter.2}% 20
+\BOOKMARK [1][-]{section.2.8}{Beschaffung von Geodaten}{chapter.2}% 21
+\BOOKMARK [0][-]{chapter.3}{Geoanalyse}{}% 22
+\BOOKMARK [1][-]{section.3.1}{Beispiele}{chapter.3}% 23
+\BOOKMARK [1][-]{section.3.2}{Offene Probleme}{chapter.3}% 24
+\BOOKMARK [0][-]{chapter.4}{Neuronale Netzwerke}{}% 25
+\BOOKMARK [1][-]{section.4.1}{Anwendungszwecke}{chapter.4}% 26
+\BOOKMARK [2][-]{subsection.4.1.1}{Vorhersage von St\344dtewachstum}{section.4.1}% 27
+\BOOKMARK [1][-]{section.4.2}{Tensorflow}{chapter.4}% 28
+\BOOKMARK [1][-]{section.4.3}{Anwendung auf Satellitendaten}{chapter.4}% 29
+\BOOKMARK [0][-]{chapter.5}{Clusteringverfahren}{}% 30
+\BOOKMARK [1][-]{section.5.1}{Probabilistisches und Possibilistisches Clustering}{chapter.5}% 31
+\BOOKMARK [2][-]{subsection.5.1.1}{FCM und PFCM}{section.5.1}% 32
+\BOOKMARK [2][-]{subsection.5.1.2}{Vorraussetzungen f\374r die Anwendung auf Geodaten}{section.5.1}% 33
+\BOOKMARK [2][-]{subsection.5.1.3}{Eigener Algoritmus \(noch ohne Name\)}{section.5.1}% 34
+\BOOKMARK [1][-]{section.5.2}{CVI}{chapter.5}% 35
+\BOOKMARK [2][-]{subsection.5.2.1}{NPC}{section.5.2}% 36
+\BOOKMARK [2][-]{subsection.5.2.2}{FHV}{section.5.2}% 37
+\BOOKMARK [2][-]{subsection.5.2.3}{Otsu-Binarisierung}{section.5.2}% 38
+\BOOKMARK [2][-]{subsection.5.2.4}{VAT-Algorithmus}{section.5.2}% 39
+\BOOKMARK [1][-]{section.5.3}{Clustering auf unvollst\344ndigen Daten}{chapter.5}% 40
+\BOOKMARK [0][-]{chapter.6}{Forschungsbedarf}{}% 41
+\BOOKMARK [1][-]{section.6.1}{Ausblick - Mein Thema f\374r die Masterarbeit}{chapter.6}% 42

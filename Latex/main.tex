@@ -1,7 +1,7 @@
 \documentclass[11pt,fleqn]{book} % Default font size and left-justified equations
 
 \usepackage[top=3cm,bottom=3cm,left=3.2cm,right=3.2cm,headsep=10pt,letterpaper]{geometry} % Page margins
-
+\usepackage{float}
 \usepackage{xcolor} % Required for specifying colors by name
 \definecolor{ocre}{RGB}{52,177,201} % Define the orange color used for highlighting throughout the book
 
@@ -61,18 +61,35 @@
 \chapter{Geodaten und Geoinformation}
 \section{Definition und Gestalt von Geodaten}
 Geodaten sind digitale Informationen, welche Sachdaten mit Geometriedaten\footnote{https://www.hdm-stuttgart.de/~riekert/lehre gis.pdf} (und Chronometriedaten) vereinen , z.B. \{Luftdruck 1 bar, Ort Düsseldorf, Datum 26.11.2017\}. 
-Die räumliche Information kann in unterschiedlichen Formen vorliegen, z.B. symbolisch als Ortsname oder Postleitzahl, aber auch als mathematisch atomare Referenz auf Positionen der Erde mittels Koordinaten. Diese können in unterschiedlichster Dimensionalität vorliegen:
+Die räumliche Information kann in unterschiedlichen Formen vorliegen, z.B. symbolisch als Ortsname oder Postleitzahl, aber auch als mathematisch atomare Referenz auf Positionen der Erde mittels Koordinaten. Diese können in unterschiedlichster Dimensionalität vorliegen\footnote{http://www.mathematik.uni-ulm.de/sai/ws04/biosem/GIS.pdf}
 \begin{itemize}
-\item Kugelkoordinaten mit Bezug auf jeden Punkt im Volumen der Erde als
-Geoid oder Rotationsellipsoid (3D)
+\item Ein Objekt ohne bestimmte Länge (0D)
+\item Ein Linienstück (1D)
 \item
 Gauß-Krüger oder geografische Koordinaten mit Bezug auf die Oberfläche der Erde ohne Berücksichtigung von Höhenunterschieden (2D)
 \item 
 2D-Koordinaten mit einer zusätzlichen Sachinformation für die Höhe über dem Geoiden (2.5D).
+\item Kugelkoordinaten mit Bezug auf jeden Punkt im Volumen der Erde als
+Geoid oder Rotationsellipsoid (3D)
+\item 
+Zusätzlich zu den 3 Koordinaten im Raum wird eine vierte
+Information mitgeführt, die sich aus dem zeitlichen Ablauf ergibt (4D)
 \end{itemize}
+
+
+\newpage
+
 \section{Geografische Koordinaten}
 Ein geeignetes und weit verbreitetes Koordinatensystem zur verzerrungsarmen Darstellung sind die Geografischen Koordinaten. 
-Abbruch der Arbeit an dieser Stelle, da Relevanzzweifel....
+
+\begin{figure}[H]
+\centering
+\includegraphics{gradnetz.jpg}
+\caption{Das Gradnetz der Erde}\label{gradnetz}
+\end{figure}
+
+\noindent Beschrieben wird ein Punkt auf der Erde durch gedachte Kreise um den Globus, welche Senkrecht zueinander stehen. Insgesamt existieren 180 Breitenkreise (Richtung Ost-West) und 360 Längenkreise (Richtung Nord-Süd). Die Abweichung von den beiden Referenzkreisen Äquator und Nullmeridian wird in Grad östlicher/westlicher Länge und nördlicher/südlicher Breite angegeben. Als Äquator ($0^\circ$ nördliche/südliche Breite) wird der Breitenkreis bezeichnet, auf welchem die Erdachse senkrecht steht. Der Nullmeridian ($0^\circ$ westliche/östliche Länge) ist der Längenkreis, welcher durch die britische Stadt Greenwich verläuft.\newline Weitere wichtige Koordinatensysteme sind die Gauß-Krüger und UTM-Koordinaten. Die Vorteile dieser Systeme ist, dass sich eine geografische Position direkt ablesen lässt. Geografische Koordinaten erschweren dies bedingt durch die sich verändernden Abstände zwischen den Längenkreisen in zunehmender Nord- oder Südrichtung.
+
 
 \section{Qualitätsmerkmale}
 Ein wichtiger Forschungszweig ist die automatische Beurteilung von Qualitätsmerkmalen von Geodaten hinsichtlich einer bestimmten Fragestellung.
@@ -125,11 +142,139 @@ Viele der oben genannten Punkte lassen einen subjektiven Spielraum für die Bewe
 
 
 \section{Georeferenzierung}
+\subsection{Definition}
+Unter dem Vorgang der Georeferenzierung,versteht man die Zuweisung raumbezogener Informationen, auch Georeferenz genannt, zu einem Datensatz.
+
+Es gibt folgende vier Arten der Georeferenzierung:
+
+\begin{itemize}
+\item Adresskodierung
+\item Geotagging 
+\item Kartenkalibrierung 
+\item Rektifizierung
+\end{itemize}
+
+\subsection{Adresskodierung}
+Bei der Adresskodierung wird dem Datensatz eine Postanschrift zugewiesen und somit ein indirekter Raumbezug hergestellt. Mithilfe geokodierter Adressen lassen sich funktionale zusammenhänge zwischen Daten, Postanschrift und Adresse herstellen und somit ressourcenschonende und schnelle Zugriffe ermöglichen.
+\subsection{Geotagging}
+Als Geotagging bezeichnet man das Einfügen eines Attributes (Geotag) inkl. Realweltkoordinate in einen raumbezogenen Datensatz wie ein Bild oder eine Website. Dies ist bei der räumlichen Einordnung der Information hilfreich.
+\subsection{Kartenkalibrierung}
+Bei der Kartenkalibrierung wird ein räumlicher Datensatz ohne Realkoordinatenbezug mithilfe einer Transformationsvorschrift im Bezug auf die Realwelt so orientiert, dass sich die Koordinaten des Bildes in Realweltkoordinaten einfach umrechnen lassen.
+\subsection{Rektifizierung}
+Bei der Rektfizierung werden geometrische Verzerrungen in räumlichen Daten entzerrt, indem jedem Datum eine Realweltkoordinate zugeordnet wird.
+
+
+\subsection{Bestimmung einer Transformationsvorschrift}
+
+Um eine Transformationsgleichung zu finden, werden in der Regel Passpunkte verwendet. Die Passpunkte müssen im Datensatz eindeutig zu erkennen sein. Die Koordinaten der Passpunkte im Realweltkoordinatensystem sind entweder bekannt oder werden einem Referenzdatensatz entnommen. Bei Vektordaten werden die Koordinaten abgegriffen oder interpoliert. Bei Bilddaten werden die Bildkoordinaten der Passpunkte gemessen. Die Transformation sollte unter Berücksichtigung der Abbildungsgeometrie bestimmt werden. Bei Fotos ist somit die Zentralprojektion zu berücksichtigen, bei Karten der entsprechende Kartennetzentwurf. Das automatische Finden von Gemeinsamkeiten in digitalen Bildern und die Bestimmung der Transformation wird in der Bildverarbeitung Bildregistrierung genannt. Die Registrierung von Laserscanning-Punktwolken kann mit dem ICP-Algorithmus erfolgen.\footnote{https://de.wikipedia.org/wiki/Georeferenzierung}
+
+Mark Erweiterungen, implementierungen sinnvoll?
+
 \section{Geoinformationssysteme}
-\subsection{Beispiele}
-Google Maps
-\subsection{Normbasierte Austauschschnittstelle (NAS)}
+Ein Geoinformationssystem ist eine Software, mit welcher Geodaten erfasst, verwaltet, analysiert und ausgegeben werden können.
+
+Man unterscheidet bei der Abfrage von Daten unter folgenden verschiedenen Typen:
+\begin{itemize}
+\item Alphanumerische Daten (Attribute als Text oder Zahlen)
+\item Text-Dokumente 
+\item Multimediale Informationen, wie Videos, Audiosequenzen, Animationen 
+\item Fotos, Scans, Satellitenbilder
+\end{itemize}
+
+Der Unterschied zu einer Datenbank ist, dass jedes Sachdatum einen expliziten Raumbezug hat, über welchen die Selektion erfolgt. In einer Datenbank erfolgen Zugriffe stattdessen über Schlüsselattribute. Eine weitere Stärke eines GIS ist die grafische Aufbereitung der Daten zur anschaulich-interaktiven Analyse.
+
+Beispiele für solche räumlichen Analysewerkzeuge sind Routenfindung, räumliche Suche. Ein implementiertes Kartografiesystem ermöglicht zudem das markieren von Punkten und Linien, färben von Flächen und die Anzeige und Überlagerung verschiedener Ebenen.
+
 \subsection{Geoobjekte}
+Ein Geoobjekt ist ein tatsächlich auf der Erde vorhandenes Objekt, welches durch Geodaten eindeutig referenziert wurde. Man unterscheidet zwischen Gegenständen und Sachverhalten. Gegenstände sind konkrete, visuell wahrnehmbare Erscheinungen auf der Erdoberfläche. Sachverhalte dagegen sind nicht sofort visuell wahrnehmbar, sondern bezeichnen Beziehungen zwischen Gegenständen oder die Interaktion mit der Umwelt und Oberflächengestalt.
+Außerdem unterscheidet man zwischen verschiedenen Arten der Datenspeicherung:
+\begin{itemize}
+\item Flächenhafte Daten
+\item Linienhafte Daten
+\item Punkthafte Daten
+\end{itemize}
+Je nach Kartenmaßstab, Auflösungstyp und Speichertyp (digital/analog) werden Daten unterschiedlich repräsentiert. So wird beispielsweise ein flächenhafter quadratischer Gebäudekomplex (10*10 Meter) auf einem Satellitenfoto mit dem Maßstab 1:10.000 nur noch als Punkt wahrgenommen. Linienhafte Daten bieten sich vor allem bei Flüssen, Straßen, Wasser-Land-Grenzen, starken Flankensteigungen usw. an.
+
+\subsection{Modellierung von Geoobjekten}
+Die vier informationstechnischen Dimensionen zur Modellierung von geografischen Informationssystemen sind:
+\begin{itemize}
+\item Geometrie (Ort des Objekts)
+\item Topologie (Lage der Objekte relativ zueinander)
+\item Semantik (Bedeutung des Objekts im fachspezifischen Kontext, z.B. gut-schlecht, viel-wenig, groß-klein)
+\item Dynamik (Änderung des Objekts im zeitlichen Verlauf)
+\end{itemize}
+Jedes unikate Objekt gehört zu einer Objektklasse, in welcher es nach den oben genannten vier Kriterien beschrieben und mit anderen Objekten der Klasse verglichen wird. Jedes der Objekte besitzt einen eindeutigen Schlüssel zur Identifikation. Möglichkeiten zur Klassifizierung und Clustering von Geoobjekten werden in den folgenden Kapiteln vorgestellt.\newline
+Der Ort eines Geoobjektes kann auf zwei verschiedene Arten beschrieben werden:
+\subsection{Rastermodell}
+Eine analoge topografische Karte oder Zeichnung digitalisiert und in quadratische Gitterzellen aufgeteilt, welche alle über die gleiche Semantik verfügen. Diese Semantik wird stellvertretend durch eine Matrix beschrieben, welche für jede Gitterzelle eine numerische Pixelwertinformation enthält.\footnote{https://de.wikipedia.org/wiki/Geoobjekt}
+\begin{figure}[H]
+\centering
+\includegraphics{raster.png}
+\caption{Rastermodell-Zoom \protect\footnotemark}
+\end{figure}
+\footnotetext{http://desktop.arcgis.com/de/arcmap/10.3/manage-data/raster-and-images/what-is-raster-data.htm}
+\noindent
+Diese Pixelinformationen repräsentieren Daten wie  Temperatur, Höhe, Vegetationsdichte, Landnutzung, Bodenbeschaffenheit. Rasterdaten werden in der Regel als Bilddatei gespeichert (BMP, GIF, JPEG).
+\newline
+Die Rastergeometrie eignet sich gut zur Beschreibung flächiger, homogener Sachverhalte. Die einfache Struktur bietet viele Vorteile, aber auch Nachteile: \newline
+\textbf{Vorteile}
+\begin{itemize}
+\item Einfache Datenstruktur 
+\item Geeignet für räumliche und statistische Analyse
+\item Alles ist einheitlich speicherbar (Punkte, Linien, Polygone)
+\item Überlagerung von Ebenen sehr schnell und einfach
+\end{itemize}
+\textbf{Nachteile}
+\begin{itemize}
+\item Genauigkeitsverlust beim Scannen und Neustrukturieren
+\item Endliche Auflösung => räumliche Ungenauigkeit
+\item Pixelwerte haben keine Beziehung zueinander
+\item Hoher Speicheraufwand bei Hoher Auflösung, keine Kompression möglich.
+\end{itemize}
+
+\subsection{Vektormodell}
+Im Gegensatz zu Rasterdaten werden Vektordaten bei linien- und punkthaften Informationen eingesetzt, also Informationen, die sich nicht mit homogener Eigenschaft über die gesamte Karte verteilen. Man nennt solche Informationen auch Features. Beispiele hierfür sind Straßen, Staatsgrenzen, Gewässergrenzen, Höhenlinien, Flüsse, Bäume.
+\newline
+Eine Punkthafte Vektorinformation wird auch als Vertex bezeichnet. Dieser beschreibt eine Raumlage durch Angabe einer (x,y,z)-Koordinate und ein dazugehöriges Attribut, welches die Art des Punktes beschreibt, z.B. Baum oder Laterne:
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.6]{vertex.png}
+\caption{Punkt-Feature \protect\footnotemark}
+\end{figure}
+
+\footnotetext{https://docs.qgis.org/2.8/de/docs/gentle\_gis\_introduction/vector\_data.html}
+
+\noindent
+Punkteverläufe wie Straßen werden durch sogenannte Polylinien beschrieben. Diese bestehen aus mehreren miteinander verbundenen Vertices. Im Kreis laufende Polylinien bezeichnet man auch als Polygone:
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.6]{poly.png}
+\caption{Polylinien und Polygone \protect\footnotemark}
+\end{figure}
+
+\footnotetext{https://docs.qgis.org/2.8/de/docs/gentle\_gis\_introduction/vector\_data.html}
+
+\noindent
+Wie auch bei Rasterdaten gibt es bei Vektordaten nicht nur Vorteile, sondern auch Nachteile.\footnote{http://romanharcke.de/geoinformationssysteme-geodaten-kapitel-4/}\newline
+\textbf{Vorteile:}
+\begin{itemize}
+\item Unendliche Linienauflösung und sehr hohe Genauigkeit
+\item Beschreibung von mehreren einzigartigen Features in nur einer Ebene möglich
+\item Geringer Speicherbedarf
+\item Einfache Erzeugung von Topologie (Knoten, Kanten, Flächen)
+\item Gute Performance
+\item Ermöglicht Attributierung und Objektdefinitionen
+\end{itemize}
+\textbf{Nachteile:}
+\begin{itemize}
+\item Flächenhafte Informationen können nicht gespeichert werden 
+\item Durch Scannen können diese Daten nicht erzeugt werden. Es bedarf hier einer Raster-Vektorwandlung (Hoher Erfassungsaufwand)
+\item Hoher Rechenaufwand bei Verschneidungen
+\end{itemize}
+
+
 \subsection{Mobile Mapping}
 \section{Algorithmen in der Geoinformatik}
 
@@ -157,6 +302,7 @@ Google Maps
 \subsection{FHV}
 \subsection{Otsu-Binarisierung}
 \subsection{VAT-Algorithmus}
+\section{Clustering auf unvollständigen Daten}
 \chapter{Forschungsbedarf}
 \section{Ausblick - Mein Thema für die Masterarbeit}
 
