@@ -25,18 +25,18 @@
 
 
 %	TITELSEITE
+
 \begingroup
 \thispagestyle{empty}
 \AddToShipoutPicture*{\put(0,0){\includegraphics[scale=0.37]{head1.jpg}}} % Image background
 \centering
 \vspace*{5cm}
 \par\normalfont\fontsize{35}{35}\sffamily\selectfont
-\textbf{{\color{white} Neuronale Netzwerke und Clusteringverfahren für die Analyse von Geodaten}}\\
+\textbf{{\color{white} Neuronale Netzwerke und Clusteringverfahren für Geodaten}}\\
 {\LARGE {\color{white}Lehrstuhl für Geoinformatik}}\par
 \vspace*{1cm}
 {\Huge {\color{white} Robin Bially}}\par % Author name
 \endgroup
-
 
 \newpage
 ~\vfill
@@ -274,12 +274,38 @@ Wie auch bei Rasterdaten gibt es bei Vektordaten nicht nur Vorteile, sondern auc
 \item Hoher Rechenaufwand bei Verschneidungen
 \end{itemize}
 
+\section{Beispiele von Raster und Vektordaten}
+Geodaten müssen heutzutage nicht mehr selbständig erstellt werden. Es gibt eine Vielzahl an staatlichen und privaten Institutionen, welche Ihre Daten kostenlos bereitstellen. So lassen sich zahlreiche Inhalte im ESRI Shapefile Vektordateiformat finden, welches als Quasi-Standard für Desktop-GIS gilt.\footnote{https://de.wikipedia.org/wiki/Shapefile}
+\noindent
+Der Datensatz \textit{Natural Earth}\footnote{http://www.naturalearthdata.com/} ist eine Abbildung der Erde im Maßstab 1:10 Millionen. Er ist sowohl als SHP-Vektordatei als auch als Tiff-Rasterbild verfügbar.
 
-\subsection{Mobile Mapping}
+\noindent Ein ESRI Shapefile besteht aus mindestens drei Dateien zur Speicherung der Geometriedaten, Sachdaten und der Geometrieindizierung zur Verknüpfung von Geometrie und Sachdaten (.shp, .dbf, .shx). Die Geometrie eines Shapefile definiert sich aus nur 4 verschiedenen Formdatenstrukturen: Punkte, Linien, Flächen (Polygone) und Multipunkte.\footcite{http://www.esri.com/library/whitepapers/pdfs/shapefile.pdf}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.23]{gis.png}
+\caption{.shp-Geometriedatei in dem Geoinformationssystem QGIS dargestellt \protect\footnotemark}
+\end{figure}
+\footnotetext{https://www.qgis.org/de/site/}
+\noindent
+Leider eignen sich Vektordaten nicht zur Klassifikation von Features mit Hilfe von Deep Learning wie z.B. Convolutional Neural Networks (CNN), sondern stellen viel mehr das Ergebnis einer Rasterbildanalyse dar. Aus diesem Grund beziehen sich folgende Kapitel im Kontext von Geodaten immer auf Rasterdaten und Bildausschnitte.
+\newline
+Das dem Datensatz zugehörige farbige Rasterbild inklusive Schummerung (räumliche Schattierung), Wasser und Flüssen sieht so aus:
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.4]{raster_nat_earth.png}
+\caption{Rasterbild des Natural-Earth-Datensatzes \protect\footnotemark}
+\end{figure}
+\footnotetext{http://www.naturalearthdata.com/downloads/10m-raster-data/10m-natural-earth-1/}
+
+
+
+
 \section{Algorithmen in der Geoinformatik}
 
 \section{Verschiedene Arten und ihre Anwendungszwecke}
-\section{Beschaffung von Geodaten}
+
 
 \chapter{Geoanalyse}
 \section{Beispiele}
