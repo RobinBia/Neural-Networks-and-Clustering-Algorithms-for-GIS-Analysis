@@ -25,6 +25,7 @@
 
 
 %	TITELSEITE
+\raggedright
 
 \begingroup
 \thispagestyle{empty}
@@ -43,11 +44,11 @@
 \thispagestyle{empty}
 
 %Hier kann ich Github und Downloads hin schreiben
-\noindent \textsc{https://github.com/RobinBia/Projektarbeit-Geoinformatik.git}\\ % URL
+\textsc{https://github.com/RobinBia/Projektarbeit-Geoinformatik.git}\\ % URL
 
-\noindent Projektarbeit unter der Betreuung von PD Dr. Dr.-Ing. Wilfried Linder von 11.2017 - 09.2018 als Vorbereitung der sich anschließenden Masterarbeit.\\ 
+Projektarbeit unter der Betreuung von PD Dr. Dr.-Ing. Wilfried Linder von 11.2017 - 09.2018 als Vorbereitung der sich anschließenden Masterarbeit.\\ 
 
-\noindent \textit{Fertigstellung, August 2018} 
+\textit{Fertigstellung, August 2018} 
 
 %	Inhaltsverzeichnis
 \chapterimage{head8.jpg} % Table of contents heading image
@@ -56,6 +57,7 @@
 %\cleardoublepage
 
 \pagestyle{fancy} % Print headers again
+
 
 \chapter{Motivation}
 \chapter{Geodaten und Geoinformation}
@@ -88,7 +90,7 @@ Ein geeignetes und weit verbreitetes Koordinatensystem zur verzerrungsarmen Dars
 \caption{Das Gradnetz der Erde}\label{gradnetz}
 \end{figure}
 
-\noindent Beschrieben wird ein Punkt auf der Erde durch gedachte Kreise um den Globus, welche Senkrecht zueinander stehen. Insgesamt existieren 180 Breitenkreise (Richtung Ost-West) und 360 Längenkreise (Richtung Nord-Süd). Die Abweichung von den beiden Referenzkreisen Äquator und Nullmeridian wird in Grad östlicher/westlicher Länge und nördlicher/südlicher Breite angegeben. Als Äquator ($0^\circ$ nördliche/südliche Breite) wird der Breitenkreis bezeichnet, auf welchem die Erdachse senkrecht steht. Der Nullmeridian ($0^\circ$ westliche/östliche Länge) ist der Längenkreis, welcher durch die britische Stadt Greenwich verläuft.\newline Weitere wichtige Koordinatensysteme sind die Gauß-Krüger und UTM-Koordinaten. Die Vorteile dieser Systeme ist, dass sich eine geografische Position direkt ablesen lässt. Geografische Koordinaten erschweren dies bedingt durch die sich verändernden Abstände zwischen den Längenkreisen in zunehmender Nord- oder Südrichtung.
+Beschrieben wird ein Punkt auf der Erde durch gedachte Kreise um den Globus, welche Senkrecht zueinander stehen. Insgesamt existieren 180 Breitenkreise (Richtung Ost-West) und 360 Längenkreise (Richtung Nord-Süd). Die Abweichung von den beiden Referenzkreisen Äquator und Nullmeridian wird in Grad östlicher/westlicher Länge und nördlicher/südlicher Breite angegeben. Als Äquator ($0^\circ$ nördliche/südliche Breite) wird der Breitenkreis bezeichnet, auf welchem die Erdachse senkrecht steht. Der Nullmeridian ($0^\circ$ westliche/östliche Länge) ist der Längenkreis, welcher durch die britische Stadt Greenwich verläuft.\newline Weitere wichtige Koordinatensysteme sind die Gauß-Krüger und UTM-Koordinaten. Die Vorteile dieser Systeme ist, dass sich eine geografische Position direkt ablesen lässt. Geografische Koordinaten erschweren dies bedingt durch die sich verändernden Abstände zwischen den Längenkreisen in zunehmender Nord- oder Südrichtung.
 
 
 \section{Qualitätsmerkmale}
@@ -213,7 +215,7 @@ Eine analoge topografische Karte oder Zeichnung digitalisiert und in quadratisch
 \caption{Rastermodell-Zoom \protect\footnotemark}
 \end{figure}
 \footnotetext{http://desktop.arcgis.com/de/arcmap/10.3/manage-data/raster-and-images/what-is-raster-data.htm}
-\noindent
+
 Diese Pixelinformationen repräsentieren Daten wie  Temperatur, Höhe, Vegetationsdichte, Landnutzung, Bodenbeschaffenheit. Rasterdaten werden in der Regel als Bilddatei gespeichert (BMP, GIF, JPEG).
 \newline
 Die Rastergeometrie eignet sich gut zur Beschreibung flächiger, homogener Sachverhalte. Die einfache Struktur bietet viele Vorteile, aber auch Nachteile: \newline
@@ -245,7 +247,6 @@ Eine Punkthafte Vektorinformation wird auch als Vertex bezeichnet. Dieser beschr
 
 \footnotetext{https://docs.qgis.org/2.8/de/docs/gentle\_gis\_introduction/vector\_data.html}
 
-\noindent
 Punkteverläufe wie Straßen werden durch sogenannte Polylinien beschrieben. Diese bestehen aus mehreren miteinander verbundenen Vertices. Im Kreis laufende Polylinien bezeichnet man auch als Polygone:
 
 \begin{figure}[H]
@@ -256,7 +257,6 @@ Punkteverläufe wie Straßen werden durch sogenannte Polylinien beschrieben. Die
 
 \footnotetext{https://docs.qgis.org/2.8/de/docs/gentle\_gis\_introduction/vector\_data.html}
 
-\noindent
 Wie auch bei Rasterdaten gibt es bei Vektordaten nicht nur Vorteile, sondern auch Nachteile.\footnote{http://romanharcke.de/geoinformationssysteme-geodaten-kapitel-4/}\newline
 \textbf{Vorteile:}
 \begin{itemize}
@@ -276,10 +276,9 @@ Wie auch bei Rasterdaten gibt es bei Vektordaten nicht nur Vorteile, sondern auc
 
 \section{Beispiele von Raster und Vektordaten}
 Geodaten müssen heutzutage nicht mehr selbständig erstellt werden. Es gibt eine Vielzahl an staatlichen und privaten Institutionen, welche Ihre Daten kostenlos bereitstellen. So lassen sich zahlreiche Inhalte im ESRI Shapefile Vektordateiformat finden, welches als Quasi-Standard für Desktop-GIS gilt.\footnote{https://de.wikipedia.org/wiki/Shapefile}
-\noindent
 Der Datensatz \textit{Natural Earth}\footnote{http://www.naturalearthdata.com/} ist eine Abbildung der Erde im Maßstab 1:10 Millionen. Er ist sowohl als SHP-Vektordatei als auch als Tiff-Rasterbild verfügbar.
 
-\noindent Ein ESRI Shapefile besteht aus mindestens drei Dateien zur Speicherung der Geometriedaten, Sachdaten und der Geometrieindizierung zur Verknüpfung von Geometrie und Sachdaten (.shp, .dbf, .shx). Die Geometrie eines Shapefile definiert sich aus nur 4 verschiedenen Formdatenstrukturen: Punkte, Linien, Flächen (Polygone) und Multipunkte.\footcite{http://www.esri.com/library/whitepapers/pdfs/shapefile.pdf}
+Ein ESRI Shapefile besteht aus mindestens drei Dateien zur Speicherung der Geometriedaten, Sachdaten und der Geometrieindizierung zur Verknüpfung von Geometrie und Sachdaten (.shp, .dbf, .shx). Die Geometrie eines Shapefile definiert sich aus nur 4 verschiedenen Formdatenstrukturen: Punkte, Linien, Flächen (Polygone) und Multipunkte.\footcite{http://www.esri.com/library/whitepapers/pdfs/shapefile.pdf}
 
 \begin{figure}[H]
 \centering
@@ -287,7 +286,6 @@ Der Datensatz \textit{Natural Earth}\footnote{http://www.naturalearthdata.com/} 
 \caption{.shp-Geometriedatei in dem Geoinformationssystem QGIS dargestellt \protect\footnotemark}
 \end{figure}
 \footnotetext{https://www.qgis.org/de/site/}
-\noindent
 Leider eignen sich Vektordaten nicht zur Klassifikation von Features mit Hilfe von Deep Learning wie z.B. Convolutional Neural Networks (CNN), sondern stellen viel mehr das Ergebnis einer Rasterbildanalyse dar. Aus diesem Grund beziehen sich folgende Kapitel im Kontext von Geodaten immer auf Rasterdaten und Bildausschnitte.
 \newline
 Das dem Datensatz zugehörige farbige Rasterbild inklusive Schummerung (räumliche Schattierung), Wasser und Flüssen sieht so aus:
@@ -299,23 +297,61 @@ Das dem Datensatz zugehörige farbige Rasterbild inklusive Schummerung (räumlic
 \end{figure}
 \footnotetext{http://www.naturalearthdata.com/downloads/10m-raster-data/10m-natural-earth-1/}
 
-
-
-
 \section{Algorithmen in der Geoinformatik}
-
 \section{Verschiedene Arten und ihre Anwendungszwecke}
-
-
 \chapter{Geoanalyse}
-\section{Beispiele}
-\section{Offene Probleme}
 
-\chapter{Neuronale Netzwerke}
-\section{Anwendungszwecke}
-\subsection{Vorhersage von Städtewachstum}
+
+
+\chapter{Deep Learning in Geowissenschaften}
+
+\section{Was ist Machine Learning?}
+Definition:\newline
+\textit{A computer program is said to learn from experience E with
+respect to some class of tasks T and performance measure P if its performance at tasks in T, as measured by P, improves with experience E.}\cite{mich97}
+
+\bigskip
+
+Anders ausgedrückt: Ein Computerprogramm lernt genau dann dazu, wenn es sich hinsitlich seiner Performance in bestimmten Aufgabengebieten mithilfe einer Erfahrung selbständig verbessert.
+
+\section{Motivation und Anwendungsgebiete}
+Ziel von Machine Learning in den Geowissenschaften ist es, Muster in Geodaten zu erkennen, Vorhersagen zu machen und Phänomene besser erkennen und verstehen zu können.
+
+\bigskip
+
+Eine Stadt ist ein Komplexes System, das aus vielen kleineren interagierenden Subsystemen besteht. Diese werden durch Faktoren wie Politik, Bevölkerungswachstum, Verkehrsinfrastruktur und den Arbeitsmarkt beeinflusst.
+Um zu verstehen, welche Kräfte strukturelle Änderungen von Städten vorantreiben, werden sowohl Satellitenbilder als auch nutzerbezogene Positionsdaten aus sozialen Netzwerken wie Facebook und Twitter und Attributierte Markierungen auf Geoinformationssystemen wie OpenStreetMap\footnote{https://www.openstreetmap.org} verwendet, um Langzeitvorhersagen zur erstellen.
+Außerdem helfen diese Modelle und Simulationen dabei, die Mechanismen der urbanen Evolution zu erforschen und Städteplanung zu optimieren.
+
+\bigskip
+
+Im Folgenden eine Auflistung verschiedener Probleme, für deren Lösung sich die Anwendung eines Neuronalen Netzwerks eignet:
+
+\begin{itemize}
+\item Klassifizierung - Was ist auf einem Bild zu sehen?
+\item Lokalisation - Wo ist das Objekt auf dem Bild?
+\item Segmentierung - Klassifizierung jedes Pixels
+\item Lineare Regression - Lässt sich ein funktionaler Zusammenhang zwischen den Daten des Datensatzes finden, welcher eine Vorhersage zum weiteren Verlauf der Daten ermöglicht?
+\item Clustering - Wie lassen sich Daten vergleichen und in Gruppierungen bei gewisser Ähnlichkeit Ihrer Attribute zusammenfassen?
+\item Image Captioning - Wie lassen sich die klassifizierten Objekte in Beziehung setzen? 
+\end{itemize}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.3]{anwendungen.png}
+\caption{Vergleich verschiedener Anwendungszwecke von Deep Learning}
+\end{figure}
+
+
+
+
+\section{Forschung}
+
+
+\subsection{Beispiele}
+
 \section{Tensorflow}
-\section{Anwendung auf Satellitendaten}
+\section{Erstes eigenes CNN}
 
 
 \chapter{Clusteringverfahren}

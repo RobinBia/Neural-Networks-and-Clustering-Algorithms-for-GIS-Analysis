@@ -19,13 +19,13 @@
 \BOOKMARK [1][-]{section.2.7}{Algorithmen in der Geoinformatik}{chapter.2}% 19
 \BOOKMARK [1][-]{section.2.8}{Verschiedene Arten und ihre Anwendungszwecke}{chapter.2}% 20
 \BOOKMARK [0][-]{chapter.3}{Geoanalyse}{}% 21
-\BOOKMARK [1][-]{section.3.1}{Beispiele}{chapter.3}% 22
-\BOOKMARK [1][-]{section.3.2}{Offene Probleme}{chapter.3}% 23
-\BOOKMARK [0][-]{chapter.4}{Neuronale Netzwerke}{}% 24
-\BOOKMARK [1][-]{section.4.1}{Anwendungszwecke}{chapter.4}% 25
-\BOOKMARK [2][-]{subsection.4.1.1}{Vorhersage von St\344dtewachstum}{section.4.1}% 26
-\BOOKMARK [1][-]{section.4.2}{Tensorflow}{chapter.4}% 27
-\BOOKMARK [1][-]{section.4.3}{Anwendung auf Satellitendaten}{chapter.4}% 28
+\BOOKMARK [0][-]{chapter.4}{Deep Learning in Geowissenschaften}{}% 22
+\BOOKMARK [1][-]{section.4.1}{Was ist Machine Learning?}{chapter.4}% 23
+\BOOKMARK [1][-]{section.4.2}{Motivation und Anwendungsgebiete}{chapter.4}% 24
+\BOOKMARK [1][-]{section.4.3}{Forschung}{chapter.4}% 25
+\BOOKMARK [2][-]{subsection.4.3.1}{Beispiele}{section.4.3}% 26
+\BOOKMARK [1][-]{section.4.4}{Tensorflow}{chapter.4}% 27
+\BOOKMARK [1][-]{section.4.5}{Erstes eigenes CNN}{chapter.4}% 28
 \BOOKMARK [0][-]{chapter.5}{Clusteringverfahren}{}% 29
 \BOOKMARK [1][-]{section.5.1}{Probabilistisches und Possibilistisches Clustering}{chapter.5}% 30
 \BOOKMARK [2][-]{subsection.5.1.1}{FCM und PFCM}{section.5.1}% 31
