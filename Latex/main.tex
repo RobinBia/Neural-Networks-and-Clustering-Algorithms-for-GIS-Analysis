@@ -1,65 +1,85 @@
-\documentclass[11pt,fleqn]{book} % Default font size and left-justified equations
-
-\usepackage[top=3cm,bottom=3cm,left=3.2cm,right=3.2cm,headsep=10pt,letterpaper]{geometry} % Page margins
-\usepackage{float}
-\usepackage{xcolor} % Required for specifying colors by name
-\definecolor{ocre}{RGB}{52,177,201} % Define the orange color used for highlighting throughout the book
-
-% Font Settings
-\usepackage{avant} % Use the Avantgarde font for headings
-%\usepackage{times} % Use the Times font for headings
-\usepackage{mathptmx} % Use the Adobe Times Roman as the default text font together with math symbols from the Sym­bol, Chancery and Com­puter Modern fonts
-
-\usepackage{microtype} % Slightly tweak font spacing for aesthetics
-\usepackage[utf8]{inputenc} % Required for including letters with accents
-\usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
-
-% Bibliography
+\documentclass[11pt,fleqn]{book} 
+\usepackage[top=3cm,bottom=3cm,left=3.2cm,right=3.2cm,headsep=10pt,letterpaper]{geometry} 
+\usepackage{xcolor}
+\definecolor{ocre}{RGB}{52,177,201} 
+\usepackage{avant} 
+\usepackage{mathptmx} 
+\usepackage{microtype} 
+\usepackage[utf8]{inputenc} 
+\usepackage[T1]{fontenc} 
 \usepackage[style=alphabetic,sorting=nyt,sortcites=true,autopunct=true,babel=hyphen,hyperref=true,abbreviate=false,backref=true,backend=biber]{biblatex}
-\addbibresource{bibliography.bib} % BibTeX bibliography file
+\addbibresource{bibliography.bib} 
 \defbibheading{bibempty}{}
 
-\input{structure} % Insert the commands.tex file which contains the majority of the structure behind the template
+
+
+\input{structure} 
+
+
+
+%----------------------------------------------------------------------------------------
+%	Anfang des Dokuments
+%----------------------------------------------------------------------------------------
 
 \begin{document}
 
-
-%	TITELSEITE
-\raggedright
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
 
 \begingroup
 \thispagestyle{empty}
-\AddToShipoutPicture*{\put(0,0){\includegraphics[scale=0.37]{head1.jpg}}} % Image background
+\AddToShipoutPicture*{\put(0,0){\includegraphics[scale=0.37]{head1}}} 
 \centering
 \vspace*{5cm}
 \par\normalfont\fontsize{35}{35}\sffamily\selectfont
 \textbf{{\color{white} Neuronale Netzwerke und Clusteringverfahren für Geodaten}}\\
 {\LARGE {\color{white}Lehrstuhl für Geoinformatik}}\par
 \vspace*{1cm}
-{\Huge {\color{white} Robin Bially}}\par % Author name
+{\Huge {\color{white} Robin Bially}}\par 
 \endgroup
+
+%----------------------------------------------------------------------------------------
+%	COPYRIGHT PAGE
+%----------------------------------------------------------------------------------------
 
 \newpage
 ~\vfill
 \thispagestyle{empty}
 
 %Hier kann ich Github und Downloads hin schreiben
-\textsc{https://github.com/RobinBia/Projektarbeit-Geoinformatik.git}\\ % URL
+\noindent \textsc{https://github.com/RobinBia/Projektarbeit-Geoinformatik.git}\\ \\ % URL
 
-Projektarbeit unter der Betreuung von PD Dr. Dr.-Ing. Wilfried Linder von 11.2017 - 09.2018 als Vorbereitung der sich anschließenden Masterarbeit.\\ 
+\noindent Projektarbeit unter der Betreuung von PD Dr. Dr.-Ing. Wilfried Linder von 11.2017 - 09.2018 als Vorbereitung der sich anschließenden Masterarbeit.\\ % 
 
-\textit{Fertigstellung, August 2018} 
+\noindent \textit{Fertigstellung, August 2018} 
 
-%	Inhaltsverzeichnis
-\chapterimage{head8.jpg} % Table of contents heading image
+
+%----------------------------------------------------------------------------------------
+%	TABLE OF CONTENTS
+%----------------------------------------------------------------------------------------
+\raggedright
+
+\chapterimage{head8} % Table of contents heading image
+
+\pagestyle{empty} % No headers
+
 \tableofcontents % Print the table of contents itself
 
-%\cleardoublepage
+%\cleardoublepage % Forces the first chapter to start on an odd page so it's on the right
 
 \pagestyle{fancy} % Print headers again
 
 
+%----------------------------------------------------------------------------------------
+%	CHAPTER 1
+%----------------------------------------------------------------------------------------
+
+\chapterimage{head8} % Chapter heading image
+
 \chapter{Motivation}
+\section{leeres Kapitel}
+blabla
 \chapter{Geodaten und Geoinformation}
 \section{Definition und Gestalt von Geodaten}
 Geodaten sind digitale Informationen, welche Sachdaten mit Geometriedaten\footnote{https://www.hdm-stuttgart.de/~riekert/lehre gis.pdf} (und Chronometriedaten) vereinen , z.B. \{Luftdruck 1 bar, Ort Düsseldorf, Datum 26.11.2017\}. 
@@ -84,7 +104,7 @@ Information mitgeführt, die sich aus dem zeitlichen Ablauf ergibt (4D)
 \section{Geografische Koordinaten}
 Ein geeignetes und weit verbreitetes Koordinatensystem zur verzerrungsarmen Darstellung sind die Geografischen Koordinaten. 
 
-\begin{figure}[H]
+\begin{figure}[h]
 \centering
 \includegraphics{gradnetz.jpg}
 \caption{Das Gradnetz der Erde}\label{gradnetz}
@@ -209,7 +229,7 @@ Jedes unikate Objekt gehört zu einer Objektklasse, in welcher es nach den oben 
 Der Ort eines Geoobjektes kann auf zwei verschiedene Arten beschrieben werden:
 \subsection{Rastermodell}
 Eine analoge topografische Karte oder Zeichnung digitalisiert und in quadratische Gitterzellen aufgeteilt, welche alle über die gleiche Semantik verfügen. Diese Semantik wird stellvertretend durch eine Matrix beschrieben, welche für jede Gitterzelle eine numerische Pixelwertinformation enthält.\footnote{https://de.wikipedia.org/wiki/Geoobjekt}
-\begin{figure}[H]
+\begin{figure}[h]
 \centering
 \includegraphics{raster.png}
 \caption{Rastermodell-Zoom \protect\footnotemark}
@@ -239,7 +259,7 @@ Im Gegensatz zu Rasterdaten werden Vektordaten bei linien- und punkthaften Infor
 \newline
 Eine Punkthafte Vektorinformation wird auch als Vertex bezeichnet. Dieser beschreibt eine Raumlage durch Angabe einer (x,y,z)-Koordinate und ein dazugehöriges Attribut, welches die Art des Punktes beschreibt, z.B. Baum oder Laterne:
 
-\begin{figure}[H]
+\begin{figure}[h]
 \centering
 \includegraphics[scale=0.6]{vertex.png}
 \caption{Punkt-Feature \protect\footnotemark}
@@ -249,7 +269,7 @@ Eine Punkthafte Vektorinformation wird auch als Vertex bezeichnet. Dieser beschr
 
 Punkteverläufe wie Straßen werden durch sogenannte Polylinien beschrieben. Diese bestehen aus mehreren miteinander verbundenen Vertices. Im Kreis laufende Polylinien bezeichnet man auch als Polygone:
 
-\begin{figure}[H]
+\begin{figure}[h]
 \centering
 \includegraphics[scale=0.6]{poly.png}
 \caption{Polylinien und Polygone \protect\footnotemark}
@@ -278,9 +298,9 @@ Wie auch bei Rasterdaten gibt es bei Vektordaten nicht nur Vorteile, sondern auc
 Geodaten müssen heutzutage nicht mehr selbständig erstellt werden. Es gibt eine Vielzahl an staatlichen und privaten Institutionen, welche Ihre Daten kostenlos bereitstellen. So lassen sich zahlreiche Inhalte im ESRI Shapefile Vektordateiformat finden, welches als Quasi-Standard für Desktop-GIS gilt.\footnote{https://de.wikipedia.org/wiki/Shapefile}
 Der Datensatz \textit{Natural Earth}\footnote{http://www.naturalearthdata.com/} ist eine Abbildung der Erde im Maßstab 1:10 Millionen. Er ist sowohl als SHP-Vektordatei als auch als Tiff-Rasterbild verfügbar.
 
-Ein ESRI Shapefile besteht aus mindestens drei Dateien zur Speicherung der Geometriedaten, Sachdaten und der Geometrieindizierung zur Verknüpfung von Geometrie und Sachdaten (.shp, .dbf, .shx). Die Geometrie eines Shapefile definiert sich aus nur 4 verschiedenen Formdatenstrukturen: Punkte, Linien, Flächen (Polygone) und Multipunkte.\footcite{http://www.esri.com/library/whitepapers/pdfs/shapefile.pdf}
+Ein ESRI Shapefile besteht aus mindestens drei Dateien zur Speicherung der Geometriedaten, Sachdaten und der Geometrieindizierung zur Verknüpfung von Geometrie und Sachdaten (.shp, .dbf, .shx). Die Geometrie eines Shapefile definiert sich aus nur 4 verschiedenen Formdatenstrukturen: Punkte, Linien, Flächen (Polygone) und Multipunkte.\footnote{http://www.esri.com/library/whitepapers/pdfs/shapefile.pdf}
 
-\begin{figure}[H]
+\begin{figure}[h]
 \centering
 \includegraphics[scale=0.23]{gis.png}
 \caption{.shp-Geometriedatei in dem Geoinformationssystem QGIS dargestellt \protect\footnotemark}
@@ -290,7 +310,7 @@ Leider eignen sich Vektordaten nicht zur Klassifikation von Features mit Hilfe v
 \newline
 Das dem Datensatz zugehörige farbige Rasterbild inklusive Schummerung (räumliche Schattierung), Wasser und Flüssen sieht so aus:
 
-\begin{figure}[H]
+\begin{figure}[h]
 \centering
 \includegraphics[scale=0.4]{raster_nat_earth.png}
 \caption{Rasterbild des Natural-Earth-Datensatzes \protect\footnotemark}
@@ -299,16 +319,21 @@ Das dem Datensatz zugehörige farbige Rasterbild inklusive Schummerung (räumlic
 
 \section{Algorithmen in der Geoinformatik}
 \section{Verschiedene Arten und ihre Anwendungszwecke}
-\chapter{Geoanalyse}
+
+%----------------------------------------------------------------------------------------
+%	CHAPTER 2
+%----------------------------------------------------------------------------------------
 
 
 
-\chapter{Deep Learning in Geowissenschaften}
+\chapter{Deep Learning}
 
 \section{Was ist Machine Learning?}
 Definition:\newline
+Machine Learning ist eine Unterdisziplin der künstlichen Intelligenz und basiert auf der Idee, biologische Denkprozesse, wie sie in Gehirnen ablaufen, nachzuahmen\cite{geofront}.
+
 \textit{A computer program is said to learn from experience E with
-respect to some class of tasks T and performance measure P if its performance at tasks in T, as measured by P, improves with experience E.}\cite{mich97}
+respect to some class of tasks T and performance measure P if its performance at tasks in T, as measured by P, improves with experience E.}\cite{michell}
 
 \bigskip
 
@@ -336,16 +361,57 @@ Im Folgenden eine Auflistung verschiedener Probleme, für deren Lösung sich die
 \item Image Captioning - Wie lassen sich die klassifizierten Objekte in Beziehung setzen? 
 \end{itemize}
 
-\begin{figure}[H]
+\begin{figure}[h]
 \centering
-\includegraphics[scale=0.3]{anwendungen.png}
+\includegraphics[scale=0.25]{anwendungen.png}
 \caption{Vergleich verschiedener Anwendungszwecke von Deep Learning}
 \end{figure}
 
 
+\section{Machine Learning in Geowissenschaften}
 
+\subsection{Herausforderungen und Chancen von Machine Learning}
+Die moderne Geowissenschaft steht vor vielen Herausforderungen, wie den Prognosen zu Klimawandel, Luftverschmutzung, Naturkatastrophen, Ressourcenverbrauch, Risiken für Erdbeben, Landrutsch, Vulkanausbrüchen. Die Forschung an solchen Problemen macht die interdisziplinäre Arbeit sämtlicher Wissenschaften unumgänglich.
+Geowissenschaften haben sich in den letzten Jahrzehnten von einem data-poor zu einer big-data Disziplin entwickelt. Diese wurde möglich duch die vielen technologischen Verbesserungen wie dem Wachstum der Computerleistung, welche nun große Simulationen ermöglicht und der Demokratisierung von Datenbeständen öffentliche Verbreitung im Internet und einer vielseitigen Beteiligungsmöglichkeit (crowd-source). Die wachsende Verbreitung großer geowissenschaftlicher Datenbestände ermöglicht ein enormes Potenzial für Maschinelles Lernen.
 
-\section{Forschung}
+Physikalische Gesetze beschreiben häufig Objekte mit amorphen Grenzen und zwischenbeziehungen. ...knowledge discovery und data mining
+
+Die Erde ist ein komplexes dynamisches System bestehend aus Litosphäre, Biosphäre, Atmosphäre, Hydrosphäre. Einzelne Bestandteile dieses Systems (z.B. Ozeanschichten oder die Bodenbedeckung) befinden sich in einem ständigen Wandel und interagieren miteinander über Prozesse wie Regen oder Magmaeruptionen. Um an Daten solcher Phänomene heran zu kommen, gibt es zwei Möglichkeiten:
+\begin{itemize}
+\item Messen mithilfe von Sensoren in/auf Satelliten, Flugzeugen, Ballons, Drohnen, Wetterstationen, Schiffen, Boyen.\newline
+Sensorbasierte geowissenschaftliche Beobachtungen sind nicht uniform gerastert und beziehen sich häufig auf irreguläre Zeitintervalle (zum Beispiel schwankt die Position einer Boye mit der Zeit). Sie eignen sich jedoch Hervorragend zum sammeln von Daten wie Oberflächentemperatur, Luftfeuchtigkeit, Optische Reflektion, Chemische Zusammensetzung der Atmosphäre, Strömungen und Drücke, Emissionen, seismische Aktivität und die Oberflächengestalt der Erde. Diese Vielfalt an geologischen Eigenschaften erfordert bezüglich eines gegebenen Problems eine individuelle Zusammenstellung von relevanten Datensätzen. Die Datentypen müssen gegebenenfalls konvertiert und die Datenbestände interpoliert werden, um sie besser interpretierbar zu machen.
+
+\item Ableiten aus mathematischen Modellen und Simulationen
+Geologische Prozesse, ihre Interaktionen und Änderungen sind auf physikalische Gesetze zurückzuführen. Zum Beispiel sind Bewegungen von Wasser in der Liosphäre auf die Strömungsdynamic zurückzuführen. Ein Nachteil physikalischer Berechnungen auf Grundlage von Modellen für komplexe Systeme ist leider deren Ungenauigkeit. Dennoch eignen sie sich zur näherungsweisen Darstellung des zeitlichen Verlaufes von geophysikalischen Phänomenen. Ein weiterer Vorteil ist, dass Simulationen besonders große Datensätze erzeugen können, wenn Daten für große Zeitintervalle von Interesse sind. Diese ermöglichen dann wiederum eine Datenbasierte Analyse mittels Machine Learning.
+\end{itemize}
+
+Herausforderungen: Leider ist die Nützlichkeit von Machine Learning für Knowledge Discovery häufig begrenzt. Geophysikalische Objekte sind häufig nicht klar definiert (keine klar definierten Grenzen) und ändern sich häufig. Daten zu solchen Objekten können ebenfalls unterschiedliche Auflösungen haben, rauschen, unvollständig oder ungenau sein. Auch kann die zeitliche Auflösung aus historischen Gründen stark variieren (z.B. ein Weltkrieg, in dem historische Datensätze zerstört wurden). Auch liegen häufig nicht ausreichend Geländedaten vor. Die Herausforderungen lassen sich in 3 Hauptkategorien unterteilen:
+
+\begin{itemize}
+\item \textbf{Eigenschaften Geologischer Prozesse}
+\begin{itemize}\item Amorphe Grenzen (Wellen, Flüsse, Stürme) - Segmentierungs- und Clusteringverfahren sowie Maßnahmen für Feature-Charakterisierungen sind notwendig.
+\item Raumzeitliche Struktur - 
+Für viele Machine Learning Methoden nimmt man an, dass beobachtete geophysikalische Eigenschaften nicht korrelieren und die erhobenen Daten gleichverteilt sind. Die Realität sieht anders aus: 
+Benachbarte Orte sind stark korreliert (Wahrscheinlichkeit für Grasland ist in der Nähe eines Waldes größer als in einer Wüste). Änderungen (Wald => Wüste) bewirken Zustände, die für eine unbestimmbare Zeit persistieren (Die Wüste wird nicht regelmäßig zum Wald und umgekehrt), was auf Klimaveränderungen zurückzuführen ist.
+Zwei weit entfernte Orte können ebenfalls stark korrelierte Eigenschaften besitzen (z.B. Temperatur, Druck). Man nennt diese meist meteorologischen Korrelationen Telekonnektionen .
+\item Hochdimensionalität - Die Erde ist eines der komplexesten bekannten Systeme mit einer extrem großen Anzahl an Variablen, die alle miteinander in sowohl räumlich als auch zeitlich relativ zur Größe der Erde winzigen Skalen miteinander wechselwirken. Für solche Verarbeitung und Speicherung von Daten solcher Systeme ist die Rechenleistung heutiger Computer nicht ausreichend.
+\item Raumzeitliche Variabilität - Geologische Prozesse können stark schwanken, sowohl in kurzen Zeitintervallen (Jahreszeiten, Tidenhub), als auch in langen Zeitintervallen (Polsprung, Präzession, Klimawandel) als auch räumlich (Gebirgsformationen, Vegetationszonen, Klimazonen) => Es ist sehr schwierig ein Modell zu trainieren, dass alle diese Prozesse vereint. Eine lokale und zeitliche Begrenzung der Datensätze ist zwingend erforderlich.
+\item Seletene Phänomene - Seltene Ereignisse wie z.B. Vulkanausbrüche, Tsunamis und Erdbeeben verfälschen das Modell, da sie nur für ein Training auf viel größeren Zeitskalen geeignet sind. Aus diesem Grund müssen sie erkannt und aus dem Modell  herausgerechnet werden. Dies ist nahezu unmöglich, da es für solche Ereignisse keine ausreichenden Erfahrungswerte gibt.
+\end{itemize}
+
+\item \textbf{Sammeln von Geodaten}
+\begin{itemize}
+\item Daten mit verschiedenen Auflösungen - Beispiel: Zur Beurteilung von Waldbränden müssen Bilder aus Luftaufnahmen und Satellitenbilder miteinander kombiniert werden. Die Flugzeugbilder haben eine höhere räumliche Auflösung, die Satellitenbilder wurden jedoch in regelmäßigen Zeitabständen aufgenommen. Aus diesem Grund müssen Interpolations- oder Upsamplingmethoden entworfen werden, um die beiden Arten von Bildern vergleichbar zu machen.
+\item Rauschen, Unvollständigkeit, Ungenauigkeit - Viele Geodatensätze sind unvollständig oder rauschen, weil z.B. Sensoren temporär ausgefallen sind oder unter verschiedenen Wetterbedingungen Messungen durchgeführt haben. Manche Daten sind erst dann interpretierbar, wenn Sie mit einem mathematischen Modell kombiniert werden. Dieses kann die Interpretierbarkeit jedoch ebenfalls beeinflussen.
+\end{itemize}
+
+\item \textbf{Mangelhafte Datensätze}
+\begin{itemize}
+\item Kleine Sample-Größe - Viele Datenbestände sind niedrigfrequent und extrem ungenau, wenn sie aus einer Zeit stammen, in welcher es entweder keine oder nur wenige Messinstrumente gab. Auch gibt es Orte, an denen es nur schwer möglich ist (zeitlich hochfrequente) Messungen durchzuführen (Bohrkernanalyse in Antarktis o.ä., Bäume mit ausreichendem Alter für Jahresringe). Eisbohrkerne aus der Antarktis lassen zudem keine Rückschlüsse über die Klimatischen Verhältnisse in anderen Gegenden zu. 
+\item Mangelhafte gelabelte Geländedaten - Oft liegen Geländedaten in mangelnder Qualität vor. Dies liegt daran, dass sie nur mit Zeit- und Kostenintensiven Maßnahmen zu beschaffen sind. Eine mangelhafte Datenqualität führt zu einem langsamen Trainingsprozesses und zu Unter oder Überanpassung des Modells, was die Aussagekraft stark einschränkt.
+\item Aus beiden oben genannten Gründen müssen Trainingsmodelle entwickelt werden, die mit kleineren Datensätzen zurecht kommen.
+\end{itemize}
+\end{itemize}
 
 
 \subsection{Beispiele}
@@ -353,6 +419,9 @@ Im Folgenden eine Auflistung verschiedener Probleme, für deren Lösung sich die
 \section{Tensorflow}
 \section{Erstes eigenes CNN}
 
+%----------------------------------------------------------------------------------------
+%	CHAPTER 3
+%----------------------------------------------------------------------------------------
 
 \chapter{Clusteringverfahren}
 \section{Probabilistisches und Possibilistisches Clustering}
@@ -365,8 +434,15 @@ Im Folgenden eine Auflistung verschiedener Probleme, für deren Lösung sich die
 \subsection{Otsu-Binarisierung}
 \subsection{VAT-Algorithmus}
 \section{Clustering auf unvollständigen Daten}
-\chapter{Forschungsbedarf}
+
+%----------------------------------------------------------------------------------------
+%	CHAPTER 4
+%----------------------------------------------------------------------------------------
+
+\chapter{Fazit und Ausblick}
 \section{Ausblick - Mein Thema für die Masterarbeit}
+
+\printbibliography
 
 \vfill
 \end{document}

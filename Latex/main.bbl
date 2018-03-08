@@ -1,0 +1,89 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 2.9 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nyt/global//global/global}
+    \entry{geofront}{article}{}
+      \name{author}{4}{}{%
+        {{hash=538ef463064803c379e9cd3257f6a8d4}{%
+           family={Lary},
+           familyi={L\bibinitperiod},
+           given={David\bibnamedelima J.},
+           giveni={D\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=fcfe5559a07cf6ede9e7ff7a7e4ac1b2}{%
+           family={Alavi},
+           familyi={A\bibinitperiod},
+           given={Amir\bibnamedelima H.},
+           giveni={A\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+        {{hash=46377757f36fdfbd1e744d9e85cc46e8}{%
+           family={Gandomi},
+           familyi={G\bibinitperiod},
+           given={Amir\bibnamedelima H.},
+           giveni={A\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+        {{hash=d57d0f827b62107861a935902fd877f4}{%
+           family={Walker},
+           familyi={W\bibinitperiod},
+           given={Annette\bibnamedelima L.},
+           giveni={A\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+      }
+      \strng{namehash}{8f10d831e9ac6d4c288c662165f13117}
+      \strng{fullhash}{e20cbdbdf6ff86e948f8763280e179ac}
+      \strng{bibnamehash}{8f10d831e9ac6d4c288c662165f13117}
+      \strng{authorbibnamehash}{8f10d831e9ac6d4c288c662165f13117}
+      \strng{authornamehash}{8f10d831e9ac6d4c288c662165f13117}
+      \strng{authorfullhash}{e20cbdbdf6ff86e948f8763280e179ac}
+      \field{labelalpha}{Lar+15}
+      \field{sortinit}{L}
+      \field{sortinithash}{2c7981aaabc885868aba60f0c09ee20f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Geoscience Frontiers}
+      \field{title}{Machine learning in geosciences and remote sensing}
+      \field{year}{2015}
+      \field{pages}{3\bibrangedash 10}
+      \range{pages}{8}
+    \endentry
+    \entry{michell}{article}{}
+      \name{author}{1}{}{%
+        {{hash=ef9b07697c2f1eef795e6babee804186}{%
+           family={Michell},
+           familyi={M\bibinitperiod},
+           given={T.},
+           giveni={T\bibinitperiod}}}%
+      }
+      \strng{namehash}{ef9b07697c2f1eef795e6babee804186}
+      \strng{fullhash}{ef9b07697c2f1eef795e6babee804186}
+      \strng{bibnamehash}{ef9b07697c2f1eef795e6babee804186}
+      \strng{authorbibnamehash}{ef9b07697c2f1eef795e6babee804186}
+      \strng{authornamehash}{ef9b07697c2f1eef795e6babee804186}
+      \strng{authorfullhash}{ef9b07697c2f1eef795e6babee804186}
+      \field{labelalpha}{Mic97}
+      \field{sortinit}{M}
+      \field{sortinithash}{cfd219b90152c06204fab207bc6c7cab}
+      \field{labelnamesource}{author}
+      \field{journaltitle}{1}
+      \field{number}{0}
+      \field{title}{0}
+      \field{volume}{0}
+      \field{year}{1997}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

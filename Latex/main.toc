@@ -1,8 +1,9 @@
 \boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
-\defcounter {refsection}{0}\relax 
-\select@language {german}
+\babel@toc {german}{}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {1}Motivation}{5}{chapter.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.1}leeres Kapitel}{5}{section.1.1}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {2}Geodaten und Geoinformation}{7}{chapter.2}
 \defcounter {refsection}{0}\relax 
@@ -42,45 +43,45 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {2.8}Verschiedene Arten und ihre Anwendungszwecke}{15}{section.2.8}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {3}Geoanalyse}{17}{chapter.3}
+\contentsline {chapter}{\numberline {3}Deep Learning}{17}{chapter.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {4}Deep Learning in Geowissenschaften}{19}{chapter.4}
+\contentsline {section}{\numberline {3.1}Was ist Machine Learning?}{17}{section.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.1}Was ist Machine Learning?}{19}{section.4.1}
+\contentsline {section}{\numberline {3.2}Motivation und Anwendungsgebiete}{17}{section.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.2}Motivation und Anwendungsgebiete}{19}{section.4.2}
+\contentsline {section}{\numberline {3.3}Machine Learning in Geowissenschaften}{19}{section.3.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.3}Forschung}{21}{section.4.3}
+\contentsline {subsection}{\numberline {3.3.1}Herausforderungen und Chancen von Machine Learning}{19}{subsection.3.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.3.1}Beispiele}{21}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {3.3.2}Beispiele}{21}{subsection.3.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.4}Tensorflow}{21}{section.4.4}
+\contentsline {section}{\numberline {3.4}Tensorflow}{21}{section.3.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.5}Erstes eigenes CNN}{21}{section.4.5}
+\contentsline {section}{\numberline {3.5}Erstes eigenes CNN}{21}{section.3.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {5}Clusteringverfahren}{23}{chapter.5}
+\contentsline {chapter}{\numberline {4}Clusteringverfahren}{23}{chapter.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.1}Probabilistisches und Possibilistisches Clustering}{23}{section.5.1}
+\contentsline {section}{\numberline {4.1}Probabilistisches und Possibilistisches Clustering}{23}{section.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.1.1}FCM und PFCM}{23}{subsection.5.1.1}
+\contentsline {subsection}{\numberline {4.1.1}FCM und PFCM}{23}{subsection.4.1.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.1.2}Vorraussetzungen f\IeC {\"u}r die Anwendung auf Geodaten}{23}{subsection.5.1.2}
+\contentsline {subsection}{\numberline {4.1.2}Vorraussetzungen f\IeC {\"u}r die Anwendung auf Geodaten}{23}{subsection.4.1.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.1.3}Eigener Algoritmus (noch ohne Name)}{23}{subsection.5.1.3}
+\contentsline {subsection}{\numberline {4.1.3}Eigener Algoritmus (noch ohne Name)}{23}{subsection.4.1.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.2}CVI}{23}{section.5.2}
+\contentsline {section}{\numberline {4.2}CVI}{23}{section.4.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.2.1}NPC}{23}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {4.2.1}NPC}{23}{subsection.4.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.2.2}FHV}{23}{subsection.5.2.2}
+\contentsline {subsection}{\numberline {4.2.2}FHV}{23}{subsection.4.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.2.3}Otsu-Binarisierung}{23}{subsection.5.2.3}
+\contentsline {subsection}{\numberline {4.2.3}Otsu-Binarisierung}{23}{subsection.4.2.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.2.4}VAT-Algorithmus}{23}{subsection.5.2.4}
+\contentsline {subsection}{\numberline {4.2.4}VAT-Algorithmus}{23}{subsection.4.2.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.3}Clustering auf unvollst\IeC {\"a}ndigen Daten}{23}{section.5.3}
+\contentsline {section}{\numberline {4.3}Clustering auf unvollst\IeC {\"a}ndigen Daten}{23}{section.4.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {6}Forschungsbedarf}{25}{chapter.6}
+\contentsline {chapter}{\numberline {5}Fazit und Ausblick}{25}{chapter.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.1}Ausblick - Mein Thema f\IeC {\"u}r die Masterarbeit}{25}{section.6.1}
+\contentsline {section}{\numberline {5.1}Ausblick - Mein Thema f\IeC {\"u}r die Masterarbeit}{25}{section.5.1}
 \contentsfinish 
