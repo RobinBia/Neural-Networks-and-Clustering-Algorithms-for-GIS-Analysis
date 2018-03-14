@@ -19,6 +19,56 @@
 
 \refsection{0}
   \datalist[entry]{nyt/global//global/global}
+    \entry{machgeo}{online}{}
+      \name{author}{5}{}{%
+        {{hash=6380dfa76040791b96259af49a6acdf4}{%
+           family={Karpatne},
+           familyi={K\bibinitperiod},
+           given={Anuj},
+           giveni={A\bibinitperiod}}}%
+        {{hash=02da1aa87e4b308e66ff2e7ae6d8688a}{%
+           family={Ebert-Uphoff},
+           familyi={E\bibinithyphendelim U\bibinitperiod},
+           given={Imme},
+           giveni={I\bibinitperiod}}}%
+        {{hash=3bd24f5575d6f9f2135bfa7327432847}{%
+           family={Ravela},
+           familyi={R\bibinitperiod},
+           given={Sai},
+           giveni={S\bibinitperiod}}}%
+        {{hash=a28c8202995964482380e32b7f6c8e7d}{%
+           family={Babaie},
+           familyi={B\bibinitperiod},
+           given={Hassan\bibnamedelima Ali},
+           giveni={H\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=efb90d78e35ff61d3bc639f5c6f3d822}{%
+           family={Kumar},
+           familyi={K\bibinitperiod},
+           given={Vipin},
+           giveni={V\bibinitperiod}}}%
+      }
+      \strng{namehash}{d3e2fd93eded93829871c07e1f22942b}
+      \strng{fullhash}{bcf2f820e94f04aa33b61a927ae8c1a5}
+      \strng{bibnamehash}{d3e2fd93eded93829871c07e1f22942b}
+      \strng{authorbibnamehash}{d3e2fd93eded93829871c07e1f22942b}
+      \strng{authornamehash}{d3e2fd93eded93829871c07e1f22942b}
+      \strng{authorfullhash}{bcf2f820e94f04aa33b61a927ae8c1a5}
+      \field{labelalpha}{Kar+17}
+      \field{sortinit}{K}
+      \field{sortinithash}{9fd838a31ba64d981e8f44562bd33f89}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{13}
+      \field{eprinttype}{arxiv}
+      \field{month}{11}
+      \field{title}{Machine Learning for the Geosciences: Challenges and Opportunities}
+      \field{version}{1}
+      \field{year}{2017}
+      \field{dateera}{ce}
+      \verb{eprint}
+      \verb 1711.04708
+      \endverb
+    \endentry
     \entry{geofront}{article}{}
       \name{author}{4}{}{%
         {{hash=538ef463064803c379e9cd3257f6a8d4}{%
