@@ -11,7 +11,7 @@
 \usepackage[style=alphabetic,sorting=nyt,sortcites=true,autopunct=true,babel=hyphen,hyperref=true,abbreviate=false,backref=true,backend=biber]{biblatex}
 \addbibresource{bibliography.bib} 
 \defbibheading{bibempty}{}
-
+\newcommand{\pluseq}{\mathrel{+}=}
 
 
 
@@ -416,9 +416,103 @@ Die gesamte Loss-Funktion lautet also:
 \subsection{Gradientenabstieg}
 Um die Loss-Funktion zu minimieren, müssen die Gewichte $W$ aktualisiert werden. Hierzu berechnet man den negativen Gradienten (Partielle Ableitungen der Loss-Funktion nach den Gewichten). Auf der Ebene, welche die Loss-Funktion aufspannt, zeigt der Gradient in Richtung des steilsten Abstiegs.
 
-\newpage
+
 \subsection{Multi-Layer Neural Network}
+Ein Multi-Layer Neuronales Netzwerk ist ein gerichteter azyklischer Graph, wobei die Knoten in Ebenen angeordnet werden. Die erste Knotenebene besteht aus den Eingabedaten. Im Bildbeispiel wäre jeder Knoten ein Pixelwert. Die Kanten des Graphen entsprechen den Werten der Gewichtsmatrix $W$. Die Knoten der Hidden-Layers under der Output-Layer lassen sich als Neuronen interpretieren, welche durch Aktivierung oder Deaktivierung bestimmte Muster der Eingabedaten lernen. Ob ein Neuron aktiviert wird oder nicht, bestimmt die Aktivierungsfunktion $g$. Das Ergebnis wird an eine weitere Neuronenschicht weitergeleitet und die gelernten Muster somit weiter verfeinert.
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.35]{mlnn.png}
+\caption{Multi-Layer NN. mit 2 Hidden-Layers, 32 Gewichten, 9 Biases und 9 Neuronen}
+\end{figure}
+
+Die Score-Funktion für dieses Netzwerk lautet:
+
+\[y(x) = W_3^T \cdot g[W_2^T \cdot g[W_1^T \cdot x+b_1]+b_2]+b_3\]
+
+
+\subsection{Trainieren eines Netzwerks mittels Backpropagation}
+Sei $f$ eine Score-Funktion für ein Single Layer Neural Network mit nur einer Aktivierung.
+
+\[f(x,w) = \frac{1}{1+e^{-(w_0x_0+w_1x_1+w_2)}}\]
+
+Diese Aktivierungsfunktion nennt sich auch Sigmoidfunktion. Sie transformiert relle Zahlen auf ein Intervall $\left[0, 1\right]$.
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.3]{sigmoid.png}
+\caption{Beispiel für Backpropagation anhand der Sigmoid-Funktion}
+\end{figure}
+
+Das Ergebnis von $f(x,w)$ mit $w = (2,-1,-3)$ und $x = (-1,-2)$ ist $0.73$. Die Ableitung von  $\frac{1}{x}$ ist $-\frac{1}{x^2}$. Anschließend rechnet man $-\frac{1}{1.37^2}\cdot 1 = -0.53$. Die Ableitung von $x+1$ ist $1$. Also rechnet man $1\cdot -0.53=-0.53$. Die Ableitung von $e^x$ ist $e^x$. Man rechnet $e^{-1}\cdot 0.53=-0.2$. Diese Vorgehensweise entspricht der Anwendung der Kettenregel. Fährt man fort, erhält man Gewichtsänderungen $W_{exch}=(-0.2,-0.4,0.2)$. Diese Änderungen addiert man zu den alten Gewichten mit einem Parameter $step$: $W \pluseq step \cdot W_{exch}$. Dabei gibt Lernrate $step$ an, wie stark die Änderung der Gewichte ausfallen soll. Eine zu große Änderung kann bedeuten, dass man über das Minimum der Loss-Funktion hinaus springt. Sind die Änderungen zu klein, so muss der Gradient oft berechnet werden, was sehr lange dauern kann. Das Ergebnis der Score-Funktion für $W' = (1.8,-3.4,-2.8)$ ist $0.9$. Das Netzwerk klassifiziert nun also besser.\\
+\bigskip
+Neben der Sigmoidfunktion gibt es noch viele andere Aktivierungsfunktionen. So hat die Maximumsfunktion (Rectifier Linear Unit - ReLU) gegenüber der Sigmoidfunktion den Vorteil, dass bei relativ hohen Werten nicht alle Neuronen aktiviert werden und es somit weiterhin zu einem Lerneffekt kommt. Ein weiterer Vorteil des Recitifiert ist die schnellere Konvergenz des Gradienten. So stellt sich bereits nach wenigen Trainings ein starker Lerneffekt ein. Sind die gewichte jedoch zu Beginn sehr klein, so ist die Gefahr groß, dass bei einer weiteren Verkleinerung alle Neuronen deaktiviert werden.
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.3]{aktf.png}
+\caption{Vergleich zwischen Rectivier und Sigmoid}
+\end{figure}
+
+
 \subsection{Convolutional Neural Network}
+Ein Convnet ist ein Neuronales Netzwerk, das speziell für das Klassifizierungproblem geeignet ist. Ein Standardnetzwerk besteht aus folgenden vier Layern:
+
+\begin{itemize}
+\item \textbf{1. Convolution Layer} Dies ist ein Filter $W$, der Dimension $F \times F\times c$, wobei das Bild $P$ die Dimension $N\times N\times c$ hat und $N>F$. Die neue Größe (Höhe/Breite $N$) des Ausgabebildes nach der Convolution beträgt $\frac{N-F}{stride+1}$, wobei der Stride die Anzahl der Gitterzellen ist, die der Filter jedes mal weiter springt. Als Padding bezeichnet man die Anzahl der Gitterreihen, die um das Ursprungsbild herum virtuell angefügt werden, um zu verhindern, dass das Bild durch die Convolution kleiner wird. Zu Beginn wird der Filter an die linke obere Ecke angesetzt. Anschließend wird der erste Wert des neuen Bildes berechnet.
+
+\[\sum_{i=1}^F \sum_{k=1}^F{P_{i,k} \cdot w_{i,k}}\]
+
+Danach wird der Filter um $stride$ Gitterzellen nach rechts verschoben und es wird erneut aufsummiert.
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.3]{convolution.png}
+\caption{Convolution eines $7 \times 7$ Bildes mittels $3 \times 3$ Eins-Filter ($w_{i,k} = 1$), Padding = 1 und Stride = 2}
+\end{figure}
+
+Jeder Filter erstreckt sich über die gesamte Tiefe des Bildes. Wird also ein $B\times B\times 3$ Filter auf ein $A\times A\times 3$ Bild angewandt, so hat das Ausgabebild die Dimension $C\times C\times 1$ mit $C = \frac{A-B}{stride+1}$. Werden $10$ Filter der größe $B\times B\times 3$ angewandt, so hat die Ausgabe die Dimension $C\times C\times 10$. Je mehr Filter angewandt werden, desto besser können Muster gelernt werden. Zu große und zu kleine Filter führen zu Over- und zu Underfitting.
+
+\item \textbf{2. ReLU Layer} Diese Layer übernimmt das Aktivieren der einzelnen Gewichte mit z.B. max(0,x).
+
+\item \textbf{3. Pooling Layer} Diese Layer reduziert die Ausgabe nach der Filterung und Aktivierung auf wesentliche Merkmale des Bildes und verkleinert die Anzahl der Pixel, die für die Speicherung dieser Merkmale notwendig sind. Zum Einsatz kommt meistens das Max-Pooling. Hierbei wird wie bei der Convolution eine Maske auf das Bild gesetzt. Das Maximum aller Bildwerte, die sich hinter der Maske befinden, ist der Wert des neuen Bildes nach dem Pooling. 
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.3]{pooling.png}
+\caption{Pooling mit stride = 2}
+\end{figure}
+
+\item \textbf{4. Fully Connected Layer} Diese Neuronen-Schicht soll die Ausgabe nach den oben genannten Schritten interpretierbar machen und auf Klassen-Scores abbilden. Jedes Neuron ist mit jedem aktivierten Gewicht davor liegenden Schicht verbunden.
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.2]{conv-construction.png}
+\caption{Gewöhnliches Convnet mit Fully-Connected-Layers zum Schluss}
+\end{figure}
+
+\end{itemize}
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.7]{conv-layers.png}
+\caption{Verbildlichung der Schritte 1-3 durch Anwendung von Convolution auf ein Luftbild\protect\footnotemark}
+\end{figure}
+\footnotetext{http://www.mdpi.com/2072-4292/7/11/14680/htm}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \subsection{Recurrent Neural Network}
 
 
