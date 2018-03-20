@@ -11,7 +11,7 @@
 \usepackage[style=alphabetic,sorting=nyt,sortcites=true,autopunct=true,babel=hyphen,hyperref=true,abbreviate=false,backref=true,backend=biber]{biblatex}
 \addbibresource{bibliography.bib} 
 \defbibheading{bibempty}{}
-\newcommand{\pluseq}{\mathrel{+}=}
+\newcommand{\minuseq}{\mathrel{-}=}
 
 
 
@@ -444,16 +444,48 @@ Diese Aktivierungsfunktion nennt sich auch Sigmoidfunktion. Sie transformiert re
 \caption{Beispiel für Backpropagation anhand der Sigmoid-Funktion}
 \end{figure}
 
-Das Ergebnis von $f(x,w)$ mit $w = (2,-1,-3)$ und $x = (-1,-2)$ ist $0.73$. Die Ableitung von  $\frac{1}{x}$ ist $-\frac{1}{x^2}$. Anschließend rechnet man $-\frac{1}{1.37^2}\cdot 1 = -0.53$. Die Ableitung von $x+1$ ist $1$. Also rechnet man $1\cdot -0.53=-0.53$. Die Ableitung von $e^x$ ist $e^x$. Man rechnet $e^{-1}\cdot 0.53=-0.2$. Diese Vorgehensweise entspricht der Anwendung der Kettenregel. Fährt man fort, erhält man Gewichtsänderungen $W_{exch}=(-0.2,-0.4,0.2)$. Diese Änderungen addiert man zu den alten Gewichten mit einem Parameter $step$: $W \pluseq step \cdot W_{exch}$. Dabei gibt Lernrate $step$ an, wie stark die Änderung der Gewichte ausfallen soll. Eine zu große Änderung kann bedeuten, dass man über das Minimum der Loss-Funktion hinaus springt. Sind die Änderungen zu klein, so muss der Gradient oft berechnet werden, was sehr lange dauern kann. Das Ergebnis der Score-Funktion für $W' = (1.8,-3.4,-2.8)$ ist $0.9$. Das Netzwerk klassifiziert nun also besser.\\
+Das Ergebnis von $f(x,w)$ mit $w = (2,-1,-3)$ und $x = (-1,-2)$ ist $0.73$. Die Ableitung von  $\frac{1}{x}$ ist $-\frac{1}{x^2}$. Anschließend rechnet man $-\frac{1}{1.37^2}\cdot 1 = -0.53$. Die Ableitung von $x+1$ ist $1$. Also rechnet man $1\cdot -0.53=-0.53$. Die Ableitung von $e^x$ ist $e^x$. Man rechnet $e^{-1}\cdot 0.53=-0.2$. Diese Vorgehensweise entspricht der Anwendung der Kettenregel. Fährt man fort, erhält man Gewichtsänderungen $W_{exch}=(-0.2,-0.4,0.2)$. Diese Änderungen subtrahiert man von den alten Gewichten mit einem Parameter $step$: $W \minuseq step \cdot W_{exch}$. Dabei gibt Lernrate $step$ an, wie stark die Änderung der Gewichte ausfallen soll. Eine zu große Änderung kann bedeuten, dass man über das Minimum der Loss-Funktion hinaus springt. Sind die Änderungen zu klein, so muss der Gradient oft berechnet werden, was sehr lange dauern kann. Das Ergebnis der Score-Funktion für $W' = (1.8,-3.4,-2.8)$ ist $0.9$. Das Netzwerk klassifiziert nun also besser.\\
 \bigskip
 Neben der Sigmoidfunktion gibt es noch viele andere Aktivierungsfunktionen. So hat die Maximumsfunktion (Rectifier Linear Unit - ReLU) gegenüber der Sigmoidfunktion den Vorteil, dass bei relativ hohen Werten nicht alle Neuronen aktiviert werden und es somit weiterhin zu einem Lerneffekt kommt. Ein weiterer Vorteil des Recitifiert ist die schnellere Konvergenz des Gradienten. So stellt sich bereits nach wenigen Trainings ein starker Lerneffekt ein. Sind die gewichte jedoch zu Beginn sehr klein, so ist die Gefahr groß, dass bei einer weiteren Verkleinerung alle Neuronen deaktiviert werden.
 
 \begin{figure}[h]
 \centering
 \includegraphics[scale=0.3]{aktf.png}
-\caption{Vergleich zwischen Rectivier und Sigmoid}
+\caption{Vergleich zwischen Rectifier und Sigmoid}
 \end{figure}
 
+\subsection{Parameterupdates\protect\footnote{http://ruder.io/optimizing-gradient-descent/}}
+\textbf{Batch Gradient Descent (BGD)}
+Normaler einmaliger Updateprozess wie oben beschrieben. Diese Variante ist sehr langsam, da für jedes Update der Gradient für den gesamten Datensatz berechnet werden muss.
+\[W = W - \eta \nabla_WL(W)\]
+
+\textbf{Stochastic Gradient Descent (SGD)}
+In diesem Fall werden die Gewichte nach jedem Trainingsbeispiel aktualisiert. Dies beschleunigt den Trainingsprozess und verhindert Redundanzen:
+
+\[W=W - \eta \nabla_W L(W;x_i)\]
+
+\bigskip
+Zur Beschleunigung des Gradientenabstiegs wurden ebenfalls Verfahren entwickelt:
+\begin{itemize}
+\item \textbf{Momentum} Falls der Gradient zu groß ist, wird das Ziel beim aktualisieren der Gewichte übersprungen. Diese Methode beschleungigt den Gradientenabstieg, indem die Anzahl der übersprungenen Minima reduziert wird (quantitative Oszillationsreduktion). Hierzu wird der Update-Vektor des vorherigen Schrittes durch einen Paramter $\gamma$ gewichtet und zum neuen Update-Vektor addiert:
+
+\[v_t=\gamma v_{t-1}+\eta \nabla_WL(W)\]
+\[W=W-v_t\]
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.7]{momentum.png}
+\caption{Momentum verringert die Oszillation der Loss-Funktion}
+\end{figure}
+
+
+
+\item \textbf{Adagrad} Dieses Verfahren findet für jeden Parameter in jedem Updateschritt eine individuelle Lernrate. Dies bewirkt, dass das Minimum bei starker Steigung nicht übersprungen wird. Die Oszillation wird qualitativ reduziert.
+
+\[W_{t+1,i}= W_{t,i} - \frac{\eta}{\sqrt{G_{t,ii}+\epsilon}} \nabla_W L(W_{t,i})\]
+
+Wobei $G_{t}$ eine Diagonalmatrix ist und das Element $i,i$ ist die Summe der Quadrate der Gradienten bezüglich $W_t$ bis Zeitschritt $t$. Das $\epsilon$ verhindert eine Nulldivision.
+\end{itemize}
 
 \subsection{Convolutional Neural Network}
 Ein Convnet ist ein Neuronales Netzwerk, das speziell für das Klassifizierungproblem geeignet ist. Ein Standardnetzwerk besteht aus folgenden vier Layern:
@@ -500,22 +532,38 @@ Jeder Filter erstreckt sich über die gesamte Tiefe des Bildes. Wird also ein $B
 \footnotetext{http://www.mdpi.com/2072-4292/7/11/14680/htm}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 \subsection{Recurrent Neural Network}
+Ein Recurrent Neural Network (RNN) ist ein zeitabhängiges neuronales Netz, mit welchem sich Zustände vorhersagen lassen. So lassen sich mit einem RNN z.B. folgende Probleme Lösen:
 
+\begin{itemize}
+\item Image Captioning
+\item Sentimentanalyse (Stimmungserkennung im Text Mining)
+\item Sprachübersetzung, Textproduktion und Vorhersage von Worten
+\item Videoklassifikatio
+\item Vorhersage von geologischen Aktivitäten
+\end{itemize}
 
+Ein Zustand $h_t$ und eine Ausgabe $y_t$ eines RNN zu einem bestimmten Zeitpunkt $t$ berechnet sich wie folgt:
+
+\[h_t = f(W_{xh} x_t + W_{hh} h_{t-1} + b1)\]
+\[y_t = g(W_{hy} h_t + b2)\]
+
+Hierbei enthalten die Gewichtsmatritzen $W_{xh}$, $W_{hh}$, $W_{hy}$ die zu lernenden Parameter zwischen Input Layer, Hidden Layer und Output Layer. Die Funktionen $f$ und $g$ sind Nichtlinearitäten.
+
+\textbf{Beispiel:}\\
+Ein RNN wird mit einer gegebenen Sequenz ('h' 'e' 'l' 'l' 'o') 
+trainiert, so dass es bei der Eingabesequenz x = ('h' 'e' 'l' 'l') die Sequenz ('e' 'l' 'l' 'o') und somit den Buchstaben 'o' korrekt vorhersagt. 
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.35]{RNN.png}
+\caption{RNN vervollständigt das Wort \textit{hello}}
+\end{figure}
+
+Die Gewichtsmatrix $W_{xh}$ speichert, wie Buchstaben zu Hidden States umgewandelt und inkrementiert werden. $W_{hy}$ lernt, welcher Ausgabebuchstabe zu gegebenem Hidden State passt und die Matrix $W_{hh}$ akkumuliert und migriert alle bisherigen Eingaben im zeitlichen Verlauf zu einem gemeinsamen Hidden State.
+
+\subsection{Long Short Term Memory Netzwerke}
+
+\textbf{Das Problem der Langzeitabhängigkeit}
 
 
 
