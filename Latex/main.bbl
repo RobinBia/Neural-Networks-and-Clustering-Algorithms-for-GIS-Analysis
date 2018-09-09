@@ -19,6 +19,72 @@
 
 \refsection{0}
   \datalist[entry]{nyt/global//global/global}
+    \entry{kddmod}{misc}{}
+      \name{author}{3}{}{%
+        {{hash=b42d184c7549161c8fe0c2d53decab94}{%
+           family={Fayyad},
+           familyi={F\bibinitperiod},
+           given={Usama},
+           giveni={U\bibinitperiod}}}%
+        {{hash=34f8ca71a399161ab92f9d68b804869f}{%
+           family={Piatetsky-Shapiro},
+           familyi={P\bibinithyphendelim S\bibinitperiod},
+           given={Gregory},
+           giveni={G\bibinitperiod}}}%
+        {{hash=4940852a16a84802eb98552d6deace24}{%
+           family={Smyth},
+           familyi={S\bibinitperiod},
+           given={Padhraic},
+           giveni={P\bibinitperiod}}}%
+      }
+      \strng{namehash}{f401cd48784ca09966764313d60e64c0}
+      \strng{fullhash}{f401cd48784ca09966764313d60e64c0}
+      \strng{bibnamehash}{f401cd48784ca09966764313d60e64c0}
+      \strng{authorbibnamehash}{f401cd48784ca09966764313d60e64c0}
+      \strng{authornamehash}{f401cd48784ca09966764313d60e64c0}
+      \strng{authorfullhash}{f401cd48784ca09966764313d60e64c0}
+      \field{labelalpha}{FPS96}
+      \field{sortinit}{F}
+      \field{sortinithash}{669c706c6f1fbf3b5a83d26f1d9e9e72}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Knowledge Discovery and Data Mining: Towards a Unifying Framework}
+      \field{year}{1996}
+      \verb{urlraw}
+      \verb https://www.aaai.org/Papers/KDD/1996/KDD96-014.pdf
+      \endverb
+      \verb{url}
+      \verb https://www.aaai.org/Papers/KDD/1996/KDD96-014.pdf
+      \endverb
+    \endentry
+    \entry{dynrnn}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=08ba7b0c1eb6a7b9e3e7005aa4ec2f09}{%
+           family={Hochreite},
+           familyi={H\bibinitperiod},
+           given={Josef},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{08ba7b0c1eb6a7b9e3e7005aa4ec2f09}
+      \strng{fullhash}{08ba7b0c1eb6a7b9e3e7005aa4ec2f09}
+      \strng{bibnamehash}{08ba7b0c1eb6a7b9e3e7005aa4ec2f09}
+      \strng{authorbibnamehash}{08ba7b0c1eb6a7b9e3e7005aa4ec2f09}
+      \strng{authornamehash}{08ba7b0c1eb6a7b9e3e7005aa4ec2f09}
+      \strng{authorfullhash}{08ba7b0c1eb6a7b9e3e7005aa4ec2f09}
+      \field{labelalpha}{Hoc91}
+      \field{sortinit}{H}
+      \field{sortinithash}{5f15a7bc777ad49ff15aa4d2831b1681}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Untersuchungen zu dynamischen neuronalen Netzen}
+      \field{year}{1991}
+      \verb{urlraw}
+      \verb http://people.idsia.ch/~juergen/SeppHochreiter1991ThesisAdvisorSchmidhuber.pdf
+      \endverb
+      \verb{url}
+      \verb http://people.idsia.ch/~juergen/SeppHochreiter1991ThesisAdvisorSchmidhuber.pdf
+      \endverb
+    \endentry
     \entry{machgeo}{online}{}
       \name{author}{5}{}{%
         {{hash=6380dfa76040791b96259af49a6acdf4}{%
@@ -109,29 +175,58 @@
       \field{pages}{3\bibrangedash 10}
       \range{pages}{8}
     \endentry
-    \entry{michell}{article}{}
+    \entry{michell}{book}{}
       \name{author}{1}{}{%
-        {{hash=ef9b07697c2f1eef795e6babee804186}{%
-           family={Michell},
+        {{hash=bcd7526dd1cfb546aa6337f801dfc4cd}{%
+           family={Mitchell},
            familyi={M\bibinitperiod},
-           given={T.},
-           giveni={T\bibinitperiod}}}%
+           given={Tom\bibnamedelima M.},
+           giveni={T\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
       }
-      \strng{namehash}{ef9b07697c2f1eef795e6babee804186}
-      \strng{fullhash}{ef9b07697c2f1eef795e6babee804186}
-      \strng{bibnamehash}{ef9b07697c2f1eef795e6babee804186}
-      \strng{authorbibnamehash}{ef9b07697c2f1eef795e6babee804186}
-      \strng{authornamehash}{ef9b07697c2f1eef795e6babee804186}
-      \strng{authorfullhash}{ef9b07697c2f1eef795e6babee804186}
-      \field{labelalpha}{Mic97}
+      \list{publisher}{1}{%
+        {McGraw-Hill Education}%
+      }
+      \strng{namehash}{bcd7526dd1cfb546aa6337f801dfc4cd}
+      \strng{fullhash}{bcd7526dd1cfb546aa6337f801dfc4cd}
+      \strng{bibnamehash}{bcd7526dd1cfb546aa6337f801dfc4cd}
+      \strng{authorbibnamehash}{bcd7526dd1cfb546aa6337f801dfc4cd}
+      \strng{authornamehash}{bcd7526dd1cfb546aa6337f801dfc4cd}
+      \strng{authorfullhash}{bcd7526dd1cfb546aa6337f801dfc4cd}
+      \field{labelalpha}{Mit97}
       \field{sortinit}{M}
       \field{sortinithash}{cfd219b90152c06204fab207bc6c7cab}
       \field{labelnamesource}{author}
-      \field{journaltitle}{1}
-      \field{number}{0}
-      \field{title}{0}
-      \field{volume}{0}
+      \field{labeltitlesource}{title}
+      \field{title}{Machine Learning}
       \field{year}{1997}
+    \endentry
+    \entry{lstm}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=dea937fb216bfbba25c1bfa1f36a63fe}{%
+           family={Olah},
+           familyi={O\bibinitperiod},
+           given={Christopher},
+           giveni={C\bibinitperiod}}}%
+      }
+      \strng{namehash}{dea937fb216bfbba25c1bfa1f36a63fe}
+      \strng{fullhash}{dea937fb216bfbba25c1bfa1f36a63fe}
+      \strng{bibnamehash}{dea937fb216bfbba25c1bfa1f36a63fe}
+      \strng{authorbibnamehash}{dea937fb216bfbba25c1bfa1f36a63fe}
+      \strng{authornamehash}{dea937fb216bfbba25c1bfa1f36a63fe}
+      \strng{authorfullhash}{dea937fb216bfbba25c1bfa1f36a63fe}
+      \field{labelalpha}{Ola15}
+      \field{sortinit}{O}
+      \field{sortinithash}{dad3efd0836470093a7b4a7bb756eb8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Understanding LSTM Networks}
+      \field{year}{2015}
+      \verb{urlraw}
+      \verb http://colah.github.io/posts/2015-08-Understanding-LSTMs/
+      \endverb
+      \verb{url}
+      \verb http://colah.github.io/posts/2015-08-Understanding-LSTMs/
+      \endverb
     \endentry
   \enddatalist
 \endrefsection

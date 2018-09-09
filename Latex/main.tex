@@ -7,24 +7,19 @@
 \usepackage{mathptmx} 
 \usepackage{microtype} 
 \usepackage[utf8]{luainputenc}
-\usepackage[T1]{fontenc} 
+\usepackage[T1]{fontenc}
 \usepackage[style=alphabetic,sorting=nyt,sortcites=true,autopunct=true,babel=hyphen,hyperref=true,abbreviate=false,backref=true,backend=biber]{biblatex}
 \addbibresource{bibliography.bib} 
-\defbibheading{bibempty}{}
+
 \newcommand{\minuseq}{\mathrel{-}=}
 
-
-
 \input{structure} 
-
-
 
 %----------------------------------------------------------------------------------------
 %	Anfang des Dokuments
 %----------------------------------------------------------------------------------------
 
 \begin{document}
-
 %----------------------------------------------------------------------------------------
 %	TITLE PAGE
 %----------------------------------------------------------------------------------------
@@ -35,7 +30,7 @@
 \centering
 \vspace*{5cm}
 \par\normalfont\fontsize{35}{35}\sffamily\selectfont
-\textbf{{\color{white} Neuronale Netzwerke und Clusteringverfahren für Geodaten}}\\
+\textbf{{\color{white} Einsatz von Neuronalen Netzwerken und Clusteringverfahren auf Geodatensätze}}\\
 {\LARGE {\color{white}Lehrstuhl für Geoinformatik}}\par
 \vspace*{1cm}
 {\Huge {\color{white} Robin Bially}}\par 
@@ -52,9 +47,9 @@
 %Hier kann ich Github und Downloads hin schreiben
 \noindent \textsc{https://github.com/RobinBia/Projektarbeit-Geoinformatik.git}\\ \\ % URL
 
-\noindent Projektarbeit unter der Betreuung von PD Dr. Dr.-Ing. Wilfried Linder von 11.2017 - 09.2018 als Vorbereitung der sich anschließenden Masterarbeit.\\ % 
+\noindent Projektarbeit unter der Betreuung von PD Dr. Dr.-Ing. Wilfried Linder von 11.2017 - 11.2018 als Vorbereitung der sich anschließenden Masterarbeit.\\ % 
 
-\noindent \textit{Fertigstellung, August 2018} 
+\noindent \textit{Fertigstellung, November 2018} 
 
 
 %----------------------------------------------------------------------------------------
@@ -78,10 +73,13 @@
 %----------------------------------------------------------------------------------------
 
 \chapterimage{head8} % Chapter heading image
-
 \chapter{Motivation}
 \section{leeres Kapitel}
 blabla
+
+%----------------------------------------------------------------------------------------
+%	CHAPTER 2
+%----------------------------------------------------------------------------------------
 \chapter{Geodaten und Geoinformation}
 \section{Definition und Gestalt von Geodaten}
 Geodaten sind digitale Informationen, welche Sachdaten mit Geometriedaten\footnote{https://www.hdm-stuttgart.de/~riekert/lehre gis.pdf} (und Chronometriedaten) vereinen , z.B. \{Luftdruck 1 bar, Ort Düsseldorf, Datum 26.11.2017\}. 
@@ -117,8 +115,27 @@ Beschrieben wird ein Punkt auf der Erde durch gedachte Kreise um den Globus, wel
 
 \section{Qualitätsmerkmale}
 Ein wichtiger Forschungszweig ist die automatische Beurteilung von Qualitätsmerkmalen von Geodaten hinsichtlich einer bestimmten Fragestellung.
-Ein geeignetes Maß ist die gewichtete Summe verschiedener Datenmerkmale, welche in der aktuellen ISO-Norm \textit{ISO 19157:2013}\footnote{https://www.iso.org/standard/32575.html} spezifiziert sind. Die folgende Auflistung ist eine informelle Beschreibung der oben genannten Norm durch Fragestellungen und Beispiele:
+Ein geeignetes Maß ist die gewichtete Summe verschiedener Datenmerkmale, welche in der aktuellen ISO-Norm \textit{ISO 19157:2013}\footnote{https://www.iso.org/standard/32575.html} spezifiziert sind.
 
+Die Beurteilung der Datenqualität ist ebenfalls in sämtlichen Verarbeitungsschritten des KDD-Prozessmodells\cite{kddmod} erforderlich. Das KDD-(Knowledge Discovery in Databases-)Prozessmodell  beschreibt, wie aus einer unstrukturierten Datensammlung neues, relevantes Wissen extrahiert werden kann. Es umfasst folgende Schritte:
+\begin{enumerate}
+\item \textbf{Fokussieren/Selektieren} Die Daten werden zusammengetragen, in Form einer Datenbank strukturiert und irrelevante Einträge gelöscht. Relevante Daten haben das Potenzial hinsichtlich eines vorgegebenen Ziels vielversprechende Erkenntnisse zu liefern.
+\item \textbf{Vorverarbeitung} Es wird überprüft, ob die Datenbank konsistent ist und ob es fehlende Einträge gibt. Die Konsistenz wird verletzt, wenn zum Beispiel einer Koordinate ein Land zugeordnet wird, welches den umgebenen Datenpunkten nicht zugeordnet wurde. Die Wahrscheinlichkeit einer Fehlzuordnung ist dann groß. Die Datenbank hat fehlende Einträge, wenn es Attribute mit nicht existierenden Werten gibt. Strategien zum Umgang mit fehlerhaften Datensätzen beim Clustering werden im Kapitel über Clusteringverfahren erläutert.
+\item \textbf{Transformation} Wurde ein komplexes Objekt in die Datensammlung aufgenommen, so müssen seine Merkmale zuerst numerisch diskretisiert werden. Beispielsweise hat ein Reisfeld eine Länge und Breite, aber auch eine Vegetationsdichte und einen Erntestatus. All diese Merkmale müssen vermessen und in die Datenbank aufgenommen werden. Merkmale, welche nach der Transformation in mangelhafter Qualität vorliegen, können entfernt werden.
+\item \textbf{Data Mining} Methoden zur Mustererkennung. Dazu gehören sowohl Neuronale Netze und Clusteringverfahren, als auch Assoziationsregeln. In folgenden Kapiteln werden diese erklärt.
+\item \textbf{Evaluation} Ergebnisse der Mustererkennung werden statistisch überprüft und die Nützlichkeit vom Nutzer bewertet.
+\end{enumerate}~\\
+
+
+\begin{figure}[h]
+\centering
+\includegraphics{kdd.png}
+\caption{Das KDD-Prozessmodell \protect\footnotemark}
+\end{figure}
+\footnotetext{\url{http://www.enzyklopaedie-der-wirtschaftsinformatik.de/lexikon/daten-wissen/Business-Intelligence/Analytische-Informationssysteme--Methoden-der-/Data-Mining/index.html}}
+
+
+Die folgende Auflistung ist eine informelle Beschreibung der oben genannten ISO-Norm \textit{ISO 19157:2013} durch Fragestellungen und Beispiele:
 
 \begin{itemize}
 \item \textbf{Vollständigkeit}
@@ -323,10 +340,8 @@ Das dem Datensatz zugehörige farbige Rasterbild inklusive Schummerung (räumlic
 \section{Verschiedene Arten und ihre Anwendungszwecke}
 
 %----------------------------------------------------------------------------------------
-%	CHAPTER 2
+%	CHAPTER 3
 %----------------------------------------------------------------------------------------
-
-
 
 \chapter{Deep Learning}
 
@@ -396,10 +411,10 @@ Wenn man ein Bild mit $i_{max}$ Pixeln als $i_{max}$ Dimensionalen Vektor auffas
 Äquivalent zur Score-Funktion definiert man auch eine sogenannte Loss-Funktion. Je besser ein Datum einer bestimmten Klasse zugeordnet werden kann, desto besser sind die Parameter der Gewichtsmatrix und des Bias und desto kleiner der Wert der Loss-Funktion. Im Rahmen eines Optimierungsprozesses soll die Loss-Funktion durch Änderung der Gewichte minimiert werden.
 \bigskip
 Zwei häufig verwendete Loss-Funktionen für Daten sind:
-\begin{itemize}
-\item \textbf{Hinge-Loss} $L_i = \sum_{j \neq y_i} max(0,s_j - s_{y_i} + \Delta)$ \Rightarrow Richtige Klasse muss um mindestens Delta größer sein, als alle anderen Klassen
-\item \textbf{Softmax-Loss} $L_i = -\log(\frac{e^{s_{y_i}}}{\sum_{j} e^{s_j}})$ \Rightarrow Minimieren der negativen logarithmischen Wahrscheinlichkeit für die korrekte Klasse
-\end{itemize}
+%\begin{itemize}
+%\item \textbf{Hinge-Loss} $L_i = \sum_{j \neq y_i} max(0,s_j - s_{y_i} + \Delta)$ \Rightarrow Richtige Klasse muss um mindestens Delta größer sein, als alle anderen Klassen
+%\item \textbf{Softmax-Loss} $L_i = -\log(\frac{e^{s_{y_i}}}{\sum_{j} e^{s_j}})$ \Rightarrow Minimieren der negativen logarithmischen Wahrscheinlichkeit für die korrekte Klasse
+%\end{itemize}
 
 Der gesamte Loss eines Optimierungsproblems besteht jedoch nicht nur aus dem oben genannten Datenloss, sondern des Weiteren aus dem Regularisierungs-Loss.
 
@@ -565,6 +580,9 @@ Die Gewichtsmatrix $W_{xh}$ speichert, wie Buchstaben zu Hidden States umgewande
 
 \textbf{Das Problem der Langzeitabhängigkeit}
 
+Angenommen, es soll ein RNN trainiert werden, welches das letzte Wort des folgenden Satzes vorhersagt: \textit{Ich spreche fließend}. Offensichtlich ist das gesuchte Wort eine Sprache. Leider geht diese Information nicht aus dem Satz hervor, da der Kontext fehlt. Ein vorangesteller Satz \textit{Ich bin ich Deutschland aufgewachsen.} grenzt die möglichen Worte stark ein. Ein RNN, wie oben beschrieben, kann jedoch nur Kurzzeitinformationen speichern. \cite{dynrnn}  Aus diesem Grund wurden spezielle Variante eines RNNs erfunden.
+
+\textbf{LSTM-Zellen}
 
 
 
@@ -586,6 +604,9 @@ Die Gewichtsmatrix $W_{xh}$ speichert, wie Buchstaben zu Hidden States umgewande
 
 
 
+
+
+\cite{lstm}
 
 \newpage
 \section{Machine Learning in Geowissenschaften}
@@ -690,35 +711,56 @@ Deep Learning kann bisher nur bei ausreichend gelabelten Daten zum Einsatz komme
 \textbf{Fazit}\\
 Die Forschung der letzten Jahre hat gezeigt, dass weder ein reiner Datenansatz noch ein reiner mathematischer Modellansatz ausreichend ist, um Knowledge Discovery effizient betreiben zu können. Aus diesem Grund sollten zukünftige physikalische Erkenntnisse möglichst früh und tief in Datenwissenschaftlichen Ansätze einbezogen werden. Auf diese Weise lässt sich auch die Wahrscheinlichkeit für Overfitting reduzieren, vor allem bei mangelnden Trainingsdaten.
 
-\subsection{Beispiele}
+\subsection{Einsatz in der Praxis - Beispiele}
 
 \section{Tensorflow}
+
 \section{Erstes eigenes CNN}
-
-%----------------------------------------------------------------------------------------
-%	CHAPTER 3
-%----------------------------------------------------------------------------------------
-
-\chapter{Clusteringverfahren}
-\section{Probabilistisches und Possibilistisches Clustering}
-\subsection{FCM und PFCM}
-\subsection{Vorraussetzungen für die Anwendung auf Geodaten}
-\subsection{Eigener Algoritmus (noch ohne Name)}
-\section{CVI}
-\subsection{NPC}
-\subsection{FHV}
-\subsection{Otsu-Binarisierung}
-\subsection{VAT-Algorithmus}
-\section{Clustering auf unvollständigen Daten}
 
 %----------------------------------------------------------------------------------------
 %	CHAPTER 4
 %----------------------------------------------------------------------------------------
 
+\chapter{Clusteringverfahren}
+\section{Ziel}
+%Motivation Data Mining!
+\section{Eindeutiges Clustering}
+\subsection{Partitionierende Verfahren und ihre Nachteile}
+\subsection{Dichtebasierte Verfahren}
+\subsection{Hierarchische Verfahren}
+\subsection{Outlier Detection}
+
+
+\section{Fuzzy-Clustering}
+\subsection{Probabilistisches und Possibilistisches Clustering}
+\subsubsection{FCM und PFCM}
+\subsubsection{Vorraussetzungen für die Anwendung auf Geodaten}
+\subsubsection{Eigener Algoritmus (noch ohne Name)}
+
+\section{CVI}
+\subsection{NPC}
+\subsection{FHV}
+\subsection{Otsu-Binarisierung}
+\subsection{VAT-Algorithmus}
+
+\section{Clustering auf unvollständigen Daten}
+
+\section{Einsatz in der Praxis und Software-Tools}
+
+
+
+%----------------------------------------------------------------------------------------
+%	CHAPTER 5
+%----------------------------------------------------------------------------------------
+
 \chapter{Fazit und Ausblick}
 \section{Ausblick - Mein Thema für die Masterarbeit}
 
-\printbibliography
 
+\printbibliography
 \vfill
 \end{document}
+
+
+
+
