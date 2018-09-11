@@ -59,18 +59,18 @@
     \endentry
     \entry{dynrnn}{misc}{}
       \name{author}{1}{}{%
-        {{hash=08ba7b0c1eb6a7b9e3e7005aa4ec2f09}{%
-           family={Hochreite},
+        {{hash=81c610316c4115fc4ca5e763a8934ea4}{%
+           family={Hochreiter},
            familyi={H\bibinitperiod},
            given={Josef},
            giveni={J\bibinitperiod}}}%
       }
-      \strng{namehash}{08ba7b0c1eb6a7b9e3e7005aa4ec2f09}
-      \strng{fullhash}{08ba7b0c1eb6a7b9e3e7005aa4ec2f09}
-      \strng{bibnamehash}{08ba7b0c1eb6a7b9e3e7005aa4ec2f09}
-      \strng{authorbibnamehash}{08ba7b0c1eb6a7b9e3e7005aa4ec2f09}
-      \strng{authornamehash}{08ba7b0c1eb6a7b9e3e7005aa4ec2f09}
-      \strng{authorfullhash}{08ba7b0c1eb6a7b9e3e7005aa4ec2f09}
+      \strng{namehash}{81c610316c4115fc4ca5e763a8934ea4}
+      \strng{fullhash}{81c610316c4115fc4ca5e763a8934ea4}
+      \strng{bibnamehash}{81c610316c4115fc4ca5e763a8934ea4}
+      \strng{authorbibnamehash}{81c610316c4115fc4ca5e763a8934ea4}
+      \strng{authornamehash}{81c610316c4115fc4ca5e763a8934ea4}
+      \strng{authorfullhash}{81c610316c4115fc4ca5e763a8934ea4}
       \field{labelalpha}{Hoc91}
       \field{sortinit}{H}
       \field{sortinithash}{5f15a7bc777ad49ff15aa4d2831b1681}

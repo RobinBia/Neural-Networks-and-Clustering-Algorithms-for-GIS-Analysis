@@ -1,5 +1,6 @@
 \documentclass[11pt,fleqn]{book} 
 \usepackage[top=3cm,bottom=3cm,left=3.2cm,right=3.2cm,headsep=10pt,letterpaper]{geometry} 
+\usepackage{float}
 \usepackage{xcolor}
 \usepackage{url}
 \definecolor{ocre}{RGB}{52,177,201} 
@@ -8,7 +9,15 @@
 \usepackage{microtype} 
 \usepackage[utf8]{luainputenc}
 \usepackage[T1]{fontenc}
-\usepackage[style=alphabetic,sorting=nyt,sortcites=true,autopunct=true,babel=hyphen,hyperref=true,abbreviate=false,backref=true,backend=biber]{biblatex}
+\usepackage[style=alphabetic,
+            sorting=nyt,
+            sortcites=true,
+            autopunct=true,
+            babel=hyphen,
+            hyperref=true,
+            abbreviate=false,
+            backref=true,
+            backend=biber]{biblatex}
 \addbibresource{bibliography.bib} 
 
 \newcommand{\minuseq}{\mathrel{-}=}
@@ -117,7 +126,7 @@ Beschrieben wird ein Punkt auf der Erde durch gedachte Kreise um den Globus, wel
 Ein wichtiger Forschungszweig ist die automatische Beurteilung von Qualitätsmerkmalen von Geodaten hinsichtlich einer bestimmten Fragestellung.
 Ein geeignetes Maß ist die gewichtete Summe verschiedener Datenmerkmale, welche in der aktuellen ISO-Norm \textit{ISO 19157:2013}\footnote{https://www.iso.org/standard/32575.html} spezifiziert sind.
 
-Die Beurteilung der Datenqualität ist ebenfalls in sämtlichen Verarbeitungsschritten des KDD-Prozessmodells\cite{kddmod} erforderlich. Das KDD-(Knowledge Discovery in Databases-)Prozessmodell  beschreibt, wie aus einer unstrukturierten Datensammlung neues, relevantes Wissen extrahiert werden kann. Es umfasst folgende Schritte:
+Die Beurteilung der Datenqualität ist ebenfalls in sämtlichen Verarbeitungsschritten des KDD-Prozessmodells \cite{kddmod} erforderlich. Das KDD-(Knowledge Discovery in Databases-)Prozessmodell  beschreibt, wie aus einer unstrukturierten Datensammlung neues, relevantes Wissen extrahiert werden kann. Es umfasst folgende Schritte:
 \begin{enumerate}
 \item \textbf{Fokussieren/Selektieren} Die Daten werden zusammengetragen, in Form einer Datenbank strukturiert und irrelevante Einträge gelöscht. Relevante Daten haben das Potenzial hinsichtlich eines vorgegebenen Ziels vielversprechende Erkenntnisse zu liefern.
 \item \textbf{Vorverarbeitung} Es wird überprüft, ob die Datenbank konsistent ist und ob es fehlende Einträge gibt. Die Konsistenz wird verletzt, wenn zum Beispiel einer Koordinate ein Land zugeordnet wird, welches den umgebenen Datenpunkten nicht zugeordnet wurde. Die Wahrscheinlichkeit einer Fehlzuordnung ist dann groß. Die Datenbank hat fehlende Einträge, wenn es Attribute mit nicht existierenden Werten gibt. Strategien zum Umgang mit fehlerhaften Datensätzen beim Clustering werden im Kapitel über Clusteringverfahren erläutert.
@@ -347,10 +356,10 @@ Das dem Datensatz zugehörige farbige Rasterbild inklusive Schummerung (räumlic
 
 \section{Was ist Machine Learning?}
 \textbf{Definition}\\
-Machine Learning ist eine Unterdisziplin der künstlichen Intelligenz und basiert auf der Idee, biologische Denkprozesse, wie sie in Gehirnen ablaufen, nachzuahmen\cite{geofront}.
+Machine Learning ist eine Unterdisziplin der künstlichen Intelligenz und basiert auf der Idee, biologische Denkprozesse, wie sie in Gehirnen ablaufen, nachzuahmen \cite{geofront}.
 
 \textit{A computer program is said to learn from experience E with
-respect to some class of tasks T and performance measure P if its performance at tasks in T, as measured by P, improves with experience E.}\cite{michell}
+respect to some class of tasks T and performance measure P if its performance at tasks in T, as measured by P, improves with experience E.} \cite{michell}
 
 \bigskip
 
@@ -611,7 +620,7 @@ Angenommen, es soll ein RNN trainiert werden, welches das letzte Wort des folgen
 \newpage
 \section{Machine Learning in Geowissenschaften}
 
-\subsection{Herausforderungen und Chancen von Machine Learning \cite{machgeo}}
+\subsection{Herausforderungen und Chancen von Machine Learning  \cite{machgeo}}
 \textbf{Einleitung}\\
 Die moderne Geowissenschaft steht vor vielen Herausforderungen, wie den Prognosen zu Klimawandel, Luftverschmutzung, Naturkatastrophen, Ressourcenverbrauch oder den Risiken für Erdbeben, Landrutsch und Vulkanausbrüchen. Die Forschung an solchen Problemen macht die interdisziplinäre Arbeit sämtlicher Wissenschaften unumgänglich.
 Geowissenschaften haben sich in den letzten Jahrzehnten  zu einer Big-Data Disziplin entwickelt. Angestoßen wurde diese Entwicklung durch sämtliche technologische Verbesserungen, wie dem Wachstum der Computerleistung. Aufwändige Simulationen und die Demokratisierung von Datenbeständen, deren öffentliche Verbreitung im Internet und vielseitige Beteiligungsmöglichkeiten trugen ebenfalls dazu bei. Die wachsende Verbreitung großer geowissenschaftlicher Datenbestände ermöglicht ein enormes Potenzial für Maschinelles Lernen.\\
@@ -722,12 +731,30 @@ Die Forschung der letzten Jahre hat gezeigt, dass weder ein reiner Datenansatz n
 %----------------------------------------------------------------------------------------
 
 \chapter{Clusteringverfahren}
-\section{Ziel}
-%Motivation Data Mining!
-\section{Eindeutiges Clustering}
+~
+\section{Definition und Anwendungszweck}
+Ziel des Data Mining Prozesses ist es, Muster in Datenbanken zu erkennen und diese in Form von Wissen aufzubereiten. Im Falle des Clusterings werden Datenpunkte in Gruppen (Cluster) eingeteilt,so dass Daten mit ähnlichen Eigenschaften dem gleichen Cluster und Daten mit unterschiedlichen Eigenschaften verschiedenen Clustern zugeordnet werden. Im Bezug auf Geodaten wären zum Beispiel alle Punkte mit Farbwerten dunkelblau dem Cluster Wasser zugeordnet und alle Daten mit grüner Farbe dem Cluster Vegetation. Auf diese Weise lassen sich topologische Grenzen finden. Eine andere Möglichkeit bietet die gewichtete n-dimensionale Clusteranalyse. Sie ermöglicht die Zuordnung komplexer Daten zu komplexen Klassen. Wurde nach der numerischen Diskretisierung eines Objekts eine hohe Anzahl an Eigenschaften gefunden, so müssen Clusteringverfahren angewandt werden, welche unterschiedlich dichte Cluster unterschiedlichster Form erkennen können. Unter Umständen müssen die Daten mittels Hauptkomponentenanalyse auf Unterräume transformiert werden oder die Relevanz und Unabhängigkeit einzelner Attribute mittels Entropieanalyse bestimmt werden. Ein Beispiel hierfür ist die Analyse von Spektralklassen des von Geoobjekten reflektierten Lichts. Da das Reflektionsverhalten vieler Objekte für jeden Wellenlängenbereich characteristisch ist, kann mittels 7D-Clustering (dem Clustering nach Einteilung der Wellenlängen in 7 Bereiche, auch Spektralkanäle genannt) bestimmt werden, um welches Objekt es sich handelt, oder wie eine Landfläche genutzt wird.
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.55]{spektral.jpg}
+\caption{Landsat Spektralklassen \protect\footnotemark}
+\end{figure}
+\footnotetext{\url{https://player.slideplayer.org/3/1324211}}
+Zu neuronalen Netzwerken, deren Funktionsweise nach dem Trainingsprozess nicht mehr mathematisch nachvollzogen werden kann, bieten Clusteringverfahren eine konkrete, statistische Alternative. Wird ein neuronales Netzwerk hinsichtlich einer Aufgabe angepasst, so ist eine Verbesserung nur durch Ausprobieren verschiedener Architekturen und Kernels verifizierbar. Optimierungen an Clusteringverfahren können jedoch meist als Anpassung einer Optimierungsfunktion formal mathematisch nachvollzogen werden.
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.7]{3dcluster.png}
+\caption{Geclusterter Datensatz: Jedes Datum (blaue Punkte) hat 3 Attribute. Jedes Kreuz ist das Zentrum eines gefundenen Clusters. Die optimale Clusteranzahl wurde mithilfe von Cluster Validity Indizes bestimmt.}\label{cluster}
+\end{figure}
+
+
+\section{Hartes Clustering}
 \subsection{Partitionierende Verfahren und ihre Nachteile}
 \subsection{Dichtebasierte Verfahren}
 \subsection{Hierarchische Verfahren}
+\subsection{Lineare Separation - Support Vector Machine}
+%Siehe auch Kapitel 13 Geoinf. zu Delaunay Triangulation!
 \subsection{Outlier Detection}
 
 
@@ -745,6 +772,8 @@ Die Forschung der letzten Jahre hat gezeigt, dass weder ein reiner Datenansatz n
 
 \section{Clustering auf unvollständigen Daten}
 
+\section{Assoziationsregeln}
+%In Kapitel 10 Geoinf. kommt der naive Bayes-Klassifikator vor !
 \section{Einsatz in der Praxis und Software-Tools}
 
 
