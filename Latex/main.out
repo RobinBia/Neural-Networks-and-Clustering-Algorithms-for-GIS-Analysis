@@ -38,13 +38,13 @@
 \BOOKMARK [1][-]{section.3.5}{Erstes eigenes CNN}{chapter.3}% 38
 \BOOKMARK [0][-]{chapter.4}{Clusteringverfahren}{}% 39
 \BOOKMARK [1][-]{section.4.1}{Definition und Anwendungszweck}{chapter.4}% 40
-\BOOKMARK [1][-]{section.4.2}{Hartes Clustering}{chapter.4}% 41
+\BOOKMARK [1][-]{section.4.2}{Harte Methoden}{chapter.4}% 41
 \BOOKMARK [2][-]{subsection.4.2.1}{Partitionierende Verfahren und ihre Nachteile}{section.4.2}% 42
 \BOOKMARK [2][-]{subsection.4.2.2}{Dichtebasierte Verfahren}{section.4.2}% 43
 \BOOKMARK [2][-]{subsection.4.2.3}{Hierarchische Verfahren}{section.4.2}% 44
 \BOOKMARK [2][-]{subsection.4.2.4}{Lineare Separation - Support Vector Machine}{section.4.2}% 45
 \BOOKMARK [2][-]{subsection.4.2.5}{Outlier Detection}{section.4.2}% 46
-\BOOKMARK [1][-]{section.4.3}{Fuzzy-Clustering}{chapter.4}% 47
+\BOOKMARK [1][-]{section.4.3}{Weiche Methoden - Fuzzy-Clustering}{chapter.4}% 47
 \BOOKMARK [2][-]{subsection.4.3.1}{Probabilistisches und Possibilistisches Clustering}{section.4.3}% 48
 \BOOKMARK [1][-]{section.4.4}{CVI}{chapter.4}% 49
 \BOOKMARK [2][-]{subsection.4.4.1}{NPC}{section.4.4}% 50

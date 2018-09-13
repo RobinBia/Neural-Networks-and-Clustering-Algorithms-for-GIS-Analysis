@@ -748,9 +748,35 @@ Zu neuronalen Netzwerken, deren Funktionsweise nach dem Trainingsprozess nicht m
 \caption{Geclusterter Datensatz: Jedes Datum (blaue Punkte) hat 3 Attribute. Jedes Kreuz ist das Zentrum eines gefundenen Clusters. Die optimale Clusteranzahl wurde mithilfe von Cluster Validity Indizes bestimmt.}\label{cluster}
 \end{figure}
 
+Man unterscheidet zwischen harten und weichen Clusteringverfahren. Harte Methoden ordnen jedes Datum einder Datenbank einem Cluster eindeutig zu. Häufig kollidiert dieser Ansatz mit dem intuitiven Verständnis eines Menschen. Beispielsweise kann nicht gesagt werden, dass ein 49-jähriger Mensch jung ist und 50-Jähriger alt. Der Übergang von jung nach alt ist fließend. Aus diesem Grund gibt es weiche Methoden, die jedem Datum einen Grad der Zuordnung zu einem Cluster geben. Beispielsweise ist ein 70-Jähriger zu $80\%$ alt und zu $20\%$ jung. Der Grad der Zuordnung erhält jedes Datum also für jeden Cluster. Die Summer dieser Zuordnungsgrade beträgt meistens $100\%$.
 
-\section{Hartes Clustering}
+\section{Harte Methoden}
+
 \subsection{Partitionierende Verfahren und ihre Nachteile}
+Einem partitionierenden Clusteringalgorithmus wird die feste Anzahl $k$ an Clustern und die Kostenfunktion übergeben, welche für eine optimale Zuordnung einen kleinen Wert zurück gibt.
+\subsubsection{Clustering durch Varianzminimierung}
+Das einfachste Verfahren basiert auf der Idee, dass die Zuordnung genau dann optimal ist, wenn die Summe der Abstände zwischen Datenpunkten und ihren sogenannten Clusterrepräsentanten möglichst klein wird. Ein Clusterrepräsentant $\mu_{C_i}$ eines Clusters $C_i$ ist der Mittelwert aller Punkte $p = (x_1,\dots,x_d)$ (Dimensionalität $d$ ist die Anzahl der Attribute von $p$), die $C_i$ zugeordnet wurden. Zu Beginn des Algorithmus werden die Clusterprototypen (initiale Repräsentanten) entweder zufällig initialisiert, oder auf Basis einer Wahrscheinlichkeitsfunktion gewählt, so dass sie möglichst weit voneinander entfernt sind (k-means++\cite{kmplus}). Dies reduziert die Anzahl der Iterationen bei Optimierung der Kostenfunktion. Anschließend wird jeder Punkt dem Cluster zugeordnet, dessen Repräsentant den kleinsten Abstand zu diesem Punkt hat $(1)$. Auf Basis dieser Zuordnung werden die Repräsentanten erneut berechnet $(2)$. Dabei wird die Kostenfunktion für das gesamte Clustering berücksichtigt:
+
+$$\sum_{i=1}^{k}\sum_{p \in C_i}^{} dist(p,\mu_{C_i})^2$$
+
+Die Distanzfunktion hängt von der Dimensionalität des Datensatzes ab. Die Neuberechnung von Zuordnung $(1)$ und Repräsentanten $(2)$ wird solange wiederholt, bis keine ausreichende Änderung mehr auftritt.
+
+\subsubsection{k-means}
+
+Eine beschleunigte Version der Varianzminimierung ist der \textbf{k-means-Algorithmus} \cite{forgy}. Wenn ein Datenpunkt $p$ vom Cluster $C_1$ seine Zugehörigkeit an den Cluster $C_2$ verliert, dann wird nicht auf die restlichen Punkte bei der Neuzuordnung gewartet. Stattdessen werden die Clusterzentroide der betreffenden Cluster $C_1$ und $C_2$ wie folgt sofort aktualisiert:
+$$\mu_j^{\prime C_1} = \frac{1}{|C_1|-1}\cdot(|C_1|\cdot \mu_j^{C_1} - x_j^p)$$ und $$\mu_j^{\prime C_2} = \frac{1}{|C_1|+1}\cdot(|C_2|\cdot \mu_j^{C_2} + x_j^p)$$ 
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.4]{kmeans.png}
+\caption{Visualisierung des Ablaufs der beiden alternierenden Schritte}\label{cluster}
+\end{figure}
+
+Leider erkennt der k-means-Algorithmus weder Cluster unterschiedlicher Dichte, noch unterschiedlicher Form. Auch werden sich überlappende Cluster nicht erkannt. Zudem ist die Qualität des Endergebnisses stark von der initialen Wahl der Clusterprototypen abhängig.
+
+\subsubsection{EM-Algorithmus}
+
+
 \subsection{Dichtebasierte Verfahren}
 \subsection{Hierarchische Verfahren}
 \subsection{Lineare Separation - Support Vector Machine}
@@ -758,7 +784,7 @@ Zu neuronalen Netzwerken, deren Funktionsweise nach dem Trainingsprozess nicht m
 \subsection{Outlier Detection}
 
 
-\section{Fuzzy-Clustering}
+\section{Weiche Methoden - Fuzzy-Clustering}
 \subsection{Probabilistisches und Possibilistisches Clustering}
 \subsubsection{FCM und PFCM}
 \subsubsection{Vorraussetzungen für die Anwendung auf Geodaten}

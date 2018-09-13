@@ -19,6 +19,36 @@
 
 \refsection{0}
   \datalist[entry]{nyt/global//global/global}
+    \entry{kmplus}{report}{}
+      \name{author}{2}{}{%
+        {{hash=9490d5d9532dc965f9f300a7a5c9fa13}{%
+           family={Arthur},
+           familyi={A\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod}}}%
+        {{hash=b6fa64c3195f752823d0759db3cbca91}{%
+           family={Vassilvitskii},
+           familyi={V\bibinitperiod},
+           given={Sergei},
+           giveni={S\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {Indiana University Bloomington}%
+      }
+      \strng{namehash}{c59974bc84d7d18b3663c2ec2a4eaad7}
+      \strng{fullhash}{c59974bc84d7d18b3663c2ec2a4eaad7}
+      \strng{bibnamehash}{c59974bc84d7d18b3663c2ec2a4eaad7}
+      \strng{authorbibnamehash}{c59974bc84d7d18b3663c2ec2a4eaad7}
+      \strng{authornamehash}{c59974bc84d7d18b3663c2ec2a4eaad7}
+      \strng{authorfullhash}{c59974bc84d7d18b3663c2ec2a4eaad7}
+      \field{labelalpha}{AV06}
+      \field{sortinit}{A}
+      \field{sortinithash}{d77c7cdd82ff690d4c3ef13216f92f0b}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{The Advantages of Careful Seeding}
+      \field{year}{2006}
+    \endentry
     \entry{kddmod}{misc}{}
       \name{author}{3}{}{%
         {{hash=b42d184c7549161c8fe0c2d53decab94}{%
@@ -56,6 +86,32 @@
       \verb{url}
       \verb https://www.aaai.org/Papers/KDD/1996/KDD96-014.pdf
       \endverb
+    \endentry
+    \entry{forgy}{article}{}
+      \name{author}{1}{}{%
+        {{hash=186914e6efb541fb4c231d1e8f759f02}{%
+           family={Forgy},
+           familyi={F\bibinitperiod},
+           given={E.W.},
+           giveni={E\bibinitperiod}}}%
+      }
+      \strng{namehash}{186914e6efb541fb4c231d1e8f759f02}
+      \strng{fullhash}{186914e6efb541fb4c231d1e8f759f02}
+      \strng{bibnamehash}{186914e6efb541fb4c231d1e8f759f02}
+      \strng{authorbibnamehash}{186914e6efb541fb4c231d1e8f759f02}
+      \strng{authornamehash}{186914e6efb541fb4c231d1e8f759f02}
+      \strng{authorfullhash}{186914e6efb541fb4c231d1e8f759f02}
+      \field{labelalpha}{For65}
+      \field{sortinit}{F}
+      \field{sortinithash}{669c706c6f1fbf3b5a83d26f1d9e9e72}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Biometrics}
+      \field{title}{Cluster analysis of multivariate data: efficiency versus interpretability of classifications}
+      \field{volume}{21}
+      \field{year}{1965}
+      \field{pages}{768\bibrangedash 769}
+      \range{pages}{2}
     \endentry
     \entry{dynrnn}{misc}{}
       \name{author}{1}{}{%
