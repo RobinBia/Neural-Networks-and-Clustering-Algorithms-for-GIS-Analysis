@@ -1982,6 +1982,7 @@
     <bcf:citekey order="8">machgeo</bcf:citekey>
     <bcf:citekey order="9">kmplus</bcf:citekey>
     <bcf:citekey order="10">forgy</bcf:citekey>
+    <bcf:citekey order="11">emalg</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nyt">

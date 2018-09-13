@@ -49,6 +49,42 @@
       \field{title}{The Advantages of Careful Seeding}
       \field{year}{2006}
     \endentry
+    \entry{emalg}{article}{}
+      \name{author}{3}{}{%
+        {{hash=fcdb1c86f0b69523d4c47f296045f9bf}{%
+           family={Dempster},
+           familyi={D\bibinitperiod},
+           given={A.\bibnamedelimi P.},
+           giveni={A\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+        {{hash=9528604ee4990022adb878f3267792a0}{%
+           family={Laird},
+           familyi={L\bibinitperiod},
+           given={N.\bibnamedelimi M.},
+           giveni={N\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=03ad395b57d88206c748cc95dabaf6ea}{%
+           family={Rubin},
+           familyi={R\bibinitperiod},
+           given={D.\bibnamedelimi B.},
+           giveni={D\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+      }
+      \strng{namehash}{9a4d01d9fa0b809ff08b0ef674834739}
+      \strng{fullhash}{9a4d01d9fa0b809ff08b0ef674834739}
+      \strng{bibnamehash}{9a4d01d9fa0b809ff08b0ef674834739}
+      \strng{authorbibnamehash}{9a4d01d9fa0b809ff08b0ef674834739}
+      \strng{authornamehash}{9a4d01d9fa0b809ff08b0ef674834739}
+      \strng{authorfullhash}{9a4d01d9fa0b809ff08b0ef674834739}
+      \field{labelalpha}{DLR77}
+      \field{sortinit}{D}
+      \field{sortinithash}{2ef1bd9a78cc71eb74d7231c635177b8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of the Royal Statistical Society}
+      \field{title}{Maximum Likelihood from Incomplete Data via the EM Algorithm}
+      \field{volume}{39}
+      \field{year}{1977}
+      \field{pages}{1\bibrangedash 38}
+      \range{pages}{38}
+    \endentry
     \entry{kddmod}{misc}{}
       \name{author}{3}{}{%
         {{hash=b42d184c7549161c8fe0c2d53decab94}{%

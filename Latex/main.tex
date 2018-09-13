@@ -764,7 +764,7 @@ Die Distanzfunktion hängt von der Dimensionalität des Datensatzes ab. Die Neub
 \subsubsection{k-means}
 
 Eine beschleunigte Version der Varianzminimierung ist der \textbf{k-means-Algorithmus} \cite{forgy}. Wenn ein Datenpunkt $p$ vom Cluster $C_1$ seine Zugehörigkeit an den Cluster $C_2$ verliert, dann wird nicht auf die restlichen Punkte bei der Neuzuordnung gewartet. Stattdessen werden die Clusterzentroide der betreffenden Cluster $C_1$ und $C_2$ wie folgt sofort aktualisiert:
-$$\mu_j^{\prime C_1} = \frac{1}{|C_1|-1}\cdot(|C_1|\cdot \mu_j^{C_1} - x_j^p)$$ und $$\mu_j^{\prime C_2} = \frac{1}{|C_1|+1}\cdot(|C_2|\cdot \mu_j^{C_2} + x_j^p)$$ 
+$$\mu_j^{' C_1} = \frac{1}{|C_1|-1}\cdot(|C_1|\cdot \mu_j^{C_1} - x_j^p)$$ und $$\mu_j^{' C_2} = \frac{1}{|C_1|+1}\cdot(|C_2|\cdot \mu_j^{C_2} + x_j^p)$$ 
 
 \begin{figure}[h]
 \centering
@@ -775,8 +775,18 @@ $$\mu_j^{\prime C_1} = \frac{1}{|C_1|-1}\cdot(|C_1|\cdot \mu_j^{C_1} - x_j^p)$$ 
 Leider erkennt der k-means-Algorithmus weder Cluster unterschiedlicher Dichte, noch unterschiedlicher Form. Auch werden sich überlappende Cluster nicht erkannt. Zudem ist die Qualität des Endergebnisses stark von der initialen Wahl der Clusterprototypen abhängig.
 
 \subsubsection{EM-Algorithmus}
+Ein anderer Ansatz der alternierenden Optimierung ist die Erwartungsmaximierung \cite{emalg}. Ihr Vorteil ist, dass auch unterschiedlich geformte und dichte Cluster berücksichtigt werden können. Dabei wird jeder Cluster durch eine Wahrscheinlichkeitsverteilung beschrieben, welche aus der Erzeugung aller Datenpunkte eines Clusters $C$ mittels Kovarianzmatrix $\sum_C$ der Dimension $d \times d$ resultiert. Wie bei der Varianzminimierung bezeichnet $\mu_C$ auch hier den Mittelpunkt aller Daten, die dem Cluster C zugeordnet wurden. Die Wahrscheinlichkeit, mit der bei einer einzigen Normalverteilung $C$ das Datum $x$ erzeugt wurde, beträgt:
 
+$$P(x|C) = \frac{1}{\sqrt{(2\cdot \pi)^d \cdot |\sum_C|}} \cdot e^{-\frac{1}{2}(x - \mu_C)^T \cdot (\sum_C)^{-1} \cdot (x - \mu_C)}$$ 
 
+Da es mehrere Cluster gibt und alle den Punkt $x$ mit einer unterschiedlichen Wahrscheinlichkeit erzeugen, muss die Notation der bedingten Wahrscheinlichkeit erfolgen. Die Wahrscheinlichkeitsdichte eines Clusters bezüglich $x$ lautet $P(x|C_i)$. Sind alle Cluster gaußverteilt, so kann die Gesamtdichte für den Punkt $x$ berechnet werden: $$P(x) = \sum_{i=1}^k W_i \cdot P(x|C_i)$$ 
+Wobei $W_i$ der relative Anteil der Datenpunkte ist, die zu Cluster $C_i$ gehören, was der Gesamtwahrscheinlichkeit des Clusters $C_i$ entspricht. Der Satz von Bayes ($P(A|B) = \frac{P(B|A)\cdot P(A)}{P(B)}$) ermöglicht nun die Berechnung der Wahrscheinlichkeit, mit der $x$ zum Cluster $C_i$ gehört:
+$$P(C_i|x) = W_i \cdot \frac{P(x|C_i)}{P(x)}$$
+
+Durch abwechselnde Berechnung von Zugehörigkeiten $P(C_i|x)$ und Schätzung neuer Verteilungsparameter $\mu_C$, $\sum_C$ und $W_i$ kann das Gütemaß des Clusterings maximiert werden. Es lautet:
+$$E(M) = log(\prod_{x \in D} P(x))$$
+
+Wobei $M$ die Menge aller Cluster ist: $M = \{C_1, \dots, C_k\}$. Die Optimierung wird abgebrochen, wenn $E(M)-E(M')<\epsilon$, das Gütemaß also nicht mehr in ausreichendem Maße kleiner wird.
 \subsection{Dichtebasierte Verfahren}
 \subsection{Hierarchische Verfahren}
 \subsection{Lineare Separation - Support Vector Machine}
