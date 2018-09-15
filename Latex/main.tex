@@ -1,4 +1,5 @@
 \documentclass[11pt,fleqn]{book} 
+\usepackage[export]{adjustbox}
 \usepackage[top=3cm,bottom=3cm,left=3.2cm,right=3.2cm,headsep=10pt,letterpaper]{geometry} 
 \usepackage{float}
 \usepackage{xcolor}
@@ -420,10 +421,10 @@ Wenn man ein Bild mit $i_{max}$ Pixeln als $i_{max}$ Dimensionalen Vektor auffas
 Äquivalent zur Score-Funktion definiert man auch eine sogenannte Loss-Funktion. Je besser ein Datum einer bestimmten Klasse zugeordnet werden kann, desto besser sind die Parameter der Gewichtsmatrix und des Bias und desto kleiner der Wert der Loss-Funktion. Im Rahmen eines Optimierungsprozesses soll die Loss-Funktion durch Änderung der Gewichte minimiert werden.
 \bigskip
 Zwei häufig verwendete Loss-Funktionen für Daten sind:
-%\begin{itemize}
-%\item \textbf{Hinge-Loss} $L_i = \sum_{j \neq y_i} max(0,s_j - s_{y_i} + \Delta)$ \Rightarrow Richtige Klasse muss um mindestens Delta größer sein, als alle anderen Klassen
-%\item \textbf{Softmax-Loss} $L_i = -\log(\frac{e^{s_{y_i}}}{\sum_{j} e^{s_j}})$ \Rightarrow Minimieren der negativen logarithmischen Wahrscheinlichkeit für die korrekte Klasse
-%\end{itemize}
+\begin{itemize}
+\item \textbf{Hinge-Loss} $L_i = \sum\limits_{j \neq y_i} max(0,s_j - s_{y_i} + \Delta) \Rightarrow$ Richtige Klasse muss um mindestens Delta größer sein, als alle anderen Klassen
+\item \textbf{Softmax-Loss} $L_i = -\log(\frac{e^{s_{y_i}}}{\sum_{j} e^{s_j}}) \Rightarrow$ Minimieren der negativen logarithmischen Wahrscheinlichkeit für die korrekte Klasse
+\end{itemize}
 
 Der gesamte Loss eines Optimierungsproblems besteht jedoch nicht nur aus dem oben genannten Datenloss, sondern des Weiteren aus dem Regularisierungs-Loss.
 
@@ -470,7 +471,7 @@ Diese Aktivierungsfunktion nennt sich auch Sigmoidfunktion. Sie transformiert re
 
 Das Ergebnis von $f(x,w)$ mit $w = (2,-1,-3)$ und $x = (-1,-2)$ ist $0.73$. Die Ableitung von  $\frac{1}{x}$ ist $-\frac{1}{x^2}$. Anschließend rechnet man $-\frac{1}{1.37^2}\cdot 1 = -0.53$. Die Ableitung von $x+1$ ist $1$. Also rechnet man $1\cdot -0.53=-0.53$. Die Ableitung von $e^x$ ist $e^x$. Man rechnet $e^{-1}\cdot 0.53=-0.2$. Diese Vorgehensweise entspricht der Anwendung der Kettenregel. Fährt man fort, erhält man Gewichtsänderungen $W_{exch}=(-0.2,-0.4,0.2)$. Diese Änderungen subtrahiert man von den alten Gewichten mit einem Parameter $step$: $W \minuseq step \cdot W_{exch}$. Dabei gibt Lernrate $step$ an, wie stark die Änderung der Gewichte ausfallen soll. Eine zu große Änderung kann bedeuten, dass man über das Minimum der Loss-Funktion hinaus springt. Sind die Änderungen zu klein, so muss der Gradient oft berechnet werden, was sehr lange dauern kann. Das Ergebnis der Score-Funktion für $W' = (1.8,-3.4,-2.8)$ ist $0.9$. Das Netzwerk klassifiziert nun also besser.\\
 \bigskip
-Neben der Sigmoidfunktion gibt es noch viele andere Aktivierungsfunktionen. So hat die Maximumsfunktion (Rectifier Linear Unit - ReLU) gegenüber der Sigmoidfunktion den Vorteil, dass bei relativ hohen Werten nicht alle Neuronen aktiviert werden und es somit weiterhin zu einem Lerneffekt kommt. Ein weiterer Vorteil des Recitifiert ist die schnellere Konvergenz des Gradienten. So stellt sich bereits nach wenigen Trainings ein starker Lerneffekt ein. Sind die gewichte jedoch zu Beginn sehr klein, so ist die Gefahr groß, dass bei einer weiteren Verkleinerung alle Neuronen deaktiviert werden.
+Neben der Sigmoidfunktion gibt es noch viele andere Aktivierungsfunktionen. So hat die Maximumsfunktion (Rectifier Linear Unit - ReLU) gegenüber der Sigmoidfunktion den Vorteil, dass bei relativ hohen Werten nicht alle Neuronen aktiviert werden und es somit weiterhin zu einem Lerneffekt kommt. Ein weiterer Vorteil des Rectifiert ist die schnellere Konvergenz des Gradienten. So stellt sich bereits nach wenigen Trainings ein starker Lerneffekt ein. Sind die gewichte jedoch zu Beginn sehr klein, so ist die Gefahr groß, dass bei einer weiteren Verkleinerung alle Neuronen deaktiviert werden.
 
 \begin{figure}[h]
 \centering
@@ -787,7 +788,85 @@ Durch abwechselnde Berechnung von Zugehörigkeiten $P(C_i|x)$ und Schätzung neu
 $$E(M) = log(\prod_{x \in D} P(x))$$
 
 Wobei $M$ die Menge aller Cluster ist: $M = \{C_1, \dots, C_k\}$. Die Optimierung wird abgebrochen, wenn $E(M)-E(M')<\epsilon$, das Gütemaß also nicht mehr in ausreichendem Maße kleiner wird.
-\subsection{Dichtebasierte Verfahren}
+
+\subsection{Silhouettenkoeffizient - Wahl der Clusteranzahl}
+Beide vorgestellten Varianten haben die Eigenschaft, das Gütemaß für größere Werte des Parameters $k$ immer weiter zu verbessern. Das Optimum wird erreicht, wenn jedes Datenobjekt genau einen Cluster darstellt, dessen Repräsentant das Datum selbst ist. Um dies zu vermeiden, braucht es ein Gütemaß, welches das Clustering unabhängig von der gewählten Clusteranzahl bewertet. Dieses Gütemaß ist der Silhouettenkoeffizient \cite{silh}.\\
+Sei $dist(o,C_i)$ der Abstand eines Punktes $o$ von Cluster $C_i$, also der gemittelte Abstand zwischen $o$ und allen Punkten im Cluster $C_i$. Sei $a(o)$ der Abstand von o zum Cluster, dem $o$ zugeordnet ist und $b(o)$ der Abstand zwischen $o$ und dem nächstgelegenen Cluster (nicht der Cluster, der in $a(o)$ betrachtet wird!).
+Dann ist die Silhouette eines Objekts $o$o:
+\begin{equation}
+   s(o) =
+   \begin{cases}
+     0 & \text{wenn } a(o) = 0\\
+     \frac{b(o) - a(o)}{max\{a(o), b(o)\}} & \text{sonst} \\
+   \end{cases}
+\end{equation}
+
+Ist der Wert $s(o) = 1$, dann wurde $o$ seinem Cluster korrekt zugeordnet, ist $s(o) = -1$, dann ist die Zuordnung sehr schlecht.
+
+Der Silhouettenkoeffizient ist dann die durchschnittliche Silhouette aller Datenobjekte aller Cluster des Clusterings $C_M = \{C_1, \dots, C_k\}$:
+$$s(C_M) = \frac{\sum\limits_{C \in C_M} \sum\limits_{o \in C} s(o)} {|O|}$$
+
+Der Koeffizient nimmt Werte zwischen $0$ und $1$ an, wobei Werte über 0.75 darauf hindeuten, dass eine sehr gute Zuordnung gefunden wurde. Werte unter 0.25 deuten auf ein unbrauchbares Clustering hin.
+
+Die optimale Clusteranzahl $k$ kann jetzt bestimmt werden, indem der Silhouettenkoeffizient für verschiedene Clusterings $k = 2, \dots, n-1$ berechnet wird, und dann der Wert $k$ ausgewählt wird, für den der Koeffizient den höchsten Wert hat.
+
+
+\subsection{OPTICS - Dichtebasiertes Clustering}
+Der bedeutendste dichtebasierte Clusteringalgorithmus ist das DBSCAN-Verfahren. Es ist neben seiner Abwandlungen und Optimierungen (OPTICS und HDBSCAN) in vielen Geoinformationssystemen, wie z.B. arcGIS implementiert\footnote{http://pro.arcgis.com/de/pro-app/tool-reference/spatial-statistics/densitybasedclustering.htm}. 
+
+DBSCAN nimmt an, dass Cluster Punktregionen mit höherer Dichte sind, die durch Regionen mit geringerer Dichte (Noise) voneinander getrennt werden. Es kann ausschließlich Cluster desselben Dichteniveaus erkennen. Seine Optimierung OPTICS, welches als hierarchisches dichtebasiertes Clusteringverfahren zählt, kann dagegen auch unterschiedlich dichte Cluster und Subcluster erkennen.
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.18]{dbscanprob.png}
+\caption{Probleme von DBSCAN bei Erkennung von Clustern mit unterschiedlicher Dichte}\label{cluster}
+\end{figure}
+
+\subsubsection{Erreichbarkeitseigenschaften \cite{dbscan}}
+Die \textbf{$\epsilon$-Nachbarschaft} $N_\epsilon(p,\epsilon)$ ist die Menge aller Punkte, welche maximal $\epsilon$ Einheiten von $p$ entfernt sind.
+ 
+Ein Punkt heißt \textbf{Kernobjekt}, wenn die Anzahl der Objekte in der $\epsilon$-Nachbarschaft mindestens $minPts$ beträgt, wobei $\epsilon$ und $minPts$ feste Werte sind, die dem Algorithmus initial übergeben werden.
+
+\begin{minipage}{0.6\textwidth}\raggedright
+Ein Objekt $o$ ist \textbf{direkt-dichte-erreichbar}, wenn es in der $\epsilon$-Nachbarschaft von $p$ liegt und $p$ ein Kernobjekt ist.
+\end{minipage}
+\hfill
+\begin{minipage}{0.3\textwidth}
+\includegraphics[width=\linewidth]{neps.png}
+\end{minipage}
+
+
+\begin{minipage}{0.6\textwidth}\raggedright
+Ein Objekt $q$ ist \textbf{dichte-erreichbar}, wenn es eine Kette von direkt-dichte-erreichbaren Objekten von $p$ nach $q$ gibt.
+\end{minipage}
+\hfill
+\begin{minipage}{0.3\textwidth}
+\includegraphics[width=\linewidth]{dichteerreichbar.png}
+\end{minipage}
+
+\begin{minipage}{0.6\textwidth}\raggedright
+Zwei Objekte $p$ und $q$ sind \textbf{dichte-verbunden}, wenn es einen gemeinsamen Punkt $o$ gibt, von dem aus sowohl $p$ als auch $q$ dichte-erreichbar ist.
+\end{minipage}
+\hfill
+\begin{minipage}{0.3\textwidth}
+\includegraphics[width=\linewidth]{dichteverbunden.png}
+\end{minipage}
+\\~\\
+Im Folgenden beschränke ich mich auf die hierarchische Variante des DBSCAN-Algorithmus, da Sie in der Praxis besonders auf Geodatensätzen bessere Ergebnisse erzielt und das Problem aus Abbildung 4.4 löst. 
+
+\subsubsection{Erweiterte Grundbegriffe}~
+\begin{minipage}{0.50\textwidth}\raggedright
+Die Kerndistanz $kd_{\epsilon, minPts}(o)$ ist genau dann definiert, wenn $o$ ein Kernobjekt ist, also in der $\epsilon$-Nachbarschaft mindestens $minPts$ Punkte liegen. Sie entspricht dann dem kleinsten Radius um $o$, der erforderlich ist, um $minPts$ Punkte einzuschließen.\\~\\
+
+Die Erreichbarkeitsdistanz $rd_{\epsilon, minPts}(p ,o)$ ist genau dann definiert, wenn $o$ ein Kernobjekt ist. Sie entspricht dann der Kerndistanz von $o$, aber mindestens dem Abstand zwischen $p$ und $o$.
+\end{minipage}
+\hfill
+\begin{minipage}{0.45\textwidth}
+\includegraphics[width=\linewidth]{kdrd.png}
+\end{minipage}
+\\
+
+
 \subsection{Hierarchische Verfahren}
 \subsection{Lineare Separation - Support Vector Machine}
 %Siehe auch Kapitel 13 Geoinf. zu Delaunay Triangulation!

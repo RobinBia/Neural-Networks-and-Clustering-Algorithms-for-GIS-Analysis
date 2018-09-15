@@ -1983,6 +1983,8 @@
     <bcf:citekey order="9">kmplus</bcf:citekey>
     <bcf:citekey order="10">forgy</bcf:citekey>
     <bcf:citekey order="11">emalg</bcf:citekey>
+    <bcf:citekey order="12">silh</bcf:citekey>
+    <bcf:citekey order="13">dbscan</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nyt">

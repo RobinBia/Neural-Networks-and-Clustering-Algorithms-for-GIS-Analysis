@@ -85,6 +85,78 @@
       \field{pages}{1\bibrangedash 38}
       \range{pages}{38}
     \endentry
+    \entry{silh}{book}{}
+      \name{author}{2}{}{%
+        {{hash=2c062e64ed26aacc08a62155e7944f04}{%
+           family={Ester},
+           familyi={E\bibinitperiod},
+           given={Martin},
+           giveni={M\bibinitperiod}}}%
+        {{hash=802157026f850823b2027c2100cb359a}{%
+           family={Sander},
+           familyi={S\bibinitperiod},
+           given={Jörg},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{3dc29aa7eaba59891f3c776e3ffafb76}
+      \strng{fullhash}{3dc29aa7eaba59891f3c776e3ffafb76}
+      \strng{bibnamehash}{3dc29aa7eaba59891f3c776e3ffafb76}
+      \strng{authorbibnamehash}{3dc29aa7eaba59891f3c776e3ffafb76}
+      \strng{authornamehash}{3dc29aa7eaba59891f3c776e3ffafb76}
+      \strng{authorfullhash}{3dc29aa7eaba59891f3c776e3ffafb76}
+      \field{labelalpha}{ES00}
+      \field{sortinit}{E}
+      \field{sortinithash}{f615fb9c6fba11c6f962fb3fd599810e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Knowledge Discovery in Databases: Techniken und Anwendungen}
+      \field{year}{2000}
+      \field{pages}{66}
+      \range{pages}{1}
+    \endentry
+    \entry{dbscan}{report}{}
+      \name{author}{4}{}{%
+        {{hash=2c062e64ed26aacc08a62155e7944f04}{%
+           family={Ester},
+           familyi={E\bibinitperiod},
+           given={Martin},
+           giveni={M\bibinitperiod}}}%
+        {{hash=9559fe65ed2c0877cf14a66fe1f8e9b3}{%
+           family={Kriegel},
+           familyi={K\bibinitperiod},
+           given={Hans-Peter},
+           giveni={H\bibinithyphendelim P\bibinitperiod}}}%
+        {{hash=0c3f9bc58fca8a95065837b006845f21}{%
+           family={Sander},
+           familyi={S\bibinitperiod},
+           given={Jiirg},
+           giveni={J\bibinitperiod}}}%
+        {{hash=2dda16c0a5d50fc830d0d4a3787937fa}{%
+           family={Xu},
+           familyi={X\bibinitperiod},
+           given={Xiaowei},
+           giveni={X\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {Institute for Computer Science, University of Munich}%
+      }
+      \strng{namehash}{9158a41d23cb4e154e78366d59c05728}
+      \strng{fullhash}{fc75d11960c884c810a0144f8dc39c66}
+      \strng{bibnamehash}{9158a41d23cb4e154e78366d59c05728}
+      \strng{authorbibnamehash}{9158a41d23cb4e154e78366d59c05728}
+      \strng{authornamehash}{9158a41d23cb4e154e78366d59c05728}
+      \strng{authorfullhash}{fc75d11960c884c810a0144f8dc39c66}
+      \field{labelalpha}{Est+96}
+      \field{sortinit}{E}
+      \field{sortinithash}{f615fb9c6fba11c6f962fb3fd599810e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{A Density-Based Algorithm for Discovering Clusters}
+      \field{year}{1996}
+    \endentry
     \entry{kddmod}{misc}{}
       \name{author}{3}{}{%
         {{hash=b42d184c7549161c8fe0c2d53decab94}{%
