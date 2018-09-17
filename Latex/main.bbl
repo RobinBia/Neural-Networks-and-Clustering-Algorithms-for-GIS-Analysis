@@ -19,6 +19,46 @@
 
 \refsection{0}
   \datalist[entry]{nyt/global//global/global}
+    \entry{optics}{report}{}
+      \name{author}{4}{}{%
+        {{hash=30218301c8db6744d898cf2fbef485e7}{%
+           family={Ankerst},
+           familyi={A\bibinitperiod},
+           given={Mihael},
+           giveni={M\bibinitperiod}}}%
+        {{hash=7cd6731b5fcf9523f85d9609863b7b0b}{%
+           family={Breunig},
+           familyi={B\bibinitperiod},
+           given={Markus\bibnamedelima M.},
+           giveni={M\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=9559fe65ed2c0877cf14a66fe1f8e9b3}{%
+           family={Kriegel},
+           familyi={K\bibinitperiod},
+           given={Hans-Peter},
+           giveni={H\bibinithyphendelim P\bibinitperiod}}}%
+        {{hash=802157026f850823b2027c2100cb359a}{%
+           family={Sander},
+           familyi={S\bibinitperiod},
+           given={Jörg},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {Institute for Computer Science, University of Munich}%
+      }
+      \strng{namehash}{353216c878e06e428094c446e94c76c7}
+      \strng{fullhash}{05f657a4bf82f91159c0dd881497782c}
+      \strng{bibnamehash}{353216c878e06e428094c446e94c76c7}
+      \strng{authorbibnamehash}{353216c878e06e428094c446e94c76c7}
+      \strng{authornamehash}{353216c878e06e428094c446e94c76c7}
+      \strng{authorfullhash}{05f657a4bf82f91159c0dd881497782c}
+      \field{labelalpha}{Ank+99}
+      \field{sortinit}{A}
+      \field{sortinithash}{d77c7cdd82ff690d4c3ef13216f92f0b}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{OPTICS: Ordering Points To Identify the Clustering Structure}
+      \field{year}{1999}
+    \endentry
     \entry{kmplus}{report}{}
       \name{author}{2}{}{%
         {{hash=9490d5d9532dc965f9f300a7a5c9fa13}{%

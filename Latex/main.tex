@@ -1,6 +1,15 @@
 \documentclass[11pt,fleqn]{book} 
 \usepackage[export]{adjustbox}
 \usepackage[top=3cm,bottom=3cm,left=3.2cm,right=3.2cm,headsep=10pt,letterpaper]{geometry} 
+\usepackage{listings}
+\lstset{
+  basicstyle=\ttfamily,
+  columns=fullflexible,
+  tabsize=2,
+  numbers=left,
+  literate={\ \ }{{\ }}1
+}
+\usepackage{pythonhighlight}
 \usepackage{float}
 \usepackage{xcolor}
 \usepackage{url}
@@ -812,7 +821,7 @@ Die optimale Clusteranzahl $k$ kann jetzt bestimmt werden, indem der Silhouetten
 
 
 \subsection{OPTICS - Dichtebasiertes Clustering}
-Der bedeutendste dichtebasierte Clusteringalgorithmus ist das DBSCAN-Verfahren. Es ist neben seiner Abwandlungen und Optimierungen (OPTICS und HDBSCAN) in vielen Geoinformationssystemen, wie z.B. arcGIS implementiert\footnote{http://pro.arcgis.com/de/pro-app/tool-reference/spatial-statistics/densitybasedclustering.htm}. 
+Eines der bedeutendsten Clusteringalgorithmen ist das dichtebasierte DBSCAN-Verfahren. Es ist neben seiner Abwandlungen und Optimierungen (OPTICS und HDBSCAN) in vielen Geoinformationssystemen, wie z.B. arcGIS implementiert\footnote{http://pro.arcgis.com/de/pro-app/tool-reference/spatial-statistics/densitybasedclustering.htm}. 
 
 DBSCAN nimmt an, dass Cluster Punktregionen mit höherer Dichte sind, die durch Regionen mit geringerer Dichte (Noise) voneinander getrennt werden. Es kann ausschließlich Cluster desselben Dichteniveaus erkennen. Seine Optimierung OPTICS, welches als hierarchisches dichtebasiertes Clusteringverfahren zählt, kann dagegen auch unterschiedlich dichte Cluster und Subcluster erkennen.
 
@@ -823,9 +832,9 @@ DBSCAN nimmt an, dass Cluster Punktregionen mit höherer Dichte sind, die durch 
 \end{figure}
 
 \subsubsection{Erreichbarkeitseigenschaften \cite{dbscan}}
-Die \textbf{$\epsilon$-Nachbarschaft} $N_\epsilon(p,\epsilon)$ ist die Menge aller Punkte, welche maximal $\epsilon$ Einheiten von $p$ entfernt sind.
+Die \textbf{$\epsilon$-Nachbarschaft} $N_\epsilon(p)$ ist die Menge aller Punkte, welche maximal $\epsilon$ Einheiten von $p$ entfernt sind.
  
-Ein Punkt heißt \textbf{Kernobjekt}, wenn die Anzahl der Objekte in der $\epsilon$-Nachbarschaft mindestens $minPts$ beträgt, wobei $\epsilon$ und $minPts$ feste Werte sind, die dem Algorithmus initial übergeben werden.
+Ein Punkt heißt \textbf{Kernobjekt}, wenn die Anzahl der Objekte in der $\epsilon$-Nachbarschaft mindestens $minPts$ beträgt, wobei $\epsilon$ und $minPts$ feste Werte sind, die dem Algorithmus initial übergeben werden. Sie spezifizieren zusammen die Grenzdichte eines Clusters.
 
 \begin{minipage}{0.6\textwidth}\raggedright
 Ein Objekt $o$ ist \textbf{direkt-dichte-erreichbar}, wenn es in der $\epsilon$-Nachbarschaft von $p$ liegt und $p$ ein Kernobjekt ist.
@@ -865,7 +874,124 @@ Die Erreichbarkeitsdistanz $rd_{\epsilon, minPts}(p ,o)$ ist genau dann definier
 \includegraphics[width=\linewidth]{kdrd.png}
 \end{minipage}
 \\
+Der OPTICS(Ordering Points To Identify the Clustering Structure)-Algorithmus \cite{optics} liefert bezüglich der Parameter $\epsilon$ und $minPts$ eine Ordnung von Clustern in Form eines Erreichbarkeitsdiagramms. Dazu werden die Punkte so sortiert, dass ein nachfolgender Punkt im Diagramm zur Menge der bereits besuchten Objekte die kleinste Erreichbarkeitsdistanz besitzt.
 
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.3]{reachdiag.png}
+\caption{Erreichbarkeitsdiagramm (OrderedFile) nach Ausführung des OPTICS-Algorithmus\protect\footnotemark}
+\end{figure}
+\footnotetext{\url{http://www-old.dbs.ifi.lmu.de/Lehre/KDD/WS0708/skript/kdd-5-clustering_02.pdf}}
+
+\subsubsection{OPTICS-Algorithmus}
+
+Die äußere Schleife iteriert über jedes Objekt der Datenmenge $D$, welches noch nicht als Bearbeitet markiert wurde und ruft ExpandClusterOrder auf. Die Öffnung und Schließung des OrderedFiles dient dem Erstellen des Erreichbarkeitsdiagramms.
+\begin{minipage}{\linewidth} %Vermeidung von Seitenumbruch! 
+\begin{lstlisting}[frame=single,mathescape=true]
+OPTICS(Objektmenge D, Real $\epsilon$, Integer MinPts, OutputFile OrderedFile)
+	OrderedFile.open();
+	for i from 1 to D.size() do
+		Objekt := D.get(i);
+	if not Objekt.Bearbeitet then
+		ExpandiereClusterOrder(D, Objekt, $\epsilon$, MinPts, OrderedFile);
+OrderedFile.close();
+\end{lstlisting}
+\end{minipage}
+
+
+\textit{ExpandClusterOrder} ist der eigentliche Algorithmus. Er bestimmt für den aktuell betrachteten Datenpunkt $O$ die $\epsilon$-Nachbarschaft und Kerndistanz, markiert $O$ als bearbeitet und fügt es dem Erreichbarkeitsdiagramm hinzu. Die zuvor definierte Undefinierteit der Erreichbarkeit des ersten Punktes im \textit{ExpandClusterOrder} wird als maximaler Wert (z.B. $\infty$)interpretiert.
+Wenn $O$ ein Kernobjekt ist, wird $update(Nachbarn, O)$ aufgerufen. Das bedeutet, dass auf der sogenannten Seeds-Liste, einer Pufferdatei, in welcher die Nachbarn des Zentrumsobjekt für Ihre Abarbeitung vorsortiert werden, operiert wird. Alle $\epsilon$-Nachbarn von $O$ werden dieser Liste hinzugefügt, sofern sie noch nicht enthalten sind und aufsteigend nach ihrer Erreichbarkeitsdistanz zu $O$ sortiert. Ist ein Nachbar schon enthalten, so wird sein Erreichbarkeitswert aktualisiert, wenn die neue Erreichbarkeitsdistanz kleiner ist als die Vorherige.
+Anschließend wird über eine innere Schleife iteriert. Hier werden alle Objekte der Pufferdatei ähnlich wie das Zentrumsobjekt abgearbeitet, bis kein Element mehr übrig ist. Wird \textit{ExpandClusterOrder} verlassen, kann kein weiteres Objekt dem aktuellen Cluster zugeordnet werden und der Algorithmus wird mit einem zufälligen anderen Objekt fortgesetzt, das noch nicht bearbeitet wurde. Anschließend wird auch dessen Cluster expandiert.
+
+\begin{minipage}{\linewidth}
+\begin{lstlisting}[frame=single,mathescape=true]
+ExpandClusterOrder(Objektmenge D, Objekt O, 
+		Real $\epsilon$, Integer MinPts, OutputFile OrderedFile):
+	Nachbarn:= D.bestimmeNachbarschaft(O, $\epsilon$);
+	O.Erreichbarkeitsdistanz:= UNDEFINIERT;
+	O.setzeKerndistanz(Nachbarn, $\epsilon$, MinPts);
+	O.Bearbeitet:= TRUE;
+	OrderedFile.write(o);
+	if O.Kerndistanz $\neq$ UNDEFINIERT then // Objekt O ist Kernobjekt
+		OrderSeeds.update(Nachbarn, O);
+		while OrderSeeds $\neq$ $\emptyset$ do
+			aktObjekt := OrderSeeds.next();
+			Nachbarn := D.bestimmeNachbarschaft(aktObjekt, eps);
+			aktObjekt.setzeKerndistanz(Nachbarn, eps, MinPts);
+			aktObjekt.Bearbeitet := TRUE;
+			OrderedFile.write(aktObjekt);
+			if aktObjekt.Kerndistanz $\neq$ UNDEFINIERT then
+				OrderSeeds.update(Nachbarn, aktObjekt)
+\end{lstlisting}
+\end{minipage}
+
+\begin{minipage}{\linewidth}
+\begin{lstlisting}[frame=single,mathescape=true]
+OrderSeeds :: update(Nachbarn, ZentrumsObjekt):
+	c_dist := ZentrumsObjekt.Kerndistanz;
+		for each Objekt from Nachbarn do
+			if not Objekt.Bearbeitet then
+				new r_dist := max(c_dist, ZentrumsObjekt.dist(Objekt));
+				if Objekt.Erreichbarkeitsdistanz == UNDEFINIERT then
+					Objekt.Erreichbarkeitsdistanz := new r_dist;
+					insert(Objekt, new r_dist);
+				else // Objekt ist schon in OrderSeeds enthalten
+					if new_r_dist < Objekt.Erreichbarkeitsdistanz then
+						Objekt.Erreichbarkeitsdistanz := new r_dist;
+						decrease(Objekt, new r_dist);
+\end{lstlisting}
+\end{minipage}
+\\~\\
+Es folgt eine Erklärung des Algorithmus in Form eines Beispiels:
+
+Sei $\epsilon = 44$ und $minPts = 3$. Die betrachtete Datenbank hat 16 zweidimensionale Punkte (von A - H). Zu Beginn sind alle Objekte unbearbeitet und das Erreichbarkeitsdiagramm ist leer. 
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.15]{opt1.jpg}
+\end{figure}
+Sei $A$ der erste Punkt. Die Erreichbarkeitsdistanz ist somit undefiniert. Die Kerndistanz ist definiert, da innerhalb des Radius $44$ die $minPts = 3$ Punkte $A$, $B$ und $I$ liegen. Die Kerndistanz von $A$ ist die Distanz zum am weitesten entfernten Punkte in der $\epsilon$-Nachbarschaft, also $40$. Jetzt wird der Punkt $A$ dem Erreichbarkeitsdiagramm mit dem Wert $\infty$ hinzugefügt und als bearbeitet markiert. Anschließend werden alle $\epsilon$-Nachbarn von $A$ inklusive ihrer Erreichbarkeitsdistanzen der Seeds-Liste hinzugefügt (Zeile 9, \textit{ExpandClusterOrder} erreicht).
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.15]{opt2.jpg}
+\end{figure}
+Im nächsten Schritt (Zeile 10) wird über alle Objekte der Seeds-Liste iteriert. Das vorderste Objekt ist der Punkt $B$, in dessen $\epsilon$-Nachbarschaft wieder drei Punkte liegen ($A$, $B$ und $C$). Also ist auch $B$ ein Kernobjekt und die Kerndistanz lautet $40$. Nun wird Punkt $B$ als bearbeitet markiert und seine Erreichbarkeit dem Diagramm hinzugefügt. Da das Objekt $C$ noch nicht in der Seeds-Liste ist, wird es hinzugefügt.
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.15]{opt3.jpg}
+\end{figure}
+Das nächste Objekt der Seeds-Liste ist der Punkt $I$. Auch dieser ist wieder ein Kernobjekt und hat 7 Punkte in seiner $\epsilon$-Nachbarschaft. Davon werden $K$, $J$, $M$, $L$ und $R$ der Seeds-Liste hinzugefügt.
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.15]{opt4.jpg}
+\end{figure}
+
+Der Algorithmus setzt sich fort, bis ein Objekt bearbeitet wurde, für welches keine weiteren unbearbeiteten $\epsilon$-Nachbarn hinzugefügt werden konnte. In diesem Fall kommt es zu einem Peak im Erreichbarkeitsdiagramm, welcher den Beginn eines Subclusters kennzeichnet. Wird die Seeds-Liste leer und muss die äußere Schleife einen neuen zufälligen Startpunkt auswählen, beginnt ein neuer Cluster. 
+In diesem Fall jedoch wird die innere Schleife fortgesetzt, da das Objekt $C$ noch in der Seeds-Liste steht.
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.15]{opt5.jpg}
+\end{figure}
+Da $C$ ein Kernpunkt ist, werden dessen $\epsilon$-Nachbarn $D$, $F$, $E$ und $G$ der Seeds-Liste hinzugefügt. 
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.15]{opt6.jpg}
+\end{figure}
+Der Algorithmus setzt sich fort, bis es kein unbearbeitetes Objekt mehr gibt.
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.15]{opt7.jpg}
+\end{figure}
+Im Diagramm können nun Cluster und Subcluster verschiedener Dichte, also verschiedener Erreichbarkeitsdistanzniveaus abgelesen oder algorithmisch extrahiert werden. Dazu werden Teilsequenzen gesucht, welche in einem Gebiet steil abfallender Erreichbarkeitsdistanzen beginnen und in einem Gebiet steil ansteigender Erreichbarkeitsdistanzen enden, sodass der Endpunkt in etwa die gleiche Erreichbarkeitsdistanz besitzt, wie der Startpunkt. Enthält die Teilsequenz mindestens $minPts$-viele Punkte, so kann sie als Cluster interpretiert werden. 
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.15]{opt8.jpg}
+\end{figure}
+
+\subsubsection{Wahl der Parameter $\epsilon$ und $minPts$}
+Die Wahl der Parameter $\epsilon$ und $minPts$ sollte so erfolgen, dass die Cluster im Diagramm vertikal zentriert sind. Es dürfen also nur wenige Erreichbarkeitsdistanzen $\infty$ sein. Außerdem darf die Varianz der Erreichbarkeitsdistanzen zwischen zwei benachbarten Punkten nicht zu groß werden. Um dies zu garantieren, wird $\epsilon$ entweder so gewählt, dass die $minPts$-Eigenschaft bezüglich einer kleinen Punktestrichprobe immer erfüllt ist oder es wird die durchschnittliche $minPts$-Distanz berechnet. Es wird also diejenige $\epsilon$-Distanz gewählt, welche im Durchschnitt von allen Punkten aus $minPts$-viele Punkte einschließt.
+Der Wert für $minPts$ muss in Abhängigkeit der Größe des Datensatzes gewählt werden. Je feiner die Auflösung der Datenbank, desto größer muss der Wert sein.
+
+\subsubsection{Algorithmische Extraktion von Clustern}
 
 \subsection{Hierarchische Verfahren}
 \subsection{Lineare Separation - Support Vector Machine}

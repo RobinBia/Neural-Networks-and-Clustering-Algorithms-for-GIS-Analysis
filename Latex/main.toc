@@ -99,39 +99,45 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsubsection}{Erweiterte Grundbegriffe}{41}{section*.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.2.4}Hierarchische Verfahren}{41}{subsection.4.2.4}
+\contentsline {subsubsection}{OPTICS-Algorithmus}{41}{section*.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.2.5}Lineare Separation - Support Vector Machine}{41}{subsection.4.2.5}
+\contentsline {subsubsection}{Wahl der Parameter $\epsilon $ und $minPts$}{46}{section*.8}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.2.6}Outlier Detection}{41}{subsection.4.2.6}
+\contentsline {subsubsection}{Algorithmische Extraktion von Clustern}{46}{section*.9}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.3}Weiche Methoden - Fuzzy-Clustering}{41}{section.4.3}
+\contentsline {subsection}{\numberline {4.2.4}Hierarchische Verfahren}{46}{subsection.4.2.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.3.1}Probabilistisches und Possibilistisches Clustering}{41}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.2.5}Lineare Separation - Support Vector Machine}{46}{subsection.4.2.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{FCM und PFCM}{41}{section*.7}
+\contentsline {subsection}{\numberline {4.2.6}Outlier Detection}{46}{subsection.4.2.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Vorraussetzungen f\IeC {\"u}r die Anwendung auf Geodaten}{41}{section*.8}
+\contentsline {section}{\numberline {4.3}Weiche Methoden - Fuzzy-Clustering}{46}{section.4.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Eigener Algoritmus (noch ohne Name)}{41}{section*.9}
+\contentsline {subsection}{\numberline {4.3.1}Probabilistisches und Possibilistisches Clustering}{46}{subsection.4.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.4}CVI}{41}{section.4.4}
+\contentsline {subsubsection}{FCM und PFCM}{46}{section*.10}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.4.1}NPC}{41}{subsection.4.4.1}
+\contentsline {subsubsection}{Vorraussetzungen f\IeC {\"u}r die Anwendung auf Geodaten}{46}{section*.11}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.4.2}FHV}{41}{subsection.4.4.2}
+\contentsline {subsubsection}{Eigener Algoritmus (noch ohne Name)}{46}{section*.12}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.4.3}Otsu-Binarisierung}{41}{subsection.4.4.3}
+\contentsline {section}{\numberline {4.4}CVI}{46}{section.4.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.4.4}VAT-Algorithmus}{41}{subsection.4.4.4}
+\contentsline {subsection}{\numberline {4.4.1}NPC}{46}{subsection.4.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.5}Clustering auf unvollst\IeC {\"a}ndigen Daten}{41}{section.4.5}
+\contentsline {subsection}{\numberline {4.4.2}FHV}{46}{subsection.4.4.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.6}Assoziationsregeln}{41}{section.4.6}
+\contentsline {subsection}{\numberline {4.4.3}Otsu-Binarisierung}{46}{subsection.4.4.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.7}Einsatz in der Praxis und Software-Tools}{41}{section.4.7}
+\contentsline {subsection}{\numberline {4.4.4}VAT-Algorithmus}{46}{subsection.4.4.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {5}Fazit und Ausblick}{43}{chapter.5}
+\contentsline {section}{\numberline {4.5}Clustering auf unvollst\IeC {\"a}ndigen Daten}{46}{section.4.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.1}Ausblick - Mein Thema f\IeC {\"u}r die Masterarbeit}{43}{section.5.1}
+\contentsline {section}{\numberline {4.6}Assoziationsregeln}{46}{section.4.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.7}Einsatz in der Praxis und Software-Tools}{46}{section.4.7}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {5}Fazit und Ausblick}{47}{chapter.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.1}Ausblick - Mein Thema f\IeC {\"u}r die Masterarbeit}{47}{section.5.1}
 \contentsfinish 
