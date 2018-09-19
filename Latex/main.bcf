@@ -1986,6 +1986,8 @@
     <bcf:citekey order="12">silh</bcf:citekey>
     <bcf:citekey order="13">dbscan</bcf:citekey>
     <bcf:citekey order="14">optics</bcf:citekey>
+    <bcf:citekey order="15">svmingeo</bcf:citekey>
+    <bcf:citekey order="16">svm</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nyt">

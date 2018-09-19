@@ -42,18 +42,17 @@
 \BOOKMARK [2][-]{subsection.4.2.1}{Partitionierende Verfahren und ihre Nachteile}{section.4.2}% 42
 \BOOKMARK [2][-]{subsection.4.2.2}{Silhouettenkoeffizient - Wahl der Clusteranzahl}{section.4.2}% 43
 \BOOKMARK [2][-]{subsection.4.2.3}{OPTICS - Dichtebasiertes Clustering}{section.4.2}% 44
-\BOOKMARK [2][-]{subsection.4.2.4}{Hierarchische Verfahren}{section.4.2}% 45
-\BOOKMARK [2][-]{subsection.4.2.5}{Lineare Separation - Support Vector Machine}{section.4.2}% 46
-\BOOKMARK [2][-]{subsection.4.2.6}{Outlier Detection}{section.4.2}% 47
-\BOOKMARK [1][-]{section.4.3}{Weiche Methoden - Fuzzy-Clustering}{chapter.4}% 48
-\BOOKMARK [2][-]{subsection.4.3.1}{Probabilistisches und Possibilistisches Clustering}{section.4.3}% 49
-\BOOKMARK [1][-]{section.4.4}{CVI}{chapter.4}% 50
-\BOOKMARK [2][-]{subsection.4.4.1}{NPC}{section.4.4}% 51
-\BOOKMARK [2][-]{subsection.4.4.2}{FHV}{section.4.4}% 52
-\BOOKMARK [2][-]{subsection.4.4.3}{Otsu-Binarisierung}{section.4.4}% 53
-\BOOKMARK [2][-]{subsection.4.4.4}{VAT-Algorithmus}{section.4.4}% 54
-\BOOKMARK [1][-]{section.4.5}{Clustering auf unvollst\344ndigen Daten}{chapter.4}% 55
-\BOOKMARK [1][-]{section.4.6}{Assoziationsregeln}{chapter.4}% 56
-\BOOKMARK [1][-]{section.4.7}{Einsatz in der Praxis und Software-Tools}{chapter.4}% 57
-\BOOKMARK [0][-]{chapter.5}{Fazit und Ausblick}{}% 58
-\BOOKMARK [1][-]{section.5.1}{Ausblick - Mein Thema f\374r die Masterarbeit}{chapter.5}% 59
+\BOOKMARK [2][-]{subsection.4.2.4}{Lineare Separation - Support Vector Machine}{section.4.2}% 45
+\BOOKMARK [2][-]{subsection.4.2.5}{Outlier Detection - Local Outlier Factor}{section.4.2}% 46
+\BOOKMARK [1][-]{section.4.3}{Weiche Methoden - Fuzzy-Clustering}{chapter.4}% 47
+\BOOKMARK [2][-]{subsection.4.3.1}{Probabilistisches und Possibilistisches Clustering}{section.4.3}% 48
+\BOOKMARK [1][-]{section.4.4}{CVI}{chapter.4}% 49
+\BOOKMARK [2][-]{subsection.4.4.1}{NPC}{section.4.4}% 50
+\BOOKMARK [2][-]{subsection.4.4.2}{FHV}{section.4.4}% 51
+\BOOKMARK [2][-]{subsection.4.4.3}{Otsu-Binarisierung}{section.4.4}% 52
+\BOOKMARK [2][-]{subsection.4.4.4}{VAT-Algorithmus}{section.4.4}% 53
+\BOOKMARK [1][-]{section.4.5}{Clustering auf unvollst\344ndigen Daten}{chapter.4}% 54
+\BOOKMARK [1][-]{section.4.6}{Assoziationsregeln}{chapter.4}% 55
+\BOOKMARK [1][-]{section.4.7}{Einsatz in der Praxis und Software-Tools}{chapter.4}% 56
+\BOOKMARK [0][-]{chapter.5}{Fazit und Ausblick}{}% 57
+\BOOKMARK [1][-]{section.5.1}{Ausblick - Mein Thema f\374r die Masterarbeit}{chapter.5}% 58

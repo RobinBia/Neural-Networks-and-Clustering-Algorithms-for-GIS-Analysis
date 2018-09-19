@@ -89,6 +89,37 @@
       \field{title}{The Advantages of Careful Seeding}
       \field{year}{2006}
     \endentry
+    \entry{svm}{online}{}
+      \name{author}{1}{}{%
+        {{hash=a733ed51043ae7d8cf536b992b40420f}{%
+           family={Berwick},
+           familyi={B\bibinitperiod},
+           given={R.},
+           giveni={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{a733ed51043ae7d8cf536b992b40420f}
+      \strng{fullhash}{a733ed51043ae7d8cf536b992b40420f}
+      \strng{bibnamehash}{a733ed51043ae7d8cf536b992b40420f}
+      \strng{authorbibnamehash}{a733ed51043ae7d8cf536b992b40420f}
+      \strng{authornamehash}{a733ed51043ae7d8cf536b992b40420f}
+      \strng{authorfullhash}{a733ed51043ae7d8cf536b992b40420f}
+      \field{labelalpha}{Ber}
+      \field{sortinit}{B}
+      \field{sortinithash}{276475738cc058478c1677046f857703}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{An Idiot’s guide to Support vector machines (SVMs)}
+      \field{urlday}{19}
+      \field{urlmonth}{9}
+      \field{urlyear}{2018}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb http://web.mit.edu/6.034/wwwbob/svm-notes-long-08.pdf
+      \endverb
+      \verb{url}
+      \verb http://web.mit.edu/6.034/wwwbob/svm-notes-long-08.pdf
+      \endverb
+    \endentry
     \entry{emalg}{article}{}
       \name{author}{3}{}{%
         {{hash=fcdb1c86f0b69523d4c47f296045f9bf}{%
@@ -378,6 +409,42 @@
       \field{year}{2015}
       \field{pages}{3\bibrangedash 10}
       \range{pages}{8}
+    \endentry
+    \entry{svmingeo}{online}{}
+      \name{author}{2}{}{%
+        {{hash=f39693b9358b47a6d15c67571f4c0e5a}{%
+           family={Lazar},
+           familyi={L\bibinitperiod},
+           given={Alina},
+           giveni={A\bibinitperiod}}}%
+        {{hash=d3fb04a07b93fd04875c6991aa206686}{%
+           family={Shellito},
+           familyi={S\bibinitperiod},
+           given={Bradley\bibnamedelima A.},
+           giveni={B\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \strng{namehash}{a0b78a9c3c39b03e5cb80697bbc1e969}
+      \strng{fullhash}{a0b78a9c3c39b03e5cb80697bbc1e969}
+      \strng{bibnamehash}{a0b78a9c3c39b03e5cb80697bbc1e969}
+      \strng{authorbibnamehash}{a0b78a9c3c39b03e5cb80697bbc1e969}
+      \strng{authornamehash}{a0b78a9c3c39b03e5cb80697bbc1e969}
+      \strng{authorfullhash}{a0b78a9c3c39b03e5cb80697bbc1e969}
+      \field{labelalpha}{LS}
+      \field{sortinit}{L}
+      \field{sortinithash}{2c7981aaabc885868aba60f0c09ee20f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Classification in GIS Using Support Vector Machines}
+      \field{urlday}{19}
+      \field{urlmonth}{9}
+      \field{urlyear}{2018}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb http://www.irma-international.org/viewtitle/20393/
+      \endverb
+      \verb{url}
+      \verb http://www.irma-international.org/viewtitle/20393/
+      \endverb
     \endentry
     \entry{michell}{book}{}
       \name{author}{1}{}{%

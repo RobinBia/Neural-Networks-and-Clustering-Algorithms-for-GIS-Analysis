@@ -1,4 +1,4 @@
-\documentclass[11pt,fleqn]{book} 
+\documentclass[11pt,ceqn]{book} 
 \usepackage[export]{adjustbox}
 \usepackage[top=3cm,bottom=3cm,left=3.2cm,right=3.2cm,headsep=10pt,letterpaper]{geometry} 
 \usepackage{listings}
@@ -125,7 +125,7 @@ Ein geeignetes und weit verbreitetes Koordinatensystem zur verzerrungsarmen Dars
 
 \begin{figure}[h]
 \centering
-\includegraphics{gradnetz.jpg}
+\includegraphics[scale=0.8]{gradnetz.jpg}
 \caption{Das Gradnetz der Erde}\label{gradnetz}
 \end{figure}
 
@@ -991,12 +991,99 @@ Im Diagramm können nun Cluster und Subcluster verschiedener Dichte, also versch
 Die Wahl der Parameter $\epsilon$ und $minPts$ sollte so erfolgen, dass die Cluster im Diagramm vertikal zentriert sind. Es dürfen also nur wenige Erreichbarkeitsdistanzen $\infty$ sein. Außerdem darf die Varianz der Erreichbarkeitsdistanzen zwischen zwei benachbarten Punkten nicht zu groß werden. Um dies zu garantieren, wird $\epsilon$ entweder so gewählt, dass die $minPts$-Eigenschaft bezüglich einer kleinen Punktestrichprobe immer erfüllt ist oder es wird die durchschnittliche $minPts$-Distanz berechnet. Es wird also diejenige $\epsilon$-Distanz gewählt, welche im Durchschnitt von allen Punkten aus $minPts$-viele Punkte einschließt.
 Der Wert für $minPts$ muss in Abhängigkeit der Größe des Datensatzes gewählt werden. Je feiner die Auflösung der Datenbank, desto größer muss der Wert sein.
 
-\subsubsection{Algorithmische Extraktion von Clustern}
 
-\subsection{Hierarchische Verfahren}
+
 \subsection{Lineare Separation - Support Vector Machine}
-%Siehe auch Kapitel 13 Geoinf. zu Delaunay Triangulation!
-\subsection{Outlier Detection}
+Die Support Vector Machine ist ein Klassifikator für linear und nichtlinear separierbare Daten. Er kommt in Geoinformationssystemen häufig zum Einsatz, da er besonders robust gegenüber Rauschen und Variabilität raumbezogener Daten ist \cite{svmingeo}.
+
+Die Grundidee der SVM ist es, ähnlich der Klassifikatoren neuronaler Netze eine optimal separierende Hyperebene zu finden. Ist der Datensatz nicht linear separierbar, so kann er mittels Kernelfunktion in einen Raum transformiert werden, für den eine linear separierende Hyperebene gefunden werden kann \cite{svm}. \\
+
+Im Folgenden erkläre ich anhand eines Beispiels den zweidimensionalen Fall zur Berechnung der optimal separierenden Gerade.
+
+
+
+\begin{minipage}{0.4\textwidth}\raggedright
+Seien die roten und grünen Punkte in der Abbildung rechts die Objekte, welche den Klassen rot und grün zugehörig sind. Die Herausforderung ist jetzt, die Parameter der Gerade $H_0$ (y-Achsenabschnitt und Steigung) so zu bestimmen, dass der Abstand zu den Randpunkten der beiden Klassen maximal wird. Zur Vereinfachung werden zwei weitere Geraden durch die Randpunkte beider Klassen gelegt, welche parallel zueinander stehen ($H_1$ und $H_2$). Die optimal separierende Gerade ist dann der Median beider Randgeraden.
+\end{minipage}
+\hfill
+\begin{minipage}{0.5\textwidth}
+\includegraphics[width=\linewidth]{svm.png}
+\end{minipage}
+
+Die Klassenlabels der Punkte oberhalb der Geraden $H_1$ sind $y_+ = +1$ bzw. unterhalb der Geraden $H_2$ $y_- = -1$. Sie sind also ein Teil ihrer Koordinate. Dies funktioniert, da sich die y-Werte für das Einstzen der Punkte $x_+$ und $x_-$ in die Geradengleichung von $H_0$ mithilfe der Signumfunktion transformieren lassen. Gilt für einen Punkt $x_i$, dass $\omega \cdot x_i + b \geq 0$, dann gehört dieser zur Klasse rot. Es gilt gleichzeitig für alle Werte $H_0(x_i) \geq 0$, dass $sign(H_0(x_i)) = +1 = y_i$.
+
+Setzt man die Labels in die Geradengleichungen der Geraden $H_1$ und $H_2$ ein, so erhält man die Ungleichungen
+\begin{equation} \label{hplus}
+\omega \cdot x_i +b \geq +1
+\end{equation}
+und 
+\begin{equation} \label{hminus}
+\omega \cdot x_i +b \leq -1
+\end{equation}
+Für Punkte auf Gerade $H_0$ hingegen gilt 
+
+$$\omega \cdot x_i +b = 0$$
+
+Der Abstand zwischen Randpunkten $x_i$ und der optimal separierenden Gerade kann wie folgt berechnet werden: Der Abstand eines Punktes $(x_0, y_0)$ von einer Geraden $A \cdot x + B \cdot y + C = 0$ beträgt
+  
+$$\frac{A \cdot x_0 + B \cdot y_0 +C}{\sqrt{A^2 + B^2}}$$
+
+Setzt man für den Punkt einen Randpunkt und für die Gerade die Gleichung von $H_0$, so ergibt sich 
+
+$$\frac{\omega \cdot x_+ +b}{||\omega||}$$
+
+Da $x_+$ auf $H_1$ liegt, gilt $\omega \cdot x_+ +b = 1$ und somit beträgt der Abstand zwischen $x_+$ und $H_0$ 
+
+$$d+ = \frac{1}{||\omega||}$$
+
+Wenn $\frac{1}{||\omega||}$ maximiert wird, dann muss $||\omega||$ minimiert werden. Zur Vereinfachung der Ableitung kann man auch $\frac{1}{2} \cdot ||\omega||^2$ schreiben. Anschließend wird die Lagrange-Funktion aufgestellt. Unter der Voraussetzung, dass zwischen $H_1$ und $H_2$ keine Punkte liegen, kann man die Gleichungen \eqref{hplus} und \eqref{hminus} zusammenfassen:
+\begin{equation}
+y_i \cdot (\omega \cdot x_i + b) \geq 1
+\end{equation}
+
+Unter dieser Nebenbedingung lautet die Lagrange-Funktion:
+\begin{equation} \label{lagrange}
+\mathcal{L}(\vec{\omega},b,\vec{\alpha}) = \frac{1}{2}||\vec{\omega}||^2 - \sum_{i=1}^n \alpha_i \cdot [y_i \cdot (\vec{\omega} \cdot \vec{x_i} + b) - 1]
+\end{equation}
+
+Partielle Ableitungen gleich null setzen:
+
+\begin{equation} \label{Lpw}
+\frac{\partial \mathcal{L}}{\partial \vec{\omega}} = 0 \Leftrightarrow \vec{\omega} = \sum_{i=1}^n \alpha_i \cdot y_i \cdot \vec{x_i}
+\end{equation}
+und
+\begin{equation} \label{Lpb}
+\frac{\partial \mathcal{L}}{\partial b} = 0 \Leftrightarrow \sum_{i=1}^n \alpha_i \cdot y_i = 0
+\end{equation} 
+
+Nach Einsetzen von \eqref{Lpw} in \eqref{lagrange}:
+
+\begin{equation} \label{lagrange2}
+\mathcal{L}(\vec{\omega},b,\vec{\alpha}) = \frac{1}{2}(\sum_{i=1}^n \alpha_i \cdot y_i \cdot \vec{x_i})(\sum_{j=1}^n \alpha_j \cdot y_j \vec{x_j}) - (\sum_{i=1}^n \alpha_i \cdot y_i \cdot \vec{x_i}) \cdot (\sum_{j=1}^n \alpha_j \cdot y_j \cdot \vec{x_j}) - \sum_{i=1}^n \alpha_i \cdot y_i \cdot b + \sum_{i=1}^n \alpha_i
+\end{equation}
+
+Nach Einsetzen von \eqref{Lpb} in \eqref{lagrange2} ergibt sich folgende Gleichung:
+
+\begin{equation} \label{lagfinal}
+\mathcal{L}(\vec{\omega},b,\vec{\alpha}) = \sum_{i=1}^n \alpha_i - \frac{1}{2} \sum_{i=1}^n \sum_{j=1}^n \alpha_i \cdot \alpha_j \cdot y_i \cdot y_j \frac{\vec{x_i} \cdot \vec{x_j}}{ \langle \vec{x_i},  \vec{x_j} \rangle}
+\end{equation}
+
+Diese lässt sich unter Nebenbedingung \eqref{Lpb} und $\alpha_i \geq 0$ maximieren.
+
+Im Folgenden habe ich einen Optimierer (scipy.optimize.minimize) zur Maximierung von \eqref{lagfinal} für ein selbstgewähltes Beispiel konkret in Python implementiert. Die Maximierung von $\mathcal{L}$ entspricht der Minimierung von $-\mathcal{L}$.
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.4]{svm1.png}
+\includegraphics[scale=0.43]{svm2.png}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.45]{svm3.png}
+\end{figure}
+
+\subsection{Outlier Detection - Local Outlier Factor}
 
 
 \section{Weiche Methoden - Fuzzy-Clustering}
@@ -1016,7 +1103,7 @@ Der Wert für $minPts$ muss in Abhängigkeit der Größe des Datensatzes gewähl
 \section{Assoziationsregeln}
 %In Kapitel 10 Geoinf. kommt der naive Bayes-Klassifikator vor !
 \section{Einsatz in der Praxis und Software-Tools}
-
+%Siehe Tab n Browser zu arcgis Werkzeugen Antwendungsgebiete 
 
 
 %----------------------------------------------------------------------------------------
