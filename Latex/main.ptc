@@ -4,8 +4,6 @@
 \contentsline {chapter}{\numberline {1}Motivation}{5}{chapter.1}
 \ttl@starttoc {default@1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1.1}leeres Kapitel}{5}{section.1.1}
-\defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {2}Geodaten und Geoinformation}{7}{chapter.2}
 \ttl@stoptoc {default@1}
 \ttl@starttoc {default@2}
@@ -18,33 +16,25 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {2.4}Georeferenzierung}{10}{section.2.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.4.1}Definition}{10}{subsection.2.4.1}
+\contentsline {subsubsection}{Definition}{10}{section*.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.4.2}Adresskodierung}{11}{subsection.2.4.2}
-\defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.4.3}Geotagging}{11}{subsection.2.4.3}
-\defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.4.4}Kartenkalibrierung}{11}{subsection.2.4.4}
-\defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.4.5}Rektifizierung}{11}{subsection.2.4.5}
-\defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.4.6}Bestimmung einer Transformationsvorschrift}{11}{subsection.2.4.6}
+\contentsline {subsubsection}{Bestimmung einer Transformationsvorschrift}{11}{section*.3}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {2.5}Geoinformationssysteme}{11}{section.2.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.5.1}Geoobjekte}{12}{subsection.2.5.1}
+\contentsline {subsection}{\numberline {2.5.1}Geoobjekte}{11}{subsection.2.5.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.5.2}Modellierung von Geoobjekten}{12}{subsection.2.5.2}
+\contentsline {subsubsection}{Modellierung von Geoobjekten}{12}{section*.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.5.3}Rastermodell}{12}{subsection.2.5.3}
+\contentsline {subsection}{\numberline {2.5.2}Rastermodell}{12}{subsection.2.5.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.5.4}Vektormodell}{13}{subsection.2.5.4}
+\contentsline {subsection}{\numberline {2.5.3}Vektormodell}{13}{subsection.2.5.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.6}Beispiele von Raster und Vektordaten}{15}{section.2.6}
+\contentsline {subsection}{\numberline {2.5.4}Beispiele von Raster und Vektordaten}{14}{subsection.2.5.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.7}Algorithmen in der Geoinformatik}{16}{section.2.7}
+\contentsline {section}{\numberline {2.6}Algorithmen in der Geoinformatik}{16}{section.2.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.8}Verschiedene Arten und ihre Anwendungszwecke}{16}{section.2.8}
+\contentsline {section}{\numberline {2.7}Verschiedene Arten und ihre Anwendungszwecke}{16}{section.2.7}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {3}Deep Learning}{17}{chapter.3}
 \ttl@stoptoc {default@2}
@@ -64,23 +54,23 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.2.5}Trainieren eines Netzwerks mittels Backpropagation}{21}{subsection.3.2.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.6}Parameterupdates\footnote {http://ruder.io/optimizing-gradient-descent/}}{23}{subsection.3.2.6}
+\contentsline {subsection}{\numberline {3.2.6}Parameterupdates}{23}{subsection.3.2.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.7}Convolutional Neural Network}{23}{subsection.3.2.7}
+\contentsline {subsection}{\numberline {3.2.7}Convolutional Neural Network}{24}{subsection.3.2.7}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.2.8}Recurrent Neural Network}{25}{subsection.3.2.8}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.2.9}Long Short Term Memory Netzwerke}{26}{subsection.3.2.9}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.3}Machine Learning in Geowissenschaften}{27}{section.3.3}
+\contentsline {section}{\numberline {3.3}Machine Learning in Geowissenschaften}{28}{section.3.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.3.1}Herausforderungen und Chancen von Machine Learning \cite {machgeo}}{27}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.1}Herausforderungen und Chancen von Machine Learning }{28}{subsection.3.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.3.2}Einsatz in der Praxis - Beispiele}{31}{subsection.3.3.2}
+\contentsline {subsection}{\numberline {3.3.2}Einsatz in der Praxis - Beispiele}{32}{subsection.3.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.4}Tensorflow}{31}{section.3.4}
+\contentsline {section}{\numberline {3.4}Tensorflow}{32}{section.3.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.5}Erstes eigenes CNN}{31}{section.3.5}
+\contentsline {section}{\numberline {3.5}Erstes eigenes CNN}{32}{section.3.5}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {4}Clusteringverfahren}{33}{chapter.4}
 \ttl@stoptoc {default@3}
@@ -92,57 +82,61 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {4.2.1}Partitionierende Verfahren und ihre Nachteile}{35}{subsection.4.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Clustering durch Varianzminimierung}{35}{section*.2}
+\contentsline {subsubsection}{Clustering durch Varianzminimierung}{35}{section*.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{k-means}{35}{section*.3}
+\contentsline {subsubsection}{k-means}{35}{section*.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{EM-Algorithmus}{36}{section*.4}
+\contentsline {subsubsection}{EM-Algorithmus}{36}{section*.7}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {4.2.2}Silhouettenkoeffizient - Wahl der Clusteranzahl}{37}{subsection.4.2.2}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {4.2.3}OPTICS - Dichtebasiertes Clustering}{38}{subsection.4.2.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Erreichbarkeitseigenschaften \cite {dbscan}}{38}{section*.5}
+\contentsline {subsubsection}{Erreichbarkeitseigenschaften \cite {dbscan}}{38}{section*.8}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Erweiterte Grundbegriffe}{39}{section*.6}
+\contentsline {subsubsection}{Erweiterte Grundbegriffe}{39}{section*.9}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{OPTICS-Algorithmus}{39}{section*.7}
+\contentsline {subsubsection}{OPTICS-Algorithmus}{39}{section*.10}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Wahl der Parameter $\epsilon $ und $minPts$}{44}{section*.8}
+\contentsline {subsubsection}{Wahl der Parameter $\epsilon $ und $minPts$}{44}{section*.11}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.2.4}Lineare Separation - Support Vector Machine}{44}{subsection.4.2.4}
+\contentsline {subsection}{\numberline {4.2.4}Outlier Detection - Local Outlier Factor}{44}{subsection.4.2.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.2.5}Outlier Detection - Local Outlier Factor}{48}{subsection.4.2.5}
+\contentsline {subsubsection}{Grundbegriffe}{44}{section*.12}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.3}Weiche Methoden - Fuzzy-Clustering}{48}{section.4.3}
+\contentsline {subsubsection}{Berechnung von LOF}{44}{section*.13}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.3.1}Probabilistisches und Possibilistisches Clustering}{48}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.2.5}Lineare Separation - Support Vector Machine}{45}{subsection.4.2.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{FCM und PFCM}{48}{section*.9}
+\contentsline {section}{\numberline {4.3}Weiche Methoden - Fuzzy-Clustering}{49}{section.4.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Vorraussetzungen f\IeC {\"u}r die Anwendung auf Geodaten}{48}{section*.10}
+\contentsline {subsection}{\numberline {4.3.1}Probabilistisches und Possibilistisches Clustering}{49}{subsection.4.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Eigener Algoritmus (noch ohne Name)}{48}{section*.11}
+\contentsline {subsubsection}{FCM und PFCM}{49}{section*.14}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.4}CVI}{48}{section.4.4}
+\contentsline {subsubsection}{Vorraussetzungen f\IeC {\"u}r die Anwendung auf Geodaten}{49}{section*.15}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.4.1}NPC}{48}{subsection.4.4.1}
+\contentsline {subsubsection}{Eigener Algoritmus (noch ohne Name)}{49}{section*.16}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.4.2}FHV}{48}{subsection.4.4.2}
+\contentsline {section}{\numberline {4.4}CVI}{49}{section.4.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.4.3}Otsu-Binarisierung}{48}{subsection.4.4.3}
+\contentsline {subsection}{\numberline {4.4.1}NPC}{49}{subsection.4.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.4.4}VAT-Algorithmus}{48}{subsection.4.4.4}
+\contentsline {subsection}{\numberline {4.4.2}FHV}{49}{subsection.4.4.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.5}Clustering auf unvollst\IeC {\"a}ndigen Daten}{48}{section.4.5}
+\contentsline {subsection}{\numberline {4.4.3}Otsu-Binarisierung}{49}{subsection.4.4.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.6}Assoziationsregeln}{48}{section.4.6}
+\contentsline {subsection}{\numberline {4.4.4}VAT-Algorithmus}{49}{subsection.4.4.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.7}Einsatz in der Praxis und Software-Tools}{48}{section.4.7}
+\contentsline {section}{\numberline {4.5}Clustering auf unvollst\IeC {\"a}ndigen Daten}{49}{section.4.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {5}Fazit und Ausblick}{49}{chapter.5}
+\contentsline {section}{\numberline {4.6}Assoziationsregeln}{49}{section.4.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.7}Einsatz in der Praxis und Software-Tools}{49}{section.4.7}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {5}Fazit und Ausblick}{51}{chapter.5}
 \ttl@stoptoc {default@4}
 \ttl@starttoc {default@5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.1}Ausblick - Mein Thema f\IeC {\"u}r die Masterarbeit}{49}{section.5.1}
+\contentsline {section}{\numberline {5.1}Ausblick - Mein Thema f\IeC {\"u}r die Masterarbeit}{51}{section.5.1}
 \contentsfinish 

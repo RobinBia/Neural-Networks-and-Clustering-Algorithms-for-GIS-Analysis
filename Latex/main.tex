@@ -93,13 +93,17 @@
 
 \chapterimage{head8} % Chapter heading image
 \chapter{Motivation}
-\section{leeres Kapitel}
-blabla
+Die folgende Projektarbeit liefert einen groben Überblick über Methoden und Algorithmen im Bereich der geoinformationsverarbeitenden Systeme mit dem Schwerpunkt Machine Learning (ML). Darunter werden sämtliche Verfahren verstanden, die auf Basis von Datenbeständen  Fähigkeiten erlernen, mithilfe derer abstraktere Fragenstellungen und Probleme automatisiert gelöst werden können. Das während des Lernprozesses angehäufte Wissen hilft dem Algorithmus dabei, bezüglich einer Mathematischen Vorschrift immer bessere Lösungen zu finden. Die Projektarbeit beschränkt sich auf die ML-Teilbereiche Deep Learning und Data Mining, welche Hauptsächlich im Bereich der Wissensextraktion (Assoziationsmustererkennung), Klassifikation und Clustering eingesetzt werden. Die Auswertung geowissenschaftlicher Fachliteratur soll Erkenntnisse über die Einsatzbereiche von Machine Learning liefern. Außerdem soll recherchiert werden, worin die Herausforderungen bestehen und welche offenen Probleme es gibt.
+\\~\\
+Ziel der Arbeit ist die Eingrenzung der Themenbereiche auf Fragestellungen, die sich hinsichtlich einer wissenschaftlichen Ausarbeitung im Rahmen der sich anschließenden Masterarbeit eignen.
 
 %----------------------------------------------------------------------------------------
 %	CHAPTER 2
 %----------------------------------------------------------------------------------------
 \chapter{Geodaten und Geoinformation}
+
+\textbf{Kapitel wahrscheinlich irrelevant und häufig nur eine Aneinanderreihung zusammenhangsloser Definitionen (Ausnahme 2.3). löschen?}
+
 \section{Definition und Gestalt von Geodaten}
 Geodaten sind digitale Informationen, welche Sachdaten mit Geometriedaten\footnote{https://www.hdm-stuttgart.de/~riekert/lehre gis.pdf} (und Chronometriedaten) vereinen , z.B. \{Luftdruck 1 bar, Ort Düsseldorf, Datum 26.11.2017\}. 
 Die räumliche Information kann in unterschiedlichen Formen vorliegen, z.B. symbolisch als Ortsname oder Postleitzahl, aber auch als mathematisch atomare Referenz auf Positionen der Erde mittels Koordinaten. Diese können in unterschiedlichster Dimensionalität vorliegen\footnote{http://www.mathematik.uni-ulm.de/sai/ws04/biosem/GIS.pdf}
@@ -202,33 +206,23 @@ Viele der oben genannten Punkte lassen einen subjektiven Spielraum für die Bewe
 
 
 \section{Georeferenzierung}
-\subsection{Definition}
+\subsubsection{Definition}
 Unter dem Vorgang der Georeferenzierung,versteht man die Zuweisung raumbezogener Informationen, auch Georeferenz genannt, zu einem Datensatz.
 
 Es gibt folgende vier Arten der Georeferenzierung:
 
 \begin{itemize}
-\item Adresskodierung
-\item Geotagging 
-\item Kartenkalibrierung 
-\item Rektifizierung
+\item Bei der \textbf{Adresskodierung} wird dem Datensatz eine Postanschrift zugewiesen und somit ein indirekter Raumbezug hergestellt. Mithilfe geokodierter Adressen lassen sich funktionale zusammenhänge zwischen Daten, Postanschrift und Adresse herstellen und somit ressourcenschonende und schnelle Zugriffe ermöglichen.
+\item Als \textbf{Geotagging} bezeichnet man das Einfügen eines Attributes (Geotag) inkl. Realweltkoordinate in einen raumbezogenen Datensatz wie ein Bild oder eine Website. Dies ist bei der räumlichen Einordnung der Information hilfreich.
+\item Bei der \textbf{Kartenkalibrierung} wird ein räumlicher Datensatz ohne Realkoordinatenbezug mithilfe einer Transformationsvorschrift im Bezug auf die Realwelt so orientiert, dass sich die Koordinaten des Bildes in Realweltkoordinaten einfach umrechnen lassen.
+\item Bei der \textbf{Rektfizierung} werden geometrische Verzerrungen in räumlichen Daten entzerrt, indem jedem Datum eine Realweltkoordinate zugeordnet wird.
 \end{itemize}
 
-\subsection{Adresskodierung}
-Bei der Adresskodierung wird dem Datensatz eine Postanschrift zugewiesen und somit ein indirekter Raumbezug hergestellt. Mithilfe geokodierter Adressen lassen sich funktionale zusammenhänge zwischen Daten, Postanschrift und Adresse herstellen und somit ressourcenschonende und schnelle Zugriffe ermöglichen.
-\subsection{Geotagging}
-Als Geotagging bezeichnet man das Einfügen eines Attributes (Geotag) inkl. Realweltkoordinate in einen raumbezogenen Datensatz wie ein Bild oder eine Website. Dies ist bei der räumlichen Einordnung der Information hilfreich.
-\subsection{Kartenkalibrierung}
-Bei der Kartenkalibrierung wird ein räumlicher Datensatz ohne Realkoordinatenbezug mithilfe einer Transformationsvorschrift im Bezug auf die Realwelt so orientiert, dass sich die Koordinaten des Bildes in Realweltkoordinaten einfach umrechnen lassen.
-\subsection{Rektifizierung}
-Bei der Rektfizierung werden geometrische Verzerrungen in räumlichen Daten entzerrt, indem jedem Datum eine Realweltkoordinate zugeordnet wird.
 
-
-\subsection{Bestimmung einer Transformationsvorschrift}
+\subsubsection{Bestimmung einer Transformationsvorschrift}
 
 Um eine Transformationsgleichung zu finden, werden in der Regel Passpunkte verwendet. Die Passpunkte müssen im Datensatz eindeutig zu erkennen sein. Die Koordinaten der Passpunkte im Realweltkoordinatensystem sind entweder bekannt oder werden einem Referenzdatensatz entnommen. Bei Vektordaten werden die Koordinaten abgegriffen oder interpoliert. Bei Bilddaten werden die Bildkoordinaten der Passpunkte gemessen. Die Transformation sollte unter Berücksichtigung der Abbildungsgeometrie bestimmt werden. Bei Fotos ist somit die Zentralprojektion zu berücksichtigen, bei Karten der entsprechende Kartennetzentwurf. Das automatische Finden von Gemeinsamkeiten in digitalen Bildern und die Bestimmung der Transformation wird in der Bildverarbeitung Bildregistrierung genannt. Die Registrierung von Laserscanning-Punktwolken kann mit dem ICP-Algorithmus erfolgen.\footnote{https://de.wikipedia.org/wiki/Georeferenzierung}
 
-Mark Erweiterungen, implementierungen sinnvoll?
 
 \section{Geoinformationssysteme}
 Ein Geoinformationssystem ist eine Software, mit welcher Geodaten erfasst, verwaltet, analysiert und ausgegeben werden können.
@@ -255,7 +249,7 @@ Außerdem unterscheidet man zwischen verschiedenen Arten der Datenspeicherung:
 \end{itemize}
 Je nach Kartenmaßstab, Auflösungstyp und Speichertyp (digital/analog) werden Daten unterschiedlich repräsentiert. So wird beispielsweise ein flächenhafter quadratischer Gebäudekomplex (10*10 Meter) auf einem Satellitenfoto mit dem Maßstab 1:10.000 nur noch als Punkt wahrgenommen. Linienhafte Daten bieten sich vor allem bei Flüssen, Straßen, Wasser-Land-Grenzen, starken Flankensteigungen usw. an.
 
-\subsection{Modellierung von Geoobjekten}
+\subsubsection{Modellierung von Geoobjekten}
 Die vier informationstechnischen Dimensionen zur Modellierung von geografischen Informationssystemen sind:
 \begin{itemize}
 \item Geometrie (Ort des Objekts)
@@ -264,7 +258,8 @@ Die vier informationstechnischen Dimensionen zur Modellierung von geografischen 
 \item Dynamik (Änderung des Objekts im zeitlichen Verlauf)
 \end{itemize}
 Jedes unikate Objekt gehört zu einer Objektklasse, in welcher es nach den oben genannten vier Kriterien beschrieben und mit anderen Objekten der Klasse verglichen wird. Jedes der Objekte besitzt einen eindeutigen Schlüssel zur Identifikation. Möglichkeiten zur Klassifizierung und Clustering von Geoobjekten werden in den folgenden Kapiteln vorgestellt.\newline
-Der Ort eines Geoobjektes kann auf zwei verschiedene Arten beschrieben werden:
+Der Ort eines Geoobjektes kann auf folgende zwei verschiedene Arten beschrieben werden.
+
 \subsection{Rastermodell}
 Eine analoge topografische Karte oder Zeichnung digitalisiert und in quadratische Gitterzellen aufgeteilt, welche alle über die gleiche Semantik verfügen. Diese Semantik wird stellvertretend durch eine Matrix beschrieben, welche für jede Gitterzelle eine numerische Pixelwertinformation enthält.\footnote{https://de.wikipedia.org/wiki/Geoobjekt}
 \begin{figure}[h]
@@ -332,13 +327,13 @@ Wie auch bei Rasterdaten gibt es bei Vektordaten nicht nur Vorteile, sondern auc
 \item Hoher Rechenaufwand bei Verschneidungen
 \end{itemize}
 
-\section{Beispiele von Raster und Vektordaten}
-Geodaten müssen heutzutage nicht mehr selbständig erstellt werden. Es gibt eine Vielzahl an staatlichen und privaten Institutionen, welche Ihre Daten kostenlos bereitstellen. So lassen sich zahlreiche Inhalte im ESRI Shapefile Vektordateiformat finden, welches als Quasi-Standard für Desktop-GIS gilt.\footnote{https://de.wikipedia.org/wiki/Shapefile}
+\subsection{Beispiele von Raster und Vektordaten}
+Geodaten müssen heutzutage nicht mehr selbständig erstellt werden. Es gibt eine Vielzahl an staatlichen und privaten Institutionen, welche Ihre Daten kostenlos bereitstellen. So lassen sich zahlreiche Inhalte im ESRI Shapefile Vektordateiformat finden, welches als Quasi-Standard für Desktop-GIS gilt.\footnote{\url{http://webhelp.esri.com/arcgisdesktop/9.3/index.cfm?TopicName=Geoprocessing\%20considerations\%20for\%20shapefile\%20output}}
 Der Datensatz \textit{Natural Earth}\footnote{http://www.naturalearthdata.com/} ist eine Abbildung der Erde im Maßstab 1:10 Millionen. Er ist sowohl als SHP-Vektordatei als auch als Tiff-Rasterbild verfügbar.
 
 Ein ESRI Shapefile besteht aus mindestens drei Dateien zur Speicherung der Geometriedaten, Sachdaten und der Geometrieindizierung zur Verknüpfung von Geometrie und Sachdaten (.shp, .dbf, .shx). Die Geometrie eines Shapefile definiert sich aus nur 4 verschiedenen Formdatenstrukturen: Punkte, Linien, Flächen (Polygone) und Multipunkte.\footnote{http://www.esri.com/library/whitepapers/pdfs/shapefile.pdf}
 
-\begin{figure}[h]
+\begin{figure}[H]
 \centering
 \includegraphics[scale=0.23]{gis.png}
 \caption{.shp-Geometriedatei in dem Geoinformationssystem QGIS dargestellt \protect\footnotemark}
@@ -348,7 +343,7 @@ Leider eignen sich Vektordaten nicht zur Klassifikation von Features mit Hilfe v
 \newline
 Das dem Datensatz zugehörige farbige Rasterbild inklusive Schummerung (räumliche Schattierung), Wasser und Flüssen sieht so aus:
 
-\begin{figure}[h]
+\begin{figure}[H]
 \centering
 \includegraphics[scale=0.4]{raster_nat_earth.png}
 \caption{Rasterbild des Natural-Earth-Datensatzes \protect\footnotemark}
@@ -488,7 +483,9 @@ Neben der Sigmoidfunktion gibt es noch viele andere Aktivierungsfunktionen. So h
 \caption{Vergleich zwischen Rectifier und Sigmoid}
 \end{figure}
 
-\subsection{Parameterupdates\protect\footnote{http://ruder.io/optimizing-gradient-descent/}}
+\subsection{Parameterupdates}
+Die folgenden Verfahren sind die Grundlegendsten und am häufigsten eingesetzten Methoden zur Aktualisierung der Gewichte. Aus ihnen sind viele weitere Optimierungen hervorgegangen, die auch in der heutigen Forschung noch intensiv diskutiert werden \cite{gdalg}.\\~\\
+
 \textbf{Batch Gradient Descent (BGD)}
 Normaler einmaliger Updateprozess wie oben beschrieben. Diese Variante ist sehr langsam, da für jedes Update der Gradient für den gesamten Datensatz berechnet werden muss.
 \[W = W - \eta \nabla_WL(W)\]
@@ -630,10 +627,10 @@ Angenommen, es soll ein RNN trainiert werden, welches das letzte Wort des folgen
 \newpage
 \section{Machine Learning in Geowissenschaften}
 
-\subsection{Herausforderungen und Chancen von Machine Learning  \cite{machgeo}}
+\subsection{Herausforderungen und Chancen von Machine Learning  }
 \textbf{Einleitung}\\
 Die moderne Geowissenschaft steht vor vielen Herausforderungen, wie den Prognosen zu Klimawandel, Luftverschmutzung, Naturkatastrophen, Ressourcenverbrauch oder den Risiken für Erdbeben, Landrutsch und Vulkanausbrüchen. Die Forschung an solchen Problemen macht die interdisziplinäre Arbeit sämtlicher Wissenschaften unumgänglich.
-Geowissenschaften haben sich in den letzten Jahrzehnten  zu einer Big-Data Disziplin entwickelt. Angestoßen wurde diese Entwicklung durch sämtliche technologische Verbesserungen, wie dem Wachstum der Computerleistung. Aufwändige Simulationen und die Demokratisierung von Datenbeständen, deren öffentliche Verbreitung im Internet und vielseitige Beteiligungsmöglichkeiten trugen ebenfalls dazu bei. Die wachsende Verbreitung großer geowissenschaftlicher Datenbestände ermöglicht ein enormes Potenzial für Maschinelles Lernen.\\
+Geowissenschaften haben sich in den letzten Jahrzehnten  zu einer Big-Data Disziplin entwickelt. Angestoßen wurde diese Entwicklung durch technologische Verbesserungen, wie dem Wachstum der Rechenleistung. Aufwändige Simulationen und die Demokratisierung von Datenbeständen, deren öffentliche Verbreitung im Internet und vielseitige Beteiligungsmöglichkeiten trugen ebenfalls dazu bei. Die wachsende Verbreitung großer geowissenschaftlicher Datenbestände ermöglicht ein enormes Potenzial für Maschinelles Lernen\cite{machgeo}.\\
 
 \bigskip
 
@@ -991,7 +988,29 @@ Im Diagramm können nun Cluster und Subcluster verschiedener Dichte, also versch
 Die Wahl der Parameter $\epsilon$ und $minPts$ sollte so erfolgen, dass die Cluster im Diagramm vertikal zentriert sind. Es dürfen also nur wenige Erreichbarkeitsdistanzen $\infty$ sein. Außerdem darf die Varianz der Erreichbarkeitsdistanzen zwischen zwei benachbarten Punkten nicht zu groß werden. Um dies zu garantieren, wird $\epsilon$ entweder so gewählt, dass die $minPts$-Eigenschaft bezüglich einer kleinen Punktestrichprobe immer erfüllt ist oder es wird die durchschnittliche $minPts$-Distanz berechnet. Es wird also diejenige $\epsilon$-Distanz gewählt, welche im Durchschnitt von allen Punkten aus $minPts$-viele Punkte einschließt.
 Der Wert für $minPts$ muss in Abhängigkeit der Größe des Datensatzes gewählt werden. Je feiner die Auflösung der Datenbank, desto größer muss der Wert sein.
 
+\subsection{Outlier Detection - Local Outlier Factor}
+Ein Problem der dichtebasierten Clusteringverfahren ist, dass manche Punkte entweder als Outlier oder als Clusterpunkt markiert werden. Manchmal möchte man jedoch aus analytischen Gründen selbständig beurteilen und steuern können, was als Outlier markiert werden soll. Aus diesem Grund wurde der Local Outlier Factor (LOF) erfunden, welcher für Punkt den Grad seiner Zuordenbarkeit berechnet \cite{lof}.
 
+\subsubsection{Grundbegriffe}
+Die $k$-Distanz eines Punktes $p$ ist der Radius $kd(p)$, für den mindestens $k$ Punkte innerhalb oder auf ihm liegen müssen, aber maximal $k-1$ Punkte innerhalb liegen dürfen. \\
+
+Die $k$-Distanz-Nachbarschaft $N_{kd(p)} (p)$ ist die Menge aller Punkte, welche maximal den Abstand $kd(p)$ von $p$ haben.
+
+Die Erreichbarkeitsdistanz $rd(o,p)$ ist die $k$-Distanz von $p$, aber mindestens der Abstand $dist(p,o)$.
+
+\subsubsection{Berechnung von LOF}
+
+Zuerst wird die lokale Erreichbarkeitsdichte eines Punktes $p$ berechnet. Diese entspricht dem Kehrwert der durchschnittlichen Erreichbarkeitsdistanzen von den Nachbarn aus:
+
+$$Ird_{minPts}(p) = (\frac{\sum\limits_{o \in N_{minPts}(p)} rd_{minPts}(p,o)}{|N_{minPts}(p)|})^{-1}$$
+
+Je höher der Wert, desto besser ist $p$ von seinen Nachbarn aus erreichbar. Die Wahrscheinlichkeit, dass $p$ ein Outlier ist, sinkt.
+
+Auch die lokalen Erreichbarkeitsdichten der Nachbarn von $p$ müssen mit einfließen, um beurteilen zu können, wie gut der Erreichbarkeit von $p$ im Verhältnis zu seiner Nachbarschaft ist. Sind die Nachbarn viel besser zu erreichen als $p$, dann ist $p$ ein starker Outlier:
+
+$$LOF_{minPts}(p) = \frac{\sum\limits_{o \in N_{minPts}(p)}\frac{Ird_{minPts}(o)}{Ird_{minPts}(p)}}{|N_{minPts}(p)|}$$
+
+Ist der Wert von $LOF$ in etwa $1$, handelt es sich bei dem betrachteten Objekt um einen durchschnittlich ähnlich gut erreichbaren Punkt (im Vergleich zu seinen Nachbarn) und somit um einen Clusterpunkt. Für Werte, die größer als $1$ sind, ist der Punkt deutlich schlechter erreichbar als seine Nachbarn und somit ein Outlier.
 
 \subsection{Lineare Separation - Support Vector Machine}
 Die Support Vector Machine ist ein Klassifikator für linear und nichtlinear separierbare Daten. Er kommt in Geoinformationssystemen häufig zum Einsatz, da er besonders robust gegenüber Rauschen und Variabilität raumbezogener Daten ist \cite{svmingeo}.
@@ -1083,7 +1102,7 @@ Im Folgenden habe ich einen Optimierer (scipy.optimize.minimize) zur Maximierung
 \includegraphics[scale=0.45]{svm3.png}
 \end{figure}
 
-\subsection{Outlier Detection - Local Outlier Factor}
+
 
 
 \section{Weiche Methoden - Fuzzy-Clustering}
@@ -1103,6 +1122,7 @@ Im Folgenden habe ich einen Optimierer (scipy.optimize.minimize) zur Maximierung
 \section{Assoziationsregeln}
 %In Kapitel 10 Geoinf. kommt der naive Bayes-Klassifikator vor !
 \section{Einsatz in der Praxis und Software-Tools}
+%Outlier Detection z.B. zum Finden von Erdbeeben
 %Siehe Tab n Browser zu arcgis Werkzeugen Antwendungsgebiete 
 
 

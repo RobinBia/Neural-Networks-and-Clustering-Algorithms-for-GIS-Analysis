@@ -1974,18 +1974,20 @@
     <bcf:datasource type="file" datatype="bibtex">bibliography.bib</bcf:datasource>
   </bcf:bibdata>
   <bcf:section number="0">
-    <bcf:citekey order="3">kddmod</bcf:citekey>
-    <bcf:citekey order="4">geofront</bcf:citekey>
-    <bcf:citekey order="5">michell</bcf:citekey>
-    <bcf:citekey order="6">dynrnn</bcf:citekey>
-    <bcf:citekey order="7">lstm</bcf:citekey>
-    <bcf:citekey order="8">machgeo</bcf:citekey>
-    <bcf:citekey order="9">kmplus</bcf:citekey>
-    <bcf:citekey order="10">forgy</bcf:citekey>
-    <bcf:citekey order="11">emalg</bcf:citekey>
-    <bcf:citekey order="12">silh</bcf:citekey>
-    <bcf:citekey order="13">dbscan</bcf:citekey>
-    <bcf:citekey order="14">optics</bcf:citekey>
+    <bcf:citekey order="1">kddmod</bcf:citekey>
+    <bcf:citekey order="2">geofront</bcf:citekey>
+    <bcf:citekey order="3">michell</bcf:citekey>
+    <bcf:citekey order="4">gdalg</bcf:citekey>
+    <bcf:citekey order="5">dynrnn</bcf:citekey>
+    <bcf:citekey order="6">lstm</bcf:citekey>
+    <bcf:citekey order="7">machgeo</bcf:citekey>
+    <bcf:citekey order="8">kmplus</bcf:citekey>
+    <bcf:citekey order="9">forgy</bcf:citekey>
+    <bcf:citekey order="10">emalg</bcf:citekey>
+    <bcf:citekey order="11">silh</bcf:citekey>
+    <bcf:citekey order="12">dbscan</bcf:citekey>
+    <bcf:citekey order="13">optics</bcf:citekey>
+    <bcf:citekey order="14">lof</bcf:citekey>
     <bcf:citekey order="15">svmingeo</bcf:citekey>
     <bcf:citekey order="16">svm</bcf:citekey>
   </bcf:section>

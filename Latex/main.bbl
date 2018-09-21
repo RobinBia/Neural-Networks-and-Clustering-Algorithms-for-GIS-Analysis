@@ -120,6 +120,47 @@
       \verb http://web.mit.edu/6.034/wwwbob/svm-notes-long-08.pdf
       \endverb
     \endentry
+    \entry{lof}{report}{}
+      \name{author}{4}{}{%
+        {{hash=7cd6731b5fcf9523f85d9609863b7b0b}{%
+           family={Breunig},
+           familyi={B\bibinitperiod},
+           given={Markus\bibnamedelima M.},
+           giveni={M\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=9559fe65ed2c0877cf14a66fe1f8e9b3}{%
+           family={Kriegel},
+           familyi={K\bibinitperiod},
+           given={Hans-Peter},
+           giveni={H\bibinithyphendelim P\bibinitperiod}}}%
+        {{hash=601e20c03c57b398561a9afd7fc45519}{%
+           family={Ng},
+           familyi={N\bibinitperiod},
+           given={Raymond\bibnamedelima T.},
+           giveni={R\bibinitperiod\bibinitdelim T\bibinitperiod}}}%
+        {{hash=802157026f850823b2027c2100cb359a}{%
+           family={Sander},
+           familyi={S\bibinitperiod},
+           given={Jörg},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{institution}{2}{%
+        {Institute for Computer Science, University of Munich}%
+        {Department of Computer Science, University of British Columbia}%
+      }
+      \strng{namehash}{d3ae79e92b2294df24223e1dfd3f836d}
+      \strng{fullhash}{6291c444c1d3f44711275e42e7520244}
+      \strng{bibnamehash}{d3ae79e92b2294df24223e1dfd3f836d}
+      \strng{authorbibnamehash}{d3ae79e92b2294df24223e1dfd3f836d}
+      \strng{authornamehash}{d3ae79e92b2294df24223e1dfd3f836d}
+      \strng{authorfullhash}{6291c444c1d3f44711275e42e7520244}
+      \field{labelalpha}{Bre+00}
+      \field{sortinit}{B}
+      \field{sortinithash}{276475738cc058478c1677046f857703}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{LOF: Identifying Density-Based Local Outliers}
+      \field{year}{2000}
+    \endentry
     \entry{emalg}{article}{}
       \name{author}{3}{}{%
         {{hash=fcdb1c86f0b69523d4c47f296045f9bf}{%
@@ -497,6 +538,37 @@
       \endverb
       \verb{url}
       \verb http://colah.github.io/posts/2015-08-Understanding-LSTMs/
+      \endverb
+    \endentry
+    \entry{gdalg}{online}{}
+      \name{author}{1}{}{%
+        {{hash=b468248a20d75c52ee742f4592c2569f}{%
+           family={Ruder},
+           familyi={R\bibinitperiod},
+           given={Sebastian},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{b468248a20d75c52ee742f4592c2569f}
+      \strng{fullhash}{b468248a20d75c52ee742f4592c2569f}
+      \strng{bibnamehash}{b468248a20d75c52ee742f4592c2569f}
+      \strng{authorbibnamehash}{b468248a20d75c52ee742f4592c2569f}
+      \strng{authornamehash}{b468248a20d75c52ee742f4592c2569f}
+      \strng{authorfullhash}{b468248a20d75c52ee742f4592c2569f}
+      \field{labelalpha}{Rud}
+      \field{sortinit}{R}
+      \field{sortinithash}{da6b42bd3ab22fee61abed031ee405f7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{An overview of gradient descent optimization algorithms}
+      \field{urlday}{21}
+      \field{urlmonth}{9}
+      \field{urlyear}{2018}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb http://ruder.io/optimizing-gradient-descent/
+      \endverb
+      \verb{url}
+      \verb http://ruder.io/optimizing-gradient-descent/
       \endverb
     \endentry
   \enddatalist
