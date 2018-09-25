@@ -1,3 +1,6 @@
+\pdfminorversion=5
+\pdfcompresslevel=9
+\pdfobjcompresslevel=2
 \documentclass[11pt,ceqn]{book} 
 \usepackage[export]{adjustbox}
 \usepackage[top=3cm,bottom=3cm,left=3.2cm,right=3.2cm,headsep=10pt,letterpaper]{geometry} 
@@ -49,7 +52,7 @@
 \centering
 \vspace*{5cm}
 \par\normalfont\fontsize{35}{35}\sffamily\selectfont
-\textbf{{\color{white} Einsatz von Neuronalen Netzwerken und Clusteringverfahren auf Geodatensätze}}\\
+\textbf{{\color{white} Neuronale Netzwerke und Clusteringverfahren zur Analyse von Geodaten}}\\
 {\LARGE {\color{white}Lehrstuhl für Geoinformatik}}\par
 \vspace*{1cm}
 {\Huge {\color{white} Robin Bially}}\par 
@@ -93,7 +96,7 @@
 
 \chapterimage{head8} % Chapter heading image
 \chapter{Motivation}
-Die folgende Projektarbeit liefert einen groben Überblick über Methoden und Algorithmen im Bereich der geoinformationsverarbeitenden Systeme mit dem Schwerpunkt Machine Learning (ML). Darunter werden sämtliche Verfahren verstanden, die auf Basis von Datenbeständen  Fähigkeiten erlernen, mithilfe derer abstraktere Fragenstellungen und Probleme automatisiert gelöst werden können. Das während des Lernprozesses angehäufte Wissen hilft dem Algorithmus dabei, bezüglich einer Mathematischen Vorschrift immer bessere Lösungen zu finden. Die Projektarbeit beschränkt sich auf die ML-Teilbereiche Deep Learning und Data Mining, welche Hauptsächlich im Bereich der Wissensextraktion (Assoziationsmustererkennung), Klassifikation und Clustering eingesetzt werden. Die Auswertung geowissenschaftlicher Fachliteratur soll Erkenntnisse über die Einsatzbereiche von Machine Learning liefern. Außerdem soll recherchiert werden, worin die Herausforderungen bestehen und welche offenen Probleme es gibt.
+Die folgende Projektarbeit liefert einen groben Überblick über Methoden und Algorithmen im Bereich der geoinformationsverarbeitenden Systeme mit dem Schwerpunkt Machine Learning (ML). Darunter werden sämtliche Verfahren verstanden, die auf Basis von Datenbeständen  Fähigkeiten erlernen, mithilfe derer abstraktere Fragenstellungen und Probleme automatisiert gelöst werden können. Das während des Lernprozesses angehäufte Wissen hilft dem Algorithmus dabei, bezüglich einer mathematischen Vorschrift immer bessere Lösungen zu finden. Die Projektarbeit beschränkt sich auf die ML-Teilbereiche Deep Learning und Data Mining, welche Hauptsächlich im Bereich der Wissensextraktion (Assoziationsmustererkennung), Klassifikation und Clustering eingesetzt werden. Die Auswertung geowissenschaftlicher Fachliteratur soll Erkenntnisse über die Einsatzbereiche von Machine Learning liefern. Außerdem soll recherchiert werden, worin die Herausforderungen bestehen und welche offenen Probleme es gibt.
 \\~\\
 Ziel der Arbeit ist die Eingrenzung der Themenbereiche auf Fragestellungen, die sich hinsichtlich einer wissenschaftlichen Ausarbeitung im Rahmen der sich anschließenden Masterarbeit eignen.
 
@@ -127,9 +130,9 @@ Information mitgeführt, die sich aus dem zeitlichen Ablauf ergibt (4D)
 \section{Geografische Koordinaten}
 Ein geeignetes und weit verbreitetes Koordinatensystem zur verzerrungsarmen Darstellung sind die Geografischen Koordinaten. 
 
-\begin{figure}[h]
+\begin{figure}[H]
 \centering
-\includegraphics[scale=0.8]{gradnetz.jpg}
+\includegraphics[scale=0.7]{gradnetz.jpg}
 \caption{Das Gradnetz der Erde}\label{gradnetz}
 \end{figure}
 
@@ -150,9 +153,9 @@ Die Beurteilung der Datenqualität ist ebenfalls in sämtlichen Verarbeitungssch
 \end{enumerate}~\\
 
 
-\begin{figure}[h]
+\begin{figure}[H]
 \centering
-\includegraphics{kdd.png}
+\includegraphics[scale=0.35]{kdd.jpg}
 \caption{Das KDD-Prozessmodell \protect\footnotemark}
 \end{figure}
 \footnotetext{\url{http://www.enzyklopaedie-der-wirtschaftsinformatik.de/lexikon/daten-wissen/Business-Intelligence/Analytische-Informationssysteme--Methoden-der-/Data-Mining/index.html}}
@@ -262,9 +265,9 @@ Der Ort eines Geoobjektes kann auf folgende zwei verschiedene Arten beschrieben 
 
 \subsection{Rastermodell}
 Eine analoge topografische Karte oder Zeichnung digitalisiert und in quadratische Gitterzellen aufgeteilt, welche alle über die gleiche Semantik verfügen. Diese Semantik wird stellvertretend durch eine Matrix beschrieben, welche für jede Gitterzelle eine numerische Pixelwertinformation enthält.\footnote{https://de.wikipedia.org/wiki/Geoobjekt}
-\begin{figure}[h]
+\begin{figure}[H]
 \centering
-\includegraphics{raster.png}
+\includegraphics[scale=0.5]{raster.jpg}
 \caption{Rastermodell-Zoom \protect\footnotemark}
 \end{figure}
 \footnotetext{http://desktop.arcgis.com/de/arcmap/10.3/manage-data/raster-and-images/what-is-raster-data.htm}
@@ -292,9 +295,9 @@ Im Gegensatz zu Rasterdaten werden Vektordaten bei linien- und punkthaften Infor
 \newline
 Eine Punkthafte Vektorinformation wird auch als Vertex bezeichnet. Dieser beschreibt eine Raumlage durch Angabe einer (x,y,z)-Koordinate und ein dazugehöriges Attribut, welches die Art des Punktes beschreibt, z.B. Baum oder Laterne:
 
-\begin{figure}[h]
+\begin{figure}[H]
 \centering
-\includegraphics[scale=0.6]{vertex.png}
+\includegraphics[scale=0.3]{vertex.jpg}
 \caption{Punkt-Feature \protect\footnotemark}
 \end{figure}
 
@@ -302,9 +305,9 @@ Eine Punkthafte Vektorinformation wird auch als Vertex bezeichnet. Dieser beschr
 
 Punkteverläufe wie Straßen werden durch sogenannte Polylinien beschrieben. Diese bestehen aus mehreren miteinander verbundenen Vertices. Im Kreis laufende Polylinien bezeichnet man auch als Polygone:
 
-\begin{figure}[h]
+\begin{figure}[H]
 \centering
-\includegraphics[scale=0.6]{poly.png}
+\includegraphics[scale=0.3]{poly.jpg}
 \caption{Polylinien und Polygone \protect\footnotemark}
 \end{figure}
 
@@ -335,7 +338,7 @@ Ein ESRI Shapefile besteht aus mindestens drei Dateien zur Speicherung der Geome
 
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.23]{gis.png}
+\includegraphics[scale=0.23]{gis.jpg}
 \caption{.shp-Geometriedatei in dem Geoinformationssystem QGIS dargestellt \protect\footnotemark}
 \end{figure}
 \footnotetext{https://www.qgis.org/de/site/}
@@ -345,7 +348,7 @@ Das dem Datensatz zugehörige farbige Rasterbild inklusive Schummerung (räumlic
 
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.4]{raster_nat_earth.png}
+\includegraphics[scale=0.9]{raster_nat_earth.jpg}
 \caption{Rasterbild des Natural-Earth-Datensatzes \protect\footnotemark}
 \end{figure}
 \footnotetext{http://www.naturalearthdata.com/downloads/10m-raster-data/10m-natural-earth-1/}
@@ -392,9 +395,9 @@ Im Folgenden eine Auflistung verschiedener Probleme, für deren Lösung sich die
 \item Image Captioning - Wie lassen sich die klassifizierten Objekte in Beziehung setzen? 
 \end{itemize}
 
-\begin{figure}[h]
+\begin{figure}[H]
 \centering
-\includegraphics[scale=0.25]{anwendungen.png}
+\includegraphics[scale=0.73]{anwendungen.jpg}
 \caption{Vergleich verschiedener Anwendungszwecke von Deep Learning}
 \end{figure}
 
@@ -407,21 +410,20 @@ Um bestimmen zu können, wie gut ein Bild $x$ ($x_i$ sind die einzelnen Pixelwer
 Der Parameter $W$ ist die sogenannte Gewichtsmatrix. Sie besitzt die Dimensionalität $i_{max} \times k_{max}$.
 Der Parameter $b$ heißt Bias und besitzt die Dimensionalität $k_{max} \times 1$. Er hat die gleiche Funktion wie die Gewichtsmatrix, ermöglicht aber eine zusätzliche additive Änderung beim Lernen. Im nächsten Unterkapitel wird die genauer Erläutert, wie dies zu interpretieren ist.
 
-\begin{figure}[h]
+\begin{figure}[H]
 \centering
-\includegraphics[scale=0.3]{wxplusb.png}
+\includegraphics[scale=0.25]{wxplusb.jpg}
 \caption{Interpretation der Score-Funktion anhand eines Beispiels}
 \end{figure}
 
 Wenn man ein Bild mit $i_{max}$ Pixeln als $i_{max}$ Dimensionalen Vektor auffasst, dann lässt sich ein Classifier als Hyperebenenseparator dieses Vektorraumes interpretieren. Je höher die Score Funktion für eine Klasse, desto geringer ist der Abstand zum Untervektorraum mit entsprechenden zur Klasse zugehörigen Mustern.
 
-\begin{figure}[h]
+\begin{figure}[H]
 \centering
-\includegraphics[scale=0.3]{hyperraum.png}
+\includegraphics[scale=0.3]{hyperraum.jpg}
 \caption{Hirsch-Auto-Flugzeug-Hyperraum mit Ebenenseparatoren}
 \end{figure}
 
-\newpage
 Äquivalent zur Score-Funktion definiert man auch eine sogenannte Loss-Funktion. Je besser ein Datum einer bestimmten Klasse zugeordnet werden kann, desto besser sind die Parameter der Gewichtsmatrix und des Bias und desto kleiner der Wert der Loss-Funktion. Im Rahmen eines Optimierungsprozesses soll die Loss-Funktion durch Änderung der Gewichte minimiert werden.
 \bigskip
 Zwei häufig verwendete Loss-Funktionen für Daten sind:
@@ -449,9 +451,9 @@ Um die Loss-Funktion zu minimieren, müssen die Gewichte $W$ aktualisiert werden
 \subsection{Multi-Layer Neural Network}
 Ein Multi-Layer Neuronales Netzwerk ist ein gerichteter azyklischer Graph, wobei die Knoten in Ebenen angeordnet werden. Die erste Knotenebene besteht aus den Eingabedaten. Im Bildbeispiel wäre jeder Knoten ein Pixelwert. Die Kanten des Graphen entsprechen den Werten der Gewichtsmatrix $W$. Die Knoten der Hidden-Layers under der Output-Layer lassen sich als Neuronen interpretieren, welche durch Aktivierung oder Deaktivierung bestimmte Muster der Eingabedaten lernen. Ob ein Neuron aktiviert wird oder nicht, bestimmt die Aktivierungsfunktion $g$. Das Ergebnis wird an eine weitere Neuronenschicht weitergeleitet und die gelernten Muster somit weiter verfeinert.
 
-\begin{figure}[h]
+\begin{figure}[H]
 \centering
-\includegraphics[scale=0.35]{mlnn.png}
+\includegraphics[scale=0.35]{mlnn.jpg}
 \caption{Multi-Layer NN. mit 2 Hidden-Layers, 32 Gewichten, 9 Biases und 9 Neuronen}
 \end{figure}
 
@@ -467,9 +469,9 @@ Sei $f$ eine Score-Funktion für ein Single Layer Neural Network mit nur einer A
 
 Diese Aktivierungsfunktion nennt sich auch Sigmoidfunktion. Sie transformiert relle Zahlen auf ein Intervall $\left[0, 1\right]$.
 
-\begin{figure}[h]
+\begin{figure}[H]
 \centering
-\includegraphics[scale=0.3]{sigmoid.png}
+\includegraphics[scale=0.12]{sigmoid.jpg}
 \caption{Beispiel für Backpropagation anhand der Sigmoid-Funktion}
 \end{figure}
 
@@ -477,9 +479,9 @@ Das Ergebnis von $f(x,w)$ mit $w = (2,-1,-3)$ und $x = (-1,-2)$ ist $0.73$. Die 
 \bigskip
 Neben der Sigmoidfunktion gibt es noch viele andere Aktivierungsfunktionen. So hat die Maximumsfunktion (Rectifier Linear Unit - ReLU) gegenüber der Sigmoidfunktion den Vorteil, dass bei relativ hohen Werten nicht alle Neuronen aktiviert werden und es somit weiterhin zu einem Lerneffekt kommt. Ein weiterer Vorteil des Rectifiert ist die schnellere Konvergenz des Gradienten. So stellt sich bereits nach wenigen Trainings ein starker Lerneffekt ein. Sind die gewichte jedoch zu Beginn sehr klein, so ist die Gefahr groß, dass bei einer weiteren Verkleinerung alle Neuronen deaktiviert werden.
 
-\begin{figure}[h]
+\begin{figure}[H]
 \centering
-\includegraphics[scale=0.3]{aktf.png}
+\includegraphics[scale=0.15]{aktf.jpg}
 \caption{Vergleich zwischen Rectifier und Sigmoid}
 \end{figure}
 
@@ -503,9 +505,9 @@ Zur Beschleunigung des Gradientenabstiegs wurden ebenfalls Verfahren entwickelt:
 \[v_t=\gamma v_{t-1}+\eta \nabla_WL(W)\]
 \[W=W-v_t\]
 
-\begin{figure}[h]
+\begin{figure}[H]
 \centering
-\includegraphics[scale=0.7]{momentum.png}
+\includegraphics[scale=0.35]{momentum.jpg}
 \caption{Momentum verringert die Oszillation der Loss-Funktion}
 \end{figure}
 
@@ -528,9 +530,9 @@ Ein Convnet ist ein Neuronales Netzwerk, das speziell für das Klassifizierungpr
 
 Danach wird der Filter um $stride$ Gitterzellen nach rechts verschoben und es wird erneut aufsummiert.
 
-\begin{figure}[h]
+\begin{figure}[H]
 \centering
-\includegraphics[scale=0.3]{convolution.png}
+\includegraphics[scale=0.15]{convolution.jpg}
 \caption{Convolution eines $7 \times 7$ Bildes mittels $3 \times 3$ Eins-Filter ($w_{i,k} = 1$), Padding = 1 und Stride = 2}
 \end{figure}
 
@@ -540,24 +542,24 @@ Jeder Filter erstreckt sich über die gesamte Tiefe des Bildes. Wird also ein $B
 
 \item \textbf{3. Pooling Layer} Diese Layer reduziert die Ausgabe nach der Filterung und Aktivierung auf wesentliche Merkmale des Bildes und verkleinert die Anzahl der Pixel, die für die Speicherung dieser Merkmale notwendig sind. Zum Einsatz kommt meistens das Max-Pooling. Hierbei wird wie bei der Convolution eine Maske auf das Bild gesetzt. Das Maximum aller Bildwerte, die sich hinter der Maske befinden, ist der Wert des neuen Bildes nach dem Pooling. 
 
-\begin{figure}[h]
+\begin{figure}[H]
 \centering
-\includegraphics[scale=0.3]{pooling.png}
+\includegraphics[scale=0.3]{pooling.jpg}
 \caption{Pooling mit stride = 2}
 \end{figure}
 
 \item \textbf{4. Fully Connected Layer} Diese Neuronen-Schicht soll die Ausgabe nach den oben genannten Schritten interpretierbar machen und auf Klassen-Scores abbilden. Jedes Neuron ist mit jedem aktivierten Gewicht davor liegenden Schicht verbunden.
-\begin{figure}[h]
+\begin{figure}[H]
 \centering
-\includegraphics[scale=0.2]{conv-construction.png}
+\includegraphics[scale=0.1]{conv-construction.jpg}
 \caption{Gewöhnliches Convnet mit Fully-Connected-Layers zum Schluss}
 \end{figure}
 
 \end{itemize}
 
-\begin{figure}[h]
+\begin{figure}[H]
 \centering
-\includegraphics[scale=0.7]{conv-layers.png}
+\includegraphics[scale=0.25]{conv-layers.jpg}
 \caption{Verbildlichung der Schritte 1-3 durch Anwendung von Convolution auf ein Luftbild\protect\footnotemark}
 \end{figure}
 \footnotetext{http://www.mdpi.com/2072-4292/7/11/14680/htm}
@@ -584,9 +586,9 @@ Hierbei enthalten die Gewichtsmatritzen $W_{xh}$, $W_{hh}$, $W_{hy}$ die zu lern
 \textbf{Beispiel:}\\
 Ein RNN wird mit einer gegebenen Sequenz ('h' 'e' 'l' 'l' 'o') 
 trainiert, so dass es bei der Eingabesequenz x = ('h' 'e' 'l' 'l') die Sequenz ('e' 'l' 'l' 'o') und somit den Buchstaben 'o' korrekt vorhersagt. 
-\begin{figure}[h]
+\begin{figure}[H]
 \centering
-\includegraphics[scale=0.35]{RNN.png}
+\includegraphics[scale=0.15]{RNN.jpg}
 \caption{RNN vervollständigt das Wort \textit{hello}}
 \end{figure}
 
@@ -676,14 +678,14 @@ Aus beiden oben genannten Gründen müssen Trainingsmodelle entwickelt werden, d
 Maschinelles Lernalgorithmen können dazu beitragen, Geowissenschaftliche Objekte und Ereignisse zu Charakterisieren und somit helfen, das Erdsystem besser zu verstehen. Während traditionelle Ansätze auf handgefertigten Algorithmen basieren, können Machine Learning Algorithmen mit ihrer automatischen Mustererkennung die Berechnungszeit deutlich verkürzen. Eine große Herausforderung stellt die Charakterisierung von physikalisch ungenau definierten Objekten dar. Unsupervised Learning kann dabei helfen, anomalische Objekte aufzuspüren (z.B. Landminen).\\
 \bigskip
 Ein weiterer großer Vorteil von Machine Learning ist die Erzeugung von Geodaten aus nur schwer beobachtbaren Prozessen (z.B. Methanausstoß und Konzentration in der Atmosphäre). Supervised Learning kann verwendet werden, um Fernerkundungsdaten zu analysieren und daraus Aussagen über das Ökosystem abzuleiten (z.B. Gesundheit der Vegetation oder Wasserqualität). Eine besondere Herausforderung ist dabei die Heterogenität solcher Daten, wie bereits weiter oben beschrieben. Eine mögliche Lösung sind Multi-Task-Learning-Frameworks, welche Datensätze zuerst in homogene Partitionen unterteilen (hierarchisches Clustern), und dann auf jeder dieser Partitionen einzeln trainieren. Dieses Vorgehen ist eine Regularisierungstechnik, welche die Überanpassung des Modells verhindern soll. Folgende Abbildung zeigt die Verbesserung der Genauigkeit der geschätzten Waldbedeckung vier brasilianischer Staaten, wobei die rot markierten Bereiche die Residuen darstellen.
-\begin{figure}[h]
+\begin{figure}[H]
 \centering
-\includegraphics[scale=0.25]{multi-task-learning.png}
+\includegraphics[scale=0.1]{multi-task-learning.jpg}
 \caption{Schätzung der Waldbedeckung in Brasilien \protect\footnotemark}
 \end{figure}
 \footnotetext{A. Karpatne, Z. Jiang, R. R. Vatsavai, S. Shekhar, and V. Kumar,
 Monitoring Land-Cover Changes. IEEE Geoscience and Remote
-Sensing Magazine, 2016}\\
+Sensing Magazine, 2016}~\\
 \bigskip
 \textbf{Nichtstationarität, Heterogenität und Mangeldaten}\\
 Zum Umgang mit der Nichtstationarität (= Variable folgt keinem konstanten Wert) von Klimadaten wurden lernende Algorithmen entworfen, welche die Vorhersagen verschiedener Klimamodelle kombinieren. Statt eines Mittelwertes über die Klimamodelle berücksichtigt der selbstlernende Algorithmus zusätzlich  die nichtstationären Dateneigenschaften und erzeugt wesentlich genauerer Vorhersagen.
@@ -749,9 +751,9 @@ Ziel des Data Mining Prozesses ist es, Muster in Datenbanken zu erkennen und die
 \footnotetext{\url{https://player.slideplayer.org/3/1324211}}
 Zu neuronalen Netzwerken, deren Funktionsweise nach dem Trainingsprozess nicht mehr mathematisch nachvollzogen werden kann, bieten Clusteringverfahren eine konkrete, statistische Alternative. Wird ein neuronales Netzwerk hinsichtlich einer Aufgabe angepasst, so ist eine Verbesserung nur durch Ausprobieren verschiedener Architekturen und Kernels verifizierbar. Optimierungen an Clusteringverfahren können jedoch meist als Anpassung einer Optimierungsfunktion formal mathematisch nachvollzogen werden.
 
-\begin{figure}[h]
+\begin{figure}[H]
 \centering
-\includegraphics[scale=0.7]{3dcluster.png}
+\includegraphics[scale=0.3]{3dcluster.jpg}
 \caption{Geclusterter Datensatz: Jedes Datum (blaue Punkte) hat 3 Attribute. Jedes Kreuz ist das Zentrum eines gefundenen Clusters. Die optimale Clusteranzahl wurde mithilfe von Cluster Validity Indizes bestimmt.}\label{cluster}
 \end{figure}
 
@@ -773,9 +775,9 @@ Die Distanzfunktion hängt von der Dimensionalität des Datensatzes ab. Die Neub
 Eine beschleunigte Version der Varianzminimierung ist der \textbf{k-means-Algorithmus} \cite{forgy}. Wenn ein Datenpunkt $p$ vom Cluster $C_1$ seine Zugehörigkeit an den Cluster $C_2$ verliert, dann wird nicht auf die restlichen Punkte bei der Neuzuordnung gewartet. Stattdessen werden die Clusterzentroide der betreffenden Cluster $C_1$ und $C_2$ wie folgt sofort aktualisiert:
 $$\mu_j^{' C_1} = \frac{1}{|C_1|-1}\cdot(|C_1|\cdot \mu_j^{C_1} - x_j^p)$$ und $$\mu_j^{' C_2} = \frac{1}{|C_1|+1}\cdot(|C_2|\cdot \mu_j^{C_2} + x_j^p)$$ 
 
-\begin{figure}[h]
+\begin{figure}[H]
 \centering
-\includegraphics[scale=0.4]{kmeans.png}
+\includegraphics[scale=0.17]{kmeans.jpg}
 \caption{Visualisierung des Ablaufs der beiden alternierenden Schritte}\label{cluster}
 \end{figure}
 
@@ -822,9 +824,9 @@ Eines der bedeutendsten Clusteringalgorithmen ist das dichtebasierte DBSCAN-Verf
 
 DBSCAN nimmt an, dass Cluster Punktregionen mit höherer Dichte sind, die durch Regionen mit geringerer Dichte (Noise) voneinander getrennt werden. Es kann ausschließlich Cluster desselben Dichteniveaus erkennen. Seine Optimierung OPTICS, welches als hierarchisches dichtebasiertes Clusteringverfahren zählt, kann dagegen auch unterschiedlich dichte Cluster und Subcluster erkennen.
 
-\begin{figure}[h]
+\begin{figure}[H]
 \centering
-\includegraphics[scale=0.18]{dbscanprob.png}
+\includegraphics[scale=0.35]{dbscanprob.jpg}
 \caption{Probleme von DBSCAN bei Erkennung von Clustern mit unterschiedlicher Dichte}\label{cluster}
 \end{figure}
 
@@ -838,7 +840,7 @@ Ein Objekt $o$ ist \textbf{direkt-dichte-erreichbar}, wenn es in der $\epsilon$-
 \end{minipage}
 \hfill
 \begin{minipage}{0.3\textwidth}
-\includegraphics[width=\linewidth]{neps.png}
+\includegraphics[width=\linewidth]{neps.jpg}
 \end{minipage}
 
 
@@ -847,7 +849,7 @@ Ein Objekt $q$ ist \textbf{dichte-erreichbar}, wenn es eine Kette von direkt-dic
 \end{minipage}
 \hfill
 \begin{minipage}{0.3\textwidth}
-\includegraphics[width=\linewidth]{dichteerreichbar.png}
+\includegraphics[width=\linewidth]{dichteerreichbar.jpg}
 \end{minipage}
 
 \begin{minipage}{0.6\textwidth}\raggedright
@@ -855,10 +857,10 @@ Zwei Objekte $p$ und $q$ sind \textbf{dichte-verbunden}, wenn es einen gemeinsam
 \end{minipage}
 \hfill
 \begin{minipage}{0.3\textwidth}
-\includegraphics[width=\linewidth]{dichteverbunden.png}
+\includegraphics[width=\linewidth]{dichteverbunden.jpg}
 \end{minipage}
 \\~\\
-Im Folgenden beschränke ich mich auf die hierarchische Variante des DBSCAN-Algorithmus, da Sie in der Praxis besonders auf Geodatensätzen bessere Ergebnisse erzielt und das Problem aus Abbildung 4.4 löst. 
+Im Folgenden beschränke ich mich auf die hierarchische Variante des DBSCAN-Algorithmus, da Sie in der Praxis besonders auf Geodatensätzen bessere Ergebnisse erzielt und das Problem aus Abbildung 4.4 löst. Gegenüber der Grundvariante ist OPTICS allerdings rechenintensiver.
 
 \subsubsection{Erweiterte Grundbegriffe}~
 \begin{minipage}{0.50\textwidth}\raggedright
@@ -868,14 +870,14 @@ Die Erreichbarkeitsdistanz $rd_{\epsilon, minPts}(p ,o)$ ist genau dann definier
 \end{minipage}
 \hfill
 \begin{minipage}{0.45\textwidth}
-\includegraphics[width=\linewidth]{kdrd.png}
+\includegraphics[width=\linewidth]{kdrd.jpg}
 \end{minipage}
 \\
 Der OPTICS(Ordering Points To Identify the Clustering Structure)-Algorithmus \cite{optics} liefert bezüglich der Parameter $\epsilon$ und $minPts$ eine Ordnung von Clustern in Form eines Erreichbarkeitsdiagramms. Dazu werden die Punkte so sortiert, dass ein nachfolgender Punkt im Diagramm zur Menge der bereits besuchten Objekte die kleinste Erreichbarkeitsdistanz besitzt.
 
-\begin{figure}[h]
+\begin{figure}[H]
 \centering
-\includegraphics[scale=0.3]{reachdiag.png}
+\includegraphics[scale=0.12]{reachdiag.jpg}
 \caption{Erreichbarkeitsdiagramm (OrderedFile) nach Ausführung des OPTICS-Algorithmus\protect\footnotemark}
 \end{figure}
 \footnotetext{\url{http://www-old.dbs.ifi.lmu.de/Lehre/KDD/WS0708/skript/kdd-5-clustering_02.pdf}}
@@ -1026,7 +1028,7 @@ Seien die roten und grünen Punkte in der Abbildung rechts die Objekte, welche d
 \end{minipage}
 \hfill
 \begin{minipage}{0.5\textwidth}
-\includegraphics[width=\linewidth]{svm.png}
+\includegraphics[width=\linewidth]{svm.jpg}
 \end{minipage}
 
 Die Klassenlabels der Punkte oberhalb der Geraden $H_1$ sind $y_+ = +1$ bzw. unterhalb der Geraden $H_2$ $y_- = -1$. Sie sind also ein Teil ihrer Koordinate. Dies funktioniert, da sich die y-Werte für das Einstzen der Punkte $x_+$ und $x_-$ in die Geradengleichung von $H_0$ mithilfe der Signumfunktion transformieren lassen. Gilt für einen Punkt $x_i$, dass $\omega \cdot x_i + b \geq 0$, dann gehört dieser zur Klasse rot. Es gilt gleichzeitig für alle Werte $H_0(x_i) \geq 0$, dass $sign(H_0(x_i)) = +1 = y_i$.
@@ -1093,13 +1095,12 @@ Im Folgenden habe ich einen Optimierer (scipy.optimize.minimize) zur Maximierung
 
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.4]{svm1.png}
-\includegraphics[scale=0.43]{svm2.png}
+\includegraphics[scale=0.19]{svm1.jpg}
 \end{figure}
-
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.45]{svm3.png}
+\includegraphics[scale=0.2]{svm2.jpg}
+\includegraphics[scale=0.2]{svm3.jpg}
 \end{figure}
 
 

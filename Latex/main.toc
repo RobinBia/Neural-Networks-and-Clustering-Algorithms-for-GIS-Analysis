@@ -53,9 +53,9 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.2.7}Convolutional Neural Network}{24}{subsection.3.2.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.8}Recurrent Neural Network}{25}{subsection.3.2.8}
+\contentsline {subsection}{\numberline {3.2.8}Recurrent Neural Network}{26}{subsection.3.2.8}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.9}Long Short Term Memory Netzwerke}{26}{subsection.3.2.9}
+\contentsline {subsection}{\numberline {3.2.9}Long Short Term Memory Netzwerke}{27}{subsection.3.2.9}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {3.3}Machine Learning in Geowissenschaften}{28}{section.3.3}
 \defcounter {refsection}{0}\relax 
