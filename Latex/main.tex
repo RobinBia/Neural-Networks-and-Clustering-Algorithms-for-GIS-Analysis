@@ -742,7 +742,7 @@ Die Forschung der letzten Jahre hat gezeigt, dass weder ein reiner Datenansatz n
 \chapter{Clusteringverfahren}
 ~
 \section{Definition und Anwendungszweck}
-Ziel des Data Mining Prozesses ist es, Muster in Datenbanken zu erkennen und diese in Form von Wissen aufzubereiten. Im Falle des Clusterings werden Datenpunkte in Gruppen (Cluster) eingeteilt,so dass Daten mit ähnlichen Eigenschaften dem gleichen Cluster und Daten mit unterschiedlichen Eigenschaften verschiedenen Clustern zugeordnet werden. Im Bezug auf Geodaten wären zum Beispiel alle Punkte mit Farbwerten dunkelblau dem Cluster Wasser zugeordnet und alle Daten mit grüner Farbe dem Cluster Vegetation. Auf diese Weise lassen sich topologische Grenzen finden. Eine andere Möglichkeit bietet die gewichtete n-dimensionale Clusteranalyse. Sie ermöglicht die Zuordnung komplexer Daten zu komplexen Klassen. Wurde nach der numerischen Diskretisierung eines Objekts eine hohe Anzahl an Eigenschaften gefunden, so müssen Clusteringverfahren angewandt werden, welche unterschiedlich dichte Cluster unterschiedlichster Form erkennen können. Unter Umständen müssen die Daten mittels Hauptkomponentenanalyse auf Unterräume transformiert werden oder die Relevanz und Unabhängigkeit einzelner Attribute mittels Entropieanalyse bestimmt werden. Ein Beispiel hierfür ist die Analyse von Spektralklassen des von Geoobjekten reflektierten Lichts. Da das Reflektionsverhalten vieler Objekte für jeden Wellenlängenbereich characteristisch ist, kann mittels 7D-Clustering (dem Clustering nach Einteilung der Wellenlängen in 7 Bereiche, auch Spektralkanäle genannt) bestimmt werden, um welches Objekt es sich handelt, oder wie eine Landfläche genutzt wird.
+Ziel des Data Mining Prozesses ist es, Muster in Datenbanken zu erkennen und diese in Form von Wissen aufzubereiten. Im Falle des Clusterings werden Datenpunkte in Gruppen (Cluster) eingeteilt,so dass Daten mit ähnlichen Eigenschaften dem gleichen Cluster und Daten mit unterschiedlichen Eigenschaften verschiedenen Clustern zugeordnet werden. Im Bezug auf Geodaten wären zum Beispiel alle Punkte mit Farbwerten dunkelblau dem Cluster Wasser zugeordnet und alle Daten mit grüner Farbe dem Cluster Vegetation. Auf diese Weise lassen sich topologische Grenzen finden. Eine andere Möglichkeit bietet die gewichtete n-dimensionale Clusteranalyse. Sie ermöglicht die Zuordnung komplexer Daten zu komplexen Klassen. Wurde nach der numerischen Diskretisierung eines Objekts eine hohe Anzahl an Eigenschaften gefunden, so müssen Clusteringverfahren angewandt werden, welche unterschiedlich dichte Cluster unterschiedlichster Form erkennen können. Unter Umständen müssen die Daten mittels Hauptkomponentenanalyse auf Unterräume transformiert werden oder die Relevanz und Unabhängigkeit einzelner Attribute mittels Entropieanalyse bestimmt werden. Ein Beispiel hierfür ist die Analyse von Spektralklassen des von Geoobjekten reflektierten Lichts. Da das Reflektionsverhalten vieler Objekte für jeden Wellenlängenbereich characteristisch ist, kann mittels 7D-Clustering (dem Clustering nach Einteilung der Wellenlängen in 7 Bereiche, auch Spektralkanäle genannt) bestimmt werden, um welches Objekt es sich handelt, oder wie eine Landfläche genutzt wird. \newpage
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.55]{spektral.jpg}
@@ -820,7 +820,7 @@ Die optimale Clusteranzahl $k$ kann jetzt bestimmt werden, indem der Silhouetten
 
 
 \subsection{OPTICS - Dichtebasiertes Clustering}
-Eines der bedeutendsten Clusteringalgorithmen ist das dichtebasierte DBSCAN-Verfahren. Es ist neben seiner Abwandlungen und Optimierungen (OPTICS und HDBSCAN) in vielen Geoinformationssystemen, wie z.B. arcGIS implementiert\footnote{http://pro.arcgis.com/de/pro-app/tool-reference/spatial-statistics/densitybasedclustering.htm}. 
+Einer der bedeutendsten Clusteringalgorithmen ist das dichtebasierte DBSCAN-Verfahren. Es ist neben seiner Abwandlungen und Optimierungen (OPTICS und HDBSCAN) in vielen Geoinformationssystemen, wie z.B. arcGIS implementiert\footnote{http://pro.arcgis.com/de/pro-app/tool-reference/spatial-statistics/densitybasedclustering.htm}. 
 
 DBSCAN nimmt an, dass Cluster Punktregionen mit höherer Dichte sind, die durch Regionen mit geringerer Dichte (Noise) voneinander getrennt werden. Es kann ausschließlich Cluster desselben Dichteniveaus erkennen. Seine Optimierung OPTICS, welches als hierarchisches dichtebasiertes Clusteringverfahren zählt, kann dagegen auch unterschiedlich dichte Cluster und Subcluster erkennen.
 
@@ -990,6 +990,18 @@ Im Diagramm können nun Cluster und Subcluster verschiedener Dichte, also versch
 Die Wahl der Parameter $\epsilon$ und $minPts$ sollte so erfolgen, dass die Cluster im Diagramm vertikal zentriert sind. Es dürfen also nur wenige Erreichbarkeitsdistanzen $\infty$ sein. Außerdem darf die Varianz der Erreichbarkeitsdistanzen zwischen zwei benachbarten Punkten nicht zu groß werden. Um dies zu garantieren, wird $\epsilon$ entweder so gewählt, dass die $minPts$-Eigenschaft bezüglich einer kleinen Punktestrichprobe immer erfüllt ist oder es wird die durchschnittliche $minPts$-Distanz berechnet. Es wird also diejenige $\epsilon$-Distanz gewählt, welche im Durchschnitt von allen Punkten aus $minPts$-viele Punkte einschließt.
 Der Wert für $minPts$ muss in Abhängigkeit der Größe des Datensatzes gewählt werden. Je feiner die Auflösung der Datenbank, desto größer muss der Wert sein.
 
+\subsubsection{Anwendungsgebiete}
+Die Werkzeugreferenz von \textbf{ArcGIS Pro}\footnote{\url{https://pro.arcgis.com/de/pro-app/tool-reference/spatial-statistics/how-density-based-clustering-works.htm}} gibt folgende Anwendungsszenarien für das Werkzeug \textit{Dichte-basierte Cluster-Bildung} an:
+
+\begin{itemize}
+\item Clustering von Rohrbrüchen und Rissen städtischer Wasserversorgungssysteme kann auf bevorstehende Probleme hinweisen. Je nach Größe und Diche eines Clusters können Gefahrenpotentiale abgeschätzt und vorbeugende Maßnahmen getroffen werden.
+\item Positionsdaten von erfolgreichen und nicht erfolgreichen Sportlern z.B. Torschützen beim Fußball clustern, um Muster zu erkennen und daraus neue Spielstrategien ableiten zu können.
+\item Angenommen es liegt ein Datensatz vor, der für ein begrenztes Untersuchtungsgebiet (z.B. für eine Stadt) aufführt, ob ein Haushalt unter Schädlingsbefall leidet oder nicht. Mittels Clusterbildung können die größten und dichtesten Cluster betroffener Haushaltsgruppen identifiziert und behandelt werden. Dies steigert die Effizienz der Schädlingsbekämpfung.
+\item Das Verorten von Tweets infolge von Naturgefahren oder Terroranschlägen kann geclustert und notwendige Rettungsmaßnahmen und Evakuierungen können basierend auf der Größe und Position des identifizierten Clusters vermittelt werden.
+\end{itemize}
+
+\textbf{Genaueres zu dem Tool, den Parametern und der Verwendung unter Umständen hier?}
+
 \subsection{Outlier Detection - Local Outlier Factor}
 Ein Problem der dichtebasierten Clusteringverfahren ist, dass manche Punkte entweder als Outlier oder als Clusterpunkt markiert werden. Manchmal möchte man jedoch aus analytischen Gründen selbständig beurteilen und steuern können, was als Outlier markiert werden soll. Aus diesem Grund wurde der Local Outlier Factor (LOF) erfunden, welcher für Punkt den Grad seiner Zuordenbarkeit berechnet \cite{lof}.
 
@@ -1091,16 +1103,19 @@ Nach Einsetzen von \eqref{Lpb} in \eqref{lagrange2} ergibt sich folgende Gleichu
 
 Diese lässt sich unter Nebenbedingung \eqref{Lpb} und $\alpha_i \geq 0$ maximieren.
 
-Im Folgenden habe ich einen Optimierer (scipy.optimize.minimize) zur Maximierung von \eqref{lagfinal} für ein selbstgewähltes Beispiel konkret in Python implementiert. Die Maximierung von $\mathcal{L}$ entspricht der Minimierung von $-\mathcal{L}$.
+\vspace*{\fill}
+
+Im Folgenden habe ich einen Optimierer (scipy.optimize.minimize) zur Maximierung von \eqref{lagfinal} für ein selbstgewähltes Beispiel konkret in Python implementiert. Die Maximierung von $\mathcal{L}$ entspricht der Minimierung von $-\mathcal{L}$:
+
 
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.19]{svm1.jpg}
+\includegraphics[scale=0.45]{svm1.jpg}
+\includegraphics[scale=0.45]{svm2.jpg}
 \end{figure}
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.2]{svm2.jpg}
-\includegraphics[scale=0.2]{svm3.jpg}
+\includegraphics[scale=0.45]{svm3.jpg}
 \end{figure}
 
 
@@ -1121,10 +1136,12 @@ Im Folgenden habe ich einen Optimierer (scipy.optimize.minimize) zur Maximierung
 \section{Clustering auf unvollständigen Daten}
 
 \section{Assoziationsregeln}
-%In Kapitel 10 Geoinf. kommt der naive Bayes-Klassifikator vor !
+In Kapitel 10 Geoinf. kommt der naive Bayes-Klassifikator vor!
+Paper: \url{https://www.mii.lt/na/issues/NA_0602/NA06203.pdf}
+Entscheidungsbäume, Splitstrategien, Anwendung
 \section{Einsatz in der Praxis und Software-Tools}
 %Outlier Detection z.B. zum Finden von Erdbeeben
-%Siehe Tab n Browser zu arcgis Werkzeugen Antwendungsgebiete 
+%Siehe Tab in Browser zu arcgis Werkzeugen Antwendungsgebiete 
 
 
 %----------------------------------------------------------------------------------------

@@ -93,11 +93,13 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsubsection}{Wahl der Parameter $\epsilon $ und $minPts$}{44}{section*.11}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.2.4}Outlier Detection - Local Outlier Factor}{44}{subsection.4.2.4}
+\contentsline {subsubsection}{Anwendungsgebiete}{44}{section*.12}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Grundbegriffe}{44}{section*.12}
+\contentsline {subsection}{\numberline {4.2.4}Outlier Detection - Local Outlier Factor}{45}{subsection.4.2.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Berechnung von LOF}{44}{section*.13}
+\contentsline {subsubsection}{Grundbegriffe}{45}{section*.13}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Berechnung von LOF}{45}{section*.14}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {4.2.5}Lineare Separation - Support Vector Machine}{45}{subsection.4.2.5}
 \defcounter {refsection}{0}\relax 
@@ -105,11 +107,11 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {4.3.1}Probabilistisches und Possibilistisches Clustering}{49}{subsection.4.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{FCM und PFCM}{49}{section*.14}
+\contentsline {subsubsection}{FCM und PFCM}{49}{section*.15}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Vorraussetzungen f\IeC {\"u}r die Anwendung auf Geodaten}{49}{section*.15}
+\contentsline {subsubsection}{Vorraussetzungen f\IeC {\"u}r die Anwendung auf Geodaten}{49}{section*.16}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Eigener Algoritmus (noch ohne Name)}{49}{section*.16}
+\contentsline {subsubsection}{Eigener Algoritmus (noch ohne Name)}{49}{section*.17}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {4.4}CVI}{49}{section.4.4}
 \defcounter {refsection}{0}\relax 
