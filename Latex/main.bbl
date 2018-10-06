@@ -333,33 +333,42 @@
       \field{pages}{768\bibrangedash 769}
       \range{pages}{2}
     \endentry
-    \entry{dynrnn}{misc}{}
-      \name{author}{1}{}{%
-        {{hash=81c610316c4115fc4ca5e763a8934ea4}{%
-           family={Hochreiter},
-           familyi={H\bibinitperiod},
-           given={Josef},
-           giveni={J\bibinitperiod}}}%
+    \entry{csteps}{report}{}
+      \name{author}{3}{}{%
+        {{hash=9d61913304fabd25aefc2177b984c2f9}{%
+           family={JAIN},
+           familyi={J\bibinitperiod},
+           given={A.K.},
+           giveni={A\bibinitperiod}}}%
+        {{hash=a862e917fe6fa214f4ab0975f073321b}{%
+           family={MURTY},
+           familyi={M\bibinitperiod},
+           given={M.N.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=c77550af32f3aac9143a6b72bd24cfcc}{%
+           family={FLYNN},
+           familyi={F\bibinitperiod},
+           given={P.J.},
+           giveni={P\bibinitperiod}}}%
       }
-      \strng{namehash}{81c610316c4115fc4ca5e763a8934ea4}
-      \strng{fullhash}{81c610316c4115fc4ca5e763a8934ea4}
-      \strng{bibnamehash}{81c610316c4115fc4ca5e763a8934ea4}
-      \strng{authorbibnamehash}{81c610316c4115fc4ca5e763a8934ea4}
-      \strng{authornamehash}{81c610316c4115fc4ca5e763a8934ea4}
-      \strng{authorfullhash}{81c610316c4115fc4ca5e763a8934ea4}
-      \field{labelalpha}{Hoc91}
-      \field{sortinit}{H}
-      \field{sortinithash}{5f15a7bc777ad49ff15aa4d2831b1681}
+      \list{institution}{3}{%
+        {Michigan State University}%
+        {Indian Institute of Science}%
+        {The Ohio State University}%
+      }
+      \strng{namehash}{52a0b220be9bf7f3998ca5b46dd9289f}
+      \strng{fullhash}{52a0b220be9bf7f3998ca5b46dd9289f}
+      \strng{bibnamehash}{52a0b220be9bf7f3998ca5b46dd9289f}
+      \strng{authorbibnamehash}{52a0b220be9bf7f3998ca5b46dd9289f}
+      \strng{authornamehash}{52a0b220be9bf7f3998ca5b46dd9289f}
+      \strng{authorfullhash}{52a0b220be9bf7f3998ca5b46dd9289f}
+      \field{labelalpha}{JMF99}
+      \field{sortinit}{J}
+      \field{sortinithash}{fce5f8d0bd05e8d93f3dbe21c78897ca}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{title}{Untersuchungen zu dynamischen neuronalen Netzen}
-      \field{year}{1991}
-      \verb{urlraw}
-      \verb http://people.idsia.ch/~juergen/SeppHochreiter1991ThesisAdvisorSchmidhuber.pdf
-      \endverb
-      \verb{url}
-      \verb http://people.idsia.ch/~juergen/SeppHochreiter1991ThesisAdvisorSchmidhuber.pdf
-      \endverb
+      \field{title}{Data Clustering: A Review}
+      \field{year}{1999}
     \endentry
     \entry{machgeo}{online}{}
       \name{author}{5}{}{%
@@ -512,33 +521,30 @@
       \field{title}{Machine Learning}
       \field{year}{1997}
     \endentry
-    \entry{lstm}{misc}{}
+    \entry{clustgis}{report}{}
       \name{author}{1}{}{%
-        {{hash=dea937fb216bfbba25c1bfa1f36a63fe}{%
-           family={Olah},
-           familyi={O\bibinitperiod},
-           given={Christopher},
-           giveni={C\bibinitperiod}}}%
+        {{hash=0ea5d144f202173579a66b2542a2139c}{%
+           family={Roy},
+           familyi={R\bibinitperiod},
+           given={Parthajit},
+           giveni={P\bibinitperiod}}}%
       }
-      \strng{namehash}{dea937fb216bfbba25c1bfa1f36a63fe}
-      \strng{fullhash}{dea937fb216bfbba25c1bfa1f36a63fe}
-      \strng{bibnamehash}{dea937fb216bfbba25c1bfa1f36a63fe}
-      \strng{authorbibnamehash}{dea937fb216bfbba25c1bfa1f36a63fe}
-      \strng{authornamehash}{dea937fb216bfbba25c1bfa1f36a63fe}
-      \strng{authorfullhash}{dea937fb216bfbba25c1bfa1f36a63fe}
-      \field{labelalpha}{Ola15}
-      \field{sortinit}{O}
-      \field{sortinithash}{dad3efd0836470093a7b4a7bb756eb8c}
+      \list{institution}{1}{%
+        {The University of Burdwan}%
+      }
+      \strng{namehash}{0ea5d144f202173579a66b2542a2139c}
+      \strng{fullhash}{0ea5d144f202173579a66b2542a2139c}
+      \strng{bibnamehash}{0ea5d144f202173579a66b2542a2139c}
+      \strng{authorbibnamehash}{0ea5d144f202173579a66b2542a2139c}
+      \strng{authornamehash}{0ea5d144f202173579a66b2542a2139c}
+      \strng{authorfullhash}{0ea5d144f202173579a66b2542a2139c}
+      \field{labelalpha}{Roy13}
+      \field{sortinit}{R}
+      \field{sortinithash}{da6b42bd3ab22fee61abed031ee405f7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{title}{Understanding LSTM Networks}
-      \field{year}{2015}
-      \verb{urlraw}
-      \verb http://colah.github.io/posts/2015-08-Understanding-LSTMs/
-      \endverb
-      \verb{url}
-      \verb http://colah.github.io/posts/2015-08-Understanding-LSTMs/
-      \endverb
+      \field{title}{Clustering and its application to GIS}
+      \field{year}{2013}
     \endentry
     \entry{gdalg}{online}{}
       \name{author}{1}{}{%

@@ -22,29 +22,30 @@
 \BOOKMARK [2][-]{subsection.3.2.6}{Parameterupdates}{section.3.2}% 22
 \BOOKMARK [2][-]{subsection.3.2.7}{Convolutional Neural Network}{section.3.2}% 23
 \BOOKMARK [2][-]{subsection.3.2.8}{Recurrent Neural Network}{section.3.2}% 24
-\BOOKMARK [2][-]{subsection.3.2.9}{Long Short Term Memory Netzwerke}{section.3.2}% 25
-\BOOKMARK [1][-]{section.3.3}{Machine Learning in Geowissenschaften}{chapter.3}% 26
-\BOOKMARK [2][-]{subsection.3.3.1}{Herausforderungen und Chancen von Machine Learning }{section.3.3}% 27
-\BOOKMARK [2][-]{subsection.3.3.2}{Einsatz in der Praxis - Beispiele}{section.3.3}% 28
-\BOOKMARK [1][-]{section.3.4}{Tensorflow}{chapter.3}% 29
-\BOOKMARK [1][-]{section.3.5}{Erstes eigenes CNN}{chapter.3}% 30
-\BOOKMARK [0][-]{chapter.4}{Clusteringverfahren}{}% 31
-\BOOKMARK [1][-]{section.4.1}{Definition und Anwendungszweck}{chapter.4}% 32
-\BOOKMARK [1][-]{section.4.2}{Harte Methoden}{chapter.4}% 33
-\BOOKMARK [2][-]{subsection.4.2.1}{Partitionierende Verfahren und ihre Nachteile}{section.4.2}% 34
-\BOOKMARK [2][-]{subsection.4.2.2}{Silhouettenkoeffizient - Wahl der Clusteranzahl}{section.4.2}% 35
-\BOOKMARK [2][-]{subsection.4.2.3}{OPTICS - Dichtebasiertes Clustering}{section.4.2}% 36
-\BOOKMARK [2][-]{subsection.4.2.4}{Outlier Detection - Local Outlier Factor}{section.4.2}% 37
-\BOOKMARK [2][-]{subsection.4.2.5}{Lineare Separation - Support Vector Machine}{section.4.2}% 38
-\BOOKMARK [1][-]{section.4.3}{Weiche Methoden - Fuzzy-Clustering}{chapter.4}% 39
-\BOOKMARK [2][-]{subsection.4.3.1}{Probabilistisches und Possibilistisches Clustering}{section.4.3}% 40
-\BOOKMARK [1][-]{section.4.4}{CVI}{chapter.4}% 41
-\BOOKMARK [2][-]{subsection.4.4.1}{NPC}{section.4.4}% 42
-\BOOKMARK [2][-]{subsection.4.4.2}{FHV}{section.4.4}% 43
-\BOOKMARK [2][-]{subsection.4.4.3}{Otsu-Binarisierung}{section.4.4}% 44
-\BOOKMARK [2][-]{subsection.4.4.4}{VAT-Algorithmus}{section.4.4}% 45
-\BOOKMARK [1][-]{section.4.5}{Clustering auf unvollst\344ndigen Daten}{chapter.4}% 46
-\BOOKMARK [1][-]{section.4.6}{Assoziationsregeln}{chapter.4}% 47
-\BOOKMARK [1][-]{section.4.7}{Einsatz in der Praxis und Software-Tools}{chapter.4}% 48
-\BOOKMARK [0][-]{chapter.5}{Fazit und Ausblick}{}% 49
-\BOOKMARK [1][-]{section.5.1}{Ausblick - Mein Thema f\374r die Masterarbeit}{chapter.5}% 50
+\BOOKMARK [1][-]{section.3.3}{Machine Learning in Geowissenschaften}{chapter.3}% 25
+\BOOKMARK [2][-]{subsection.3.3.1}{Herausforderungen und Chancen von Machine Learning }{section.3.3}% 26
+\BOOKMARK [0][-]{chapter.4}{Clusteringverfahren}{}% 27
+\BOOKMARK [1][-]{section.4.1}{Definition und Anwendungszweck}{chapter.4}% 28
+\BOOKMARK [2][-]{subsection.4.1.1}{Die f\374nf Hauptschritte des Datenclustering}{section.4.1}% 29
+\BOOKMARK [1][-]{section.4.2}{Crisp Clustering}{chapter.4}% 30
+\BOOKMARK [2][-]{subsection.4.2.1}{Partitionierende Verfahren und ihre Nachteile}{section.4.2}% 31
+\BOOKMARK [2][-]{subsection.4.2.2}{Silhouettenkoeffizient - Wahl der Clusteranzahl}{section.4.2}% 32
+\BOOKMARK [2][-]{subsection.4.2.3}{OPTICS - Dichtebasiertes Clustering}{section.4.2}% 33
+\BOOKMARK [2][-]{subsection.4.2.4}{Outlier Detection - Local Outlier Factor}{section.4.2}% 34
+\BOOKMARK [2][-]{subsection.4.2.5}{Lineare Separation - Support Vector Machine}{section.4.2}% 35
+\BOOKMARK [1][-]{section.4.3}{Fuzzy-Clustering}{chapter.4}% 36
+\BOOKMARK [2][-]{subsection.4.3.1}{Fuzzy C-Means \(FCM\)}{section.4.3}% 37
+\BOOKMARK [2][-]{subsection.4.3.2}{PFCM}{section.4.3}% 38
+\BOOKMARK [2][-]{subsection.4.3.3}{Geometrisches Clustering}{section.4.3}% 39
+\BOOKMARK [2][-]{subsection.4.3.4}{Graphbasiertes Clustering}{section.4.3}% 40
+\BOOKMARK [2][-]{subsection.4.3.5}{Kontextbasiertes Clustering}{section.4.3}% 41
+\BOOKMARK [1][-]{section.4.4}{Finden der Clusteranzahl}{chapter.4}% 42
+\BOOKMARK [2][-]{subsection.4.4.1}{NPC}{section.4.4}% 43
+\BOOKMARK [2][-]{subsection.4.4.2}{FHV}{section.4.4}% 44
+\BOOKMARK [2][-]{subsection.4.4.3}{Otsu-Binarisierung}{section.4.4}% 45
+\BOOKMARK [2][-]{subsection.4.4.4}{VAT-Algorithmus}{section.4.4}% 46
+\BOOKMARK [1][-]{section.4.5}{Clustering auf unvollst\344ndigen Daten}{chapter.4}% 47
+\BOOKMARK [1][-]{section.4.6}{Assoziationsregeln}{chapter.4}% 48
+\BOOKMARK [0][-]{chapter.5}{Implementierungen}{}% 49
+\BOOKMARK [0][-]{chapter.6}{Fazit und Ausblick}{}% 50
+\BOOKMARK [1][-]{section.6.1}{Ausblick - Mein Thema f\374r die Masterarbeit}{chapter.6}% 51

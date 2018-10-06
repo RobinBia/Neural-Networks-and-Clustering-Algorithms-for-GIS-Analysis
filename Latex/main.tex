@@ -1,6 +1,3 @@
-\pdfminorversion=5
-\pdfcompresslevel=9
-\pdfobjcompresslevel=2
 \documentclass[11pt,ceqn]{book} 
 \usepackage[export]{adjustbox}
 \usepackage[top=3cm,bottom=3cm,left=3.2cm,right=3.2cm,headsep=10pt,letterpaper]{geometry} 
@@ -12,16 +9,24 @@
   numbers=left,
   literate={\ \ }{{\ }}1
 }
+\usepackage{amsmath}
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
+\makeatletter
+\def\BState{\State\hskip-\ALG@thistlm}
+\makeatother
 \usepackage{pythonhighlight}
 \usepackage{float}
 \usepackage{xcolor}
 \usepackage{url}
 \definecolor{ocre}{RGB}{52,177,201} 
 \usepackage{avant} 
-\usepackage{mathptmx} 
+%\usepackage{mathptmx}
+%\usepackage{mathrsfs} 
 \usepackage{microtype} 
 \usepackage[utf8]{luainputenc}
 \usepackage[T1]{fontenc}
+\usepackage{lmodern}
 \usepackage[style=alphabetic,
             sorting=nyt,
             sortcites=true,
@@ -404,9 +409,7 @@ Im Folgenden eine Auflistung verschiedener Probleme, für deren Lösung sich die
 \newpage
 \subsection{Linear Classifier}
 Um bestimmen zu können, wie gut ein Bild $x$ ($x_i$ sind die einzelnen Pixelwerte) zu einer Klasse $k_j$ passt, muss mithilfe einer Funktion $f$ ein numerischer Vergleichswert bestimmt werden. Die Funktion $f$ wird auch Score-Funktion genannt:
-
-\[f(x_i, W, b) = W \cdot x_i + b \]
-
+$$f(x_i, W, b) = W \cdot x_i + b$$
 Der Parameter $W$ ist die sogenannte Gewichtsmatrix. Sie besitzt die Dimensionalität $i_{max} \times k_{max}$.
 Der Parameter $b$ heißt Bias und besitzt die Dimensionalität $k_{max} \times 1$. Er hat die gleiche Funktion wie die Gewichtsmatrix, ermöglicht aber eine zusätzliche additive Änderung beim Lernen. Im nächsten Unterkapitel wird die genauer Erläutert, wie dies zu interpretieren ist.
 
@@ -416,7 +419,7 @@ Der Parameter $b$ heißt Bias und besitzt die Dimensionalität $k_{max} \times 1
 \caption{Interpretation der Score-Funktion anhand eines Beispiels}
 \end{figure}
 
-Wenn man ein Bild mit $i_{max}$ Pixeln als $i_{max}$ Dimensionalen Vektor auffasst, dann lässt sich ein Classifier als Hyperebenenseparator dieses Vektorraumes interpretieren. Je höher die Score Funktion für eine Klasse, desto geringer ist der Abstand zum Untervektorraum mit entsprechenden zur Klasse zugehörigen Mustern.
+Wenn man ein Bild mit $i_{max}$ Pixeln als $i_{max}$-dimensionalen Vektor auffasst, dann lässt sich ein Classifier als Hyperebenenseparator dieses Vektorraumes interpretieren. Je höher die Score Funktion für eine Klasse, desto geringer ist der Abstand zum Untervektorraum mit entsprechenden zur Klasse zugehörigen Mustern.
 
 \begin{figure}[H]
 \centering
@@ -428,8 +431,8 @@ Wenn man ein Bild mit $i_{max}$ Pixeln als $i_{max}$ Dimensionalen Vektor auffas
 \bigskip
 Zwei häufig verwendete Loss-Funktionen für Daten sind:
 \begin{itemize}
-\item \textbf{Hinge-Loss} $L_i = \sum\limits_{j \neq y_i} max(0,s_j - s_{y_i} + \Delta) \Rightarrow$ Richtige Klasse muss um mindestens Delta größer sein, als alle anderen Klassen
-\item \textbf{Softmax-Loss} $L_i = -\log(\frac{e^{s_{y_i}}}{\sum_{j} e^{s_j}}) \Rightarrow$ Minimieren der negativen logarithmischen Wahrscheinlichkeit für die korrekte Klasse
+\item \textbf{Hinge-Loss} $L_i = \sum\limits_{j \neq y_i} max\left(0,s_j - s_{y_i} + \Delta\right) \Rightarrow$ Richtige Klasse muss um mindestens Delta größer sein, als alle anderen Klassen
+\item \textbf{Softmax-Loss} $L_i = -\log\left(\frac{e^{s_{y_i}}}{\sum_{j} e^{s_j}}\right) \Rightarrow$ Minimieren der negativen logarithmischen Wahrscheinlichkeit für die korrekte Klasse
 \end{itemize}
 
 Der gesamte Loss eines Optimierungsproblems besteht jedoch nicht nur aus dem oben genannten Datenloss, sondern des Weiteren aus dem Regularisierungs-Loss.
@@ -582,7 +585,7 @@ Ein Zustand $h_t$ und eine Ausgabe $y_t$ eines RNN zu einem bestimmten Zeitpunkt
 \[y_t = g(W_{hy} h_t + b2)\]
 
 Hierbei enthalten die Gewichtsmatritzen $W_{xh}$, $W_{hh}$, $W_{hy}$ die zu lernenden Parameter zwischen Input Layer, Hidden Layer und Output Layer. Die Funktionen $f$ und $g$ sind Nichtlinearitäten.
-
+\\~\\
 \textbf{Beispiel:}\\
 Ein RNN wird mit einer gegebenen Sequenz ('h' 'e' 'l' 'l' 'o') 
 trainiert, so dass es bei der Eingabesequenz x = ('h' 'e' 'l' 'l') die Sequenz ('e' 'l' 'l' 'o') und somit den Buchstaben 'o' korrekt vorhersagt. 
@@ -593,38 +596,6 @@ trainiert, so dass es bei der Eingabesequenz x = ('h' 'e' 'l' 'l') die Sequenz (
 \end{figure}
 
 Die Gewichtsmatrix $W_{xh}$ speichert, wie Buchstaben zu Hidden States umgewandelt und inkrementiert werden. $W_{hy}$ lernt, welcher Ausgabebuchstabe zu gegebenem Hidden State passt und die Matrix $W_{hh}$ akkumuliert und migriert alle bisherigen Eingaben im zeitlichen Verlauf zu einem gemeinsamen Hidden State.
-
-\subsection{Long Short Term Memory Netzwerke}
-
-\textbf{Das Problem der Langzeitabhängigkeit}
-
-Angenommen, es soll ein RNN trainiert werden, welches das letzte Wort des folgenden Satzes vorhersagt: \textit{Ich spreche fließend}. Offensichtlich ist das gesuchte Wort eine Sprache. Leider geht diese Information nicht aus dem Satz hervor, da der Kontext fehlt. Ein vorangesteller Satz \textit{Ich bin ich Deutschland aufgewachsen.} grenzt die möglichen Worte stark ein. Ein RNN, wie oben beschrieben, kann jedoch nur Kurzzeitinformationen speichern. \cite{dynrnn}  Aus diesem Grund wurden spezielle Variante eines RNNs erfunden.
-
-\textbf{LSTM-Zellen}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-\cite{lstm}
 
 \newpage
 \section{Machine Learning in Geowissenschaften}
@@ -729,12 +700,6 @@ Deep Learning kann bisher nur bei ausreichend gelabelten Daten zum Einsatz komme
 \textbf{Fazit}\\
 Die Forschung der letzten Jahre hat gezeigt, dass weder ein reiner Datenansatz noch ein reiner mathematischer Modellansatz ausreichend ist, um Knowledge Discovery effizient betreiben zu können. Aus diesem Grund sollten zukünftige physikalische Erkenntnisse möglichst früh und tief in Datenwissenschaftlichen Ansätze einbezogen werden. Auf diese Weise lässt sich auch die Wahrscheinlichkeit für Overfitting reduzieren, vor allem bei mangelnden Trainingsdaten.
 
-\subsection{Einsatz in der Praxis - Beispiele}
-
-\section{Tensorflow}
-
-\section{Erstes eigenes CNN}
-
 %----------------------------------------------------------------------------------------
 %	CHAPTER 4
 %----------------------------------------------------------------------------------------
@@ -757,9 +722,19 @@ Zu neuronalen Netzwerken, deren Funktionsweise nach dem Trainingsprozess nicht m
 \caption{Geclusterter Datensatz: Jedes Datum (blaue Punkte) hat 3 Attribute. Jedes Kreuz ist das Zentrum eines gefundenen Clusters. Die optimale Clusteranzahl wurde mithilfe von Cluster Validity Indizes bestimmt.}\label{cluster}
 \end{figure}
 
-Man unterscheidet zwischen harten und weichen Clusteringverfahren. Harte Methoden ordnen jedes Datum einder Datenbank einem Cluster eindeutig zu. Häufig kollidiert dieser Ansatz mit dem intuitiven Verständnis eines Menschen. Beispielsweise kann nicht gesagt werden, dass ein 49-jähriger Mensch jung ist und 50-Jähriger alt. Der Übergang von jung nach alt ist fließend. Aus diesem Grund gibt es weiche Methoden, die jedem Datum einen Grad der Zuordnung zu einem Cluster geben. Beispielsweise ist ein 70-Jähriger zu $80\%$ alt und zu $20\%$ jung. Der Grad der Zuordnung erhält jedes Datum also für jeden Cluster. Die Summer dieser Zuordnungsgrade beträgt meistens $100\%$.
+Man unterscheidet zwischen harten (crisp) und weichen (fuzzy) Clusteringverfahren. Harte Methoden ordnen jedes Datum einer Datenbank einem Cluster eindeutig zu. Häufig kollidiert dieser Ansatz mit dem intuitiven Verständnis eines Menschen. Beispielsweise kann nicht gesagt werden, dass ein 49-jähriger Mensch jung ist und 50-Jähriger alt. Der Übergang von jung nach alt ist fließend. Aus diesem Grund gibt es weiche Methoden, die jedem Datum einen Grad der Zuordnung zu einem Cluster geben. Beispielsweise ist ein 70-Jähriger zu $80\%$ alt und zu $20\%$ jung. Der Grad der Zuordnung erhält jedes Datum also für jeden Cluster. Die Summer dieser Zuordnungsgrade beträgt meistens $100\%$.
+\\
+\subsection{Die fünf Hauptschritte des Datenclustering}
+Der Prozess des Clusterings ist wie das Data Mining in Hauptschritte unterteilt\cite{csteps}. Sie lauten:
+\begin{itemize}
+\item \textbf{Feature Extraction} Seien $n$ Objekte ${o_1, o_2, \dots, o_n}$ gegeben. Im ersten Schritt werden die relevanten Features extrahiert, welche die Menge der Objekte am besten beschreiben. Formal lassen sich die Objekte durch die Menge folgender Feature-Vektoren beschreiben: $$S =  p_1, p_2, p_3, \dots, p_n  \forall p_i \in R^m$$
+\item \textbf{Aufstellen der Ähnlichkeitsmatrix} Die Ähnlichkeitsmatrix $P(S)$ der Dimension $C \times n$ repräsentiert ein Clustering in $C$-viele Cluster, wobei jeder Eintrag $u_{ij}, \forall i=1, \dots, n$ und $j=1, \dots, C$ dem Grad der Zugehörigkeit des $i$-ten Objekts zum $j$-ten Cluster entspricht.
+\item \textbf{Berechnung der Gruppierungen} Anwenden eines harten oder weichen Clusteringalgorithmus
+\item \textbf{Datenabstraktion} Finden einer anschaulichen Repräsentation der Clusteringergebnisse, meistens auf Basis der Clusterzentroide.
+\item \textbf{Evaluation der Ergebnisse} Wie gut ist das Clustering im Vergleich zu anderen Algorithmen? Hat der Algorithmus Cluster gefunden, wo gar keine sind? Wie ist die Clustertendenz zu bewerten, d.h. gibt es bevorzugte Cluster? Schneidet das Clustering für andere Werte $C$  besser ab?
+\end{itemize}
 
-\section{Harte Methoden}
+\section{Crisp Clustering}
 
 \subsection{Partitionierende Verfahren und ihre Nachteile}
 Einem partitionierenden Clusteringalgorithmus wird die feste Anzahl $k$ an Clustern und die Kostenfunktion übergeben, welche für eine optimale Zuordnung einen kleinen Wert zurück gibt.
@@ -793,7 +768,7 @@ Wobei $W_i$ der relative Anteil der Datenpunkte ist, die zu Cluster $C_i$ gehör
 $$P(C_i|x) = W_i \cdot \frac{P(x|C_i)}{P(x)}$$
 
 Durch abwechselnde Berechnung von Zugehörigkeiten $P(C_i|x)$ und Schätzung neuer Verteilungsparameter $\mu_C$, $\sum_C$ und $W_i$ kann das Gütemaß des Clusterings maximiert werden. Es lautet:
-$$E(M) = log(\prod_{x \in D} P(x))$$
+$$E(M) = log\left(\prod_{x \in D} P(x)\right)$$
 
 Wobei $M$ die Menge aller Cluster ist: $M = \{C_1, \dots, C_k\}$. Die Optimierung wird abgebrochen, wenn $E(M)-E(M')<\epsilon$, das Gütemaß also nicht mehr in ausreichendem Maße kleiner wird.
 
@@ -1000,7 +975,6 @@ Die Werkzeugreferenz von \textbf{ArcGIS Pro}\footnote{\url{https://pro.arcgis.co
 \item Das Verorten von Tweets infolge von Naturgefahren oder Terroranschlägen kann geclustert und notwendige Rettungsmaßnahmen und Evakuierungen können basierend auf der Größe und Position des identifizierten Clusters vermittelt werden.
 \end{itemize}
 
-\textbf{Genaueres zu dem Tool, den Parametern und der Verwendung unter Umständen hier?}
 
 \subsection{Outlier Detection - Local Outlier Factor}
 Ein Problem der dichtebasierten Clusteringverfahren ist, dass manche Punkte entweder als Outlier oder als Clusterpunkt markiert werden. Manchmal möchte man jedoch aus analytischen Gründen selbständig beurteilen und steuern können, was als Outlier markiert werden soll. Aus diesem Grund wurde der Local Outlier Factor (LOF) erfunden, welcher für Punkt den Grad seiner Zuordenbarkeit berechnet \cite{lof}.
@@ -1016,7 +990,7 @@ Die Erreichbarkeitsdistanz $rd(o,p)$ ist die $k$-Distanz von $p$, aber mindesten
 
 Zuerst wird die lokale Erreichbarkeitsdichte eines Punktes $p$ berechnet. Diese entspricht dem Kehrwert der durchschnittlichen Erreichbarkeitsdistanzen von den Nachbarn aus:
 
-$$Ird_{minPts}(p) = (\frac{\sum\limits_{o \in N_{minPts}(p)} rd_{minPts}(p,o)}{|N_{minPts}(p)|})^{-1}$$
+$$Ird_{minPts}(p) = \left(\frac{\sum\limits_{o \in N_{minPts}(p)} rd_{minPts}(p,o)}{|N_{minPts}(p)|}\right)^{-1}$$
 
 Je höher der Wert, desto besser ist $p$ von seinen Nachbarn aus erreichbar. Die Wahrscheinlichkeit, dass $p$ ein Outlier ist, sinkt.
 
@@ -1076,7 +1050,7 @@ y_i \cdot (\omega \cdot x_i + b) \geq 1
 
 Unter dieser Nebenbedingung lautet die Lagrange-Funktion:
 \begin{equation} \label{lagrange}
-\mathcal{L}(\vec{\omega},b,\vec{\alpha}) = \frac{1}{2}||\vec{\omega}||^2 - \sum_{i=1}^n \alpha_i \cdot [y_i \cdot (\vec{\omega} \cdot \vec{x_i} + b) - 1]
+\mathcal{L}(\vec{\omega},b,\vec{\alpha}) = \frac{1}{2}||\vec{\omega}||^2 - \sum_{i=1}^n \alpha_i \cdot \left[y_i \cdot (\vec{\omega} \cdot \vec{x_i} + b) - 1\right]
 \end{equation}
 
 Partielle Ableitungen gleich null setzen:
@@ -1092,7 +1066,7 @@ und
 Nach Einsetzen von \eqref{Lpw} in \eqref{lagrange}:
 
 \begin{equation} \label{lagrange2}
-\mathcal{L}(\vec{\omega},b,\vec{\alpha}) = \frac{1}{2}(\sum_{i=1}^n \alpha_i \cdot y_i \cdot \vec{x_i})(\sum_{j=1}^n \alpha_j \cdot y_j \vec{x_j}) - (\sum_{i=1}^n \alpha_i \cdot y_i \cdot \vec{x_i}) \cdot (\sum_{j=1}^n \alpha_j \cdot y_j \cdot \vec{x_j}) - \sum_{i=1}^n \alpha_i \cdot y_i \cdot b + \sum_{i=1}^n \alpha_i
+\mathcal{L}(\vec{\omega},b,\vec{\alpha}) = \frac{1}{2}\left(\sum_{i=1}^n \alpha_i \cdot y_i \cdot \vec{x_i}\right)\cdot \left(\sum_{j=1}^n \alpha_j \cdot y_j \vec{x_j}\right) - \left(\sum_{i=1}^n \alpha_i \cdot y_i \cdot \vec{x_i}\right) \cdot \left(\sum_{j=1}^n \alpha_j \cdot y_j \cdot \vec{x_j}\right) - \sum_{i=1}^n \alpha_i \cdot y_i \cdot b + \sum_{i=1}^n \alpha_i
 \end{equation}
 
 Nach Einsetzen von \eqref{Lpb} in \eqref{lagrange2} ergibt sich folgende Gleichung:
@@ -1119,19 +1093,83 @@ Im Folgenden habe ich einen Optimierer (scipy.optimize.minimize) zur Maximierung
 \end{figure}
 
 
+Vorgehen nächste Tage:\\
+
+Clusteringverfahren konkret implementieren im Jupyter Notebook, KDD-Prozessmodell nachvollziehen, Rasterbilder diskretisieren, selektieren, evtl. vervollständigen, Implementierung darauf anwenden, zusätzlich Assoziationsverfahren darauf anwenden und Ergebnisse interpretieren.
+
+Was fehlt: Probleme von Clusteringverfahren in Geowis. identifizieren und Verbesserungen bzw. Problemlösungen anbieten.
+
+Wichtig: Keine neue Erkenntnisse in Geowis. sondern Werkzeuge liefern, die neue Erkenntnisse ermöglichen!
+
+\section{Fuzzy-Clustering}
+
+\subsection{Fuzzy C-Means (FCM)}
+Neuere Methoden der letzten Jahre verwenden häufig modifizierte Versionen des FCM(Fuzzy C-Means)-Algorithmus\cite{clustgis}. Dieser berechnet für jeden Punkt den Grad seiner Zuordnung zu allen Clustern. Er gehört zu den probabilistischen partitionierenden Clusteringverfahren.
+Die zu minimierende Kostenfunktion lautet:
+
+$$J_m(X,U,V) = \sum_{i=1}^{c} \sum_{k=1}^{n} u_{ik}^m \cdot d^2(v_i,x_k) \quad \forall i,k \in [0,1]$$
+
+Wobei $u_ik$ die Eingangs beschriebene Zugehörigkeitsmatrix ist und $d^2$ ein Abstandsmaß zur Gewichtung der Zugehörigkeit in Abhängigkeit des Abstandes zwischen Punkt $x_k$ und Clusterzentroid $v_i$. Parameter $m>1$ ist die Vagheit der Zerlegung und gibt an, wie stark die Zugehörigkeitsgrade abfallen. In der Regel wird hier der Wert $m=2$ verwendet.
+\\
+Dabei sind folgende Nebenbedingungen Einzuhalten:
+$$\forall k \in {1, \dots, n} : \sum_{i=1}^c u_{ik} = 1$$
+Dies sorgt dafür, dass jedes Objekt das Gesamtgewicht 1 erhält und somit kein Punkt bevorzugt wird.
+$$\forall i \in \{1, \dots, c\} : \sum_{i=1}^n u_{ik} > 0$$
+Dies garantiert, dass es keinen Cluster gibt, dem nichts zugeordnet wurde. Es muss also mindestens ein Objekt geben, das eine positive Zugehörigkeit zu Cluster $i$ hat.
+\\
+Zur Optimierung der Zielfunktion, bildet man die partiellen Ableitungen der Lagrangefunktion 
+$$\mathcal{L}(X, U, V , \Lambda) = \sum_{i=1}^{c} \sum_{k=1}^{n} u_{ik}^m \cdot d^2(v_i,x_k) + \sum_{k=1}^n \lambda_k \left(\sum_{i=1}^c u_{ik} - 1\right)$$
+
+Man erhält die zu aktualisierenden Werte von Zugehörigkeitsmatrix und Clusterzentroiden:
+\begin{equation} \label{uikopt}
+u_{ik} = \frac{1}{\sum\limits_{j=1}^c \left(\frac{d^2(v_i, x_k)}{d^2(v_j, x_k)^{\frac{1}{m-1}}}\right)}
+\end{equation}
+und
+\begin{equation} \label{viopt}
+v_i = \frac{\sum\limits_{k=1}^n u_{ik}^m \cdot x_k}{\sum\limits_{k=1}^n u_{ik}^m}  \quad \forall i \in \{1, \dots, c\}
+\end{equation}
 
 
-\section{Weiche Methoden - Fuzzy-Clustering}
-\subsection{Probabilistisches und Possibilistisches Clustering}
-\subsubsection{FCM und PFCM}
-\subsubsection{Vorraussetzungen für die Anwendung auf Geodaten}
-\subsubsection{Eigener Algoritmus (noch ohne Name)}
+Der Algorithmus zum Finden der besten Clusterzentroiden ist wie beim $k$-means Verfahren ein alternierendes Programm.
+%http://tug.ctan.org/macros/latex/contrib/algorithmicx/algorithmicx.pdf
+\begin{algorithm}
+\caption{$FCM(X,c,m,\epsilon)$}\label{fcm}
+\begin{algorithmic}[1]
+\Require{$X$ ist ein $d$-dimensionaler Datensatz mit $n$ Datenpunkten, $2 \leq
+c \leq n$ ist die Clusteranzahl, $m > 1$ ist  die Vagheit und $ \epsilon > 0$ ist die Terminierungsgenauigkeit}
+\State Initialisiere die Clusterprototypen $v' = \{v'_1, \dots, v'_c\}$
+\State $v = \emptyset$
+\Repeat
+\State $v=v'$
+\State Berechne die Zugehörigkeitsgrade $u_{ik}$ von jedem Datenpunkt $x_k$ zu jedem Cluster $C_i$ nach \hspace*{5mm} Formel \eqref{uikopt} \textit{// Schritt 1}
+\State Berechne die neuen Clusterprototypen $v' = \{v'_1, \dots, v'_c\}$ nach Formel \eqref{viopt} \textit{// Schritt 2}
+\Until{$||v - v'|| < \epsilon$}
+\State \Return $v'$
+\end{algorithmic}
+\end{algorithm}
 
-\section{CVI}
+Leider hat das urspüngliche FCM-Verfahren viele Nachteile. Man weiß leider nie, ob ein lokales oder ein globales Minimum für die Kostenfunktion gefunden wurde. Je nach Initialisierungsmethode muss FCM unter Umständen mehrmals mit unterschiedlichen Parametern ausgeführt werden, um das beste Ergebnis zu finden. Wird für das Distanzmaß die euklidische Distanzfunktion verwendet, können nur gleich große, sphärische Cluster gefunden werden. Aus diesem Grund wurden viele weitere Fuzzy-Clusteringalgorithmen entwickelt, die auf dem gleichen Basisalgorithmus basieren, jedoch andere Kostenfunktionen minimieren.
+
+\subsection{PFCM}
+
+\subsection{Geometrisches Clustering}
+
+\subsection{Graphbasiertes Clustering}
+
+\subsection{Kontextbasiertes Clustering}
+
+
+
+
+
+
+
+\section{Finden der Clusteranzahl}
 \subsection{NPC}
 \subsection{FHV}
 \subsection{Otsu-Binarisierung}
 \subsection{VAT-Algorithmus}
+
 
 \section{Clustering auf unvollständigen Daten}
 
@@ -1139,10 +1177,9 @@ Im Folgenden habe ich einen Optimierer (scipy.optimize.minimize) zur Maximierung
 In Kapitel 10 Geoinf. kommt der naive Bayes-Klassifikator vor!
 Paper: \url{https://www.mii.lt/na/issues/NA_0602/NA06203.pdf}
 Entscheidungsbäume, Splitstrategien, Anwendung
-\section{Einsatz in der Praxis und Software-Tools}
-%Outlier Detection z.B. zum Finden von Erdbeeben
-%Siehe Tab in Browser zu arcgis Werkzeugen Antwendungsgebiete 
 
+\chapter{Implementierungen}
+%Voraussichtlich diskretisierung von Rasterbildern, Optics, FCM, Delaunay, 
 
 %----------------------------------------------------------------------------------------
 %	CHAPTER 5

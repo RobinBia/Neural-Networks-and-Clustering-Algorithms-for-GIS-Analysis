@@ -1978,18 +1978,18 @@
     <bcf:citekey order="2">geofront</bcf:citekey>
     <bcf:citekey order="3">michell</bcf:citekey>
     <bcf:citekey order="4">gdalg</bcf:citekey>
-    <bcf:citekey order="5">dynrnn</bcf:citekey>
-    <bcf:citekey order="6">lstm</bcf:citekey>
-    <bcf:citekey order="7">machgeo</bcf:citekey>
-    <bcf:citekey order="8">kmplus</bcf:citekey>
-    <bcf:citekey order="9">forgy</bcf:citekey>
-    <bcf:citekey order="10">emalg</bcf:citekey>
-    <bcf:citekey order="11">silh</bcf:citekey>
-    <bcf:citekey order="12">dbscan</bcf:citekey>
-    <bcf:citekey order="13">optics</bcf:citekey>
-    <bcf:citekey order="14">lof</bcf:citekey>
-    <bcf:citekey order="15">svmingeo</bcf:citekey>
-    <bcf:citekey order="16">svm</bcf:citekey>
+    <bcf:citekey order="5">machgeo</bcf:citekey>
+    <bcf:citekey order="6">csteps</bcf:citekey>
+    <bcf:citekey order="7">kmplus</bcf:citekey>
+    <bcf:citekey order="8">forgy</bcf:citekey>
+    <bcf:citekey order="9">emalg</bcf:citekey>
+    <bcf:citekey order="10">silh</bcf:citekey>
+    <bcf:citekey order="11">dbscan</bcf:citekey>
+    <bcf:citekey order="12">optics</bcf:citekey>
+    <bcf:citekey order="13">lof</bcf:citekey>
+    <bcf:citekey order="14">svmingeo</bcf:citekey>
+    <bcf:citekey order="15">svm</bcf:citekey>
+    <bcf:citekey order="16">clustgis</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nyt">
