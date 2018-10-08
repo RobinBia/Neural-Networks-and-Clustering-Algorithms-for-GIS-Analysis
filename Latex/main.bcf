@@ -1990,6 +1990,8 @@
     <bcf:citekey order="14">svmingeo</bcf:citekey>
     <bcf:citekey order="15">svm</bcf:citekey>
     <bcf:citekey order="16">clustgis</bcf:citekey>
+    <bcf:citekey order="17">cabstossung</bcf:citekey>
+    <bcf:citekey order="18">pfcmpaper</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nyt">

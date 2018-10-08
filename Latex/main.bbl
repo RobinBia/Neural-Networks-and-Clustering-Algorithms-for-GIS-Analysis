@@ -521,6 +521,47 @@
       \field{title}{Machine Learning}
       \field{year}{1997}
     \endentry
+    \entry{pfcmpaper}{article}{}
+      \name{author}{4}{}{%
+        {{hash=ee25aa5186e7b520b3e4d07176f130d5}{%
+           family={Pal},
+           familyi={P\bibinitperiod},
+           given={N.R.},
+           giveni={N\bibinitperiod}}}%
+        {{hash=c2f27dfbc382220ab5a14d4465a39c7d}{%
+           family={Pal},
+           familyi={P\bibinitperiod},
+           given={K.},
+           giveni={K\bibinitperiod}}}%
+        {{hash=fbfab9c7a4afad2eea0ee1dfd008ddfb}{%
+           family={Keller},
+           familyi={K\bibinitperiod},
+           given={J.M.},
+           giveni={J\bibinitperiod}}}%
+        {{hash=e9db388ffd3885b253e9862b8f94df6b}{%
+           family={Bezdek},
+           familyi={B\bibinitperiod},
+           given={J.C.},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{d39b80a5212bd45a92b5f8687cf23646}
+      \strng{fullhash}{bd9c2aac544b68aac465d19ceec91c58}
+      \strng{bibnamehash}{d39b80a5212bd45a92b5f8687cf23646}
+      \strng{authorbibnamehash}{d39b80a5212bd45a92b5f8687cf23646}
+      \strng{authornamehash}{d39b80a5212bd45a92b5f8687cf23646}
+      \strng{authorfullhash}{bd9c2aac544b68aac465d19ceec91c58}
+      \field{labelalpha}{Pal+05}
+      \field{sortinit}{P}
+      \field{sortinithash}{8d51b3d5b78d75b54308d706b9bbe285}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Transactions on Fuzzy Systems}
+      \field{title}{A possibilistic fuzzy c-means clustering algorithm}
+      \field{volume}{13}
+      \field{year}{2005}
+      \field{pages}{517\bibrangedash 530}
+      \range{pages}{14}
+    \endentry
     \entry{clustgis}{report}{}
       \name{author}{1}{}{%
         {{hash=0ea5d144f202173579a66b2542a2139c}{%
@@ -576,6 +617,47 @@
       \verb{url}
       \verb http://ruder.io/optimizing-gradient-descent/
       \endverb
+    \endentry
+    \entry{cabstossung}{article}{}
+      \name{author}{4}{}{%
+        {{hash=0793e4bd101d239c6004ee611bcb9d85}{%
+           family={Timm},
+           familyi={T\bibinitperiod},
+           given={H.},
+           giveni={H\bibinitperiod}}}%
+        {{hash=354606bf2e0751a880a3a26a8e5ad7d7}{%
+           family={Borgelt},
+           familyi={B\bibinitperiod},
+           given={C.},
+           giveni={C\bibinitperiod}}}%
+        {{hash=6c3cec35761e0617cd974755d51f7c8b}{%
+           family={Döring},
+           familyi={D\bibinitperiod},
+           given={C.},
+           giveni={C\bibinitperiod}}}%
+        {{hash=aaa1770f97b9df7fc0722d47cfdee9a1}{%
+           family={Kruse},
+           familyi={K\bibinitperiod},
+           given={R.},
+           giveni={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{7991f1dac701f1ecc2885004368a2437}
+      \strng{fullhash}{68bcbb9211f578d14714b9880d583e34}
+      \strng{bibnamehash}{7991f1dac701f1ecc2885004368a2437}
+      \strng{authorbibnamehash}{7991f1dac701f1ecc2885004368a2437}
+      \strng{authornamehash}{7991f1dac701f1ecc2885004368a2437}
+      \strng{authorfullhash}{68bcbb9211f578d14714b9880d583e34}
+      \field{labelalpha}{Tim+04}
+      \field{sortinit}{T}
+      \field{sortinithash}{6f7aff9db9dcfeb7f95fd5bbd2f78df9}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Fuzzy Sets and Systems}
+      \field{title}{An extension to possibilistic fuzzy cluster analysis}
+      \field{volume}{147}
+      \field{year}{2004}
+      \field{pages}{3\bibrangedash 16}
+      \range{pages}{14}
     \endentry
   \enddatalist
 \endrefsection
