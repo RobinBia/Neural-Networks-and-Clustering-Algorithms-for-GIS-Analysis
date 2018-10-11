@@ -107,23 +107,23 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {4.3.4}Geometrisches Clustering}{56}{subsection.4.3.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.3.5}Graphbasiertes Clustering}{56}{subsection.4.3.5}
+\contentsline {subsection}{\numberline {4.3.5}Graphbasiertes Clustering}{58}{subsection.4.3.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.3.6}Kontextbasiertes Clustering}{56}{subsection.4.3.6}
+\contentsline {subsection}{\numberline {4.3.6}Kontextbasiertes Clustering}{58}{subsection.4.3.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.4}Finden der Clusteranzahl}{56}{section.4.4}
+\contentsline {section}{\numberline {4.4}Finden der Clusteranzahl}{58}{section.4.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.4.1}NPC}{56}{subsection.4.4.1}
+\contentsline {subsection}{\numberline {4.4.1}NPC}{58}{subsection.4.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.4.2}FHV}{56}{subsection.4.4.2}
+\contentsline {subsection}{\numberline {4.4.2}FHV}{58}{subsection.4.4.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.4.3}Otsu-Binarisierung}{56}{subsection.4.4.3}
+\contentsline {subsection}{\numberline {4.4.3}Otsu-Binarisierung}{58}{subsection.4.4.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.4.4}VAT-Algorithmus}{56}{subsection.4.4.4}
+\contentsline {subsection}{\numberline {4.4.4}VAT-Algorithmus}{58}{subsection.4.4.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.5}Clustering auf unvollst\IeC {\"a}ndigen Daten}{56}{section.4.5}
+\contentsline {section}{\numberline {4.5}Clustering auf unvollst\IeC {\"a}ndigen Daten}{58}{section.4.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.6}Assoziationsregeln}{56}{section.4.6}
+\contentsline {section}{\numberline {4.6}Assoziationsregeln}{58}{section.4.6}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {5}Implementierungen}{59}{chapter.5}
 \defcounter {refsection}{0}\relax 

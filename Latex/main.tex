@@ -11,7 +11,7 @@
 }
 \usepackage{amsmath}
 \usepackage{algorithm}
-\usepackage[noend]{algpseudocode}
+\usepackage{algpseudocode}
 \makeatletter
 \def\BState{\State\hskip-\ALG@thistlm}
 \makeatother
@@ -21,8 +21,6 @@
 \usepackage{url}
 \definecolor{ocre}{RGB}{52,177,201} 
 \usepackage{avant} 
-%\usepackage{mathptmx}
-%\usepackage{mathrsfs} 
 \usepackage{microtype} 
 \usepackage[utf8]{luainputenc}
 \usepackage[T1]{fontenc}
@@ -1223,8 +1221,61 @@ J_{m,\eta}(U,T,V,X,\gamma) = \sum_{i=1}^{c} \sum_{k=1}^{n} \left(a\cdot u_{ik}^m
 Dabei steuern $a$ und $b$ den relativen Einfluss der verschiedenen Arten von Zugehörigkeitsgraden. Je ungeeigneter die typicality Values ($t_ik$) in Anbetracht der Größe des Datensatzes sind, desto stärker wird die Gewichtung bei den Zugehörigkeitsgraden ($u_{ik}$). Mit $a=0$ wird PFCM zu PCM und mit $b=0$ zu FCM.
 
 \subsection{Geometrisches Clustering}
+Eine weitere Variante des FCM-Algorithmus, der Selective Scale Space based FCM wurde entworfen, um den Clusteringprozess raumbezogener Daten zu verbessern. 
+
+Gegeben einer Menge von Objekten kann es vorkommen, dass sich bestimmte Objektfeatures nicht clustern lassen. Dies ist der Fall, wenn sich die Werte eines Featurevektors zu ähnlich sind und keine deutlichen Cluster bilden. Man sagt, dass die Cluster nicht linear separabel sind. Der Scale Space Filter löst dieses Problem, indem er mithilfe einer Transformationsvorschrift nah beieinander liegende Punkte weiter zusammen schiebt und weiter entfernte Punkte voneinander abstößt. Wird der Filter jedoch auf bereits für das Clustering geeignete Parameter angewendet, kann der Informationsgehalt verschlechtert werden. Aus diesem Grund müssen zuerst Features selektiert werden, welche für eine Vorverarbeitung geeignet sind und somit das Potential haben, nach ihrer Transformation die Clusteringgenauigkeit zu verbessern. Ein weiterer Vorteil des Selektionsprozesses ist die Optimierung der Laufzeiteffizienz. Ein Parameter ist genau dann geeignet, wenn seine Standardabweichung einen bestimmten Schwellwert unterschreitet.
+\\
+Das Maß für die Separation und Ähnlichkeit bietet der Xie Beni Cluster Validity Index. Er setzt die Distanzen zwischen Datenpunkten und Clusterzentroiden ins Verhältnis zu den Distanzen zwischen den Clustern:
+
+$$V_{XB}(U,X,V)= \frac{\sum\limits_{i=1}^c \sum\limits_{k=1}^n u_{ik}^2 \cdot ||x_k-v_i||^2}{n \cdot \min\limits_{1\leqslant i,j \leqslant c, i \neq j}||v_i-v_j||^2}$$
+
+Es fließt also ein, wie kompakt die einzelnen Cluster sind und wie stark die topologische Unähnlichkeit bzw. Separation zwischen verschiedenen Cluster ist.
+\\
+Sei $X$ eine Datenmatrix der Dimensionalität $m\times n$. Es gibt also $n$ Objekte mit je $m$ Parametern. 
+
+Ein Parameter $j$ ist genau dann krank, wenn für den Feature-Vektor $x_{ij} \forall i\in \{1,\dots, n\}$ gilt:
+
+$$\theta-\epsilon\leqslant x_{ij} \leqslant\theta+\epsilon$$ 
+für ein $\theta$ und einen sehr kleinen Wert $\epsilon>0$. In diesem Fall wird der Parameter mit einer Transformationsfunktion modifiziert. Möglich sind hier eine vielzahl von Funktionen. In dem Originalpaper beschränken sich die Autoren jedoch auf die Gaußsche Transformationsformel:
+
+$$f(x,\sigma) = \frac{1}{(\sigma \cdot \sqrt{2\pi})^2}e^{-\frac{||x-x_j||^2}{2\sigma^2}}$$
+
+Diese wird auf jeden Parameter einzeln angewandt. Anschließend werden die neuen Werte normalisiert:
+
+$$x[j] = \frac{x_{ij}-min(X[j])}{\max(x[j])-\min(x[j])},\quad \forall x_{ij} \in X[j]$$
+
+Hierbei ist x[j] der $j$-te Featurevektor, $x_{ij}$ der Wert von Parameter $j$ von Datum $i$.
+\\~\\
+Der Pseudocode für den gesamten Algorithmus sieht dann folgendermaßen aus:
+
+\begin{algorithm}[H]
+\caption{ S.D. based Selective Scale Spaced FCM}\label{sdbsssfcm}
+\hspace*{\algorithmicindent} \textbf{Input:} $X={x_1,\dots,x_n}$, standardAbweichungGrenzwert\\
+ \hspace*{\algorithmicindent} \textbf{Output:} Clustering $C$ 
+\begin{algorithmic}[1]
+\State Deklariere Zugehörigkeitsmatrix $u_{ik}$ mit $i\in \{1,\dots,c\}$ und $k \in \{1,\dots,n\}$.
+\State Deklariere Clustervaliditätsindex (Hier $V_{XB}$)
+\For{$j$ in $X_i$}
+	\State $sd \gets berechneStandardabweichung(j)$
+	\If {$sd<standardAbweichungGrenzwert$}
+		 \State $j \gets gaussianScaleSpace(j)$ 
+	\EndIf
+\EndFor
+\State $V\gets initialisiereClusterprototypen(V)$
+\While{$V_{XB} \leqslant Validitätsgrenze$}
+	\State $U\gets berechneZugehörigkeitsmatrix(X,U,V)$
+	\State $V\gets aktualisiereClusterzentroide(U,V)$
+	\State $V_{XB} \gets aktualisiereXieBeniIndex(U,V)$
+\EndWhile
+
+
+\end{algorithmic}
+\end{algorithm}
+
+
 
 \subsection{Graphbasiertes Clustering}
+
 
 \subsection{Kontextbasiertes Clustering}
 
