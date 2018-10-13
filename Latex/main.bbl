@@ -333,6 +333,33 @@
       \field{pages}{768\bibrangedash 769}
       \range{pages}{2}
     \endentry
+    \entry{dependency}{report}{}
+      \name{author}{1}{}{%
+        {{hash=ef29d76581b0a0cdb8cf5c00bdfb190c}{%
+           family={Goodchild},
+           familyi={G\bibinitperiod},
+           given={Michael\bibnamedelima F.},
+           giveni={M\bibinitperiod\bibinitdelim F\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {University of California}%
+      }
+      \strng{namehash}{ef29d76581b0a0cdb8cf5c00bdfb190c}
+      \strng{fullhash}{ef29d76581b0a0cdb8cf5c00bdfb190c}
+      \strng{bibnamehash}{ef29d76581b0a0cdb8cf5c00bdfb190c}
+      \strng{authorbibnamehash}{ef29d76581b0a0cdb8cf5c00bdfb190c}
+      \strng{authornamehash}{ef29d76581b0a0cdb8cf5c00bdfb190c}
+      \strng{authorfullhash}{ef29d76581b0a0cdb8cf5c00bdfb190c}
+      \field{labelalpha}{Goo92}
+      \field{sortinit}{G}
+      \field{sortinithash}{5e8d2bf9d38de41b1528bd307546008f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Geographical Information Systems}
+      \field{year}{1992}
+      \field{pages}{33}
+      \range{pages}{1}
+    \endentry
     \entry{csteps}{report}{}
       \name{author}{3}{}{%
         {{hash=9d61913304fabd25aefc2177b984c2f9}{%
@@ -658,6 +685,36 @@
       \field{year}{2004}
       \field{pages}{3\bibrangedash 16}
       \range{pages}{14}
+    \endentry
+    \entry{nscabdt}{report}{}
+      \name{author}{2}{}{%
+        {{hash=3526e05d35aedd99fd0c0e0b258771e7}{%
+           family={Yang1},
+           familyi={Y\bibinitperiod},
+           given={Xiankun},
+           giveni={X\bibinitperiod}}}%
+        {{hash=c75bbc77982688c81080c5af722fc0df}{%
+           family={Cui},
+           familyi={C\bibinitperiod},
+           given={Weihong},
+           giveni={W\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {Institute of Remote Sensing Application, Chinese Academy of Sciences}%
+      }
+      \strng{namehash}{57244cdfda59abb0008af92510a625c6}
+      \strng{fullhash}{57244cdfda59abb0008af92510a625c6}
+      \strng{bibnamehash}{57244cdfda59abb0008af92510a625c6}
+      \strng{authorbibnamehash}{57244cdfda59abb0008af92510a625c6}
+      \strng{authornamehash}{57244cdfda59abb0008af92510a625c6}
+      \strng{authorfullhash}{57244cdfda59abb0008af92510a625c6}
+      \field{labelalpha}{YC10}
+      \field{sortinit}{Y}
+      \field{sortinithash}{b8d711a035f7be9840c721c82920477e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{A Novel Spatial Clustering Algorithm Based on Delaunay Triangulation}
+      \field{year}{2010}
     \endentry
   \enddatalist
 \endrefsection

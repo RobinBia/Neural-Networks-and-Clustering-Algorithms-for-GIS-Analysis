@@ -1992,6 +1992,8 @@
     <bcf:citekey order="16">clustgis</bcf:citekey>
     <bcf:citekey order="17">cabstossung</bcf:citekey>
     <bcf:citekey order="18">pfcmpaper</bcf:citekey>
+    <bcf:citekey order="19">nscabdt</bcf:citekey>
+    <bcf:citekey order="20">dependency</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nyt">

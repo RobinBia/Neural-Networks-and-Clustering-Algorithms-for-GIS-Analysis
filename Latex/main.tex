@@ -1152,7 +1152,7 @@ Da die Zugehörigkeiten der Datenobjekte relativ sind, können Outlier fälschli
 
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.4]{fcmnachteil.jpg}
+\includegraphics[scale=0.35]{fcmnachteil.jpg}
  \caption{Punkt $X_1$ hat den gleichen Zugehörigkeitsgrad wie der Outlier $X_2$}
 \end{figure}
 
@@ -1267,24 +1267,102 @@ Der Pseudocode für den gesamten Algorithmus sieht dann folgendermaßen aus:
 	\State $V\gets aktualisiereClusterzentroide(U,V)$
 	\State $V_{XB} \gets aktualisiereXieBeniIndex(U,V)$
 \EndWhile
-
-
 \end{algorithmic}
 \end{algorithm}
 
 
 
-\subsection{Graphbasiertes Clustering}
+\subsection{Graphbasiertes Clustering (NSCABDT)}
+Eine weitere FCM-Variante, die speziell zum Clustering von geologischen Strukturen entwickelt wurde, basiert auf der Delaunay Triangulation, also der planaren Dekomposition einer Punktemenge\cite{nscabdt}. Dies war nötig, da bisherige Entwicklungen es nicht geschafft hatten, räumliche Abhängigkeiten und Heterogenitäten zu erkennen. Beide gelten als starke Indikatoren für geographische Prozesse. Dabei bezeichnet die räumliche Abhängkeit die Tendenz zweier Punkte, sich mit zunehmender räumlicher Nähe gegenseitig zu beeinflussen oder ähnliche Attributwerte anzunehmen\cite{dependency}. Räumliche Heterogenenität bezeichnet die Ungleichverteilung von Populationen auf einem bestimmten Gebiet. Ein weiterer Vorteil der Methode ist, dass nun auch Cluster erkannt werden können, die durch eine schmale Brücke verbunden sind. Da eine Delaunay-Triangulation viele Ähnlichkeitsinformationen implizit speichert, eignet sie sich für eine robuste Clusteranalyse. Außerdem werden Delaunay-Triangulationen bei der Analyse von Topologieproblemen, Autokonturierung, der Visualisierung von 2.5D Geodaten, Oberflächencharakterisierung und in vielen weiteren raumbezogenen Analysewerkzeugen eingesetzt.
+\\~\\
+Eine Delaunay-Triangulation $D(X)$ ist eine Vernetzung aller Punkte aus $X$ zu Dreiecken, so dass kein Punkt $p\in X$ innerhalb des Umkreises eines dieser Dreiecke liegt. Dabei wird der kleinste Innenwinkel über alle Dreiecke maximiert.
+\\
+Ein einfacher Algorithmus zur Erzeugung der Delaunay-Triangulation ist die inkrementelle Konstruktion:
+Zu Beginn muss ein Dreieck gefunden werden, welches die Delaunay-Bedingung (DB) erfüllt. Anschließend werden alle anderen Punkte inkrementell hinzugefügt. Der nächste Punkte aus $X$ wird $D(X)$ hinzugefügt und mit allen Punkten des initialen Dreiecks verbunden. Es entstehen drei weitere Dreiecke, die die DB eventuell verletzen. Jedes der Dreiecke wird auf die Umkreisbedingung getestet. Schließt ein Umkreis einen Punkt eines angrenzenden Dreiecks ein, so wird die gemeinsame Kante gelöscht und eine Kante zwischen den beiden Punkten erzeugt, die vorher nicht verbunden waren:
 
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.4]{umkreis.jpg}
+\caption{Flip einer gemeinsamen Kante zur Erfüllung der Delaunay-Bedingung}
+\end{figure}
 
+Anschließend existieren weitere Dreiecke, welche die Bedingung nicht erfüllen könnten. Es werden nacheinander alle Dreiecke überprüft und gegebenenfalls Flips durchgeführt, bis die Bedingung global erfüllt ist.
+\\
+
+Während der Triangulierung werden Informationen zu Knoten, Kanten und Oberflächen in einer Datenbank für das spätere Clustering gespeichert:
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.3]{delaunayinfo.jpg}
+\caption{Beispiel einer DT von 15 Datenpunkten mit Tabellen für sämtliche Informationen}
+\end{figure}
+
+Die Knotentabelle enthält zu jedem der 15 Punkte die Koordinaten, den Knotengrad und die Kategorie bzw. die Clusternummer ($-1 = Outlier$).\\
+Die Kantentabelle enthält Infos zur Richtung der Kanten, wobei $Start=1$ und $End=8$ bedeutet, dass von Knoten $1$ eine gerichtete Kante Richtung Knoten 8 zeigt. Außerdem besitzt sie die Länge $76$.
+\\
+Die Oberflächentabelle enthält alle Knoten und Kanten, welche an den jeweiligen Ebenen (Dreiecken) beteiligt sind.
+
+Im Gegensatz zur gewöhnlichen Delaunay Triangulation sollen in diesem Verfahren nur solche Knoten verbunden werden, die näher beieinander liegen, als ein vorgegebenes Ähnlichkeitsmaß.
+\\
+
+\subsubsection{Bezeichnungen}
+Im Folgenen werden Kanten $e_k$ geschrieben als $(p_i,p_j)$, wobei $p_i$ der Startpunkt ist und $p_j$ der Endpunkt. $N(p_i)$ bezeichnet die Menge aller eingehenden und Ausgehenden Kanten von Knoten $p_i$. Die lokale Durchschnittslänge $local_mean(p_i)$ ist die durchschnittliche Länge aller Kanten in $N(p_i)$:
+
+$$local\_mean(p_i) =\frac{\sum\limits_{j=1}^{deg(p_i)} len(e_j)}{deg(p_i)}$$
+
+Die globale durchschnittslänge ist definiert als Durchschnittslänge aller Kanten in $E$.
+
+$$global\_mean(X) =\frac{\sum\limits_{j=1}^{|E|} len(e_j)}{|E|}$$
+
+Die globale Standardabweichung ist die durchschnittliche Abweichung des $global\_mean$ von allen Kantenlängen:
+
+$$global\_sta\_dev(X)= \frac{\sqrt{\sum\limits_{i=0}^n \left(global\_mean(X)-len(e_i)\right)^2}}{n}$$
+
+Der relative Durchschnitt ist das Verhältnis von lokalem zu globalem Durchschnitt:
+
+$$relative\_mean(p_i) = \frac{local\_mean(p_i)}{global\_mean(X)}$$
+
+Eine Kante wird als positive Kante bezeichnet, wenn sie kleiner ist als das Kriterium $F(p_i)$. Positive Kanten und dazu inzidente Punkte formen einen neuen Wahrscheinlichkeitsgraphen, der gleichzeitig Subgraph der Delaunay-Triangulation ist. Das Kriterium berechnet sich wie folgt:
+
+$$F(p_i) = global\_mean(X) + global\_sta\_dev(X) \times \frac{global\_mean(X)}{local\_mean(p_i)}$$
+
+Ein positiver Pfad ist ein Pfad von positiven Kanten und alle verbundenen Punkte gehören zu einem Cluster.
+
+Die effektive Region des Punktes $p$ mit Radius $\delta$ ist wie folgt definiert:
+
+$$p_{\delta} = \{x|\enspace|x-p|<\delta, p\in X,\forall x\in \mathbb{R}^2\}$$
+
+Die effektive Region einer Punktmenge ist dann die Vereinigung der effektiven Regionen aller Punkte dieser Menge:
+
+$$\overline{X} = \bigcup_{p\in X} p_{\delta}$$
 \subsection{Kontextbasiertes Clustering}
 
+Die $\gamma$-Grenze ist die Menge aller Punkte im Kreis mit Radius $\delta$
+
+$$V_\gamma = \overline{V_{\gamma}} \bigcap V, \qquad \overline{V_{\gamma}} = 
+\frac{\overline{V}}
+{\{\overline{V} \Theta \gamma Dm(\delta)\}} 
+, \enspace \gamma>1$$
 
 
+mit 
 
+$$Dm = \{x|\enspace |x|\leqslant \delta\}$$
 
+Die $\gamma$-Kurve ist die prinzipielle Mannigfaltigkeit des Punktes in der $\gamma$-Grenze einer Punktemenge.\\
 
+Der Algorithmus für NSCABDT kann wie folgt beschrieben werden:
 
+Zu Beginn gehört kein Punkt einer gegebenen Punktemenge $S$ zu einem Cluster. Außerdem ist die Menge der Punkte des ersten Clusters $C$ leer: $C=\emptyset$
+\begin{enumerate}
+\item Delaunay-Triangulation berechnen und dabei die Knoten, Kanten und Flächentabellen ausfüllen
+\item Für jeden Punkt $p_i \in S$ alle inzidenten Kanten $N(p_i)$ finden, $local_mean(p_i)$ und $F(p_i)$ berechnen.
+\item Für jede Kante $e \in N(p_i): Wenn len(e) \geqslant F(p_i), dann Kante aus DT entfernen$
+\item Wenn $deg(p_i)=0$, Knoten $p_i$ löschen, ansonsten zu $C$ hinzufügen.
+\item Iterativ für alle Knoten durchführen, mit denen $p_i$ verbunden ist.
+\item Grenze von Cluster C extrahieren und alle Brücken eliminieren
+\item Gibt es noch unbearbeitete Knoten, obwohl im Iterationsprozess alle Knoten positiver Pfade betrachtet wurden, dann konnten nicht alle Knoten erreicht werden und es mussten zu lange Kanten gelöscht werden (negative Pfade). Es wird ein neuer Cluster $C'$ erstellt und die Iteration mit einem beliebigen unbearbeiteten Punkt forgesetzt.
+\end{enumerate}
 \section{Finden der Clusteranzahl}
 \subsection{NPC}
 \subsection{FHV}

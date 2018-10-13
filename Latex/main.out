@@ -38,7 +38,7 @@
 \BOOKMARK [2][-]{subsection.4.3.2}{Possibilistic C-Means \(PCM\)}{section.4.3}% 38
 \BOOKMARK [2][-]{subsection.4.3.3}{Possibilistic Fuzzy C-Means \(PFCM\)}{section.4.3}% 39
 \BOOKMARK [2][-]{subsection.4.3.4}{Geometrisches Clustering}{section.4.3}% 40
-\BOOKMARK [2][-]{subsection.4.3.5}{Graphbasiertes Clustering}{section.4.3}% 41
+\BOOKMARK [2][-]{subsection.4.3.5}{Graphbasiertes Clustering \(NSCABDT\)}{section.4.3}% 41
 \BOOKMARK [2][-]{subsection.4.3.6}{Kontextbasiertes Clustering}{section.4.3}% 42
 \BOOKMARK [1][-]{section.4.4}{Finden der Clusteranzahl}{chapter.4}% 43
 \BOOKMARK [2][-]{subsection.4.4.1}{NPC}{section.4.4}% 44
