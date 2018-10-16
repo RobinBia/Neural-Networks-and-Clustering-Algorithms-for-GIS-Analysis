@@ -13,15 +13,15 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {2.4}Georeferenzierung}{10}{section.2.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Definition}{10}{section*.2}
+\contentsline {subsubsection}{Definition}{10}{section*.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Bestimmung einer Transformationsvorschrift}{11}{section*.3}
+\contentsline {subsubsection}{Bestimmung einer Transformationsvorschrift}{11}{section*.5}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {2.5}Geoinformationssysteme}{11}{section.2.5}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.5.1}Geoobjekte}{12}{subsection.2.5.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Modellierung von Geoobjekten}{12}{section*.4}
+\contentsline {subsubsection}{Modellierung von Geoobjekten}{12}{section*.6}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.5.2}Rastermodell}{12}{subsection.2.5.2}
 \defcounter {refsection}{0}\relax 
@@ -69,31 +69,31 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {4.2.1}Partitionierende Verfahren und ihre Nachteile}{37}{subsection.4.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Clustering durch Varianzminimierung}{37}{section*.5}
+\contentsline {subsubsection}{Clustering durch Varianzminimierung}{37}{section*.27}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{k-means}{38}{section*.6}
+\contentsline {subsubsection}{k-means}{38}{section*.28}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{EM-Algorithmus}{39}{section*.7}
+\contentsline {subsubsection}{EM-Algorithmus}{39}{section*.30}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {4.2.2}Silhouettenkoeffizient - Wahl der Clusteranzahl}{39}{subsection.4.2.2}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {4.2.3}OPTICS - Dichtebasiertes Clustering}{40}{subsection.4.2.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Erreichbarkeitseigenschaften \cite {dbscan}}{41}{section*.8}
+\contentsline {subsubsection}{Erreichbarkeitseigenschaften \cite {dbscan}}{41}{section*.32}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Erweiterte Grundbegriffe}{42}{section*.9}
+\contentsline {subsubsection}{Erweiterte Grundbegriffe}{42}{section*.33}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{OPTICS-Algorithmus}{42}{section*.10}
+\contentsline {subsubsection}{OPTICS-Algorithmus}{42}{section*.35}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Wahl der Parameter $\epsilon $ und $minPts$}{47}{section*.11}
+\contentsline {subsubsection}{Wahl der Parameter $\epsilon $ und $minPts$}{47}{section*.44}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Anwendungsgebiete}{47}{section*.12}
+\contentsline {subsubsection}{Anwendungsgebiete}{47}{section*.45}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {4.2.4}Outlier Detection - Local Outlier Factor}{48}{subsection.4.2.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Grundbegriffe}{48}{section*.13}
+\contentsline {subsubsection}{Grundbegriffe}{48}{section*.46}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Berechnung von LOF}{48}{section*.14}
+\contentsline {subsubsection}{Berechnung von LOF}{48}{section*.47}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {4.2.5}Lineare Separation - Support Vector Machine}{48}{subsection.4.2.5}
 \defcounter {refsection}{0}\relax 
@@ -105,31 +105,35 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {4.3.3}Possibilistic Fuzzy C-Means (PFCM)}{56}{subsection.4.3.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.3.4}Geometrisches Clustering}{56}{subsection.4.3.4}
+\contentsline {subsection}{\numberline {4.3.4}Scale Space Filter Clustering}{56}{subsection.4.3.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.3.5}Graphbasiertes Clustering (NSCABDT)}{58}{subsection.4.3.5}
+\contentsline {subsection}{\numberline {4.3.5}Graphbasiertes Clustering I (NSCABDT)}{58}{subsection.4.3.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Bezeichnungen}{60}{section*.15}
+\contentsline {subsubsection}{Bezeichnungen}{60}{section*.54}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.3.6}Kontextbasiertes Clustering}{61}{subsection.4.3.6}
+\contentsline {subsubsection}{Clusteringergebnisse}{61}{section*.55}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.4}Finden der Clusteranzahl}{61}{section.4.4}
+\contentsline {subsection}{\numberline {4.3.6}Graphbasiertes Clustering II (NSFCDT)}{62}{subsection.4.3.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.4.1}NPC}{61}{subsection.4.4.1}
+\contentsline {subsection}{\numberline {4.3.7}Kontextbasiertes Clustering}{63}{subsection.4.3.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.4.2}FHV}{61}{subsection.4.4.2}
+\contentsline {section}{\numberline {4.4}Finden der Clusteranzahl}{63}{section.4.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.4.3}Otsu-Binarisierung}{61}{subsection.4.4.3}
+\contentsline {subsection}{\numberline {4.4.1}NPC}{63}{subsection.4.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.4.4}VAT-Algorithmus}{61}{subsection.4.4.4}
+\contentsline {subsection}{\numberline {4.4.2}FHV}{63}{subsection.4.4.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.5}Clustering auf unvollst\IeC {\"a}ndigen Daten}{61}{section.4.5}
+\contentsline {subsection}{\numberline {4.4.3}Otsu-Binarisierung}{63}{subsection.4.4.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.6}Assoziationsregeln}{61}{section.4.6}
+\contentsline {subsection}{\numberline {4.4.4}VAT-Algorithmus}{63}{subsection.4.4.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {5}Implementierungen}{63}{chapter.5}
+\contentsline {section}{\numberline {4.5}Clustering auf unvollst\IeC {\"a}ndigen Daten}{63}{section.4.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {6}Fazit und Ausblick}{65}{chapter.6}
+\contentsline {section}{\numberline {4.6}Assoziationsregeln}{63}{section.4.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.1}Ausblick - Mein Thema f\IeC {\"u}r die Masterarbeit}{65}{section.6.1}
+\contentsline {chapter}{\numberline {5}Implementierungen}{65}{chapter.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {6}Fazit und Ausblick}{67}{chapter.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {6.1}Ausblick - Mein Thema f\IeC {\"u}r die Masterarbeit}{67}{section.6.1}
 \contentsfinish 

@@ -614,6 +614,37 @@
       \field{title}{Clustering and its application to GIS}
       \field{year}{2013}
     \endentry
+    \entry{nsfcdt}{article}{}
+      \name{author}{2}{}{%
+        {{hash=0ea5d144f202173579a66b2542a2139c}{%
+           family={Roy},
+           familyi={R\bibinitperiod},
+           given={Parthajit},
+           giveni={P\bibinitperiod}}}%
+        {{hash=18e90d486138854c9b242af2e22f3492}{%
+           family={Mandal},
+           familyi={M\bibinitperiod},
+           given={J.K.},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{a83e88a5e4d26df6f32b052faaddbb03}
+      \strng{fullhash}{a83e88a5e4d26df6f32b052faaddbb03}
+      \strng{bibnamehash}{a83e88a5e4d26df6f32b052faaddbb03}
+      \strng{authorbibnamehash}{a83e88a5e4d26df6f32b052faaddbb03}
+      \strng{authornamehash}{a83e88a5e4d26df6f32b052faaddbb03}
+      \strng{authorfullhash}{a83e88a5e4d26df6f32b052faaddbb03}
+      \field{labelalpha}{RM12}
+      \field{sortinit}{R}
+      \field{sortinithash}{da6b42bd3ab22fee61abed031ee405f7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Procedia Technology}
+      \field{title}{A Novel Spatial Fuzzy Clustering using Delaunay Triangulation for Large Scale GIS Data (NSFCDT)}
+      \field{volume}{6}
+      \field{year}{2012}
+      \field{pages}{452\bibrangedash 459}
+      \range{pages}{8}
+    \endentry
     \entry{gdalg}{online}{}
       \name{author}{1}{}{%
         {{hash=b468248a20d75c52ee742f4592c2569f}{%

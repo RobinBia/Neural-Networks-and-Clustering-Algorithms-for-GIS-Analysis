@@ -9,6 +9,7 @@
   numbers=left,
   literate={\ \ }{{\ }}1
 }
+\usepackage{caption}
 \usepackage{amsmath}
 \usepackage{algorithm}
 \usepackage{algpseudocode}
@@ -385,8 +386,11 @@ Eine Stadt ist ein Komplexes System, das aus vielen kleineren interagierenden Su
 Um zu verstehen, welche Kräfte strukturelle Änderungen von Städten vorantreiben, werden sowohl Satellitenbilder als auch nutzerbezogene Positionsdaten aus sozialen Netzwerken wie Facebook und Twitter und Attributierte Markierungen auf Geoinformationssystemen wie OpenStreetMap\footnote{https://www.openstreetmap.org} verwendet, um Langzeitvorhersagen zur erstellen.
 Außerdem helfen diese Modelle und Simulationen dabei, die Mechanismen der urbanen Evolution zu erforschen und Städteplanung zu optimieren.
 
-\bigskip
 
+\clearpage
+\vspace*{\fill}
+\begin{center}
+\begin{minipage}{1\textwidth}
 Im Folgenden eine Auflistung verschiedener Probleme, für deren Lösung sich die Anwendung eines Neuronalen Netzwerks eignet:
 
 \begin{itemize}
@@ -398,13 +402,25 @@ Im Folgenden eine Auflistung verschiedener Probleme, für deren Lösung sich die
 \item Image Captioning - Wie lassen sich die klassifizierten Objekte in Beziehung setzen? 
 \end{itemize}
 
-\begin{figure}[H]
+\end{minipage}
+\end{center}
+\vfill
+\clearpage
+
+\clearpage
+
+
+
+\begin{figure}[h]
 \centering
+\vfill
 \includegraphics[scale=0.73]{anwendungen.jpg}
 \caption{Vergleich verschiedener Anwendungszwecke von Deep Learning}
+\vfill
 \end{figure}
+\clearpage 
 
-\newpage
+
 \subsection{Linear Classifier}
 Um bestimmen zu können, wie gut ein Bild $x$ ($x_i$ sind die einzelnen Pixelwerte) zu einer Klasse $k_j$ passt, muss mithilfe einer Funktion $f$ ein numerischer Vergleichswert bestimmt werden. Die Funktion $f$ wird auch Score-Funktion genannt:
 $$f(x_i, W, b) = W \cdot x_i + b$$
@@ -1220,7 +1236,7 @@ J_{m,\eta}(U,T,V,X,\gamma) = \sum_{i=1}^{c} \sum_{k=1}^{n} \left(a\cdot u_{ik}^m
 
 Dabei steuern $a$ und $b$ den relativen Einfluss der verschiedenen Arten von Zugehörigkeitsgraden. Je ungeeigneter die typicality Values ($t_ik$) in Anbetracht der Größe des Datensatzes sind, desto stärker wird die Gewichtung bei den Zugehörigkeitsgraden ($u_{ik}$). Mit $a=0$ wird PFCM zu PCM und mit $b=0$ zu FCM.
 
-\subsection{Geometrisches Clustering}
+\subsection{Scale Space Filter Clustering}
 Eine weitere Variante des FCM-Algorithmus, der Selective Scale Space based FCM wurde entworfen, um den Clusteringprozess raumbezogener Daten zu verbessern. 
 
 Gegeben einer Menge von Objekten kann es vorkommen, dass sich bestimmte Objektfeatures nicht clustern lassen. Dies ist der Fall, wenn sich die Werte eines Featurevektors zu ähnlich sind und keine deutlichen Cluster bilden. Man sagt, dass die Cluster nicht linear separabel sind. Der Scale Space Filter löst dieses Problem, indem er mithilfe einer Transformationsvorschrift nah beieinander liegende Punkte weiter zusammen schiebt und weiter entfernte Punkte voneinander abstößt. Wird der Filter jedoch auf bereits für das Clustering geeignete Parameter angewendet, kann der Informationsgehalt verschlechtert werden. Aus diesem Grund müssen zuerst Features selektiert werden, welche für eine Vorverarbeitung geeignet sind und somit das Potential haben, nach ihrer Transformation die Clusteringgenauigkeit zu verbessern. Ein weiterer Vorteil des Selektionsprozesses ist die Optimierung der Laufzeiteffizienz. Ein Parameter ist genau dann geeignet, wenn seine Standardabweichung einen bestimmten Schwellwert unterschreitet.
@@ -1236,7 +1252,7 @@ Sei $X$ eine Datenmatrix der Dimensionalität $m\times n$. Es gibt also $n$ Obje
 Ein Parameter $j$ ist genau dann krank, wenn für den Feature-Vektor $x_{ij} \forall i\in \{1,\dots, n\}$ gilt:
 
 $$\theta-\epsilon\leqslant x_{ij} \leqslant\theta+\epsilon$$ 
-für ein $\theta$ und einen sehr kleinen Wert $\epsilon>0$. In diesem Fall wird der Parameter mit einer Transformationsfunktion modifiziert. Möglich sind hier eine vielzahl von Funktionen. In dem Originalpaper beschränken sich die Autoren jedoch auf die Gaußsche Transformationsformel:
+für ein $\theta$ und einen sehr kleinen Wert $\epsilon>0$. In diesem Fall wird der Parameter mit einer Transformationsfunktion modifiziert. Möglich sind hier eine vielzahl von Funktionen. In der Publikation beschränken sich die Autoren jedoch auf die Gaußsche Transformationsformel:
 
 $$f(x,\sigma) = \frac{1}{(\sigma \cdot \sqrt{2\pi})^2}e^{-\frac{||x-x_j||^2}{2\sigma^2}}$$
 
@@ -1250,7 +1266,7 @@ Der Pseudocode für den gesamten Algorithmus sieht dann folgendermaßen aus:
 
 \begin{algorithm}[H]
 \caption{ S.D. based Selective Scale Spaced FCM}\label{sdbsssfcm}
-\hspace*{\algorithmicindent} \textbf{Input:} $X={x_1,\dots,x_n}$, standardAbweichungGrenzwert\\
+\hspace*{\algorithmicindent} \textbf{Input:} $X=\{x_1,\dots,x_n\}$, standardAbweichungGrenzwert\\
  \hspace*{\algorithmicindent} \textbf{Output:} Clustering $C$ 
 \begin{algorithmic}[1]
 \State Deklariere Zugehörigkeitsmatrix $u_{ik}$ mit $i\in \{1,\dots,c\}$ und $k \in \{1,\dots,n\}$.
@@ -1272,8 +1288,8 @@ Der Pseudocode für den gesamten Algorithmus sieht dann folgendermaßen aus:
 
 
 
-\subsection{Graphbasiertes Clustering (NSCABDT)}
-Eine weitere FCM-Variante, die speziell zum Clustering von geologischen Strukturen entwickelt wurde, basiert auf der Delaunay Triangulation, also der planaren Dekomposition einer Punktemenge\cite{nscabdt}. Dies war nötig, da bisherige Entwicklungen es nicht geschafft hatten, räumliche Abhängigkeiten und Heterogenitäten zu erkennen. Beide gelten als starke Indikatoren für geographische Prozesse. Dabei bezeichnet die räumliche Abhängkeit die Tendenz zweier Punkte, sich mit zunehmender räumlicher Nähe gegenseitig zu beeinflussen oder ähnliche Attributwerte anzunehmen\cite{dependency}. Räumliche Heterogenenität bezeichnet die Ungleichverteilung von Populationen auf einem bestimmten Gebiet. Ein weiterer Vorteil der Methode ist, dass nun auch Cluster erkannt werden können, die durch eine schmale Brücke verbunden sind. Da eine Delaunay-Triangulation viele Ähnlichkeitsinformationen implizit speichert, eignet sie sich für eine robuste Clusteranalyse. Außerdem werden Delaunay-Triangulationen bei der Analyse von Topologieproblemen, Autokonturierung, der Visualisierung von 2.5D Geodaten, Oberflächencharakterisierung und in vielen weiteren raumbezogenen Analysewerkzeugen eingesetzt.
+\subsection{Graphbasiertes Clustering I (NSCABDT)}
+Eine weitere FCM-Variante, die speziell zum Clustering von geographischen Strukturen entwickelt wurde, basiert auf der Delaunay Triangulation, also der planaren Dekomposition einer Punktemenge \cite{nscabdt}. Dies war nötig, da bisherige Entwicklungen es nicht geschafft hatten, räumliche Abhängigkeiten und Heterogenitäten zu erkennen. Beide gelten als starke Indikatoren für geographische Prozesse. Dabei bezeichnet die räumliche Abhängkeit die Tendenz zweier Punkte, sich mit zunehmender räumlicher Nähe gegenseitig zu beeinflussen oder ähnliche Attributwerte anzunehmen \cite{dependency}. Räumliche Heterogenenität bezeichnet die Ungleichverteilung von Populationen auf einem bestimmten Gebiet. Ein weiterer Vorteil der Methode ist, dass nun auch Cluster erkannt werden können, die durch eine schmale Brücke verbunden sind. Da eine Delaunay-Triangulation viele Ähnlichkeitsinformationen implizit speichert, eignet sie sich für eine robuste Clusteranalyse. Außerdem werden Delaunay-Triangulationen bei der Analyse von Topologieproblemen, Autokonturierung, der Visualisierung von 2.5D Geodaten, Oberflächencharakterisierung und in vielen weiteren raumbezogenen Analysewerkzeugen eingesetzt.
 \\~\\
 Eine Delaunay-Triangulation $D(X)$ ist eine Vernetzung aller Punkte aus $X$ zu Dreiecken, so dass kein Punkt $p\in X$ innerhalb des Umkreises eines dieser Dreiecke liegt. Dabei wird der kleinste Innenwinkel über alle Dreiecke maximiert.
 \\
@@ -1335,7 +1351,6 @@ $$p_{\delta} = \{x|\enspace|x-p|<\delta, p\in X,\forall x\in \mathbb{R}^2\}$$
 Die effektive Region einer Punktmenge ist dann die Vereinigung der effektiven Regionen aller Punkte dieser Menge:
 
 $$\overline{X} = \bigcup_{p\in X} p_{\delta}$$
-\subsection{Kontextbasiertes Clustering}
 
 Die $\gamma$-Grenze ist die Menge aller Punkte im Kreis mit Radius $\delta$
 
@@ -1349,7 +1364,7 @@ mit
 
 $$Dm = \{x|\enspace |x|\leqslant \delta\}$$
 
-Die $\gamma$-Kurve ist die prinzipielle Mannigfaltigkeit des Punktes in der $\gamma$-Grenze einer Punktemenge.\\
+Die $\gamma$-Kurve ist die Mannigfaltigkeit des Punktes in der $\gamma$-Grenze einer Punktemenge.\\
 
 Der Algorithmus für NSCABDT kann wie folgt beschrieben werden:
 
@@ -1357,12 +1372,84 @@ Zu Beginn gehört kein Punkt einer gegebenen Punktemenge $S$ zu einem Cluster. A
 \begin{enumerate}
 \item Delaunay-Triangulation berechnen und dabei die Knoten, Kanten und Flächentabellen ausfüllen
 \item Für jeden Punkt $p_i \in S$ alle inzidenten Kanten $N(p_i)$ finden, $local_mean(p_i)$ und $F(p_i)$ berechnen.
-\item Für jede Kante $e \in N(p_i): Wenn len(e) \geqslant F(p_i), dann Kante aus DT entfernen$
+\item Für jede Kante $e \in N(p_i)$: Wenn $len(e) \geqslant F(p_i)$, dann Kante aus DT entfernen
 \item Wenn $deg(p_i)=0$, Knoten $p_i$ löschen, ansonsten zu $C$ hinzufügen.
 \item Iterativ für alle Knoten durchführen, mit denen $p_i$ verbunden ist.
-\item Grenze von Cluster C extrahieren und alle Brücken eliminieren
+\item Grenze von Cluster C extrahieren und alle Brücken eliminieren. Dies erfolgt per Hauptkurvenanalyse, welche eine Generalisierung der Hauptachsenanalyse ist. Wenn für einen Cluster zwei verschiedene Grenzen gefunden werden kann, ist dies ein Indiz dafür, dass es zwei kleinere Cluster gibt, die über eine Brücke verbunden sind. Der Algorithmus zur Eliminierung von Brücken lautet wie folgt:
+\begin{enumerate}
+\item Setze $\delta$ auf die Medianlänge aller Kanten $E$
+\item Berechne die effektive Region einer Punktemenge $V$
+\item Berechne die $\gamma$-Grenze von $V$
+\item Berechne die $\gamma$-Kurve von $V$
+\end{enumerate}
 \item Gibt es noch unbearbeitete Knoten, obwohl im Iterationsprozess alle Knoten positiver Pfade betrachtet wurden, dann konnten nicht alle Knoten erreicht werden und es mussten zu lange Kanten gelöscht werden (negative Pfade). Es wird ein neuer Cluster $C'$ erstellt und die Iteration mit einem beliebigen unbearbeiteten Punkt forgesetzt.
 \end{enumerate}
+
+
+
+\begin{minipage}{0.45\textwidth}\raggedright
+\subsubsection{Clusteringergebnisse} ~\\
+In der Originalpublikation wird untersucht, wie sich der NSCABDT-Algorithmus beim Clustern von drei verschieden geformten Polygonen verhält. Diese sollen aus mehreren Hundert Punkten bestehen und von Outliern umgegeben sind. Außerdem sind zwei Polygone über mehrere Brücken verbunden.
+\end{minipage}
+\hfill
+\begin{minipage}{0.5\textwidth}
+\includegraphics[width=\linewidth]{polygone.jpg}
+\captionof{figure}{Beispieldatensatz mit drei Clustern}
+\end{minipage}
+~\\~\\
+Im direkten Vergleich mit DBSCAN ist der NSCABDT-Algorithmus zwar viel langsamer, findet jedoch in jedem Untersuchten Fall die korrekten Cluster mit etwas höherer Genauigkeit.
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.35]{nscabdtaccuracy.jpg}
+\caption{NSCABDT schlägt DBSCAN immer, braucht dafür aber länger}
+\end{figure}
+
+\hfil
+\subsection{Graphbasiertes Clustering II (NSFCDT)}
+Eine weitere Optimierung, die zwei Jahre später vorgestellt wurde, basiert ebenfalls auf der Delaunay-Triangulation mit der Einschränkung auf minimale Spannbäume (MST). Ein Hauptvorteil gegenüber NSCABDT ist eine deutlich verbesserte Laufzeiteffizienz bei gleichwertigen Ergebnissen \cite{nsfcdt}. Die Methode wurde speziell für Geodatensätze entworfen, die meist viele tausend Punkte enthalten.\\
+
+Das Verfahren besteht aus zwei Schritten. Im ersten Schritt wird die Delaunay Triangulation berechnet und ein ähnlichkeitsbasiertes Clustering gebildet. Im zweiten Schritt wird eine Fuzzy Logik zur Verfeinerung der Ergebnisse angewandt.\\
+
+
+Der folgende Algorithmus beschreibt den ersten Schritt des Verfahrens. Er einen Datensatz $X$ mit $n$ Punkten entgegen und clustert ihn auf Basis der Delaunay-Triangulation.
+
+In der Originalpublikation wird für die Erzeugung der $DT$ der Bowyer-Watson Algorithmus empfohlen, der nur $\mathcal{O}(n\log{}n)$ Operationen benötigt, um $n$ Punkte zu triangulieren und somit besonders effizient ist. Anschließend startet in Zeile $5$ die harte Partitionierung. Dabei wird für ein Initialdreieck aus $DT$ geprüft, ob es größer ist, als ein bestimmter Schwellwert und ob es noch nicht besucht wurde. Wurde ein Initialdreieck gefunden, das klein genug ist, werden von ihm aus alle Nachbarn betrachtet. Für jedes Nachbardreieck wird geprüft, ob es klein genug ist. Ist dies der Fall, wird es auf einem Stack gespeichert. Alle zu großen Nachbardreiecke werden hingegen ignoriert. Der Algorithmus wird solange fortgesetzt, bis alle Elemente auf dem Stack abgearbeitet wurden und kein gültiger Nachbar eines Stackelements mehr gefunden werden konnte. Die Menge der gültigen Nachbardreiecke inklusive Initialdreieck bilden dann einen Cluster. Der Algorithmus wird danach für alle unbesuchten Initialdreiecke aus $DT$ fortgesetzt. Zum Schluss enthält die Menge $ClusterSet$ Mengen von Dreiecken, die die Cluster des Datensatzes bilden.
+
+\begin{algorithm}[H]
+\caption{ Schritt 1: Delaunay Klassifikation}\label{nsfcdt}
+\hspace*{\algorithmicindent} \textbf{Input:} $X=\{x_1,\dots,x_n\}$ 
+\begin{algorithmic}[1]
+\State $DT \gets DelaunayTriangleSet(X)$
+\State $ClusterSet \gets \emptyset$
+\State $NewSet \gets \emptyset$
+\State $TmpSet \gets \emptyset$
+\ForAll{$dt \in DT$}
+\If{$VISITED(dt) = False$}
+\State $INITIALIZE(NewSet)$
+\State $PUSH(dt,Stack)$
+\While{$EMPTY(Stack) = False$}
+\State $Triangle\,T \gets POP(Stack)$
+\If{$SATISFIABLE(T) \& NOTVISITED(T)$}
+\State $T.Visited \gets True$
+\State $NewSet \gets NewSet \cup \{T\}$
+\State $TmpSet \gets NEIGHBORS(T)$
+\ForAll{$Element \in TmpSet$}
+\If{$NOTVISITED(Element)$}
+\State $PUSH(Element,Stack)$
+\EndIf
+\EndFor
+\EndIf
+\EndWhile
+\State $ClusterSet \gets ClusterSet \cup newSet$
+\EndIf
+\EndFor
+\end{algorithmic}
+\end{algorithm}
+
+
+
+
+\subsection{Kontextbasiertes Clustering}
 \section{Finden der Clusteranzahl}
 \subsection{NPC}
 \subsection{FHV}

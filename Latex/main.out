@@ -37,16 +37,17 @@
 \BOOKMARK [2][-]{subsection.4.3.1}{Fuzzy C-Means \(FCM\)}{section.4.3}% 37
 \BOOKMARK [2][-]{subsection.4.3.2}{Possibilistic C-Means \(PCM\)}{section.4.3}% 38
 \BOOKMARK [2][-]{subsection.4.3.3}{Possibilistic Fuzzy C-Means \(PFCM\)}{section.4.3}% 39
-\BOOKMARK [2][-]{subsection.4.3.4}{Geometrisches Clustering}{section.4.3}% 40
-\BOOKMARK [2][-]{subsection.4.3.5}{Graphbasiertes Clustering \(NSCABDT\)}{section.4.3}% 41
-\BOOKMARK [2][-]{subsection.4.3.6}{Kontextbasiertes Clustering}{section.4.3}% 42
-\BOOKMARK [1][-]{section.4.4}{Finden der Clusteranzahl}{chapter.4}% 43
-\BOOKMARK [2][-]{subsection.4.4.1}{NPC}{section.4.4}% 44
-\BOOKMARK [2][-]{subsection.4.4.2}{FHV}{section.4.4}% 45
-\BOOKMARK [2][-]{subsection.4.4.3}{Otsu-Binarisierung}{section.4.4}% 46
-\BOOKMARK [2][-]{subsection.4.4.4}{VAT-Algorithmus}{section.4.4}% 47
-\BOOKMARK [1][-]{section.4.5}{Clustering auf unvollst\344ndigen Daten}{chapter.4}% 48
-\BOOKMARK [1][-]{section.4.6}{Assoziationsregeln}{chapter.4}% 49
-\BOOKMARK [0][-]{chapter.5}{Implementierungen}{}% 50
-\BOOKMARK [0][-]{chapter.6}{Fazit und Ausblick}{}% 51
-\BOOKMARK [1][-]{section.6.1}{Ausblick - Mein Thema f\374r die Masterarbeit}{chapter.6}% 52
+\BOOKMARK [2][-]{subsection.4.3.4}{Scale Space Filter Clustering}{section.4.3}% 40
+\BOOKMARK [2][-]{subsection.4.3.5}{Graphbasiertes Clustering I \(NSCABDT\)}{section.4.3}% 41
+\BOOKMARK [2][-]{subsection.4.3.6}{Graphbasiertes Clustering II \(NSFCDT\)}{section.4.3}% 42
+\BOOKMARK [2][-]{subsection.4.3.7}{Kontextbasiertes Clustering}{section.4.3}% 43
+\BOOKMARK [1][-]{section.4.4}{Finden der Clusteranzahl}{chapter.4}% 44
+\BOOKMARK [2][-]{subsection.4.4.1}{NPC}{section.4.4}% 45
+\BOOKMARK [2][-]{subsection.4.4.2}{FHV}{section.4.4}% 46
+\BOOKMARK [2][-]{subsection.4.4.3}{Otsu-Binarisierung}{section.4.4}% 47
+\BOOKMARK [2][-]{subsection.4.4.4}{VAT-Algorithmus}{section.4.4}% 48
+\BOOKMARK [1][-]{section.4.5}{Clustering auf unvollst\344ndigen Daten}{chapter.4}% 49
+\BOOKMARK [1][-]{section.4.6}{Assoziationsregeln}{chapter.4}% 50
+\BOOKMARK [0][-]{chapter.5}{Implementierungen}{}% 51
+\BOOKMARK [0][-]{chapter.6}{Fazit und Ausblick}{}% 52
+\BOOKMARK [1][-]{section.6.1}{Ausblick - Mein Thema f\374r die Masterarbeit}{chapter.6}% 53
