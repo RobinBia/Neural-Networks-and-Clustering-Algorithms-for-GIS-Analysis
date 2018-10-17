@@ -1107,13 +1107,7 @@ Im Folgenden habe ich einen Optimierer (scipy.optimize.minimize) zur Maximierung
 \end{figure}
 
 
-Vorgehen nächste Tage:\\
-
-Clusteringverfahren konkret implementieren im Jupyter Notebook, KDD-Prozessmodell nachvollziehen, Rasterbilder diskretisieren, selektieren, evtl. vervollständigen, Implementierung darauf anwenden, zusätzlich Assoziationsverfahren darauf anwenden und Ergebnisse interpretieren.
-
-Was fehlt: Probleme von Clusteringverfahren in Geowis. identifizieren und Verbesserungen bzw. Problemlösungen anbieten.
-
-Wichtig: Keine neue Erkenntnisse in Geowis. sondern Werkzeuge liefern, die neue Erkenntnisse ermöglichen!
+\hfill
 
 \section{Fuzzy-Clustering}
 
@@ -1146,7 +1140,7 @@ v_i = \frac{\sum\limits_{k=1}^n u_{ik}^m \cdot x_k}{\sum\limits_{k=1}^n u_{ik}^m
 
 Der Algorithmus zum Finden der besten Clusterzentroiden ist wie beim $k$-means Verfahren ein alternierendes Programm.
 %http://tug.ctan.org/macros/latex/contrib/algorithmicx/algorithmicx.pdf
-\begin{algorithm}
+\begin{algorithm}[H]
 \caption{$FCM(X,c,m,\epsilon)$}\label{fcm}
 \begin{algorithmic}[1]
 \Require{$X$ ist ein $d$-dimensionaler Datensatz mit $n$ Datenpunkten, $2 \leqslant
@@ -1189,9 +1183,7 @@ Die Kostenfunktion für PCM lautet insgesamt:
 
 $$J_m(T,V,X,\gamma) = \sum_{i=1}^{c} \sum_{k=1}^{n} t_{ik}^m \cdot d^2(v_i,x_k) + \sum_{i=1}^c  \gamma_i \sum_{k=1}^n (1-t_{ik})^m,\quad \gamma_i>0 \forall i$$
 
-Leider führt auch diese Funktion je nach Initialisierung der Clusterprototypen zu einer trivialen Lösung, bei der nur noch ein einziger Cluster erkannt wird. Mögliche Lösungen sind die Initialisierung mit der Ausgabe eines zuvor ausgelösten FCM-Durchlaufs oder das Hinzufügen eines weiteren Bestrafungsterms, der Clusterabstoßung. Je näher sich die Clusterzentroiden im Laufe der Optimierung kommen, desto größer soll die Kostenfunktion werden. Gleichzeitig sollen die Punkte nicht nur einem Cluster zugeordnet und alle anderen Cluster möglichst weit weg sein. Zwei Abstoßungsfunktionen\cite{cabstossung}, die solche Kriterien erfüllen, sind:
-
-$f(x) = \frac{1}{x^2}$ und $g(x) = \frac{1}{e^{x^2}}$
+Leider führt auch diese Funktion je nach Initialisierung der Clusterprototypen zu einer trivialen Lösung, bei der nur noch ein einziger Cluster erkannt wird. Mögliche Lösungen sind die Initialisierung mit der Ausgabe eines zuvor ausgelösten FCM-Durchlaufs oder das Hinzufügen eines weiteren Bestrafungsterms, der Clusterabstoßung. Je näher sich die Clusterzentroiden im Laufe der Optimierung kommen, desto größer soll die Kostenfunktion werden. Gleichzeitig sollen die Punkte nicht nur einem Cluster zugeordnet und alle anderen Cluster möglichst weit weg sein. Zwei Abstoßungsfunktionen\cite{cabstossung}, die solche Kriterien erfüllen, sind: $f(x) = \frac{1}{x^2}$ und $g(x) = \frac{1}{e^{x^2}}$.
 
 \begin{figure}[H]
 \centering
@@ -1286,7 +1278,7 @@ Der Pseudocode für den gesamten Algorithmus sieht dann folgendermaßen aus:
 \end{algorithmic}
 \end{algorithm}
 
-
+\clearpage
 
 \subsection{Graphbasiertes Clustering I (NSCABDT)}
 Eine weitere FCM-Variante, die speziell zum Clustering von geographischen Strukturen entwickelt wurde, basiert auf der Delaunay Triangulation, also der planaren Dekomposition einer Punktemenge \cite{nscabdt}. Dies war nötig, da bisherige Entwicklungen es nicht geschafft hatten, räumliche Abhängigkeiten und Heterogenitäten zu erkennen. Beide gelten als starke Indikatoren für geographische Prozesse. Dabei bezeichnet die räumliche Abhängkeit die Tendenz zweier Punkte, sich mit zunehmender räumlicher Nähe gegenseitig zu beeinflussen oder ähnliche Attributwerte anzunehmen \cite{dependency}. Räumliche Heterogenenität bezeichnet die Ungleichverteilung von Populationen auf einem bestimmten Gebiet. Ein weiterer Vorteil der Methode ist, dass nun auch Cluster erkannt werden können, die durch eine schmale Brücke verbunden sind. Da eine Delaunay-Triangulation viele Ähnlichkeitsinformationen implizit speichert, eignet sie sich für eine robuste Clusteranalyse. Außerdem werden Delaunay-Triangulationen bei der Analyse von Topologieproblemen, Autokonturierung, der Visualisierung von 2.5D Geodaten, Oberflächencharakterisierung und in vielen weiteren raumbezogenen Analysewerkzeugen eingesetzt.
@@ -1396,7 +1388,9 @@ In der Originalpublikation wird untersucht, wie sich der NSCABDT-Algorithmus bei
 \includegraphics[width=\linewidth]{polygone.jpg}
 \captionof{figure}{Beispieldatensatz mit drei Clustern}
 \end{minipage}
-~\\~\\
+
+\vspace{\belowdisplayskip}
+
 Im direkten Vergleich mit DBSCAN ist der NSCABDT-Algorithmus zwar viel langsamer, findet jedoch in jedem Untersuchten Fall die korrekten Cluster mit etwas höherer Genauigkeit.
 \begin{figure}[H]
 \centering
@@ -1404,9 +1398,15 @@ Im direkten Vergleich mit DBSCAN ist der NSCABDT-Algorithmus zwar viel langsamer
 \caption{NSCABDT schlägt DBSCAN immer, braucht dafür aber länger}
 \end{figure}
 
-\hfil
+
+
+\clearpage
+\vspace*{\fill}
+\begin{center}
+\begin{minipage}{1\textwidth}
 \subsection{Graphbasiertes Clustering II (NSFCDT)}
-Eine weitere Optimierung, die zwei Jahre später vorgestellt wurde, basiert ebenfalls auf der Delaunay-Triangulation mit der Einschränkung auf minimale Spannbäume (MST). Ein Hauptvorteil gegenüber NSCABDT ist eine deutlich verbesserte Laufzeiteffizienz bei gleichwertigen Ergebnissen \cite{nsfcdt}. Die Methode wurde speziell für Geodatensätze entworfen, die meist viele tausend Punkte enthalten.\\
+
+Eine weitere Optimierung, die zwei Jahre später vorgestellt wurde, basiert ebenfalls auf der Delaunay-Triangulation mit anschließendem Fuzzy Refinement. Ein Hauptvorteil gegenüber NSCABDT ist eine deutlich verbesserte Laufzeiteffizienz bei gleichwertigen Ergebnissen \cite{nsfcdt}. Die Methode wurde speziell für sehr große Datensätze entworfen, wie es bei Geodaten gewöhnlich ist.\\
 
 Das Verfahren besteht aus zwei Schritten. Im ersten Schritt wird die Delaunay Triangulation berechnet und ein ähnlichkeitsbasiertes Clustering gebildet. Im zweiten Schritt wird eine Fuzzy Logik zur Verfeinerung der Ergebnisse angewandt.\\
 
@@ -1414,28 +1414,34 @@ Das Verfahren besteht aus zwei Schritten. Im ersten Schritt wird die Delaunay Tr
 Der folgende Algorithmus beschreibt den ersten Schritt des Verfahrens. Er einen Datensatz $X$ mit $n$ Punkten entgegen und clustert ihn auf Basis der Delaunay-Triangulation.
 
 In der Originalpublikation wird für die Erzeugung der $DT$ der Bowyer-Watson Algorithmus empfohlen, der nur $\mathcal{O}(n\log{}n)$ Operationen benötigt, um $n$ Punkte zu triangulieren und somit besonders effizient ist. Anschließend startet in Zeile $5$ die harte Partitionierung. Dabei wird für ein Initialdreieck aus $DT$ geprüft, ob es größer ist, als ein bestimmter Schwellwert und ob es noch nicht besucht wurde. Wurde ein Initialdreieck gefunden, das klein genug ist, werden von ihm aus alle Nachbarn betrachtet. Für jedes Nachbardreieck wird geprüft, ob es klein genug ist. Ist dies der Fall, wird es auf einem Stack gespeichert. Alle zu großen Nachbardreiecke werden hingegen ignoriert. Der Algorithmus wird solange fortgesetzt, bis alle Elemente auf dem Stack abgearbeitet wurden und kein gültiger Nachbar eines Stackelements mehr gefunden werden konnte. Die Menge der gültigen Nachbardreiecke inklusive Initialdreieck bilden dann einen Cluster. Der Algorithmus wird danach für alle unbesuchten Initialdreiecke aus $DT$ fortgesetzt. Zum Schluss enthält die Menge $ClusterSet$ Mengen von Dreiecken, die die Cluster des Datensatzes bilden.
+\end{minipage}
+\end{center}
+
+
+
+
 
 \begin{algorithm}[H]
 \caption{ Schritt 1: Delaunay Klassifikation}\label{nsfcdt}
 \hspace*{\algorithmicindent} \textbf{Input:} $X=\{x_1,\dots,x_n\}$ 
 \begin{algorithmic}[1]
-\State $DT \gets DelaunayTriangleSet(X)$
+\State $DT \gets \textsc{Delaunay}\textsc{Triangles}(X)$
 \State $ClusterSet \gets \emptyset$
 \State $NewSet \gets \emptyset$
 \State $TmpSet \gets \emptyset$
 \ForAll{$dt \in DT$}
-\If{$VISITED(dt) = False$}
-\State $INITIALIZE(NewSet)$
-\State $PUSH(dt,Stack)$
-\While{$EMPTY(Stack) = False$}
-\State $Triangle\,T \gets POP(Stack)$
-\If{$SATISFIABLE(T) \& NOTVISITED(T)$}
+\If{$\textsc{Visited}(dt) = False$}
+\State $\textsc{Initialize}(NewSet)$
+\State $\textsc{Push}(dt,Stack)$
+\While{$\textsc{Empty}(Stack) = False$}
+\State $Triangle\,T \gets \textsc{Pop}(Stack)$
+\If{$\textsc{Satisfiable}(T) \& \textsc{Not}\textsc{Visited}(T)$}
 \State $T.Visited \gets True$
 \State $NewSet \gets NewSet \cup \{T\}$
-\State $TmpSet \gets NEIGHBORS(T)$
+\State $TmpSet \gets \textsc{Neighbours}(T)$
 \ForAll{$Element \in TmpSet$}
-\If{$NOTVISITED(Element)$}
-\State $PUSH(Element,Stack)$
+\If{$\textsc{Not}\textsc{Visited}(Element)$}
+\State $\textsc{Push}(Element,Stack)$
 \EndIf
 \EndFor
 \EndIf
@@ -1446,8 +1452,68 @@ In der Originalpublikation wird für die Erzeugung der $DT$ der Bowyer-Watson Al
 \end{algorithmic}
 \end{algorithm}
 
+Im zweiten Schritt wird eine Fuzzy-Funktion angewandt, um das Clustering zu verfeinern. Dies ist notwendig, um Dichteabfälle an den Randbereichen großer Cluster zu erkennen. Beispielsweise hat ein Wald keine harte Grenze, an der das Baumwachstum plötzlich aufhört. Auch die Bäume in den weniger dichten äußeren Regionen sollten dem Waldcluster zugeordnet werden. Gleichzeitig soll die Größe der Randregionen bei zunehmender Größe des Kernwaldes ebenfalls zunehmen. Die hierzu erforderliche Fuzzy-Zugehörigkeitsfunktion lautet:
+
+$\mu(x:\alpha,\beta) = \left\{
+\begin{array}{ll}
+0 & x < \alpha \\
+2\cdot\left(\frac{x-\alpha}{\beta-\alpha}\right)^2 & \alpha \leqslant x < \frac{\alpha + \beta}{2} \\
+1-2\cdot\left(\frac{x-\beta}{\beta-\alpha}\right)^2 & \frac{\alpha + \beta}{2} \leqslant x < \beta \\
+1 & x \geqslant \beta
+\end{array}
+\right. $
+
+Es handelt sich hierbei um eine Sigmoidfunktion. Der Parameter $\alpha$ gibt den Wendepunkt der Kurve an, der Parameter $\beta$ bestimmt die Neigung der Kurve, welche mit zunehmendem $\beta$ immer flacher wird. Je nach Klasseneigenschaft können die Fuzzy Parameter variiert werden. Beispielsweise könnte die Baumart Buche, die einem Nadelwald steht, eine steilere Zugehörigkeitskurve besitzen, als die Baumart Tanne. Das bedeutet, dass eine Buche gegenpber einer Tanne viel näher an einem Nadelkernwald stehen muss, um mit einer hohen Zugehörigkeit klassifiziert zu werden. 
+\\
+Der Funktionswert $\mu$ wird als Stärke der Inklusion bezeichnet. Je größer dieser Wert wird, desto wird der Randbereich, in dem weitere Punkte berücksichtigt werden.\\
+Der Gesamtalgorithmus inklusive Triangulation und Fuzzy Refinement sieht dann folgendermaßen aus:
+
+\begin{algorithm}[H]
+\caption{Fuzzy Basiertes NSFCDT}\label{nsfcdt}
+\hspace*{\algorithmicindent} \textbf{Input:} $X=\{x_1,\dots,x_n\}$ 
+\begin{algorithmic}[1]
+\State $\textsc{Build} (ClusterSet)$
+\ForAll{$C_i \in ClusterSet$}
+\State $Area \gets \textsc{Get}\textsc{Area}(C_i)$
+\State $Degree \gets \textsc{Get}\textsc{Fuzzy}\textsc{Degree}(Area)$
+\State $\textsc{Set}\textsc{Satisfiability}\textsc{Condition}(Degree)$
+\ForAll{$Triangle \in Cluster$ }
+\State $N \gets Neighbour(Triangle)$
+\ForAll{$E \in N$}
+\If{$\textsc{Fuzzy}\textsc{Satisfiable}(E)$}
+\If{$E\in C_j, \forall j=1\dots m \& j\neq i$}
+\State $C_i \gets C_i \cup C_j$
+\Else 
+\State $C_i \gets C_i \cup \{E\}$
+\EndIf
+\EndIf
+\EndFor
+\EndFor
+\EndFor
+\end{algorithmic}
+\end{algorithm} 
+
+\subsubsection{Ergebnisse}
+Die Untersuchung hat gezeigt, dass NSFCDT gegenüber NSCABDT bei größeren Datensätzen eine bessere Laufzeit besitzt, vor allem, wenn der Refinement-Schritt weggelassen wird. Bei kleineren Datensätzen ist das Fuzzy-NSFCDT etwas langsamer, erzielt jedoch bessere Ergebnisse, da manche Cluster sinnvollerweise verschmolzen werden können.
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.33]{nsfcomp.jpg}
+\caption{Laufzeiten von NSFCDT und NSCABDT bei verschieden großen Datensätzen}
+\end{figure}
+
+So wurde zum Beispiel ein Graustufenbild einer indischen Stadt mit NSFCDT sowohl mit als auch ohne Refinement geclustert. Die Fuzzy-Methode fand dabei vier Gebiete mit Baumbestand. Die harte Methode jedoch unterteilte zwei der Gebiete in zwei weitere Cluster, obwohl dies zu sinnlosen Ergebnissen führte. Die Untersuchung zeigt, welch hohes Potential das Fuzzy basierte NSFCDT beim Clustern von großen Datensätzen mit vielseitigen Eigenschaften besitzt. So ist es von zentraler Bedeutung, dass je nach Geländeart eine individuelle Fuzzy-Kurve gefunden wird. So führt die Unterscheidung zwischen Gebäuden, Flüssen und Wäldern bei der Berechnung des Inklusionsfaktors dazu, dass für jede Klasse sehr präzise Clusteringergebnisse gefunden werden kann, welche die Präzisium des NSCABDT-Algorithmus deutlich übertrifft.
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.4]{nsfcdtres.jpg}
+\caption{Clusteringergebnis nach hartem NSFCDT (links) und nach dem Fuzzy Refinement (rechts)}
+\end{figure}
 
 
+Als Vorteil sehen die Autoren, dass die Gesamtlaufzeit des Algorithmus mit $\mathcal{O}n\sqrt{n}$ sehr klein ist. Trotzdem fügen Sie hinzu, dass es noch viel Spielraum für Verbesserungen gibt. So können zwei benachbarte Dreiecke nicht berücksichtigt werden, wenn sie anstelle einer gemeinsamen Kante einen gemeinsamen Knoten haben. Dieses Problem kann nur durch einem weiteren Teilalgorithmus gelöst werden. Außerdem könnten noch effizientere Datenstrukturen oder statistische Modelle zu einer weiteren Verbesserung der Laufzeit führen.
+ 
+\clearpage
 
 \subsection{Kontextbasiertes Clustering}
 \section{Finden der Clusteranzahl}
