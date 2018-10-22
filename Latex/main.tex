@@ -1515,7 +1515,43 @@ Als Vorteil sehen die Autoren, dass die Gesamtlaufzeit des Algorithmus mit $\mat
  
 \clearpage
 
-\subsection{Kontextbasiertes Clustering}
+\subsection{Kontextbasiertes geographisch gewichtetes Fuzzy-Clustering (CFGWC)}
+Eine weiteres FCM-basiertes Clusteringverfahren wurde im Hinblick auf die geodemografische Analyse entwickelt, das CFGWC \cite{cfgwc}. Die Geodemografie beschäftigt sich mit dem Verständnis von der Entstehung von menschlichen Populationszentren (i.d.R. Städte). Sie verbindet die Demographie, also die Wissenschaft von menschlichen Populationsströmen, mit der Geographie, der Wissenschaft von der physischen Gestalt der Erdoberfläche, dessen Variation und Veränderung. Fuzzy-basierte Clusteringalgorithmen kommen in der Geodemografie häufig zum Einsatz, da Sie das Problem des ökologischen Fehlschlusses vermeiden. Ein ökologischer (oder kollektiver) Fehlschluss ist ein unzulässiger Vergleich von Durchschnittswerten.
+Ein Beispiel dafür ist die Reichtumsverteilung in einem Dorf und einer Großstadt. Zwar ist der durchschnittliche Stadtbewohner reicher als der durchschnittliche Dorfbewohner, jedoch kann es trotzdem sein, dass der ärmste Dorfbewohner reicher ist, als der ärmste Stadtbewohner, da Städte eine anziehende Wirkung auf arme Menschen haben. Gleichzeitig ist es durch eine stark komprimierte Reichtumsanhäufung einer Elite auch möglich, dass es mehr arme Stadtbewohner als arme Dorfbewohner gibt.
+Obwohl der FCM-Algorithmus dieses Problem im Gegensatz zu harten Clusteringalgorithmen verhindert, fehlt ihm eine geographische Komponente. Zum Beispiel kann die Interpretation eines Wohngebiets trotz identischer Clusterattribute abhängig von seinem Standtort unterschiedlich ausfallen. Aus diesem Grund wurde eine Modifikation für die Berechnung der Zugehörigkeitsmatrix in FCM entwickelt, welche den sogenannten Nachbarschaftseffekt berücksichtigt. Als Nachbarschaftseffekt bezeichnet man die Art der Beeinflussung des Verhaltens eines Menschen in Abhängigkeit von seiner Wohnlage und Nachbarschaft:
+
+$$u_{jk}^{\prime} = \alpha \times u_{jk}+\beta \times \frac{1}{A} \times \sum\limits_{i=1}^c \omega_{ji} \times u _{ik}$$
+
+Dieser dritte Schritt erfolgt unmittelbar nach der Aktualisierung von Zugehörigkeitsmatrix, Clusterzentroiden noch in der Repeat-Schleife des oben beschriebenen FCM-Algorithmus. Dabei ist $u_{jk}$ die alte Zugehörigkeitsmatrix aus dem vorherigen Schritt und $u_{jk}^{\prime}$ die geographisch gewichtete neue Zugehörigkeitsmatrix. Die Parameter $\alpha$ und $\beta$ legen fest, wie stark die alten Zugehörigkeiten in die Berechnung einfließen sollen, wobei $\alpha + \beta = 1$. Parameter $A$ sorgt dafür, dass die Summe der Zugehörigkeiten eines Punktes zu einem Gebiet für alle Gebiete stets dem Kontextgrad $f_k$ (wird später erklärt) entspricht. Die gewichtete Zugehörigkeit wird folgendermaßen berechnet:
+
+$$\omega_{ji} = \frac{\left(m_j \times m_i\right)^b}{d_{ji}^{a}}$$
+
+Dabei stehen $m_i$ und $m_j$ für die Einwohnerzahlen der Gebiete $i$ bzw. $j$ und $d_{ji}^a$ ist die Distanz zwischen beiden Gebieten. Die Parameter $a$ und $b$ können beliebig gewählt werden. 
+\\
+Weil immer nur eine Teilmenge des Datensatzes eine Bedeutung für den betrachteten Kontext hat, kann die Geschwindigkeit des Algorithmus deutlich beschleunigt werden. Möchte man zum Beispiel nach einem Einkaufszentrum suchen, wird dem Algorithmus die Kontextvariable $shopping$ hinzugefügt, so dass der Suchraum deutlich verkleinert wird.
+\\
+Sei $y\in X$ die Kontextvariable $y$ aus Datensatz $X$, welche definiert ist als:
+
+\begin{align*}
+A \colon &Y \to \left[0,1\right] \\
+  &y_k \mapsto f_k = A(y_k).
+\end{align*}
+
+Der Wert $f_k$ repräsentiert den Grad der Relation des $k$-ten Punktes zu Kontext $Y$.
+\\
+Es gilt außerdem:
+
+$$\sum\limits_{j=1}^c u_{jk} = f_k,\, \forall k\in\{1,\dots,n\}$$
+und 
+$$\sum\limits_{k=1}^n u_{jk} < n, \, \forall j \in \{1,\dots ,c \}$$
+Die Aktualisierung der Clusterzentroide entspricht der Methode im originalen FCM-Algorithmus. Die Zugehörigkeitsmatrix wird hingegen wie folgt berechnet:
+
+$$u_{jk}=\frac{f_k}{\sum\limits_{i=1}^c \left(\frac{||x_k-v_j||}{||x_k-v_i||}\right)^{\frac{2}{m-1}}},\, \forall k\in\{1,\dots,n\},\,\forall j\in\{1,\dots,c\}$$
+
+Die alternierende Optimierung bricht ab, wenn die aus einem Schleifendurchlauf resultierende Zugehörigkeitsmatrix von der Matrix aus dem vorherigen Durchlauf um weniger als $\delta$ abweicht.
+\\
+
+Untersuchungen haben gezeigt, dass CFGWC gegenüber den älteren und konzeptionell unterlegenen Methoden NE \cite{ne} und FGWC \cite{fgwc} performanter ist und zum Zweck der Demografieanalyse die besten Ergebnisse liefert. Für die Zukunft wünschen sich die Autoren weitere Leistungsverbesserungen durch parallele Varianten des Algorithmus.
 \section{Finden der Clusteranzahl}
 \subsection{NPC}
 \subsection{FHV}
@@ -1542,7 +1578,7 @@ Entscheidungsbäume, Splitstrategien, Anwendung
 
 
 \printbibliography
-\vfill
+
 \end{document}
 
 

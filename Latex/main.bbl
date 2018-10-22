@@ -307,6 +307,37 @@
       \verb https://www.aaai.org/Papers/KDD/1996/KDD96-014.pdf
       \endverb
     \endentry
+    \entry{ne}{inproceedings}{}
+      \name{author}{2}{}{%
+        {{hash=80bf6fb53c0fecd03aeb096067b59fd9}{%
+           family={Feng},
+           familyi={F\bibinitperiod},
+           given={Z.},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=4bc5e03b535e46b92a53ca9788adce62}{%
+           family={Flowerdew},
+           familyi={F\bibinitperiod},
+           given={R.},
+           giveni={R\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Taylor \& Francis}%
+      }
+      \strng{namehash}{6988f2ea409fa541fea7340bb4d1a885}
+      \strng{fullhash}{6988f2ea409fa541fea7340bb4d1a885}
+      \strng{bibnamehash}{6988f2ea409fa541fea7340bb4d1a885}
+      \strng{authorbibnamehash}{6988f2ea409fa541fea7340bb4d1a885}
+      \strng{authornamehash}{6988f2ea409fa541fea7340bb4d1a885}
+      \strng{authorfullhash}{6988f2ea409fa541fea7340bb4d1a885}
+      \field{labelalpha}{FF98}
+      \field{sortinit}{F}
+      \field{sortinithash}{669c706c6f1fbf3b5a83d26f1d9e9e72}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Innovations In GIS 5}
+      \field{title}{Fuzzy Geodemographics: a contribution from fuzzy clustering methods}
+      \field{year}{1998}
+    \endentry
     \entry{forgy}{article}{}
       \name{author}{1}{}{%
         {{hash=186914e6efb541fb4c231d1e8f759f02}{%
@@ -523,6 +554,41 @@
       \verb http://www.irma-international.org/viewtitle/20393/
       \endverb
     \endentry
+    \entry{fgwc}{inproceedings}{}
+      \name{author}{2}{}{%
+        {{hash=11a0f8a6263b71815fbebcedb9c34ba0}{%
+           family={Mason},
+           familyi={M\bibinitperiod},
+           given={G.\bibnamedelimi A.},
+           giveni={G\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=28a462422f8a0d7129159f60120fcf84}{%
+           family={Jacobson},
+           familyi={J\bibinitperiod},
+           given={R.\bibnamedelimi D.},
+           giveni={R\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Maynooth, Ireland}%
+      }
+      \list{publisher}{1}{%
+        {National University of Ireland Maynooth}%
+      }
+      \strng{namehash}{2078fba3da5ad7f8cb26e84ecb64d960}
+      \strng{fullhash}{2078fba3da5ad7f8cb26e84ecb64d960}
+      \strng{bibnamehash}{2078fba3da5ad7f8cb26e84ecb64d960}
+      \strng{authorbibnamehash}{2078fba3da5ad7f8cb26e84ecb64d960}
+      \strng{authornamehash}{2078fba3da5ad7f8cb26e84ecb64d960}
+      \strng{authorfullhash}{2078fba3da5ad7f8cb26e84ecb64d960}
+      \field{labelalpha}{MJ07}
+      \field{sortinit}{M}
+      \field{sortinithash}{cfd219b90152c06204fab207bc6c7cab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{In Proceedings of the 9th International Conference on GeoComputation}
+      \field{month}{9}
+      \field{title}{Fuzzy Geographically Weighted Clustering}
+      \field{year}{2007}
+    \endentry
     \entry{michell}{book}{}
       \name{author}{1}{}{%
         {{hash=bcd7526dd1cfb546aa6337f801dfc4cd}{%
@@ -675,6 +741,45 @@
       \verb{url}
       \verb http://ruder.io/optimizing-gradient-descent/
       \endverb
+    \endentry
+    \entry{cfgwc}{article}{}
+      \name{author}{4}{}{%
+        {{hash=7aac6b03cdca6a9f578de79dcba9e5ac}{%
+           family={Son},
+           familyi={S\bibinitperiod},
+           given={Le\bibnamedelima Hoang},
+           giveni={L\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+        {{hash=96653fe9ca54aaefe89a001afff85a15}{%
+           family={Lanzi},
+           familyi={L\bibinitperiod},
+           given={Pier\bibnamedelima Luca},
+           giveni={P\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+        {{hash=bfdc4313939a0065b64ca7b15854c467}{%
+           family={Cuong},
+           familyi={C\bibinitperiod},
+           given={Bui\bibnamedelima Cong},
+           giveni={B\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=00a22720b2132ba54dbb1a2a61456f8d}{%
+           family={Hung},
+           familyi={H\bibinitperiod},
+           given={Hoang\bibnamedelima Anh},
+           giveni={H\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \strng{namehash}{2a66ff540a488ea3540c1cc330cf2f56}
+      \strng{fullhash}{4d4ea049324c1de653b5d260a969f433}
+      \strng{bibnamehash}{2a66ff540a488ea3540c1cc330cf2f56}
+      \strng{authorbibnamehash}{2a66ff540a488ea3540c1cc330cf2f56}
+      \strng{authornamehash}{2a66ff540a488ea3540c1cc330cf2f56}
+      \strng{authorfullhash}{4d4ea049324c1de653b5d260a969f433}
+      \field{labelalpha}{Son+12}
+      \field{sortinit}{S}
+      \field{sortinithash}{322b1d5276f2f6c1bccdcd15920dbee6}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{International Journal of Machine Learning and Computing}
+      \field{title}{Data Mining in GIS: A Novel Context-Based Fuzzy Geographically Weighted Clustering Algorithm}
+      \field{volume}{2}
+      \field{year}{2012}
     \endentry
     \entry{cabstossung}{article}{}
       \name{author}{4}{}{%

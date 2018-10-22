@@ -40,7 +40,7 @@
 \BOOKMARK [2][-]{subsection.4.3.4}{Scale Space Filter Clustering}{section.4.3}% 40
 \BOOKMARK [2][-]{subsection.4.3.5}{Graphbasiertes Clustering I \(NSCABDT\)}{section.4.3}% 41
 \BOOKMARK [2][-]{subsection.4.3.6}{Graphbasiertes Clustering II \(NSFCDT\)}{section.4.3}% 42
-\BOOKMARK [2][-]{subsection.4.3.7}{Kontextbasiertes Clustering}{section.4.3}% 43
+\BOOKMARK [2][-]{subsection.4.3.7}{Kontextbasiertes geographisch gewichtetes Fuzzy-Clustering \(CFGWC\)}{section.4.3}% 43
 \BOOKMARK [1][-]{section.4.4}{Finden der Clusteranzahl}{chapter.4}% 44
 \BOOKMARK [2][-]{subsection.4.4.1}{NPC}{section.4.4}% 45
 \BOOKMARK [2][-]{subsection.4.4.2}{FHV}{section.4.4}% 46
