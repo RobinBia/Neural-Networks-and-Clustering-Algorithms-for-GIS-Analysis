@@ -119,23 +119,31 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {4.3.7}Kontextbasiertes geographisch gewichtetes Fuzzy-Clustering (CFGWC)}{66}{subsection.4.3.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.4}Finden der Clusteranzahl}{67}{section.4.4}
+\contentsline {section}{\numberline {4.4}Bestimmung der optimalen Clusteranzahl}{67}{section.4.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.4.1}NPC}{67}{subsection.4.4.1}
+\contentsline {subsection}{\numberline {4.4.1}Basisalgorithmus}{67}{subsection.4.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.4.2}FHV}{67}{subsection.4.4.2}
+\contentsline {subsection}{\numberline {4.4.2}Normalized Partition Coefficient (NPC)}{68}{subsection.4.4.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.4.3}Otsu-Binarisierung}{67}{subsection.4.4.3}
+\contentsline {subsection}{\numberline {4.4.3}Kim-Kim-Lee-Lee Index (KKLL)}{68}{subsection.4.4.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.4.4}VAT-Algorithmus}{67}{subsection.4.4.4}
+\contentsline {subsection}{\numberline {4.4.4}Fuzzy Hypervolume/Partition Density (FHV/PD)}{69}{subsection.4.4.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.5}Clustering auf unvollst\IeC {\"a}ndigen Daten}{67}{section.4.5}
+\contentsline {subsection}{\numberline {4.4.5}Zahid-Limouri-Essaid Index (ZLE)}{70}{subsection.4.4.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.6}Assoziationsregeln}{67}{section.4.6}
+\contentsline {subsection}{\numberline {4.4.6}Visual Assessment for Cluster Tendency (VAT)}{71}{subsection.4.4.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {5}Implementierungen}{69}{chapter.5}
+\contentsline {subsubsection}{Otsu-Binarisierung}{71}{section*.60}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {6}Fazit und Ausblick}{71}{chapter.6}
+\contentsline {section}{\numberline {4.5}Vergleich von Clusteringergebnissen}{71}{section.4.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.1}Ausblick - Mein Thema f\IeC {\"u}r die Masterarbeit}{71}{section.6.1}
+\contentsline {section}{\numberline {4.6}Clustering auf unvollst\IeC {\"a}ndigen Daten}{71}{section.4.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.7}Assoziationsregeln}{71}{section.4.7}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {5}Implementierungen}{73}{chapter.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {6}Fazit und Ausblick}{75}{chapter.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {6.1}Ausblick - Mein Thema f\IeC {\"u}r die Masterarbeit}{75}{section.6.1}
 \contentsfinish 

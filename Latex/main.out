@@ -41,13 +41,16 @@
 \BOOKMARK [2][-]{subsection.4.3.5}{Graphbasiertes Clustering I \(NSCABDT\)}{section.4.3}% 41
 \BOOKMARK [2][-]{subsection.4.3.6}{Graphbasiertes Clustering II \(NSFCDT\)}{section.4.3}% 42
 \BOOKMARK [2][-]{subsection.4.3.7}{Kontextbasiertes geographisch gewichtetes Fuzzy-Clustering \(CFGWC\)}{section.4.3}% 43
-\BOOKMARK [1][-]{section.4.4}{Finden der Clusteranzahl}{chapter.4}% 44
-\BOOKMARK [2][-]{subsection.4.4.1}{NPC}{section.4.4}% 45
-\BOOKMARK [2][-]{subsection.4.4.2}{FHV}{section.4.4}% 46
-\BOOKMARK [2][-]{subsection.4.4.3}{Otsu-Binarisierung}{section.4.4}% 47
-\BOOKMARK [2][-]{subsection.4.4.4}{VAT-Algorithmus}{section.4.4}% 48
-\BOOKMARK [1][-]{section.4.5}{Clustering auf unvollst\344ndigen Daten}{chapter.4}% 49
-\BOOKMARK [1][-]{section.4.6}{Assoziationsregeln}{chapter.4}% 50
-\BOOKMARK [0][-]{chapter.5}{Implementierungen}{}% 51
-\BOOKMARK [0][-]{chapter.6}{Fazit und Ausblick}{}% 52
-\BOOKMARK [1][-]{section.6.1}{Ausblick - Mein Thema f\374r die Masterarbeit}{chapter.6}% 53
+\BOOKMARK [1][-]{section.4.4}{Bestimmung der optimalen Clusteranzahl}{chapter.4}% 44
+\BOOKMARK [2][-]{subsection.4.4.1}{Basisalgorithmus}{section.4.4}% 45
+\BOOKMARK [2][-]{subsection.4.4.2}{Normalized Partition Coefficient \(NPC\)}{section.4.4}% 46
+\BOOKMARK [2][-]{subsection.4.4.3}{Kim-Kim-Lee-Lee Index \(KKLL\)}{section.4.4}% 47
+\BOOKMARK [2][-]{subsection.4.4.4}{Fuzzy Hypervolume/Partition Density \(FHV/PD\)}{section.4.4}% 48
+\BOOKMARK [2][-]{subsection.4.4.5}{Zahid-Limouri-Essaid Index \(ZLE\)}{section.4.4}% 49
+\BOOKMARK [2][-]{subsection.4.4.6}{Visual Assessment for Cluster Tendency \(VAT\)}{section.4.4}% 50
+\BOOKMARK [1][-]{section.4.5}{Vergleich von Clusteringergebnissen}{chapter.4}% 51
+\BOOKMARK [1][-]{section.4.6}{Clustering auf unvollst\344ndigen Daten}{chapter.4}% 52
+\BOOKMARK [1][-]{section.4.7}{Assoziationsregeln}{chapter.4}% 53
+\BOOKMARK [0][-]{chapter.5}{Implementierungen}{}% 54
+\BOOKMARK [0][-]{chapter.6}{Fazit und Ausblick}{}% 55
+\BOOKMARK [1][-]{section.6.1}{Ausblick - Mein Thema f\374r die Masterarbeit}{chapter.6}% 56

@@ -1996,8 +1996,9 @@
     <bcf:citekey order="20">dependency</bcf:citekey>
     <bcf:citekey order="21">nsfcdt</bcf:citekey>
     <bcf:citekey order="22">cfgwc</bcf:citekey>
-    <bcf:citekey order="23">ne</bcf:citekey>
-    <bcf:citekey order="24">fgwc</bcf:citekey>
+    <bcf:citekey order="23">cfgwc</bcf:citekey>
+    <bcf:citekey order="24">ne</bcf:citekey>
+    <bcf:citekey order="25">fgwc</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nyt">

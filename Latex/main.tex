@@ -1551,14 +1551,111 @@ $$u_{jk}=\frac{f_k}{\sum\limits_{i=1}^c \left(\frac{||x_k-v_j||}{||x_k-v_i||}\ri
 Die alternierende Optimierung bricht ab, wenn die aus einem Schleifendurchlauf resultierende Zugehörigkeitsmatrix von der Matrix aus dem vorherigen Durchlauf um weniger als $\delta$ abweicht.
 \\
 
-Untersuchungen haben gezeigt, dass CFGWC gegenüber den älteren und konzeptionell unterlegenen Methoden NE \cite{ne} und FGWC \cite{fgwc} performanter ist und zum Zweck der Demografieanalyse die besten Ergebnisse liefert. Für die Zukunft wünschen sich die Autoren weitere Leistungsverbesserungen durch parallele Varianten des Algorithmus.
-\section{Finden der Clusteranzahl}
-\subsection{NPC}
-\subsection{FHV}
-\subsection{Otsu-Binarisierung}
-\subsection{VAT-Algorithmus}
+Untersuchungen haben gezeigt, dass CFGWC \cite{cfgwc} gegenüber den älteren und konzeptionell unterlegenen Methoden NE \cite{ne} und FGWC \cite{fgwc} performanter ist und zum Zweck der Demografieanalyse die besten Ergebnisse liefert. Für die Zukunft wünschen sich die Autoren weitere Leistungsverbesserungen durch parallele Varianten des Algorithmus.
+
+\section{Bestimmung der optimalen Clusteranzahl}
+Clustering wird im Allgemeinen als unüberwachte Lernmethode zur Gruppierung von ähnlichen Daten verstanden. Aus diesem Grund braucht es vor der eigentlichen Partitionierung Methoden, die die optimale Clusteranzahl bestimmen und die Kostenfunktion des betrachteten Partitionierungsprozesses global minimieren.
+\\
+Eine Methode wurde oben bereits vorgestellt: Der Xie-Beni-Index. Solche Indizes werden im Allgemeinen auch Clustervaliditätsindex genannt. Sie bewerten, wie gut eine Partitionierung für unterschiedliche Clusteranzahlen ist.
+\\
+Im Folgenden werden weitere Methoden vorgestellt, die aus verschiedenen Clusteringverfahren abgeleitet wurden und nicht somit nicht immer anwendbar sind!
+
+\subsection{Basisalgorithmus}
+Das Grundsätzliche Programm zur Berechnung der optimalen Clusteranzahl $c_opt$ ist für jeden CVI identisch und kann wie folgt beschrieben werden:
+
+\begin{algorithm}[H]
+\caption{cOpt(X,pFCA,CVI,$c_{max}$)}\label{cvibase}
+\begin{algorithmic}[1]
+\Require $X$ ist dein d-dimensionaler Datensatz mit $n$ Datenpunkten, $2\leqslant c_{max} \leqslant n$ ist die maximale Clusteranzahl, pFCA ist ein probabilistischer Clusteringalgorithmus, CVI ist ein globales Gütemaß
+\State Initialisiere $cvi_{opt}$ mit einem sehr schlechten Wert in Bezug auf das gewählte CVI-Verfahren.
+\State $c=1$, $c_{opt} = 1$
+\Repeat
+\State $c=c+1$
+\State Führe Partitionierung $pFCA(X,c)$ durch
+\If{$CVI(f)$ der neuen Partitionierung $f$ besser als $CVI_{opt}$}\State $CVI_{opt} = CVI(f)$, $c_{opt} = c$
+\EndIf
+\Until{$c==c_{max}$}
+\State \Return $c_{opt}$, $CVI_{opt}$
+\end{algorithmic}
+\end{algorithm} 
+
+Zu Beginn wird die optimale Clusteranzahl mit dem Wert $1$ initialisiert. In einer Schleife wird dann für jede mögliche Clusteranzahl zwischen $1$ und $c_{max}$ ermittelt, ob sich das Gütemaß $CVI$ verbessert hat. Es bleiben die optimale Clusteranzahl $c_{opt}$ mit dem zugehörigen CVI-Wert $CVI_{opt}$ hängen.  
+
+\subsection{Normalized Partition Coefficient (NPC)}
+Dieses Verfahren basiert ausschließlich auf der Zugehörigkeitsmatrix. Eine Partitionierung gilt als optimal, wenn Datenpunkte den Clustern klar zugeordnet wurden, die Zugehörigkeitsgrade also nicht zu stark von den Werten $0$ und $1$ abweichen. Implizit wird so die Kompaktheit innerhalb der Cluster bewertet. Der Index berechnet sich wie folgt:
+$$V_{PC}(U,c) = \frac{1}{n} \sum\limits_{i=1}^c \sum\limits_{k=1}^n u_{ik}^2$$
+Da das Ergebnis aber von der Clusteranzahl $c$ abhängig ist und große Clusteranzahlen automatisch schlechter bewertet werden, wird das Ergebnis zusätzlich normalisiert:
+
+$$V_{NPC}(U,c) = 1- \frac{c}{c-1}\left(1-V_{PC}\right)$$
+
+$V_{NPC}$ nimmt Werte zwischen $0$ und $1$ an, wobei ein möglichst großer Wert auf eine gute Zerlegung hindeutet.
+
+\subsection{Kim-Kim-Lee-Lee Index (KKLL)}
+Eine andere Variante, die ebenfalls nur auf den relativen Zugehörigkeiten der Daten beruht, ist der Kim-Kim-Lee-Lee Index. Er berechnet die durchschnittliche Überlappung zwischen den Clusterpaaren als relativen Grad der Teilung der Datenpunkte in der Überlappung. Die Partitionierung ist optimal, wenn der Überlappungsgrad am Kleinsten ist.
+
+Der relative Grad der Teilung eines Datenpunktes $x_k$ zwischen zwei
+Clustern $C_i$ und $C_j$ ist wie folgt definiert:
+
+$$S_{rel}(x_k\colon C_i,C_j) = \frac{u_{ik} \land u_{jk}}{\frac{1}{c} \sum\limits_{l=1}^c u_{lk}}$$
+
+Der binäre Fuzzy-AND-Operator ist definiert als Minimum der beiden Parameter: $min(u_{ik}, u_{jk})$.
+
+Der relative Grad der Teilung zwischen zwei Clustern $C_i$ und $C_j$ definiert sich folgendermaßen:
+
+$$S_{rel}(C_i,C_j) = \sum_{k=1}^n c\cdot \left[u_{ik} \land u_{jk}\right] h(x_k) \text{ mit } h(x_k) = -\sum_{i=1}^c u_{ik}\cdot log_a(u_{ik})$$
+
+Dabei soll die Entropie $h(x_k)$ der Datenpunkte deren Vagheit verstärken. Als Entropie kann man den Grad der Abweichung von einer Gleichverteilung verstehen. Je ungleichmäßiger also die Verteilung der Daten ist, desto kleiner wird der relative Clusterteilungsgrad.
+\\
+Der Kim-Kim-Lee-Lee Index ist dann definiert als durchschnittlicher
+relativer Grad der Teilung zwischen allen möglichen Clusterpaaren:
+
+$$V_{KKLL}(U) = \frac{2}{c(c-1)} \sum_{i=1}^{c-1} \sum_{j=i+1}^c \sum_{k=1}^n \left[c \cdot \left[u_{ik} \land u_{jk} \right]\cdot h(x_k)\right]$$
+
+Die Zerlegung ist optimal, wenn $V_{KKLL}$ einen möglichst kleinen Wert annimmt.
+
+\subsection{Fuzzy Hypervolume/Partition Density (FHV/PD)}
+Die CVI-Methode Fuzzy Hypervolume bewertet nicht nur die relativen Entfernungen der Datenpunkte zu ihren Clustern, sondern insgesamt die Kompaktheit der gesamten Zerlegung. FHV bewertet eine Partitionierung als gut, wenn die Summe der Clustervolumina möglichst klein ist. Dabei lässt sich das Volumen eines Clusters über die Determinante der Datenerzeugenden Kovarianzmatrix berechnen: 
+
+$$Cov_i = \frac{\sum\limits_{k=1}^n (u_{ik})^m (x_k-v_i)(x_k-v_i)^T)}{\sum\limits_{k=1}^n (u_{ik})^m} \text{\quad für \quad} 1\leqslant i\leqslant c$$
+
+und
+
+$$V_{FHV}(U,X,V) = \sum_{i=1}^c \sqrt{\det(Cov_i)}$$
+
+Da eine Kovarianzmatrix sowohl die Ausdehnung und Richtung einer Punktwolke beschreibt, kann Fuzzy Hypervolume entsprechend unterschiedlich große und geformte Cluster erkennen. Dies ist gegenüber anderen Verfahren ein erheblicher Vorteil. Ein Nachteil ist, dass die optimale Clusteranzahl für $c=n$ erreicht wird. Aus diesem Grund muss manuell überprüft werden, ab wann die Erhöhung der Clusteranzahl nicht mehr wesentlich zu einer Verbesserung der Partitionierungsergebnisse beiträgt. Außerdem werden große Cluster mit vielen Punkten automatisch schlechter bewertet. Aus diesem Grund wurde eine Verbesserung vorgeschlagen, die Partition Density (PC):
+
+$$V_{PD}=\frac{\sum\limits_{i=1}^c \sum\limits_{k=1}^n u_{ik}}{V_{FHV}},\quad \forall x_k \in \{x_k|(x_k-v_i)^T\cdot Cov_i^{-1}\cdot(x_k-v_i)<1\}$$
+
+Diese basiert auf dem physikalischen Prinzip \textit{Dichte ist Masse pro Volumen} ($\rho = \frac{m}{V}$). Die Zerlegung ist optimal, wenn die Cluster möglichst dicht sind, also $V_{PD}$ einen großen Wert hat. Partition Density erhält alle Eigenschaften von Fuzzy Hypervolume, verringert aber die Präferenz für kleine Cluster. Da die monoton fallende Tendenz für $c \rightarrow n$ noch verschärft wird, muss auch hier manuell evaluiert werden, ab wann eine weitere Inkrementierung der Clusteranzahl nicht mehr sinnvoll ist.
+\subsection{Zahid-Limouri-Essaid Index (ZLE)}
+Eine weitere Klasse von Clustervaliditätsindizes basiert auf der gleichzeitigen Optimierung von Kompaktheit und Separation:
+\begin{itemize}
+\item \textbf{Kompaktheit} Datenpunkte innerhalb eines Clusters sind möglichst ähnlich zueinander
+\item \textbf{Separation} Datenpunkte aus unterschiedlichen Clustern sind möglichst verschieden
+\end{itemize}
+
+Ein bereits vorgestelltes Verfahren aus dieser Klasse von CVI ist der Xie-Beni-Index. Der Zahid-Limouri-Essaid Index kombiniert die Ideen aus dem Xie-Beni Index, dem Kim-Kim-Lee-Lee Index und einem weiteren Verfahren - dem Fukuyama-Sugeno Index. \\
+
+Funktion $SC_1$ berechnet die geometrische Struktur als das Verhältnis von der Streuung der Clusterprototypen (Fukuyama-Sugeno Index) zur Kompaktheit innerhalb der Cluster (Summe der quadrierten Abstände zwischen Clusterzentroiden und Datenpunkten - Xie-Beni Index):
+
+$$SC_1(X,U,V) = \frac{\frac{\sum\limits_{i=1}^c ||v_i-\overline{x}||_A^2}{c}}{\sum\limits_{i=1}^c\left(\frac{\sum\limits_{k=1}^n u_{ik}^2 \cdot ||x_k-v_i||^2}{\sum\limits_{k=1}^n u_{ik}}\right)}$$
+
+Die Funktion $SC_2$ ermittelt die Partitionierungsstruktur wieder als das Verhältnis von Separations zu Kompaktheitsmaßen. Die Separation ist hierbei durch die Überlappung zwischen den Clusterpaaren gegeben (Kim-Kim-Lee-Lee Index). Das Kompaktheitsmaß ist die Summe aller Kompaktheitsmaße aller Datenpunkte, wobei das Kompaktheitsmaß eines Datenpunktes als größter Zugehörigkeitsgrad unter den Clustern definiert ist: 
+
+$$SC_2(U) = \frac{\sum\limits_{i=1}^{c-1} \sum\limits_{j=i+1}^c\frac{\sum\limits_{k=1}^n \min(u_{ik},u_{jk})^2}{\sum\limits_{k=1}^n \min(u_{ik},u_{jk})}}{\frac{\sum\limits_{k=1}^n \max_{1\leqslant i \leqslant c}(u_{ik})^2}{\sum\limits_{k=1}^n \max_{1\leqslant i \leqslant c}u_{ik}}}$$ 
+
+ZLE kombiniert beide Funktionen, wobei $SC_1$ maximiert und $SC_2$ minimiert wird.
+$$V_{ZLE}(U,V,X) = SC_1(U,V,X)-SC_2(U)$$
+Die optimale Clusteranzahl wird durch Maximierung von
+$V_{ZLE}$ über dem Intervall $\left[c_{min},\dots,c_{max}\right]$ berechnet.
+\subsection{Visual Assessment for Cluster Tendency (VAT)}
+\subsubsection{Otsu-Binarisierung}
 
 
+
+
+
+\section{Vergleich von Clusteringergebnissen}
 \section{Clustering auf unvollständigen Daten}
 
 \section{Assoziationsregeln}
