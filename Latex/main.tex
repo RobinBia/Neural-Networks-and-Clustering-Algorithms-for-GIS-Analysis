@@ -11,6 +11,8 @@
 }
 \usepackage{caption}
 \usepackage{amsmath}
+\DeclareMathOperator*{\argmax}{argmax}
+\DeclareMathOperator*{\argmin}{argmin}
 \usepackage{algorithm}
 \usepackage{algpseudocode}
 \makeatletter
@@ -1080,7 +1082,9 @@ und
 Nach Einsetzen von \eqref{Lpw} in \eqref{lagrange}:
 
 \begin{equation} \label{lagrange2}
-\mathcal{L}(\vec{\omega},b,\vec{\alpha}) = \frac{1}{2}\left(\sum_{i=1}^n \alpha_i \cdot y_i \cdot \vec{x_i}\right)\cdot \left(\sum_{j=1}^n \alpha_j \cdot y_j \vec{x_j}\right) - \left(\sum_{i=1}^n \alpha_i \cdot y_i \cdot \vec{x_i}\right) \cdot \left(\sum_{j=1}^n \alpha_j \cdot y_j \cdot \vec{x_j}\right) - \sum_{i=1}^n \alpha_i \cdot y_i \cdot b + \sum_{i=1}^n \alpha_i
+\begin{split}
+\mathcal{L}(\vec{\omega},b,\vec{\alpha}) = \frac{1}{2}\left(\sum_{i=1}^n \alpha_i \cdot y_i \cdot \vec{x_i}\right)\cdot \left(\sum_{j=1}^n \alpha_j \cdot y_j \vec{x_j}\right) - \left(\sum_{i=1}^n \alpha_i \cdot y_i \cdot \vec{x_i}\right) \cdot \left(\sum_{j=1}^n \alpha_j \cdot y_j \cdot \vec{x_j}\right)\\ - \sum_{i=1}^n \alpha_i \cdot y_i \cdot b + \sum_{i=1}^n \alpha_i
+\end{split}
 \end{equation}
 
 Nach Einsetzen von \eqref{Lpb} in \eqref{lagrange2} ergibt sich folgende Gleichung:
@@ -1582,7 +1586,7 @@ Das Grundsätzliche Programm zur Berechnung der optimalen Clusteranzahl $c_opt$ 
 Zu Beginn wird die optimale Clusteranzahl mit dem Wert $1$ initialisiert. In einer Schleife wird dann für jede mögliche Clusteranzahl zwischen $1$ und $c_{max}$ ermittelt, ob sich das Gütemaß $CVI$ verbessert hat. Es bleiben die optimale Clusteranzahl $c_{opt}$ mit dem zugehörigen CVI-Wert $CVI_{opt}$ hängen.  
 
 \subsection{Normalized Partition Coefficient (NPC)}
-Dieses Verfahren basiert ausschließlich auf der Zugehörigkeitsmatrix. Eine Partitionierung gilt als optimal, wenn Datenpunkte den Clustern klar zugeordnet wurden, die Zugehörigkeitsgrade also nicht zu stark von den Werten $0$ und $1$ abweichen. Implizit wird so die Kompaktheit innerhalb der Cluster bewertet. Der Index berechnet sich wie folgt:
+Dieses Verfahren \cite{npc} basiert ausschließlich auf der Zugehörigkeitsmatrix. Eine Partitionierung gilt als optimal, wenn Datenpunkte den Clustern klar zugeordnet wurden, die Zugehörigkeitsgrade also nicht zu stark von den Werten $0$ und $1$ abweichen. Implizit wird so die Kompaktheit innerhalb der Cluster bewertet. Der Index berechnet sich wie folgt:
 $$V_{PC}(U,c) = \frac{1}{n} \sum\limits_{i=1}^c \sum\limits_{k=1}^n u_{ik}^2$$
 Da das Ergebnis aber von der Clusteranzahl $c$ abhängig ist und große Clusteranzahlen automatisch schlechter bewertet werden, wird das Ergebnis zusätzlich normalisiert:
 
@@ -1591,7 +1595,7 @@ $$V_{NPC}(U,c) = 1- \frac{c}{c-1}\left(1-V_{PC}\right)$$
 $V_{NPC}$ nimmt Werte zwischen $0$ und $1$ an, wobei ein möglichst großer Wert auf eine gute Zerlegung hindeutet.
 
 \subsection{Kim-Kim-Lee-Lee Index (KKLL)}
-Eine andere Variante, die ebenfalls nur auf den relativen Zugehörigkeiten der Daten beruht, ist der Kim-Kim-Lee-Lee Index. Er berechnet die durchschnittliche Überlappung zwischen den Clusterpaaren als relativen Grad der Teilung der Datenpunkte in der Überlappung. Die Partitionierung ist optimal, wenn der Überlappungsgrad am Kleinsten ist.
+Eine andere Variante, die ebenfalls nur auf den relativen Zugehörigkeiten der Daten beruht, ist der Kim-Kim-Lee-Lee Index \cite{kkll}. Er berechnet die durchschnittliche Überlappung zwischen den Clusterpaaren als relativen Grad der Teilung der Datenpunkte in der Überlappung. Die Partitionierung ist optimal, wenn der Überlappungsgrad am Kleinsten ist.
 
 Der relative Grad der Teilung eines Datenpunktes $x_k$ zwischen zwei
 Clustern $C_i$ und $C_j$ ist wie folgt definiert:
@@ -1614,7 +1618,7 @@ $$V_{KKLL}(U) = \frac{2}{c(c-1)} \sum_{i=1}^{c-1} \sum_{j=i+1}^c \sum_{k=1}^n \l
 Die Zerlegung ist optimal, wenn $V_{KKLL}$ einen möglichst kleinen Wert annimmt.
 
 \subsection{Fuzzy Hypervolume/Partition Density (FHV/PD)}
-Die CVI-Methode Fuzzy Hypervolume bewertet nicht nur die relativen Entfernungen der Datenpunkte zu ihren Clustern, sondern insgesamt die Kompaktheit der gesamten Zerlegung. FHV bewertet eine Partitionierung als gut, wenn die Summe der Clustervolumina möglichst klein ist. Dabei lässt sich das Volumen eines Clusters über die Determinante der Datenerzeugenden Kovarianzmatrix berechnen: 
+Die CVI-Methode Fuzzy Hypervolume \cite{fhv} bewertet nicht nur die relativen Entfernungen der Datenpunkte zu ihren Clustern, sondern insgesamt die Kompaktheit der gesamten Zerlegung. FHV bewertet eine Partitionierung als gut, wenn die Summe der Clustervolumina möglichst klein ist. Dabei lässt sich das Volumen eines Clusters über die Determinante der Datenerzeugenden Kovarianzmatrix berechnen: 
 
 $$Cov_i = \frac{\sum\limits_{k=1}^n (u_{ik})^m (x_k-v_i)(x_k-v_i)^T)}{\sum\limits_{k=1}^n (u_{ik})^m} \text{\quad für \quad} 1\leqslant i\leqslant c$$
 
@@ -1627,8 +1631,10 @@ Da eine Kovarianzmatrix sowohl die Ausdehnung und Richtung einer Punktwolke besc
 $$V_{PD}=\frac{\sum\limits_{i=1}^c \sum\limits_{k=1}^n u_{ik}}{V_{FHV}},\quad \forall x_k \in \{x_k|(x_k-v_i)^T\cdot Cov_i^{-1}\cdot(x_k-v_i)<1\}$$
 
 Diese basiert auf dem physikalischen Prinzip \textit{Dichte ist Masse pro Volumen} ($\rho = \frac{m}{V}$). Die Zerlegung ist optimal, wenn die Cluster möglichst dicht sind, also $V_{PD}$ einen großen Wert hat. Partition Density erhält alle Eigenschaften von Fuzzy Hypervolume, verringert aber die Präferenz für kleine Cluster. Da die monoton fallende Tendenz für $c \rightarrow n$ noch verschärft wird, muss auch hier manuell evaluiert werden, ab wann eine weitere Inkrementierung der Clusteranzahl nicht mehr sinnvoll ist.
+
+
 \subsection{Zahid-Limouri-Essaid Index (ZLE)}
-Eine weitere Klasse von Clustervaliditätsindizes basiert auf der gleichzeitigen Optimierung von Kompaktheit und Separation:
+Eine weitere Klasse von Clustervaliditätsindizes basiert auf der gleichzeitigen Optimierung von Kompaktheit und Separation \cite{zle}:
 \begin{itemize}
 \item \textbf{Kompaktheit} Datenpunkte innerhalb eines Clusters sind möglichst ähnlich zueinander
 \item \textbf{Separation} Datenpunkte aus unterschiedlichen Clustern sind möglichst verschieden
@@ -1649,11 +1655,37 @@ $$V_{ZLE}(U,V,X) = SC_1(U,V,X)-SC_2(U)$$
 Die optimale Clusteranzahl wird durch Maximierung von
 $V_{ZLE}$ über dem Intervall $\left[c_{min},\dots,c_{max}\right]$ berechnet.
 \subsection{Visual Assessment for Cluster Tendency (VAT)}
-\subsubsection{Otsu-Binarisierung}
+\begin{minipage}{0.35\textwidth}\raggedright
+Neben der automatischen Bestimmung der optimalen Clusteranzahl gibt es auch diverse semiautomatische Verfahren, die es dem Benutzer möglich machen, die korrekte Clusteranzahl einfach abzulesen. Der VAT-Algorithmus erreicht dies, indem er die paarweisen Unähnlichkeiten zwischen den Daten als Graustufenbild visualisiert und so umsortiert, dass die Cluster entlang der Hauptdiagonalen als dunkle Blöcke zu erkennen sind.
+\end{minipage}
+\hfill
+\begin{minipage}{0.6\textwidth}
+\includegraphics[width=\linewidth]{vatalg.jpg}
+\captionof{figure}{Paarweise Unähnlichkeiten zwischen Datenpunkten als Matrix und Graustufenbild vor und nach Anwendung des VAT-Algorithmus}
+\end{minipage}
+ 
+\vspace{\belowdisplayskip}
 
+Der Sortierprozess kann wie folgt beschrieben werden:
+\begin{algorithm}[H]
+\caption{$VAT(R)$}\label{vatalg}
+\begin{algorithmic}[1]
+\Require{$R = \left[r_{ij}\right]$ ist eine $n \times n$ Matrix von paarweisen Unähnlichkeiten mit $r_{ii} = 0$ und $r_{ij} \geqslant 0, \, \forall i,j \in \{1,\dots,n\}$}
+\State Initialisiere $I=\emptyset$; $J=\{1,2,\dots,n\}$; $P = (0,0,\dots,0)$
+\State Bestimme $(i,j)\in \argmax\limits_{p\in J, q\in J}\{r_{pq}\}$
+\State Setze $P(1)=j$; ersetze $I = I \cup \{j\}$ und $J = J - \{j\}$
+\For{$t\in \{2,\dots,n\}$}
+\State Bestimme $(i,j) \in \argmin\limits_{p\in I, q\in J}\{r_{pq}\}$
+\State Setze $P(t) = j$; ersetze $I = I \cup \{j\}$ und $J = J - \{j\}$
+\EndFor
+\State Berechne $\tilde{R}_{ij} = \left[\tilde{r}_{ij}\right] = \left[r_{P(i)P(j)}\right],\, \forall i,j \in \{1,\dots,n\}$
+\State \Return Graustufenbild $I(\tilde{R})$ mit größten Ähnlichkeiten entlang der Hauptdiagonalen
+\end{algorithmic}
+\end{algorithm}
 
-
-
+Die Matrix $r_{ij}$ enthält die Unähnlichkeiten der Punkte $x_i$ und $x_j$ als auf das Intervall $\left[0,1\right]$ normalisiertes Abstandsmaß. Zu Beginn werden die Indizes des größten Unähnlichkeitswertes gesucht, wobei alle Zeilen und Spalten erlaubt sind. Anschließend wird der erste Eintrag des Permutationsvektors $P$ auf den Spaltenindex des gefundenen Eintrags gesetzt. Der Menge der noch zu bearbeitenden Indizes $J$ wird $j$ entzogen, während die Menge der schon bearbeiteten Indizes $I$ $j$ hinzugefügt wird. In einer Schleife wird dieser Vorgang für alle Permutationseinträge von $2$ bis $n$ wiederholt. Im Unterschied zur Initialisierung wird jedoch immer nach den Indizes der kleinsten Unähnlichkeit gesucht und es sind nur solche Spalten und Zeilen erlaubt, die durch Mengen $I$ (erlaubte Zeilen) und $J$ (erlaubte Spalten) gekennzeichnet werden. Die Vertauschung der Matrixwerte mit den Einträgen des Permutationsvektors an den Indizes dieser Werte ergibt letztendlich die umsortierte Ergebnismatrix. Diese kann als Graustufenbild visualisiert werden, so dass Ähnlichkeiten möglichst dunkel und Unähnlichkeiten möglichst hell dargestellt werden. Die Anzahl der Quadrate entlang der Hauptdiagonalen entspricht der Clusteranzahl des Datensatzes.
+\\
+Die Erkennung der Clusteranzahl möchte man jedoch keinem Menschen überlassen, da Datensätze sehr groß werden können und Menschen zu unterschiedlichen Ergebnissen kommen. Eine Lösung bietet die automatische Cluster Count Extraction (CCE) \cite{cce}.
 
 \section{Vergleich von Clusteringergebnissen}
 \section{Clustering auf unvollständigen Daten}

@@ -89,6 +89,31 @@
       \field{title}{The Advantages of Careful Seeding}
       \field{year}{2006}
     \endentry
+    \entry{npc}{report}{}
+      \name{author}{1}{}{%
+        {{hash=ed39cb3bd5e776c194e1263921dcc8a5}{%
+           family={Backer},
+           familyi={B\bibinitperiod},
+           given={E.},
+           giveni={E\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {Delftse Universitaire Pers}%
+      }
+      \strng{namehash}{ed39cb3bd5e776c194e1263921dcc8a5}
+      \strng{fullhash}{ed39cb3bd5e776c194e1263921dcc8a5}
+      \strng{bibnamehash}{ed39cb3bd5e776c194e1263921dcc8a5}
+      \strng{authorbibnamehash}{ed39cb3bd5e776c194e1263921dcc8a5}
+      \strng{authornamehash}{ed39cb3bd5e776c194e1263921dcc8a5}
+      \strng{authorfullhash}{ed39cb3bd5e776c194e1263921dcc8a5}
+      \field{labelalpha}{Bac78}
+      \field{sortinit}{B}
+      \field{sortinithash}{276475738cc058478c1677046f857703}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Cluster analysis by optimal decomposition of induced fuzzy sets}
+      \field{year}{1978}
+    \endentry
     \entry{svm}{online}{}
       \name{author}{1}{}{%
         {{hash=a733ed51043ae7d8cf536b992b40420f}{%
@@ -364,6 +389,37 @@
       \field{pages}{768\bibrangedash 769}
       \range{pages}{2}
     \endentry
+    \entry{fhv}{article}{}
+      \name{author}{2}{}{%
+        {{hash=3df6384915d1bf6bfec9411be83dab4f}{%
+           family={Gath},
+           familyi={G\bibinitperiod},
+           given={I.},
+           giveni={I\bibinitperiod}}}%
+        {{hash=5bc4a7e63acc0905e2292085abe3f243}{%
+           family={Geva},
+           familyi={G\bibinitperiod},
+           given={A.\bibnamedelimi B.},
+           giveni={A\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+      }
+      \strng{namehash}{0bac236c4facefe1dc114b8d1df9521f}
+      \strng{fullhash}{0bac236c4facefe1dc114b8d1df9521f}
+      \strng{bibnamehash}{0bac236c4facefe1dc114b8d1df9521f}
+      \strng{authorbibnamehash}{0bac236c4facefe1dc114b8d1df9521f}
+      \strng{authornamehash}{0bac236c4facefe1dc114b8d1df9521f}
+      \strng{authorfullhash}{0bac236c4facefe1dc114b8d1df9521f}
+      \field{labelalpha}{GG89}
+      \field{sortinit}{G}
+      \field{sortinithash}{5e8d2bf9d38de41b1528bd307546008f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Transactions on Pattern Analysis and Machine Intelligence}
+      \field{title}{Unsupervised Optimal Fuzzy Clustering}
+      \field{volume}{11}
+      \field{year}{1989}
+      \field{pages}{773\bibrangedash 780}
+      \range{pages}{8}
+    \endentry
     \entry{dependency}{report}{}
       \name{author}{1}{}{%
         {{hash=ef29d76581b0a0cdb8cf5c00bdfb190c}{%
@@ -477,6 +533,47 @@
       \verb{eprint}
       \verb 1711.04708
       \endverb
+    \endentry
+    \entry{kkll}{article}{}
+      \name{author}{4}{}{%
+        {{hash=7b4fb4c42b93181949bf4b08174a4a07}{%
+           family={Kima},
+           familyi={K\bibinitperiod},
+           given={Young-Il},
+           giveni={Y\bibinithyphendelim I\bibinitperiod}}}%
+        {{hash=9baab1e58870cfab5d4cd4c6d4380563}{%
+           family={Kim},
+           familyi={K\bibinitperiod},
+           given={Dae-Won},
+           giveni={D\bibinithyphendelim W\bibinitperiod}}}%
+        {{hash=b085a81df58573d374b21f5c11971024}{%
+           family={Lee},
+           familyi={L\bibinitperiod},
+           given={Doheon},
+           giveni={D\bibinitperiod}}}%
+        {{hash=311b4e30fda31127e99d10a55f1d4690}{%
+           family={H.Lee},
+           familyi={H\bibinitperiod},
+           given={Kwang},
+           giveni={K\bibinitperiod}}}%
+      }
+      \strng{namehash}{34317ad0c3408768ce75b1b176de712f}
+      \strng{fullhash}{be5031fefcc71243a04016a3fe6bbb76}
+      \strng{bibnamehash}{34317ad0c3408768ce75b1b176de712f}
+      \strng{authorbibnamehash}{34317ad0c3408768ce75b1b176de712f}
+      \strng{authornamehash}{34317ad0c3408768ce75b1b176de712f}
+      \strng{authorfullhash}{be5031fefcc71243a04016a3fe6bbb76}
+      \field{labelalpha}{Kim+04}
+      \field{sortinit}{K}
+      \field{sortinithash}{9fd838a31ba64d981e8f44562bd33f89}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Information Sciences}
+      \field{title}{A cluster validation index for GK cluster analysis based on relative degree of sharing}
+      \field{volume}{168}
+      \field{year}{2004}
+      \field{pages}{225\bibrangedash 242}
+      \range{pages}{18}
     \endentry
     \entry{geofront}{article}{}
       \name{author}{4}{}{%
@@ -614,6 +711,35 @@
       \field{title}{Machine Learning}
       \field{year}{1997}
     \endentry
+    \entry{zle}{report}{}
+      \name{author}{3}{}{%
+        {{hash=713fc0e45bdb5fccfb677c62fa0b442f}{%
+           family={N.Zahid},
+           familyi={N\bibinitperiod}}}%
+        {{hash=c18bd232a75703ac160d1f90a6faa93e}{%
+           family={M.Limouri},
+           familyi={M\bibinitperiod}}}%
+        {{hash=47d1713a6cee7efdd45c81402412e483}{%
+           family={A.Essaid},
+           familyi={A\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {Laboratoire Conception et Systèmes, Faculté des Sciences, Université Mohammed V - AGDAL}%
+      }
+      \strng{namehash}{b4b45ea8af48125f0ac1dc5d5ddd6e17}
+      \strng{fullhash}{b4b45ea8af48125f0ac1dc5d5ddd6e17}
+      \strng{bibnamehash}{b4b45ea8af48125f0ac1dc5d5ddd6e17}
+      \strng{authorbibnamehash}{b4b45ea8af48125f0ac1dc5d5ddd6e17}
+      \strng{authornamehash}{b4b45ea8af48125f0ac1dc5d5ddd6e17}
+      \strng{authorfullhash}{b4b45ea8af48125f0ac1dc5d5ddd6e17}
+      \field{labelalpha}{NMA99}
+      \field{sortinit}{N}
+      \field{sortinithash}{f7242c3ed3dc50029fca1be76c497c7c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{A new cluster-validity for fuzzy clustering}
+      \field{year}{1999}
+    \endentry
     \entry{pfcmpaper}{article}{}
       \name{author}{4}{}{%
         {{hash=ee25aa5186e7b520b3e4d07176f130d5}{%
@@ -741,6 +867,42 @@
       \verb{url}
       \verb http://ruder.io/optimizing-gradient-descent/
       \endverb
+    \endentry
+    \entry{cce}{article}{}
+      \name{author}{3}{}{%
+        {{hash=6b8831e2ac9d6c703b23f3568aa0d313}{%
+           family={Sledge},
+           familyi={S\bibinitperiod},
+           given={Isaac\bibnamedelima J.},
+           giveni={I\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=b634452b7cd2b2678d54fa86e4cb5f3f}{%
+           family={Huband},
+           familyi={H\bibinitperiod},
+           given={Jacalyn\bibnamedelima M.},
+           giveni={J\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=38ce82959812b814cf6aa4d6260407a9}{%
+           family={Bezdek},
+           familyi={B\bibinitperiod},
+           given={James\bibnamedelima C.},
+           giveni={J\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+      }
+      \strng{namehash}{c4d505d23bae21428c2d4285488c074b}
+      \strng{fullhash}{c4d505d23bae21428c2d4285488c074b}
+      \strng{bibnamehash}{c4d505d23bae21428c2d4285488c074b}
+      \strng{authorbibnamehash}{c4d505d23bae21428c2d4285488c074b}
+      \strng{authornamehash}{c4d505d23bae21428c2d4285488c074b}
+      \strng{authorfullhash}{c4d505d23bae21428c2d4285488c074b}
+      \field{labelalpha}{SHB08}
+      \field{sortinit}{S}
+      \field{sortinithash}{322b1d5276f2f6c1bccdcd15920dbee6}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Proc. of the 2008 Fifth Int. Joint Conf. on Fuzzy Systems and Knowledge Discovery}
+      \field{title}{(Automatic) Cluster Count Extraction from Unlabeled Data Sets}
+      \field{volume}{1}
+      \field{year}{2008}
+      \field{pages}{1\bibrangedash 13}
+      \range{pages}{13}
     \endentry
     \entry{cfgwc}{article}{}
       \name{author}{4}{}{%
