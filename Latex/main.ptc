@@ -84,7 +84,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {4.2.2}Silhouettenkoeffizient - Wahl der Clusteranzahl}{39}{subsection.4.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.2.3}OPTICS - Dichtebasiertes Clustering}{40}{subsection.4.2.3}
+\contentsline {subsection}{\numberline {4.2.3}Dichtebasiertes Clustering (OPTICS)}{40}{subsection.4.2.3}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsubsection}{Erreichbarkeitseigenschaften \cite {dbscan}}{41}{section*.32}
 \defcounter {refsection}{0}\relax 
@@ -140,19 +140,31 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {4.4.6}Visual Assessment for Cluster Tendency (VAT)}{71}{subsection.4.4.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.5}Vergleich von Clusteringergebnissen}{72}{section.4.5}
+\contentsline {section}{\numberline {4.5}Clustering auf unvollst\IeC {\"a}ndigen Daten}{72}{section.4.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.6}Clustering auf unvollst\IeC {\"a}ndigen Daten}{72}{section.4.6}
+\contentsline {subsection}{\numberline {4.5.1}Missing Data Patterns}{72}{subsection.4.5.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.7}Assoziationsregeln}{72}{section.4.7}
+\contentsline {subsection}{\numberline {4.5.2}Missing Data Mechanisms}{73}{subsection.4.5.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {5}Implementierungen}{73}{chapter.5}
+\contentsline {subsection}{\numberline {4.5.3}Strategien zum Umgang mit fehlenden Werten}{73}{subsection.4.5.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{FCM mit Whole Data Strategy (WDSFCM)}{73}{section*.60}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{FCM mit Partial Distance Strategy (PDSFCM)}{74}{section*.61}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{FCM mit Optimal Completion Strategy (OCSFCM)}{74}{section*.62}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.5.4}Distance Estimation Strategy (DESFCM)}{75}{subsection.4.5.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.6}Vergleich von Clusteringergebnissen}{75}{section.4.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {5}Implementierungen}{77}{chapter.5}
 \ttl@stoptoc {default@4}
 \ttl@starttoc {default@5}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {6}Fazit und Ausblick}{75}{chapter.6}
+\contentsline {chapter}{\numberline {6}Fazit und Ausblick}{79}{chapter.6}
 \ttl@stoptoc {default@5}
 \ttl@starttoc {default@6}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.1}Ausblick - Mein Thema f\IeC {\"u}r die Masterarbeit}{75}{section.6.1}
+\contentsline {section}{\numberline {6.1}Ausblick - Mein Thema f\IeC {\"u}r die Masterarbeit}{79}{section.6.1}
 \contentsfinish 

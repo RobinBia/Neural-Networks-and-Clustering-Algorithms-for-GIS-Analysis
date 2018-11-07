@@ -447,6 +447,37 @@
       \field{pages}{33}
       \range{pages}{1}
     \endentry
+    \entry{wdsfcm}{article}{}
+      \name{author}{2}{}{%
+        {{hash=264887643a95eb4211ddee45f8ce0b45}{%
+           family={Hathaway},
+           familyi={H\bibinitperiod},
+           given={R.J.},
+           giveni={R\bibinitperiod}}}%
+        {{hash=e9db388ffd3885b253e9862b8f94df6b}{%
+           family={Bezdek},
+           familyi={B\bibinitperiod},
+           given={J.C.},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{98aa9bfeafd543ca9311c9a98daa248a}
+      \strng{fullhash}{98aa9bfeafd543ca9311c9a98daa248a}
+      \strng{bibnamehash}{98aa9bfeafd543ca9311c9a98daa248a}
+      \strng{authorbibnamehash}{98aa9bfeafd543ca9311c9a98daa248a}
+      \strng{authornamehash}{98aa9bfeafd543ca9311c9a98daa248a}
+      \strng{authorfullhash}{98aa9bfeafd543ca9311c9a98daa248a}
+      \field{labelalpha}{HB01}
+      \field{sortinit}{H}
+      \field{sortinithash}{5f15a7bc777ad49ff15aa4d2831b1681}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Transactions on Systems, Man, and Cybernetics}
+      \field{title}{Fuzzy c-means Clustering of Incomplete Data}
+      \field{volume}{31}
+      \field{year}{2001}
+      \field{pages}{735\bibrangedash 744}
+      \range{pages}{10}
+    \endentry
     \entry{csteps}{report}{}
       \name{author}{3}{}{%
         {{hash=9d61913304fabd25aefc2177b984c2f9}{%
@@ -868,6 +899,36 @@
       \verb http://ruder.io/optimizing-gradient-descent/
       \endverb
     \endentry
+    \entry{desfcm}{article}{}
+      \name{author}{2}{}{%
+        {{hash=fd225b582be8cd80461813bd78c24393}{%
+           family={Sarkar},
+           familyi={S\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=d76091823a9eccf4617d32ecc4c97c96}{%
+           family={Leong},
+           familyi={L\bibinitperiod},
+           given={T.-Y.},
+           giveni={T\bibinithyphendelim Y\bibinitperiod}}}%
+      }
+      \strng{namehash}{87311c233e5db7b07bfd321ce6dd8e7e}
+      \strng{fullhash}{87311c233e5db7b07bfd321ce6dd8e7e}
+      \strng{bibnamehash}{87311c233e5db7b07bfd321ce6dd8e7e}
+      \strng{authorbibnamehash}{87311c233e5db7b07bfd321ce6dd8e7e}
+      \strng{authornamehash}{87311c233e5db7b07bfd321ce6dd8e7e}
+      \strng{authorfullhash}{87311c233e5db7b07bfd321ce6dd8e7e}
+      \field{labelalpha}{SL01}
+      \field{sortinit}{S}
+      \field{sortinithash}{322b1d5276f2f6c1bccdcd15920dbee6}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{In Proc. of the American Medical Informatics Association Annual Symposium}
+      \field{title}{Fuzzy K-means clustering with missing values}
+      \field{year}{2001}
+      \field{pages}{588\bibrangedash 592}
+      \range{pages}{5}
+    \endentry
     \entry{cce}{article}{}
       \name{author}{3}{}{%
         {{hash=6b8831e2ac9d6c703b23f3568aa0d313}{%
@@ -942,6 +1003,41 @@
       \field{title}{Data Mining in GIS: A Novel Context-Based Fuzzy Geographically Weighted Clustering Algorithm}
       \field{volume}{2}
       \field{year}{2012}
+    \endentry
+    \entry{pdsfcm}{article}{}
+      \name{author}{3}{}{%
+        {{hash=0793e4bd101d239c6004ee611bcb9d85}{%
+           family={Timm},
+           familyi={T\bibinitperiod},
+           given={H.},
+           giveni={H\bibinitperiod}}}%
+        {{hash=6c3cec35761e0617cd974755d51f7c8b}{%
+           family={Döring},
+           familyi={D\bibinitperiod},
+           given={C.},
+           giveni={C\bibinitperiod}}}%
+        {{hash=aaa1770f97b9df7fc0722d47cfdee9a1}{%
+           family={Kruse},
+           familyi={K\bibinitperiod},
+           given={R.},
+           giveni={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{bc67803307185c40564ee5847b74616f}
+      \strng{fullhash}{bc67803307185c40564ee5847b74616f}
+      \strng{bibnamehash}{bc67803307185c40564ee5847b74616f}
+      \strng{authorbibnamehash}{bc67803307185c40564ee5847b74616f}
+      \strng{authornamehash}{bc67803307185c40564ee5847b74616f}
+      \strng{authorfullhash}{bc67803307185c40564ee5847b74616f}
+      \field{labelalpha}{TDK02}
+      \field{sortinit}{T}
+      \field{sortinithash}{6f7aff9db9dcfeb7f95fd5bbd2f78df9}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{In Proc. of the European Symposium on Intelligent Technologies, Hybrid Systems, and Their Implementation on Smart Adaptive Systems}
+      \field{title}{Fuzzy cluster analysis of partially missing datasets}
+      \field{year}{2002}
+      \field{pages}{426\bibrangedash 431}
+      \range{pages}{6}
     \endentry
     \entry{cabstossung}{article}{}
       \name{author}{4}{}{%

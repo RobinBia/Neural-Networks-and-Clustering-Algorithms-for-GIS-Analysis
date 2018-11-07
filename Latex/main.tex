@@ -810,7 +810,7 @@ Der Koeffizient nimmt Werte zwischen $0$ und $1$ an, wobei Werte über 0.75 dara
 Die optimale Clusteranzahl $k$ kann jetzt bestimmt werden, indem der Silhouettenkoeffizient für verschiedene Clusterings $k = 2, \dots, n-1$ berechnet wird, und dann der Wert $k$ ausgewählt wird, für den der Koeffizient den höchsten Wert hat.
 
 
-\subsection{OPTICS - Dichtebasiertes Clustering}
+\subsection{Dichtebasiertes Clustering (OPTICS)}
 Einer der bedeutendsten Clusteringalgorithmen ist das dichtebasierte DBSCAN-Verfahren. Es ist neben seiner Abwandlungen und Optimierungen (OPTICS und HDBSCAN) in vielen Geoinformationssystemen, wie z.B. arcGIS implementiert\footnote{http://pro.arcgis.com/de/pro-app/tool-reference/spatial-statistics/densitybasedclustering.htm}. 
 
 DBSCAN nimmt an, dass Cluster Punktregionen mit höherer Dichte sind, die durch Regionen mit geringerer Dichte (Noise) voneinander getrennt werden. Es kann ausschließlich Cluster desselben Dichteniveaus erkennen. Seine Optimierung OPTICS, welches als hierarchisches dichtebasiertes Clusteringverfahren zählt, kann dagegen auch unterschiedlich dichte Cluster und Subcluster erkennen.
@@ -1687,13 +1687,86 @@ Die Matrix $r_{ij}$ enthält die Unähnlichkeiten der Punkte $x_i$ und $x_j$ als
 \\
 Die Erkennung der Clusteranzahl möchte man jedoch keinem Menschen überlassen, da Datensätze sehr groß werden können und Menschen zu unterschiedlichen Ergebnissen kommen. Eine Lösung bietet die automatische Cluster Count Extraction (CCE) \cite{cce}.
 
-\section{Vergleich von Clusteringergebnissen}
 \section{Clustering auf unvollständigen Daten}
+Im optimalen Fall enthalten alle gesammelten Daten Werteeinträge. Je größer und komplexer die Datenbank jedoch wird, desto größer ist für jeden einzelnen Eintrag die Wahrscheinlichkeit, dass er fehlerhaft oder gar nicht erst vorhanden ist. Datenfehler können bei der Erfassung, Übertragung und Bereinigung von Daten entstehen. Auch das Migrieren mehrerer Datenbanken ist fehleranfällig. \\
 
-\section{Assoziationsregeln}
-In Kapitel 10 Geoinf. kommt der naive Bayes-Klassifikator vor!
-Paper: \url{https://www.mii.lt/na/issues/NA_0602/NA06203.pdf}
-Entscheidungsbäume, Splitstrategien, Anwendung
+Leider lassen sich distanzbasierte Clusteringverfahren nicht einfach auf solche Datensätze anwenden, da es ansonsten zu stark verfälschten Ergebnissen kommen kann. Es braucht also alternative Ansätze.
+
+Die Voraussetzung der im Folgenden vorgestellten Methoden basiert auf der Annahme, dass ein Wert fehlt, wenn er sinnvollerweise existieren kann, aber unbekannt ist. Beispielsweise ist ein sinnvoller Eintrag zum Attribut Maximalhöhe kein Blutdruckwert, sondern eine Meterangabe. Leider ist der Wert dieser Angabe aber unbekannt.\\
+
+Die Klassifikation der fehlenden Werte erfolgt nach verschiedenen Kriterien:
+
+\begin{itemize}
+\item Anzahl der betroffenen Eigenschaften (Attribute) - Wenn $m$ von $d$ Attributen fehlende Werte haben, sind $(d-m)$ Eigenschaften vollständig
+\item Maximale Anzahl fehlender Werte je Attribut
+\item Anteil fehlender Werte an Gesamtanzahl aller Datenmatrixeinträge
+\end{itemize}
+
+\subsection{Missing Data Patterns}
+Fehlende Daten weisen häufig bestimmte Muster auf, da der Grund für das Fehlen von Werten konstant ist und sich auf verschiedene Attribute proportional auswirkt. Die vier wichtigsten \textit{Missing Data Patterns (MDP)} heißen:
+\begin{itemize}
+\item \textbf{Multivariate/Univariate MDP} - Es gibt fehlende Werte in einer Menge von Attributen, die entweder vollständig sind oder ganz fehlen.
+\item \textbf{Monotone MDP} - Fehlende Werte sind in der Datenmatrix treppenförmig angeordnet. Die Folgespalte hat also immer mehr fehlende Werte als die vorherige Spalte.
+\item \textbf{File-Matching MDP} - Es gibt vollständige Daten und unvollständige Daten haben Einträge in Zeilen, die alle anderen unvollständigen Daten nicht haben dürfen. Hat Attribut A fehlende Einträge in Zeilen $1$ und $2$, so darf ein Attribut B, sofern es fehlende Werte hat, diese nur in in allen anderen Zeilen (z.B. $3$ und $4$) haben. Der Schnitt über die Zeilen fehlender Einträge ist also leer.
+\item \textbf{General MDP} - Die Anordnung fehlender Werte passt zu keinem zuvor beschriebenen MDP.
+\end{itemize}
+
+\subsection{Missing Data Mechanisms}
+Missing Data Mechanismen (MDM) deuten darauf hin, wie fehlende Werte in der Datenmatrix optimalerweise behandelt werden sollten. Sie sind formal als Wahrscheinlichkeit für das Fehlen oder Vorhandensein von Werten in der Datenmatrix definiert. Man unterscheidet zwischen drei MDM: 
+\begin{itemize}
+\item \textbf{Missing Completely at Random (MCAR)} - Das Fehlen von Werten hängt weder von fehlenden noch von vorhandenen Werten ab. \textbf{Beispiel:} In einem Fragebogen wurde eine Frage übersehen.
+\item \textbf{Missing at Random (MAR)} - Die Wahrscheinlichkeit für das Fehlen eines Wertes hängt von den vorhandenen, jedoch nicht von den fehlenden Werten ab. \textbf{Beispiel:} In dem Fragebogen wird die Frage nach dem Einkommen vor Allem von jungen Menschen nicht beantwortet. 
+\item \textbf{Not Missing at Random (NMAR)} - Die Wahrscheinlichkeit für das Fehlen eines Wertes hängt von dem fehlenden Wert ab. \textbf{Beispiel:} Die Frage nach dem Einkommen wird von Menschen mit hohem Einkommen nicht beantwortet.
+\end{itemize}
+
+\subsection{Strategien zum Umgang mit fehlenden Werten}
+Ziel von Strategien zum Umgang mit fehlenden Werten ist es, die Datenmatrix so zu verändern, dass Clusteringverfahren darauf angewandt werden können. Die trivialste Lösung ist es, fehlende Werte zu identifizieren und entsprechende Zeilen und Spalten zu löschen. Im schlimmsten Fall kommt es zu starken Verzerrungen, falls repräsentative Attribute gelöscht werden müssen oder es starke Abhängigkeiten gibt. Eine weitere Variante ist die sogenannte Datenimputation. Bei dieser werden fehlende Werte in einem Vorverarbeitungsschritt geschätzt (z.B. durch das Einsetzen von Durchschnittswerten, Regressionsanalyse, Erwartungsmaximierung). Auch hier kommt es unter Umständen zu Verzerrungen. Außerdem ist der Rechenaufwand besonders groß. In der Literatur wurden aus diesem Grund spezielle adaptive Clusteringverfahren für unvollständige Daten vorgestellt. Die Meisten basieren auf dem FCM-Algorithmus
+
+\subsubsection{FCM mit Whole Data Strategy (WDSFCM)}
+Bei der Whole Data Strategy \cite{wdsfcm} werden initial alle Datenpuntke ignoriert, bei denen ein Wert fehlt. Nach dem Clustering mit den vollständigen Datenpunkten werden die unvollständigen Datenpunkte unter Berechnung der partiellen Distanzen dem Cluster des jeweils nächsten Clusterprototypen zugeordnet. Die partielle Distanzfunktion berechnet sich wie folgt:
+
+$$D_{part}(x_k,v_i) = \frac{d}{\sum\limits_{j=1}^d i_{kj}} \sum\limits_{j=1}^d (x_{kj}-v_{ij})^2 \cdot i_{kj}, \text{wobei}$$
+$$i_{kj} = \begin{cases}
+1, & \text{wenn der Wert } x_{kj} \text{ vorhanden ist} \\
+0 & \textrm{sonst} \\
+\end{cases}, \text{ mit } 1\leqslant j\leqslant d \text{ und } 1\leqslant k \leqslant n.$$
+
+WDSFCM ist leicht zu implementieren, führt aber zu schlechten Ergebnissen, wenn die vollständigen Daten nicht repräsentativ für den gesamten Datensatz sind. Es eignet sich daher nur bei leicht fehlerhaften Datensätzen.
+
+\subsubsection{FCM mit Partial Distance Strategy (PDSFCM)}
+Wie bei WDSFCM verwendet auch PDSFCM \cite{wdsfcm}\cite{pdsfcm} die partielle Distanzfunktion. Allerdings nicht erst nach dem Clustern, sondern während des FCM-Clusteringprozesses. Die FCM-Distanzfunktion wird also einfach ersetzt. In der alternierenden Optimierung ändert sich die Aktualisierung der Clusterzentroide wie folgt:
+
+$$v_{ij} = \frac{\sum\limits_{k=1}^n (u_{ik})^m \cdot i_{kj} \cdot x_{kj}}{\sum\limits_{k=1}^n (u_{ik})^m \cdot i_{kj}}, \text{ für } 1 \leqslant i \leqslant c \text{ und } 1 \leqslant j \leqslant d$$
+
+Der Wert $i_{kj}$ ist dabei so definiert wie in WDSFCM. Im Gegensatz zu WDSFCM kann PDSFCM auch verwendet werden, wenn in allen Datenpunkten Werte fehlen. Das Problem mit der mangelnden Repräsentativität ist gelöst!
+
+\subsubsection{FCM mit Optimal Completion Strategy (OCSFCM)}
+Die Optimal Completion Strategy \cite{wdsfcm}\cite{pdsfcm} versucht die fehlenden Werte in jeder FCM-Iteration zu schätzen. Zuerst werden zufällige Werte für die fehlenden Werte in die Datenmatrix eingesetzt. Anschließend werden die Zugehörigkeitsgrade und Clusterprototypen unverändert berechnet. In einem letzten Iterationsschritt werden die fehlenden Werte anhand der neuen Clusterzentroide und Zugehörigkeiten geschätzt und aktualisiert:
+
+$$x_{kj} = \frac{\sum\limits_{i=1}^c (u_{ik})^m v_{ij}}{\sum\limits_{i=1}^c (u_{ik})^m}, \text{ für } 1 \leqslant k \leqslant n \text{ und } 1 \leqslant j \leqslant d$$
+
+Vorteilhaft ist, dass OCSFCM auch verwendet werden kann, wenn sowohl in allen Attributen, als auch allen Datenpunkten Werte fehlen. Leider ist der Rechenaufwand durch den dritten Iterationsschritt etwas größer. Außerdem können sich Clusterprototypen und die fehlenden Werte bei der Schätzung gegenseitig beeinflussen. Eine Variante der OCSFCM, die Nearest Prototype Strategy (NPSFCM) ersetzt in jeder Iteration von FCM die fehlenden Werte, durch die Werte des nächstgelegenden Clusterzentroiden ($x_{kj} = v_{ij}$). Die Partielle Distanzfunktion wird dann zu:
+
+$$D_{part}(x_k,v_i) = \min\{D_{part}(x_k,v1),D_{part}(x_k,v_2),\dots,D_{part}(x_k,v_c)\}$$
+
+Auf diese Weise kann der Rechenaufwand von OCSFCM reduziert werden. 
+
+
+\subsection{Distance Estimation Strategy (DESFCM)}
+Ein anderer Ansatz \cite{desfcm} geht davon aus, dass die konkreten Werte gar nicht so wichtig sind, da die Berechnung der Zugehörigkeitsmatrix ausschließlich auf den Distanzen zwischen unvollständigen Daten und den Clusterzentroiden basiert. Die Datenmenge wird zu Beginn unterteilt in die vollständigen Datenpunkte $X_{obs}$ und die Menge der Datenpunkte mit fehlenden Werten $X_{mis}$. Im ersten Iterationsschritt werden die Clusterzentroide wie in FCM berechnet. Allerdings wird dabei nur über $x_k \in X_{obs}$ summiert. Im zweiten Iterationsschritt bleibt die Berechnung der Zugehörigkeitsgrade ebenfalls erhalten. Die Distanzfunktion muss allerdings angepasst werden, da die Distanzen für fehlende Werte nicht existieren:
+
+$$d^2(v_i,x_k) = (v_{i1}-x_{k1})^2 + (v_{i2}-x_{k2})^2 + \dots + (v_{id}-x_{kd})^2$$
+
+Wenn die Distanz $(v{ij}-x_{kj})^2$ unbekannt ist, wird auf Basis der vorhandenen Werte folgendermaßen geschätzt:
+
+$$(v_{ij}-x_{kj})^2 = \frac{\sum\limits_{x_s \in X_{obs}} u_{is}(v_{ij}-x_{sj})^2}{\sum\limits_{x_s \in X_{obs}} u_{is}}$$
+
+Wie bei WDSFCM hängt die Bestimmung der Clusterprototypen von den vollständigen Datenpunkten ab. Allerdings ist die Genauigkeit besser, da auch unvollständige Daten zum Teil mit einfließen.
+
+\section{Vergleich von Clusteringergebnissen}
+
+
+
 
 \chapter{Implementierungen}
 %Voraussichtlich diskretisierung von Rasterbildern, Optics, FCM, Delaunay, 
