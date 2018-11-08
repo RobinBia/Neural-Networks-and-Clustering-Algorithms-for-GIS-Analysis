@@ -53,7 +53,9 @@
 \BOOKMARK [2][-]{subsection.4.5.2}{Missing Data Mechanisms}{section.4.5}% 53
 \BOOKMARK [2][-]{subsection.4.5.3}{Strategien zum Umgang mit fehlenden Werten}{section.4.5}% 54
 \BOOKMARK [2][-]{subsection.4.5.4}{Distance Estimation Strategy \(DESFCM\)}{section.4.5}% 55
-\BOOKMARK [1][-]{section.4.6}{Vergleich von Clusteringergebnissen}{chapter.4}% 56
-\BOOKMARK [0][-]{chapter.5}{Implementierungen}{}% 57
-\BOOKMARK [0][-]{chapter.6}{Fazit und Ausblick}{}% 58
-\BOOKMARK [1][-]{section.6.1}{Ausblick - Mein Thema f\374r die Masterarbeit}{chapter.6}% 59
+\BOOKMARK [2][-]{subsection.4.5.5}{Experimenteller Vergleich}{section.4.5}% 56
+\BOOKMARK [2][-]{subsection.4.5.6}{Fuzzy c-Means clustering of Incomplete Date using Dimension-wise Fuzzy Variance of Clusters \(FCMDFVC\)}{section.4.5}% 57
+\BOOKMARK [1][-]{section.4.6}{Vergleich von Clusteringergebnissen}{chapter.4}% 58
+\BOOKMARK [0][-]{chapter.5}{Implementierungen}{}% 59
+\BOOKMARK [0][-]{chapter.6}{Fazit und Ausblick}{}% 60
+\BOOKMARK [1][-]{section.6.1}{Ausblick - Mein Thema f\374r die Masterarbeit}{chapter.6}% 61

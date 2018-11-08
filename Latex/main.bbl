@@ -478,6 +478,62 @@
       \field{pages}{735\bibrangedash 744}
       \range{pages}{10}
     \endentry
+    \entry{fcmdfvc}{article}{}
+      \name{author}{2}{}{%
+        {{hash=eb6c6eda055ac17972c3a722c2a2a647}{%
+           family={Himmelspach},
+           familyi={H\bibinitperiod},
+           given={L.},
+           giveni={L\bibinitperiod}}}%
+        {{hash=6cffed76554124b8f5fb230778428423}{%
+           family={Conrad},
+           familyi={C\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{332f019721582ac7e0a5408298d4d16e}
+      \strng{fullhash}{332f019721582ac7e0a5408298d4d16e}
+      \strng{bibnamehash}{332f019721582ac7e0a5408298d4d16e}
+      \strng{authorbibnamehash}{332f019721582ac7e0a5408298d4d16e}
+      \strng{authornamehash}{332f019721582ac7e0a5408298d4d16e}
+      \strng{authorfullhash}{332f019721582ac7e0a5408298d4d16e}
+      \field{labelalpha}{HC16}
+      \field{sortinit}{H}
+      \field{sortinithash}{5f15a7bc777ad49ff15aa4d2831b1681}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{In Proc. of the Int. Conf. on Information Processing and Management of Uncertainty in Knowledge-Based Systems}
+      \field{title}{Fuzzy c-Means Clustering of Incomplete Data Using Dimension-Wise Fuzzy Variances of Clusters}
+      \field{year}{2016}
+      \field{pages}{699\bibrangedash 710}
+      \range{pages}{12}
+    \endentry
+    \entry{mvresult}{thesis}{}
+      \name{author}{1}{}{%
+        {{hash=2ecb0c2e5fa57c51f0e61d1dade4d735}{%
+           family={Himmelspach},
+           familyi={H\bibinitperiod},
+           given={Ludmila},
+           giveni={L\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {Heinrich-Heine-Universität Düsseldorf}%
+      }
+      \strng{namehash}{2ecb0c2e5fa57c51f0e61d1dade4d735}
+      \strng{fullhash}{2ecb0c2e5fa57c51f0e61d1dade4d735}
+      \strng{bibnamehash}{2ecb0c2e5fa57c51f0e61d1dade4d735}
+      \strng{authorbibnamehash}{2ecb0c2e5fa57c51f0e61d1dade4d735}
+      \strng{authornamehash}{2ecb0c2e5fa57c51f0e61d1dade4d735}
+      \strng{authorfullhash}{2ecb0c2e5fa57c51f0e61d1dade4d735}
+      \field{labelalpha}{Him08}
+      \field{sortinit}{H}
+      \field{sortinithash}{5f15a7bc777ad49ff15aa4d2831b1681}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Clustering mit fehlenden Werten: Analyse und Vergleich}
+      \field{type}{Masterarbeit}
+      \field{year}{2008}
+    \endentry
     \entry{csteps}{report}{}
       \name{author}{3}{}{%
         {{hash=9d61913304fabd25aefc2177b984c2f9}{%

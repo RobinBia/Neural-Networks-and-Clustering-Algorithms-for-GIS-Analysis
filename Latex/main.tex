@@ -1763,6 +1763,42 @@ $$(v_{ij}-x_{kj})^2 = \frac{\sum\limits_{x_s \in X_{obs}} u_{is}(v_{ij}-x_{sj})^
 
 Wie bei WDSFCM hängt die Bestimmung der Clusterprototypen von den vollständigen Datenpunkten ab. Allerdings ist die Genauigkeit besser, da auch unvollständige Daten zum Teil mit einfließen.
 
+\subsection{Experimenteller Vergleich}
+In einer Untersuchung wurde ermittelt, wie sich oben beschriebene Strategien gegenüber dem Standard-FCM in Bezug auf die drei Ausfallmechanismen MAR, MCAR und NMAR verhalten \cite{mvresult}. Dabei hat sich gezeigt, dass DESFCM in jedem Szenario die mit Abstand schlechtesten Ergebnisse erzielt. WDSFCM erzielt nur bei dem Ausfallmechanismus MCAR brauchbare Ergebnisse. Die restlichen Strategien (OCSFCM, PDSFCM und NPSFCM) erzielen die besten Ergebnisse und unterscheiden sich dabei kaum. Je mehr Daten fehlen, desto schlechter wird die Leistungsfähigkeit der eingesetzten Strategie. Dabei ist jedoch entscheidend, wie stark sich die Dichte der verschiedenen Cluster unterscheidet, da alle Algorithmen auf gleichverteilten Daten bessere Ergebnisse erzielen.
+\begin{minipage}{1\textwidth}
+\includegraphics[width=\linewidth]{him08ergebnisse.jpg}
+\end{minipage}
+
+\subsection{Fuzzy c-Means clustering of Incomplete Date using
+Dimension-wise Fuzzy Variance of Clusters (FCMDFVC)}
+
+Eine 2016 vorgestellte Strategie soll sämtliche Nachteile der vorherigen Methoden vermeiden \cite{fcmdfvc}. Zum einen sollen Cluster unterschiedlicher Dichte, unterschiedlicher Ausdehnung und Richtung erkannt werden. Dazu werden die Streuung der Cluster und die dimensionsweise Fuzzy-Varianz in die Schätzung der fehlenden Werte mit einbezogen. 
+
+Dazu wird für jeden Cluster $C_i$ ($i\in \left[1,c \right]$) die Fuzzy-Varianz $w_{ij}$ ($j\in\left[1,d \right])$ in jeder Dimension $j$ als durchschnittliche quadratische Distanz zwischen den vorhandenen Datenpunkten und den Clusterzentroiden berechnet:
+
+$$w_{ij} = \frac{\sum\limits_{k=1}^n u_{ik}^m i_{kj} (x_{kj}-v_{ij})^2}{\sum\limits_{k=1}^n u_{ik}^m i_{kj}}$$
+
+Hierbei ist $i_{kj}$ wie gewohnt definiert und nimmt für alle vorhandenen Werte $x_{kj}$ den Wert $1$ an.\\
+
+Anschließend werden die Fuzzy-Varianzen in die Zugehörigkeitsgrade für die Schätzung fehlender Werte pro Dimension integriert:
+
+$$u_{(ik)j}^w = \frac{\left(w_{ij}^{-1}(x_{kj}-v_{ij})^2 \right)^{\frac{1}{1-m}}}{\sum\limits_{l=1}^c \left(w_{lj}^{-1}(x_{kj}-v_{lj})^2\right)^{\frac{1}{1-m}}}, \, \forall x_{kj} \text{ mit } i_{kj}=0$$
+
+Nun können die fehlenden Werte anhand der Distanzen zwischen den Clusterprototypen und den zuletzt geschätzten Werten und der Ausweitung der Cluster in dem unvollständigen Attribut geschätzt werden:
+
+
+$$x_{kj} = \frac{\sum\limits_{i=1}^c \left(u_{(ik)j}^w) \right)^m v_{ij}^{\prime}}{\sum\limits_{i=1}^c \left(u_{(ik)j}^w) \right)^m}, \text{ für } 1\leqslant k \leqslant n \text{ und } 1\leqslant j\leqslant d$$
+
+Zuletzt werden die Clusterzentroide nur anhand der vorhandenen Werte berechnet:
+
+$$v_{ij}^{\prime} = \frac{\sum\limits_{k=1}^n (u_{ik})^m i_{kj} x_{kj}}{\sum\limits_{k=1}^n (u_{ik})^m i_{kj}},\text{ für }  1\leqslant i \leqslant c \text{ und } 1\leqslant j \leqslant d$$
+
+Es konnte experimentell belegt werden, dass FCMDFVC bessere Endcluster findet als OCSFCM. Gegenüber der Methode, welche zusätzlich die geschätzten Feature-Werte mit in die Berechnung der Clusterzentroide einbezieht, ist FCMDFVC deutlich überlegen.
+
+
+
+\hfill
+
 \section{Vergleich von Clusteringergebnissen}
 
 
