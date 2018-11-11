@@ -868,6 +868,72 @@
       \field{pages}{517\bibrangedash 530}
       \range{pages}{14}
     \endentry
+    \entry{rand}{article}{}
+      \name{author}{1}{}{%
+        {{hash=077ff2008edd9f3cb6540ea5b6d32c6c}{%
+           family={Rand},
+           familyi={R\bibinitperiod},
+           given={William\bibnamedelima M.},
+           giveni={W\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+      }
+      \strng{namehash}{077ff2008edd9f3cb6540ea5b6d32c6c}
+      \strng{fullhash}{077ff2008edd9f3cb6540ea5b6d32c6c}
+      \strng{bibnamehash}{077ff2008edd9f3cb6540ea5b6d32c6c}
+      \strng{authorbibnamehash}{077ff2008edd9f3cb6540ea5b6d32c6c}
+      \strng{authornamehash}{077ff2008edd9f3cb6540ea5b6d32c6c}
+      \strng{authorfullhash}{077ff2008edd9f3cb6540ea5b6d32c6c}
+      \field{labelalpha}{Ran71}
+      \field{sortinit}{R}
+      \field{sortinithash}{da6b42bd3ab22fee61abed031ee405f7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of the American Statistical Association}
+      \field{title}{Objective criteria for the evaluation of clustering methods}
+      \field{volume}{66}
+      \field{year}{1971}
+      \field{pages}{846\bibrangedash 850}
+      \range{pages}{5}
+    \endentry
+    \entry{partstab}{article}{}
+      \name{author}{4}{}{%
+        {{hash=3c80160846fa323ee85baaefc4cbefe9}{%
+           family={Roth},
+           familyi={R\bibinitperiod},
+           given={V.},
+           giveni={V\bibinitperiod}}}%
+        {{hash=6f747e23e4bc38ac386c4e0b04345887}{%
+           family={Lange},
+           familyi={L\bibinitperiod},
+           given={T.},
+           giveni={T\bibinitperiod}}}%
+        {{hash=850e58082fda012d59ff65f35de227c2}{%
+           family={Braun},
+           familyi={B\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=33794529d3cdc06c997d8d67e0897817}{%
+           family={Buhmann},
+           familyi={B\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{88d4dc87695190156104fcaa0e0f3672}
+      \strng{fullhash}{6a7e48aa36129dbc978d76dafcf2d46f}
+      \strng{bibnamehash}{88d4dc87695190156104fcaa0e0f3672}
+      \strng{authorbibnamehash}{88d4dc87695190156104fcaa0e0f3672}
+      \strng{authornamehash}{88d4dc87695190156104fcaa0e0f3672}
+      \strng{authorfullhash}{6a7e48aa36129dbc978d76dafcf2d46f}
+      \field{labelalpha}{Rot+02}
+      \field{sortinit}{R}
+      \field{sortinithash}{da6b42bd3ab22fee61abed031ee405f7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{In Proc. in Computational Statistics}
+      \field{title}{A Resampling Approach to Cluster Validation}
+      \field{year}{2002}
+      \field{pages}{123\bibrangedash 128}
+      \range{pages}{6}
+    \endentry
     \entry{clustgis}{report}{}
       \name{author}{1}{}{%
         {{hash=0ea5d144f202173579a66b2542a2139c}{%
@@ -954,6 +1020,31 @@
       \verb{url}
       \verb http://ruder.io/optimizing-gradient-descent/
       \endverb
+    \endentry
+    \entry{subsim}{article}{}
+      \name{author}{1}{}{%
+        {{hash=50e2c8cc46d2b6901dab6a0a80a767a0}{%
+           family={Runkler},
+           familyi={R\bibinitperiod},
+           given={T.\bibnamedelimi A.},
+           giveni={T\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \strng{namehash}{50e2c8cc46d2b6901dab6a0a80a767a0}
+      \strng{fullhash}{50e2c8cc46d2b6901dab6a0a80a767a0}
+      \strng{bibnamehash}{50e2c8cc46d2b6901dab6a0a80a767a0}
+      \strng{authorbibnamehash}{50e2c8cc46d2b6901dab6a0a80a767a0}
+      \strng{authornamehash}{50e2c8cc46d2b6901dab6a0a80a767a0}
+      \strng{authorfullhash}{50e2c8cc46d2b6901dab6a0a80a767a0}
+      \field{labelalpha}{Run10}
+      \field{sortinit}{R}
+      \field{sortinithash}{da6b42bd3ab22fee61abed031ee405f7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{In Proc. of the 13th Int. Conf. on Information Processing and Management of Uncertainty}
+      \field{title}{Comparing Partitions by Subset Similarities}
+      \field{year}{2010}
+      \field{pages}{29\bibrangedash 38}
+      \range{pages}{10}
     \endentry
     \entry{desfcm}{article}{}
       \name{author}{2}{}{%

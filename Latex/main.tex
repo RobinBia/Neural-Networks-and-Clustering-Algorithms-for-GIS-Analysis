@@ -1687,6 +1687,89 @@ Die Matrix $r_{ij}$ enthält die Unähnlichkeiten der Punkte $x_i$ und $x_j$ als
 \\
 Die Erkennung der Clusteranzahl möchte man jedoch keinem Menschen überlassen, da Datensätze sehr groß werden können und Menschen zu unterschiedlichen Ergebnissen kommen. Eine Lösung bietet die automatische Cluster Count Extraction (CCE) \cite{cce}.
 
+
+\section{Vergleich von Clusteringergebnissen}
+Partitionierende Clusteringverfahren liefern bei zufälligen Initialisierungen oft sehr unterschiedliche Clusteringergebnisse auf dem gleichen Datensatz. Da sich stark schwankende Ergebnisse schlecht zum Vergleich mit anderen Clusteringverfahren eignen, will man immer nur jeweils die beste Partitionierung finden und mit der besten Partitionierung des anderen Verfahrens vergleichen. Eine weitere Herausforderung stellt der Vergleich der Ausreißersensitivität dar. Während ein Ausreißer beim einen Verfahren kaum eine Auswirkung auf das Endergebnis hat, führt er bei dem anderen Algorithmus zu einer starken Verschlechterung der Ergebnisse. Die folgenden Methoden sollen diese Probleme beheben. 
+
+
+\subsection{Rand-Index}
+Eine der ersten Methoden zum Vergleich von harten Partitionierungen wurde bereits 1971 von William M. Rand \cite{rand} vorgestellt. Diese misst die Ähnlichkeit zweier Zerlegungen anhand der Anzahl der Datenpunkte, die in den Clustern beider Zerlegungen gemeinsam vorkommen. \\~\\
+Seien $P = \{P_1, \dots, P_k\} \subset 2^X$ und  $Q = \{P_1, \dots, P_l\} \subset 2^X$ zwei harte Partitionierungen von Datensatz $X=\{x_1,\dots,x_n\}$ mit $n$ Datenpunkten. Sowohl in $P$ als auch in $Q$ überschneiden sich zwei verschiedene Cluster nie. Außerdem gibt es keine leeren Cluster und die Vereinigung aller Cluster ergibt den Datensatz. Es sind alle also Datenpunkte einem Cluster zugeordnet. Zwei Elemente $x$ und $x'$ bilden ein gepaartes Elementtupel in $P$, wenn sie zum gleichen Cluster gehören. Es gilt also: $\exists i \in \left[1,\dots,k\right] \text{ mit } x \in P_i \text{ und } x' \in P_i$. Man unterscheidet zwischen vier verschiedenen Paarungsarten:
+
+\begin{itemize}
+\item $C_1 \equiv \{(x,x')|  x \text{ und } x' \text{ sind sowohl in } P \text{ als auch in } Q \text{ gepaart}\}$
+\item $C_2 \equiv \{(x,x')|  x \text{ und } x' \text{ sind in } P \text{ gepaart, aber nicht in } Q\}$
+\item $C_3 \equiv \{(x,x')| x \text{ und } x' \text{ sind in } Q \text{ gepaart, aber nicht in } P\}$
+\item $C_4 \equiv \{(x,x')|  x \text{ und } x' \text{ sind weder in } P \text{ noch in } Q \text{ gepaart}\}$
+\end{itemize}
+
+Die Tupel aus $C_1 \cup C_4$ heißen konkordante Paare, wohingegen die Tupel aus $C_2 \cup C_3$ diskonkordante Paare genannt werden. Der Rand-Index ist dann definiert als der Anteil der konkordanten Paare an der Menge aller Paare:
+
+$$R(P,Q) = \frac{|C_1|+|C_4|}{|C_1|+|C_2|+|C_3|+|C_4|}, \text{ wobei } R(P,Q) \in \left[0,1 \right]$$
+
+Die zugehörige Distanzfunktion zum Berechnen des Abstands zwischen den beiden Partitionen ist dann einfach $D_R(P,Q) = 1-R(P,Q)$.
+\\~\\
+Für den Vergleich zweier Fuzzy-Zerlegungen eignet sich dagegen die Variante \textit{Campello's Fuzzy Rand Index}.
+
+\subsection{Subset Similarity Index}
+Eine weitere Methode, die eine besonders gute Laufzeit besitzt und somit auf großen Datensätzen zum Einsatz kommt, ist der Subset Similarity Index \cite{subsim}. Dieser basiert auf dem Vergleich von Fuzzy Clustern aus Partitionierungen $U_{k\times x}$ und $\tilde{U}_{l\times n}$ des Datensatzes $X=\{x_1,\dots,x_n\}$. Angewandt werden kann die Methode sowohl auf harte als auch auf weiche Paritionierungen. Die Ähnlichkeit zwischen zwei crisp Clustern ist definiert als Anteil des Schnittes zweier Cluster an ihrer Vereinigung:
+
+$$s_{ij} = \frac{||C_i \cap \tilde{C}_j||}{||C_i \cup \tilde{C}_j||},  \, \forall i \in \left[1,k\right]\text{ und } j \in \left[1,l\right] $$
+
+Die Ähnlichkeit zwischen zwei fuzzy Clustern dagegen ist definiert, als der Anteil der T-Normen aller Punktepaare beider Cluster an den T-Conormen dieser Punktepaare:
+
+$$s_{ij} = \frac{\sum\limits_{r=1}^n \top(u_{ir},\tilde{u}_{jr})}{\sum\limits_{r=1}^n \bot (u_{ir},\tilde{u}_{jr})},\, \forall i \in \left[1,k\right]\text{ und } j \in \left[1,l\right]$$
+
+Für $\top$ wird in der Regel die Minimumsfunktion und für $\bot$ die Maximumsfunktion eingesetzt (Standardnorm). Weitere Normen sind z.B. die algebraische Norm, Lukasiewicz Norm, Hamacher Norm und die Dombi Norm:
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.3]{tnorms.jpg}
+\caption{Verschiedene T-Normen und T-Conormen auf Zugehörigkeitsgrade a und b}\label{tnorms}
+\end{figure}
+
+Die Partitionierungen $U$ und $\tilde{U}$ sind ähnlich, wenn $U$ in hohem Maße eine Teilmenge von $\tilde{U}$ ist oder umgekehrt. Dieser Grad der Ähnlichkeit lässt sich anhand von Ober -und Untermengenmaßen erfassen:
+
+\begin{align*}
+S_{\subseteq} = \top( 
+&\bot(s_{11},s_{12}, \dots, s_{1l}), \\
+&\bot(s_{21}, s_{22}, \dots, s_{2l}),\\ 
+&\dots\dots\dots\dots\dots\dots,\\ 
+&\bot(s_{k1}, s_{k2}, \dots, s_{kl})
+)
+\end{align*}
+
+und 
+
+
+\begin{align*}
+S_{\supseteq} = \top( 
+&\bot(s_{11},s_{21}, \dots, s_{k1}), \\
+&\bot(s_{12}, s_{22}, \dots, s_{k2}),\\ 
+&\dots\dots\dots\dots\dots\dots,\\ 
+&\bot(s_{1l}, s_{2l}, \dots, s_{kl})
+)
+\end{align*}
+
+Der Subset Similarity Index ist definiert als die Anwendung der T-Conorm auf die Ober- und Untermengenmaße:
+
+$$S(U,\tilde{U}) = \bot(S_{\subseteq}(U,\tilde{U}),S_{\supseteq}(U,\tilde{U}))$$
+Im Falle der Standardnorm (S) wird für jeden Cluster einer Partitionierung jeweils die beste Ähnlichkeit zu einem Cluster in der anderen Partitionierung gesucht. Anschließend wird aus der Menge dieser besten Ähnlichkeiten die Schlechteste Ähnlichkeit genommen. Nun existiert ein Indikator dafür, wie sehr die eine Partitionierung eine Unter- oder Obermenge der anderen Zerlegung ist. Der beste Wert dieser beiden Indikatoren ist der Subset Similarity Index.
+
+\subsection{Partitionierungsstabilität}
+
+Andere andere sehr einfache Methode geht davon aus, dass diejenige Zerlegung die Beste ist, welche sich von allen anderen Zerlegungen der gleichen Initialvoraussetzung am wenigsten unterscheidet \cite{partstab}. Eine solche Partitionierung wird auch \textbf{stabil} genannt. Die folgenden Schritte sollen den Algorithmus zur Bestimmung der besten Zerlegung mittels Partitionierungsstabilität informell beschreiben:
+
+\begin{enumerate}
+\item Clustere Datensatz $X=\{x_1, x_2, \dots, x_n\}$ für jedes $c \in \left[c_{min},c_{max}\right]$ genau $m \in \mathbb{N}$ mal, so dass $(c_{max}-c_{min}+1)\cdot m$ Partitionierungen $U_{ci}, i\in \left[1,m\right]$ entstehen.
+\item Vergleiche die $m$ Partitionierungen $\forall c$ mit einem geeigneten Index $d(U_{ci},U_{cj}) \text{ mit } i<j \text{ und } i,j \in \left[1,m\right]$ paarweise untereinander und berechne die Partitionierungsstabilität:
+
+$$s(c)=\frac{\sum\limits_{i=1}^{m-1}\sum\limits_{j=i+1}^m d(U_{ci},U_{cj})}{\frac{m \cdot (m-1)}{2}}.$$
+\item Bestimme die optimale Clusteranzahl $c_{opt} = \argmin \limits_{c\in \left[c_{min},c_{max}\right]} s(c)$ .
+
+\end{enumerate}
+
+
 \section{Clustering auf unvollständigen Daten}
 Im optimalen Fall enthalten alle gesammelten Daten Werteeinträge. Je größer und komplexer die Datenbank jedoch wird, desto größer ist für jeden einzelnen Eintrag die Wahrscheinlichkeit, dass er fehlerhaft oder gar nicht erst vorhanden ist. Datenfehler können bei der Erfassung, Übertragung und Bereinigung von Daten entstehen. Auch das Migrieren mehrerer Datenbanken ist fehleranfällig. \\
 
@@ -1786,7 +1869,6 @@ $$u_{(ik)j}^w = \frac{\left(w_{ij}^{-1}(x_{kj}-v_{ij})^2 \right)^{\frac{1}{1-m}}
 
 Nun können die fehlenden Werte anhand der Distanzen zwischen den Clusterprototypen und den zuletzt geschätzten Werten und der Ausweitung der Cluster in dem unvollständigen Attribut geschätzt werden:
 
-
 $$x_{kj} = \frac{\sum\limits_{i=1}^c \left(u_{(ik)j}^w) \right)^m v_{ij}^{\prime}}{\sum\limits_{i=1}^c \left(u_{(ik)j}^w) \right)^m}, \text{ für } 1\leqslant k \leqslant n \text{ und } 1\leqslant j\leqslant d$$
 
 Zuletzt werden die Clusterzentroide nur anhand der vorhandenen Werte berechnet:
@@ -1794,15 +1876,6 @@ Zuletzt werden die Clusterzentroide nur anhand der vorhandenen Werte berechnet:
 $$v_{ij}^{\prime} = \frac{\sum\limits_{k=1}^n (u_{ik})^m i_{kj} x_{kj}}{\sum\limits_{k=1}^n (u_{ik})^m i_{kj}},\text{ für }  1\leqslant i \leqslant c \text{ und } 1\leqslant j \leqslant d$$
 
 Es konnte experimentell belegt werden, dass FCMDFVC bessere Endcluster findet als OCSFCM. Gegenüber der Methode, welche zusätzlich die geschätzten Feature-Werte mit in die Berechnung der Clusterzentroide einbezieht, ist FCMDFVC deutlich überlegen.
-
-
-
-\hfill
-
-\section{Vergleich von Clusteringergebnissen}
-
-
-
 
 \chapter{Implementierungen}
 %Voraussichtlich diskretisierung von Rasterbildern, Optics, FCM, Delaunay, 

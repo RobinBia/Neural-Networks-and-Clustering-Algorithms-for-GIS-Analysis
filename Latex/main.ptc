@@ -140,35 +140,41 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {4.4.6}Visual Assessment for Cluster Tendency (VAT)}{73}{subsection.4.4.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.5}Clustering auf unvollst\IeC {\"a}ndigen Daten}{74}{section.4.5}
+\contentsline {section}{\numberline {4.5}Vergleich von Clusteringergebnissen}{74}{section.4.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.5.1}Missing Data Patterns}{74}{subsection.4.5.1}
+\contentsline {subsection}{\numberline {4.5.1}Rand-Index}{74}{subsection.4.5.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.5.2}Missing Data Mechanisms}{75}{subsection.4.5.2}
+\contentsline {subsection}{\numberline {4.5.2}Subset Similarity Index}{75}{subsection.4.5.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.5.3}Strategien zum Umgang mit fehlenden Werten}{75}{subsection.4.5.3}
+\contentsline {subsection}{\numberline {4.5.3}Partitionierungsstabilit\IeC {\"a}t}{77}{subsection.4.5.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{FCM mit Whole Data Strategy (WDSFCM)}{75}{section*.60}
+\contentsline {section}{\numberline {4.6}Clustering auf unvollst\IeC {\"a}ndigen Daten}{77}{section.4.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{FCM mit Partial Distance Strategy (PDSFCM)}{76}{section*.61}
+\contentsline {subsection}{\numberline {4.6.1}Missing Data Patterns}{77}{subsection.4.6.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{FCM mit Optimal Completion Strategy (OCSFCM)}{76}{section*.62}
+\contentsline {subsection}{\numberline {4.6.2}Missing Data Mechanisms}{78}{subsection.4.6.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.5.4}Distance Estimation Strategy (DESFCM)}{77}{subsection.4.5.4}
+\contentsline {subsection}{\numberline {4.6.3}Strategien zum Umgang mit fehlenden Werten}{78}{subsection.4.6.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.5.5}Experimenteller Vergleich}{77}{subsection.4.5.5}
+\contentsline {subsubsection}{FCM mit Whole Data Strategy (WDSFCM)}{78}{section*.61}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.5.6}Fuzzy c-Means clustering of Incomplete Date using Dimension-wise Fuzzy Variance of Clusters (FCMDFVC)}{78}{subsection.4.5.6}
+\contentsline {subsubsection}{FCM mit Partial Distance Strategy (PDSFCM)}{79}{section*.62}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.6}Vergleich von Clusteringergebnissen}{79}{section.4.6}
+\contentsline {subsubsection}{FCM mit Optimal Completion Strategy (OCSFCM)}{79}{section*.63}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {5}Implementierungen}{81}{chapter.5}
+\contentsline {subsection}{\numberline {4.6.4}Distance Estimation Strategy (DESFCM)}{80}{subsection.4.6.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.6.5}Experimenteller Vergleich}{80}{subsection.4.6.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.6.6}Fuzzy c-Means clustering of Incomplete Date using Dimension-wise Fuzzy Variance of Clusters (FCMDFVC)}{81}{subsection.4.6.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {5}Implementierungen}{83}{chapter.5}
 \ttl@stoptoc {default@4}
 \ttl@starttoc {default@5}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {6}Fazit und Ausblick}{83}{chapter.6}
+\contentsline {chapter}{\numberline {6}Fazit und Ausblick}{85}{chapter.6}
 \ttl@stoptoc {default@5}
 \ttl@starttoc {default@6}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.1}Ausblick - Mein Thema f\IeC {\"u}r die Masterarbeit}{83}{section.6.1}
+\contentsline {section}{\numberline {6.1}Ausblick - Mein Thema f\IeC {\"u}r die Masterarbeit}{85}{section.6.1}
 \contentsfinish 
