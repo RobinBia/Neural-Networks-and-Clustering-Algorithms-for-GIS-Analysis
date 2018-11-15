@@ -2015,6 +2015,10 @@
     <bcf:citekey order="39">desfcm</bcf:citekey>
     <bcf:citekey order="40">mvresult</bcf:citekey>
     <bcf:citekey order="41">fcmdfvc</bcf:citekey>
+    <bcf:citekey order="42">pca</bcf:citekey>
+    <bcf:citekey order="43">ebdimred</bcf:citekey>
+    <bcf:citekey order="44">fcmaw</bcf:citekey>
+    <bcf:citekey order="45">mfcm</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nyt">

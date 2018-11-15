@@ -186,6 +186,36 @@
       \field{title}{LOF: Identifying Density-Based Local Outliers}
       \field{year}{2000}
     \endentry
+    \entry{ebdimred}{article}{}
+      \name{author}{2}{}{%
+        {{hash=d5a9724392e5bf0672e2e36c7b5af44a}{%
+           family={Dash},
+           familyi={D\bibinitperiod},
+           given={Manoranjan},
+           giveni={M\bibinitperiod}}}%
+        {{hash=a83f8cd28a9f36e43dd5d017cd7fc8f4}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Huan},
+           giveni={H\bibinitperiod}}}%
+      }
+      \strng{namehash}{dd7c9074f528b1e443ef71ac5a9c122f}
+      \strng{fullhash}{dd7c9074f528b1e443ef71ac5a9c122f}
+      \strng{bibnamehash}{dd7c9074f528b1e443ef71ac5a9c122f}
+      \strng{authorbibnamehash}{dd7c9074f528b1e443ef71ac5a9c122f}
+      \strng{authornamehash}{dd7c9074f528b1e443ef71ac5a9c122f}
+      \strng{authorfullhash}{dd7c9074f528b1e443ef71ac5a9c122f}
+      \field{labelalpha}{DL00}
+      \field{sortinit}{D}
+      \field{sortinithash}{2ef1bd9a78cc71eb74d7231c635177b8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Proceedings of the 4th Pacific-Asia Conference on Knowledge Discovery and Data Mining, Current Issues and New Applications}
+      \field{title}{Feature Selection for Clustering}
+      \field{year}{2000}
+      \field{pages}{110\bibrangedash 121}
+      \range{pages}{12}
+    \endentry
     \entry{emalg}{article}{}
       \name{author}{3}{}{%
         {{hash=fcdb1c86f0b69523d4c47f296045f9bf}{%
@@ -621,6 +651,37 @@
       \verb 1711.04708
       \endverb
     \endentry
+    \entry{fcmaw}{article}{}
+      \name{author}{2}{}{%
+        {{hash=799130b56cb8f85eca30e5ec8aff66af}{%
+           family={Keller},
+           familyi={K\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+        {{hash=3708036e154bfdb5215f1f4072bf8a27}{%
+           family={Klawonn},
+           familyi={K\bibinitperiod},
+           given={F.},
+           giveni={F\bibinitperiod}}}%
+      }
+      \strng{namehash}{545e85a9cec9d2a07c8c5a6076f51bcf}
+      \strng{fullhash}{545e85a9cec9d2a07c8c5a6076f51bcf}
+      \strng{bibnamehash}{545e85a9cec9d2a07c8c5a6076f51bcf}
+      \strng{authorbibnamehash}{545e85a9cec9d2a07c8c5a6076f51bcf}
+      \strng{authornamehash}{545e85a9cec9d2a07c8c5a6076f51bcf}
+      \strng{authorfullhash}{545e85a9cec9d2a07c8c5a6076f51bcf}
+      \field{labelalpha}{KK00}
+      \field{sortinit}{K}
+      \field{sortinithash}{9fd838a31ba64d981e8f44562bd33f89}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Int. Journal of Uncertainty, Fuzziness and Knowledge-Based Systems}
+      \field{title}{Fuzzy clustering with weighting of data variables}
+      \field{volume}{8}
+      \field{year}{2000}
+      \field{pages}{735\bibrangedash 746}
+      \range{pages}{12}
+    \endentry
     \entry{kkll}{article}{}
       \name{author}{4}{}{%
         {{hash=7b4fb4c42b93181949bf4b08174a4a07}{%
@@ -867,6 +928,39 @@
       \field{year}{2005}
       \field{pages}{517\bibrangedash 530}
       \range{pages}{14}
+    \endentry
+    \entry{mfcm}{article}{}
+      \name{author}{2}{}{%
+        {{hash=af515b8e80b798496cecacfb1d553c44}{%
+           family={Pimentel},
+           familyi={P\bibinitperiod},
+           given={B.A.},
+           giveni={B\bibinitperiod}}}%
+        {{hash=d230b53d99bc6fb0fc81a5292060f13b}{%
+           family={Souza},
+           familyi={S\bibinitperiod},
+           given={R.M.C.R.},
+           giveni={R\bibinitperiod},
+           prefix={de},
+           prefixi={d\bibinitperiod}}}%
+      }
+      \strng{namehash}{5574a92521e8cae16ce19bd9963b2134}
+      \strng{fullhash}{5574a92521e8cae16ce19bd9963b2134}
+      \strng{bibnamehash}{5574a92521e8cae16ce19bd9963b2134}
+      \strng{authorbibnamehash}{5574a92521e8cae16ce19bd9963b2134}
+      \strng{authornamehash}{5574a92521e8cae16ce19bd9963b2134}
+      \strng{authorfullhash}{5574a92521e8cae16ce19bd9963b2134}
+      \field{labelalpha}{PS13}
+      \field{sortinit}{P}
+      \field{sortinithash}{8d51b3d5b78d75b54308d706b9bbe285}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Applied Soft Computing}
+      \field{title}{A multivariate fuzzy c-means method}
+      \field{volume}{13}
+      \field{year}{2013}
+      \field{pages}{1592\bibrangedash 1607}
+      \range{pages}{16}
     \endentry
     \entry{rand}{article}{}
       \name{author}{1}{}{%
@@ -1226,6 +1320,30 @@
       \field{year}{2004}
       \field{pages}{3\bibrangedash 16}
       \range{pages}{14}
+    \endentry
+    \entry{pca}{article}{}
+      \name{author}{1}{}{%
+        {{hash=929a8e38f925226e9345b68d03c6bda8}{%
+           family={Webb},
+           familyi={W\bibinitperiod},
+           given={A.R.},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{929a8e38f925226e9345b68d03c6bda8}
+      \strng{fullhash}{929a8e38f925226e9345b68d03c6bda8}
+      \strng{bibnamehash}{929a8e38f925226e9345b68d03c6bda8}
+      \strng{authorbibnamehash}{929a8e38f925226e9345b68d03c6bda8}
+      \strng{authornamehash}{929a8e38f925226e9345b68d03c6bda8}
+      \strng{authorfullhash}{929a8e38f925226e9345b68d03c6bda8}
+      \field{labelalpha}{Web02}
+      \field{sortinit}{W}
+      \field{sortinithash}{ecb89ff85896a47dc313960773ac311d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Wiley-Blackwell}
+      \field{title}{Statistical Pattern Recognition}
+      \field{volume}{2}
+      \field{year}{2002}
     \endentry
     \entry{nscabdt}{report}{}
       \name{author}{2}{}{%

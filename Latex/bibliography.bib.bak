@@ -358,19 +358,3 @@ volume = {13},
 year = {2013},
 pages = {1592-1607}
 }
-
-@article{pca,
-author = {A.R. Webb},
-title = {Statistical Pattern Recognition},
-journal = {Wiley-Blackwell},
-volume = {2},
-year = {2002},
-}
-
-@article{ebdimred,
-author = {Manoranjan Dash and Huan Liu},
-title = {Feature Selection for Clustering},
-journal = {Proceedings of the 4th Pacific-Asia Conference on Knowledge Discovery and Data Mining, Current Issues and New Applications},
-year = {2000},
-pages = {110-121}
-}

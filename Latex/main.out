@@ -59,6 +59,11 @@
 \BOOKMARK [2][-]{subsection.4.6.4}{Distance Estimation Strategy \(DESFCM\)}{section.4.6}% 59
 \BOOKMARK [2][-]{subsection.4.6.5}{Experimenteller Vergleich}{section.4.6}% 60
 \BOOKMARK [2][-]{subsection.4.6.6}{Fuzzy c-Means clustering of Incomplete Date using Dimension-wise Fuzzy Variance of Clusters \(FCMDFVC\)}{section.4.6}% 61
-\BOOKMARK [0][-]{chapter.5}{Implementierungen}{}% 62
-\BOOKMARK [0][-]{chapter.6}{Fazit und Ausblick}{}% 63
-\BOOKMARK [1][-]{section.6.1}{Ausblick - Mein Thema f\374r die Masterarbeit}{chapter.6}% 64
+\BOOKMARK [1][-]{section.4.7}{Hochdimensionale Daten}{chapter.4}% 62
+\BOOKMARK [2][-]{subsection.4.7.1}{Dimensionsreduktion}{section.4.7}% 63
+\BOOKMARK [2][-]{subsection.4.7.2}{Entropiebasierte Attributauswahl}{section.4.7}% 64
+\BOOKMARK [2][-]{subsection.4.7.3}{Attribute Weighting Fuzzy Clustering \(FCM-AW\)}{section.4.7}% 65
+\BOOKMARK [2][-]{subsection.4.7.4}{Multivariate Fuzzy C-Means \(MFCM\)}{section.4.7}% 66
+\BOOKMARK [0][-]{chapter.5}{Implementierungen}{}% 67
+\BOOKMARK [0][-]{chapter.6}{Fazit und Ausblick}{}% 68
+\BOOKMARK [1][-]{section.6.1}{Mein Thema f\374r die Masterarbeit}{chapter.6}% 69

@@ -1885,7 +1885,7 @@ Mögliche Lösungsstrategien sind das reduzieren von Dimensionen vor der Cluster
 Ziel von Dimensionsreduktionsverfahren ist es, Daten in einer reduzierten Anzahl an Dimensionen bzw. mit weniger Attributen so zu repräsentieren, das möglichst viele relevante Informationen für die Anwendung eines Clusterings erhalten bleiben. Dabei unterscheidet man zwischen den Vorgehensweisen \textit{Feature Extraction}, der Attributauswahl im zuvor transformierten Datenraum und der \textit{Feature Selection}, der Attributselektion im unveränderten Messraum.
 
 \subsubsection{Hauptkomponentenanalyse}
-Ziel der Hauptkomponentenanalyse \cite{pca} (principal component analysis (PCA)) ist es, aus den Attributwerten neue unkorrelierte Variablen abzuleiten und nach ihrer Wichtigkeit absteigend zu sortieren. Geometrisch entspricht dies einer Axenrotation des Ursprungskoordinatensystems zur neuen Menge der orthogonalen Axen (gefundene Variablen), die nach dem Anteil der Variation in den Originaldaten sortiert sind.\\
+Ziel der Hauptkomponentenanalyse (principal component analysis (PCA)) ist es, aus den Attributwerten neue unkorrelierte Variablen abzuleiten und nach ihrer Wichtigkeit absteigend zu sortieren. Geometrisch entspricht dies einer Axenrotation des Ursprungskoordinatensystems zur neuen Menge der orthogonalen Axen (gefundene Variablen), die nach dem Anteil der Variation in den Originaldaten sortiert sind.\\
 
 Je größer die Variation der Daten, desto besser funktioniert das Clustering. Aus diesem Grund bietet es sich an, eine feste Anzahl $p<d$ von Hauptkomponenten mit der größten Variation auszuwählen und den daraus resultierenden Datensatz zu clustern.
 \\~\\
@@ -1902,7 +1902,7 @@ $Z$ kann nun als neue Datenmatrix einem gewöhnlichen Clusteringalgorithmus für
 
 $$H(X)= E(I(X)) = \sum\limits_{i=1}^m P(x_i)I(x_i)=-\sum\limits_{i=1}^m P(x_i)\log(P(x_i))$$
 
-Während die Entropie einer Gleichverteilung den maximalen Wert $1$ hat, sinkt mit zunehmender Auftretenssicherheit (z.B. wenn ein $P(x_i)=1$) die Entropie in Richtung des minimalen Wertes $0$. Diese Eigenschaft kann ausgenutzt werden, um die Wichtigkeit der Datensatzattribute für die Clustererkennung zu messen (Entropy Measure) \cite{ebdimred}. Je stärker die Entropie beim Entfernen eines Attributes steigt, desto genauer ist die Zuordnung eines Datenpunktes zu einem Cluster in diesem Attribut. Die Relevanz für die Clustererkennung steigt also. 
+Während die Entropie einer Gleichverteilung den maximalen Wert $1$ hat, sinkt mit zunehmender Auftretenssicherheit (z.B. wenn ein $P(x_i)=1$) die Entropie in Richtung des minimalen Wertes $0$. Diese Eigenschaft kann ausgenutzt werden, um die Wichtigkeit der Datensatzattribute für die Clustererkennung zu messen (Entropy Measure). Je stärker die Entropie beim Entfernen eines Attributes steigt, desto genauer ist die Zuordnung eines Datenpunktes zu einem Cluster in diesem Attribut. Die Relevanz für die Clustererkennung steigt also. 
 \\~\\
 Für eine Datenmatrix $X^{n\times p}$ wird das Entropy Measure wie folgt berechnet:
 
@@ -1920,7 +1920,7 @@ Nun kann aus dem Entropy Measure eine reduzierte Matrix $Z^{n\times p}$ errechne
 \end{enumerate}
 
 \subsection{Attribute Weighting Fuzzy Clustering (FCM-AW)}
-Diese FCM-Variante \cite{fcmaw} profitiert von der Beobachtung, dass es häufig eine repräsentative Feature-Menge gibt, auf der ein Clustering basiert. Andere Features hingegen verdecken die Cluster des Datensatzes und sollten daher ignoriert werden. Aus diesem Grund werden in der Distanzfunktion zur Berechnung der Zugehörigkeitsgrade Gewichte eingeführt:
+Diese FCM-Variante basiert auf der Beobachtung, dass es häufig eine repräsentative Feature-Menge gibt, auf der ein Clustering basiert. Andere Features hingegen verdecken die Cluster des Datensatzes und sollten daher ignoriert werden. Aus diesem Grund werden in der Distanzfunktion zur Berechnung der Zugehörigkeitsgrade Gewichte eingeführt:
 
 $$d^2(v_i,x_k) = \sum_{j=1}^d \alpha_{ij}^t(x_{kj}-v_{ij})^2,\ 1\leqslant i \leqslant c, 1\leqslant k \leqslant n,$$
 
@@ -1939,7 +1939,7 @@ $$\alpha_{ij} = \left( \sum_{r=1}^d \left(\frac{\sum\limits_{k=1}^n u_{ik}^m (x_
 
 
 \subsection{Multivariate Fuzzy C-Means (MFCM)}
-Eine weitere Möglichkeit besteht darin, die Zugehörigkeitsgrade einfach für jedes Feature separat zu berechnen \cite{mfcm}. Durch Berücksichtigung der partiellen Distanzen macht sich das \textit{concentration of distance phenomenon} nicht bemerkbar. Allerdings erhöht sich der Rechenaufwand erheblich. Die Zielfunktion von MFCM lautet:
+Eine weitere Möglichkeit besteht darin, die Zugehörigkeitsgrade einfach für jedes Feature separat zu berechnen. Durch Berücksichtigung der partiellen Distanzen macht sich das \textit{concentration of distance phenomenon} nicht bemerkbar. Allerdings erhöht sich der Rechenaufwand erheblich. Die Zielfunktion von MFCM lautet:
 
 $$J_{m}(U,V,X) = \sum_{k=1}^n\sum_{i=1}^c\sum_{j=1}^d u_{ikj}^m (v_{ij}-x_{kj})^2,$$
 
