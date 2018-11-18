@@ -102,9 +102,9 @@
 
 \chapterimage{head8} % Chapter heading image
 \chapter{Motivation}
-Die folgende Projektarbeit liefert einen groben Überblick über Methoden und Algorithmen im Bereich der geoinformationsverarbeitenden Systeme mit dem Schwerpunkt Machine Learning (ML). Darunter werden sämtliche Verfahren verstanden, die auf Basis von Datenbeständen  Fähigkeiten erlernen, mithilfe derer abstraktere Fragenstellungen und Probleme automatisiert gelöst werden können. Das während des Lernprozesses angehäufte Wissen hilft dem Algorithmus dabei, bezüglich einer mathematischen Vorschrift immer bessere Lösungen zu finden. Die Projektarbeit beschränkt sich auf die ML-Teilbereiche Deep Learning und Data Mining, welche Hauptsächlich im Bereich der Wissensextraktion (Assoziationsmustererkennung), Klassifikation und Clustering eingesetzt werden. Die Auswertung geowissenschaftlicher Fachliteratur soll Erkenntnisse über die Einsatzbereiche von Machine Learning liefern. Außerdem soll recherchiert werden, worin die Herausforderungen bestehen und welche offenen Probleme es gibt.
+Die folgende Projektarbeit liefert einen groben Überblick über Methoden und Algorithmen im Bereich der geoinformationsverarbeitenden Systeme mit dem Schwerpunkt Machine Learning (ML). Darunter werden sämtliche Verfahren verstanden, die auf Basis von Datenbeständen  Fähigkeiten erlernen, mithilfe derer abstraktere Fragenstellungen und Probleme automatisiert gelöst werden können. Die Projektarbeit beschränkt sich auf die ML-Teilbereiche Deep Learning und Data Mining, welche hauptsächlich im Bereich der Wissensextraktion (Assoziationsmustererkennung),der Klassifikation und dem Clustering von Datenpunkten eingesetzt werden. Die Auswertung geowissenschaftlicher Fachliteratur soll zudem Erkenntnisse über die Einsatzbereiche von Machine Learning liefern. Außerdem soll recherchiert werden, worin die Herausforderungen bestehen und welche offenen Probleme es gibt.
 \\~\\
-Ziel der Arbeit ist die Eingrenzung der Themenbereiche auf Fragestellungen, die sich hinsichtlich einer wissenschaftlichen Ausarbeitung im Rahmen der sich anschließenden Masterarbeit eignen.
+Ziel der Arbeit ist die Eingrenzung der Themenbereiche auf Fragestellungen, die sich für eine wissenschaftlichen Ausarbeitung im Rahmen der sich anschließenden Masterarbeit eignen.
 
 %----------------------------------------------------------------------------------------
 %	CHAPTER 2
@@ -478,7 +478,7 @@ Ein Multi-Layer Neuronales Netzwerk ist ein gerichteter azyklischer Graph, wobei
 
 Die Score-Funktion für dieses Netzwerk lautet:
 
-\[y(x) = W_3^T \cdot g[W_2^T \cdot g[W_1^T \cdot x+b_1]+b_2]+b_3\]
+\[y(x) = W_3^{\top} \cdot g[W_2^{\top} \cdot g[W_1^{\top} \cdot x+b_1]+b_2]+b_3\]
 
 
 \subsection{Trainieren eines Netzwerks mittels Backpropagation}
@@ -777,7 +777,7 @@ Leider erkennt der k-means-Algorithmus weder Cluster unterschiedlicher Dichte, n
 \subsubsection{EM-Algorithmus}
 Ein anderer Ansatz der alternierenden Optimierung ist die Erwartungsmaximierung \cite{emalg}. Ihr Vorteil ist, dass auch unterschiedlich geformte und dichte Cluster berücksichtigt werden können. Dabei wird jeder Cluster durch eine Wahrscheinlichkeitsverteilung beschrieben, welche aus der Erzeugung aller Datenpunkte eines Clusters $C$ mittels Kovarianzmatrix $\sum_C$ der Dimension $d \times d$ resultiert. Wie bei der Varianzminimierung bezeichnet $\mu_C$ auch hier den Mittelpunkt aller Daten, die dem Cluster C zugeordnet wurden. Die Wahrscheinlichkeit, mit der bei einer einzigen Normalverteilung $C$ das Datum $x$ erzeugt wurde, beträgt:
 
-$$P(x|C) = \frac{1}{\sqrt{(2\cdot \pi)^d \cdot |\sum_C|}} \cdot e^{-\frac{1}{2}(x - \mu_C)^T \cdot (\sum_C)^{-1} \cdot (x - \mu_C)}$$ 
+$$P(x|C) = \frac{1}{\sqrt{(2\cdot \pi)^d \cdot |\sum_C|}} \cdot e^{-\frac{1}{2}(x - \mu_C)^{\top} \cdot \left(\sum_C\right)^{-1}(x - \mu_C)}$$ 
 
 Da es mehrere Cluster gibt und alle den Punkt $x$ mit einer unterschiedlichen Wahrscheinlichkeit erzeugen, muss die Notation der bedingten Wahrscheinlichkeit erfolgen. Die Wahrscheinlichkeitsdichte eines Clusters bezüglich $x$ lautet $P(x|C_i)$. Sind alle Cluster gaußverteilt, so kann die Gesamtdichte für den Punkt $x$ berechnet werden: $$P(x) = \sum_{i=1}^k W_i \cdot P(x|C_i)$$ 
 Wobei $W_i$ der relative Anteil der Datenpunkte ist, die zu Cluster $C_i$ gehören, was der Gesamtwahrscheinlichkeit des Clusters $C_i$ entspricht. Der Satz von Bayes ($P(A|B) = \frac{P(B|A)\cdot P(A)}{P(B)}$) ermöglicht nun die Berechnung der Wahrscheinlichkeit, mit der $x$ zum Cluster $C_i$ gehört:
@@ -1620,7 +1620,7 @@ Die Zerlegung ist optimal, wenn $V_{KKLL}$ einen möglichst kleinen Wert annimmt
 \subsection{Fuzzy Hypervolume/Partition Density (FHV/PD)}
 Die CVI-Methode Fuzzy Hypervolume \cite{fhv} bewertet nicht nur die relativen Entfernungen der Datenpunkte zu ihren Clustern, sondern insgesamt die Kompaktheit der gesamten Zerlegung. FHV bewertet eine Partitionierung als gut, wenn die Summe der Clustervolumina möglichst klein ist. Dabei lässt sich das Volumen eines Clusters über die Determinante der Datenerzeugenden Kovarianzmatrix berechnen: 
 
-$$Cov_i = \frac{\sum\limits_{k=1}^n (u_{ik})^m (x_k-v_i)(x_k-v_i)^T)}{\sum\limits_{k=1}^n (u_{ik})^m} \text{\quad für \quad} 1\leqslant i\leqslant c$$
+$$Cov_i = \frac{\sum\limits_{k=1}^n (u_{ik})^m (x_k-v_i)(x_k-v_i)^{\top}}{\sum\limits_{k=1}^n (u_{ik})^m} \text{,\ für \quad} 1\leqslant i\leqslant c$$
 
 und
 
@@ -1628,7 +1628,7 @@ $$V_{FHV}(U,X,V) = \sum_{i=1}^c \sqrt{\det(Cov_i)}$$
 
 Da eine Kovarianzmatrix sowohl die Ausdehnung und Richtung einer Punktwolke beschreibt, kann Fuzzy Hypervolume entsprechend unterschiedlich große und geformte Cluster erkennen. Dies ist gegenüber anderen Verfahren ein erheblicher Vorteil. Ein Nachteil ist, dass die optimale Clusteranzahl für $c=n$ erreicht wird. Aus diesem Grund muss manuell überprüft werden, ab wann die Erhöhung der Clusteranzahl nicht mehr wesentlich zu einer Verbesserung der Partitionierungsergebnisse beiträgt. Außerdem werden große Cluster mit vielen Punkten automatisch schlechter bewertet. Aus diesem Grund wurde eine Verbesserung vorgeschlagen, die Partition Density (PC):
 
-$$V_{PD}=\frac{\sum\limits_{i=1}^c \sum\limits_{k=1}^n u_{ik}}{V_{FHV}},\quad \forall x_k \in \{x_k|(x_k-v_i)^T\cdot Cov_i^{-1}\cdot(x_k-v_i)<1\}$$
+$$V_{PD}=\frac{\sum\limits_{i=1}^c \sum\limits_{k=1}^n u_{ik}}{V_{FHV}},\quad \forall x_k \in \{x_k|(x_k-v_i)^{\top}\cdot Cov_i^{-1}\cdot(x_k-v_i)<1\}$$
 
 Diese basiert auf dem physikalischen Prinzip \textit{Dichte ist Masse pro Volumen} ($\rho = \frac{m}{V}$). Die Zerlegung ist optimal, wenn die Cluster möglichst dicht sind, also $V_{PD}$ einen großen Wert hat. Partition Density erhält alle Eigenschaften von Fuzzy Hypervolume, verringert aber die Präferenz für kleine Cluster. Da die monoton fallende Tendenz für $c \rightarrow n$ noch verschärft wird, muss auch hier manuell evaluiert werden, ab wann eine weitere Inkrementierung der Clusteranzahl nicht mehr sinnvoll ist.
 
@@ -1964,6 +1964,10 @@ $$v_{ij} = \frac{\sum\limits_{k=1}^n u_{ikj}^m x_{kj}}{\sum\limits_{k=1}^n u_{ik
 %----------------------------------------------------------------------------------------
 %	CHAPTER 5
 %----------------------------------------------------------------------------------------
+Dieses Kapitel soll eine Auswahl der kennengelernten Algorithmen in Form konkreter Python-Implementierungen vorstellen und ihren Nutzen demonstrieren.
+
+
+
 
 \chapter{Fazit und Ausblick}
 \section{Mein Thema für die Masterarbeit}
