@@ -37,6 +37,7 @@
             abbreviate=false,
             backref=true,
             backend=biber]{biblatex}
+\usepackage{pdfpages}
 \addbibresource{bibliography.bib} 
 
 \newcommand{\minuseq}{\mathrel{-}=}
@@ -1415,9 +1416,9 @@ Eine weitere Optimierung, die zwei Jahre später vorgestellt wurde, basiert eben
 Das Verfahren besteht aus zwei Schritten. Im ersten Schritt wird die Delaunay Triangulation berechnet und ein ähnlichkeitsbasiertes Clustering gebildet. Im zweiten Schritt wird eine Fuzzy Logik zur Verfeinerung der Ergebnisse angewandt.\\
 
 
-Der folgende Algorithmus beschreibt den ersten Schritt des Verfahrens. Er einen Datensatz $X$ mit $n$ Punkten entgegen und clustert ihn auf Basis der Delaunay-Triangulation.
+Der folgende Algorithmus beschreibt den ersten Schritt des Verfahrens. Er nimmt einen Datensatz $X$ mit $n$ Punkten entgegen und clustert ihn auf Basis der Delaunay-Triangulation.
 
-In der Originalpublikation wird für die Erzeugung der $DT$ der Bowyer-Watson Algorithmus empfohlen, der nur $\mathcal{O}(n\log{}n)$ Operationen benötigt, um $n$ Punkte zu triangulieren und somit besonders effizient ist. Anschließend startet in Zeile $5$ die harte Partitionierung. Dabei wird für ein Initialdreieck aus $DT$ geprüft, ob es größer ist, als ein bestimmter Schwellwert und ob es noch nicht besucht wurde. Wurde ein Initialdreieck gefunden, das klein genug ist, werden von ihm aus alle Nachbarn betrachtet. Für jedes Nachbardreieck wird geprüft, ob es klein genug ist. Ist dies der Fall, wird es auf einem Stack gespeichert. Alle zu großen Nachbardreiecke werden hingegen ignoriert. Der Algorithmus wird solange fortgesetzt, bis alle Elemente auf dem Stack abgearbeitet wurden und kein gültiger Nachbar eines Stackelements mehr gefunden werden konnte. Die Menge der gültigen Nachbardreiecke inklusive Initialdreieck bilden dann einen Cluster. Der Algorithmus wird danach für alle unbesuchten Initialdreiecke aus $DT$ fortgesetzt. Zum Schluss enthält die Menge $ClusterSet$ Mengen von Dreiecken, die die Cluster des Datensatzes bilden.
+In der Originalpublikation wird für die Erzeugung der $DT$ der Bowyer-Watson Algorithmus empfohlen, der nur $\mathcal{O}(n\log{}n)$ Operationen benötigt, um $n$ Punkte zu triangulieren und somit besonders effizient ist. Anschließend startet in Zeile $5$ die harte Partitionierung. Dabei wird für ein Initialdreieck aus $DT$ geprüft, ob es größer ist, als ein bestimmter Schwellwert und ob es noch nicht besucht wurde. Wurde ein Initialdreieck gefunden, das klein genug ist, werden von ihm aus alle Nachbarn (Dreiecke, die sich mit dem Initialdreieck eine Kante teilen) betrachtet. Für jedes Nachbardreieck wird geprüft, ob es klein genug ist. Ist dies der Fall, wird es auf einem Stack gespeichert. Alle zu großen Nachbardreiecke werden hingegen ignoriert. Der Algorithmus wird solange fortgesetzt, bis alle Elemente auf dem Stack abgearbeitet wurden und kein gültiger Nachbar eines Stackelements mehr gefunden werden konnte. Die Menge der gültigen Nachbardreiecke inklusive Initialdreieck bilden dann einen Cluster. Der Algorithmus wird danach für alle unbesuchten Initialdreiecke aus $DT$ fortgesetzt. Zum Schluss enthält die Menge $ClusterSet$ Mengen von Dreiecken, die die Cluster des Datensatzes bilden.
 \end{minipage}
 \end{center}
 
@@ -1439,7 +1440,7 @@ In der Originalpublikation wird für die Erzeugung der $DT$ der Bowyer-Watson Al
 \State $\textsc{Push}(dt,Stack)$
 \While{$\textsc{Empty}(Stack) = False$}
 \State $Triangle\,T \gets \textsc{Pop}(Stack)$
-\If{$\textsc{Satisfiable}(T) \& \textsc{Not}\textsc{Visited}(T)$}
+\If{$\textsc{Satisfiable}(T)\,\&\,\textsc{Not}\textsc{Visited}(T)$}
 \State $T.Visited \gets True$
 \State $NewSet \gets NewSet \cup \{T\}$
 \State $TmpSet \gets \textsc{Neighbours}(T)$
@@ -1467,7 +1468,7 @@ $\mu(x:\alpha,\beta) = \left\{
 \end{array}
 \right. $
 
-Es handelt sich hierbei um eine Sigmoidfunktion. Der Parameter $\alpha$ gibt den Wendepunkt der Kurve an, der Parameter $\beta$ bestimmt die Neigung der Kurve, welche mit zunehmendem $\beta$ immer flacher wird. Je nach Klasseneigenschaft können die Fuzzy Parameter variiert werden. Beispielsweise könnte die Baumart Buche, die einem Nadelwald steht, eine steilere Zugehörigkeitskurve besitzen, als die Baumart Tanne. Das bedeutet, dass eine Buche gegenpber einer Tanne viel näher an einem Nadelkernwald stehen muss, um mit einer hohen Zugehörigkeit klassifiziert zu werden. 
+Es handelt sich hierbei um eine Sigmoidfunktion. Der Parameter $\alpha$ gibt den Wendepunkt der Kurve an, der Parameter $\beta$ bestimmt die Neigung der Kurve, welche mit zunehmendem $\beta$ immer flacher wird. Je nach Klasseneigenschaft können die Fuzzy Parameter variiert werden. Beispielsweise könnte die Baumart Buche, die einem Nadelwald steht, eine steilere Zugehörigkeitskurve besitzen, als die Baumart Tanne. Das bedeutet, dass eine Buche gegenüber einer Tanne viel näher an einem Nadelkernwald stehen muss, um mit einer hohen Zugehörigkeit klassifiziert zu werden. 
 \\
 Der Funktionswert $\mu$ wird als Stärke der Inklusion bezeichnet. Je größer dieser Wert wird, desto wird der Randbereich, in dem weitere Punkte berücksichtigt werden.\\
 Der Gesamtalgorithmus inklusive Triangulation und Fuzzy Refinement sieht dann folgendermaßen aus:
@@ -1485,7 +1486,7 @@ Der Gesamtalgorithmus inklusive Triangulation und Fuzzy Refinement sieht dann fo
 \State $N \gets Neighbour(Triangle)$
 \ForAll{$E \in N$}
 \If{$\textsc{Fuzzy}\textsc{Satisfiable}(E)$}
-\If{$E\in C_j, \forall j=1\dots m \& j\neq i$}
+\If{$E\in C_j, \forall j\in \{1\dots m\} \,\&\, j\neq i$}
 \State $C_i \gets C_i \cup C_j$
 \Else 
 \State $C_i \gets C_i \cup \{E\}$
@@ -1966,7 +1967,7 @@ $$v_{ij} = \frac{\sum\limits_{k=1}^n u_{ikj}^m x_{kj}}{\sum\limits_{k=1}^n u_{ik
 %----------------------------------------------------------------------------------------
 Dieses Kapitel soll eine Auswahl der kennengelernten Algorithmen in Form konkreter Python-Implementierungen vorstellen und ihren Nutzen demonstrieren.
 
-
+\includepdf[pages=-,scale=0.9]{jupyter2.pdf}
 
 
 \chapter{Fazit und Ausblick}
