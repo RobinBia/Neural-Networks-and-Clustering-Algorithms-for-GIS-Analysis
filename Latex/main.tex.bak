@@ -9,6 +9,7 @@
   numbers=left,
   literate={\ \ }{{\ }}1
 }
+\usepackage{appendix}
 \usepackage{caption}
 \usepackage{amsmath}
 \DeclareMathOperator*{\argmax}{argmax}
@@ -52,6 +53,7 @@
 %----------------------------------------------------------------------------------------
 %	TITLE PAGE
 %----------------------------------------------------------------------------------------
+\include[german]{babel}
 
 \begingroup
 \thispagestyle{empty}
@@ -76,25 +78,19 @@
 %Hier kann ich Github und Downloads hin schreiben
 \noindent \textsc{https://github.com/RobinBia/Projektarbeit-Geoinformatik.git}\\ \\ % URL
 
-\noindent Projektarbeit unter der Betreuung von PD Dr. Dr.-Ing. Wilfried Linder von 11.2017 - 11.2018 als Vorbereitung der sich anschließenden Masterarbeit.\\ % 
+\noindent Projektarbeit unter der Betreuung von PD Dr. Dr.-Ing. Wilfried Linder von 11.2017 - 12.2018 zur Vorbereitung der sich anschließenden Masterarbeit.\\ % 
 
-\noindent \textit{Fertigstellung, November 2018} 
+\noindent \textit{Fertigstellung, Dezember 2018} 
 
 
 %----------------------------------------------------------------------------------------
 %	TABLE OF CONTENTS
 %----------------------------------------------------------------------------------------
 \raggedright
-
-\chapterimage{head8} % Table of contents heading image
-
-\pagestyle{empty} % No headers
-
-\tableofcontents % Print the table of contents itself
-
-%\cleardoublepage % Forces the first chapter to start on an odd page so it's on the right
-
-\pagestyle{fancy} % Print headers again
+\chapterimage{head8}
+\pagestyle{empty} 
+\tableofcontents 
+\pagestyle{fancy} 
 
 
 %----------------------------------------------------------------------------------------
@@ -103,7 +99,7 @@
 
 \chapterimage{head8} % Chapter heading image
 \chapter{Motivation}
-Die folgende Projektarbeit liefert einen groben Überblick über Methoden und Algorithmen im Bereich der geoinformationsverarbeitenden Systeme mit dem Schwerpunkt Machine Learning (ML). Darunter werden sämtliche Verfahren verstanden, die auf Basis von Datenbeständen  Fähigkeiten erlernen, mithilfe derer abstraktere Fragenstellungen und Probleme automatisiert gelöst werden können. Die Projektarbeit beschränkt sich auf die ML-Teilbereiche Deep Learning und Data Mining, welche hauptsächlich im Bereich der Wissensextraktion (Assoziationsmustererkennung),der Klassifikation und dem Clustering von Datenpunkten eingesetzt werden. Die Auswertung geowissenschaftlicher Fachliteratur soll zudem Erkenntnisse über die Einsatzbereiche von Machine Learning liefern. Außerdem soll recherchiert werden, worin die Herausforderungen bestehen und welche offenen Probleme es gibt.
+Die folgende Projektarbeit liefert einen groben Überblick über Methoden und Algorithmen im Bereich der geoinformationsverarbeitenden Systeme in Verbindung mit Machine Learning (ML). Darunter werden sämtliche Verfahren verstanden, die auf Basis von Datenbeständen  Fähigkeiten erlernen, mithilfe derer abstraktere Probleme automatisiert gelöst werden können. Die Projektarbeit beschränkt sich auf die ML-Teilbereiche Deep Learning und Data Mining, welche sich mit der Wissensextraktion (Assoziationsmustererkennung),der Klassifikation und dem Clustering von Datenpunkten auseinandersetzen. Die Auswertung geowissenschaftlicher Fachliteratur soll zudem Erkenntnisse über weitere Einsatzbereiche von Machine Learning liefern. Außerdem soll recherchiert werden, worin die Herausforderungen bestehen und welche offenen Probleme es gibt.
 \\~\\
 Ziel der Arbeit ist die Eingrenzung der Themenbereiche auf Fragestellungen, die sich für eine wissenschaftlichen Ausarbeitung im Rahmen der sich anschließenden Masterarbeit eignen.
 
@@ -112,11 +108,9 @@ Ziel der Arbeit ist die Eingrenzung der Themenbereiche auf Fragestellungen, die 
 %----------------------------------------------------------------------------------------
 \chapter{Geodaten und Geoinformation}
 
-\textbf{Kapitel wahrscheinlich irrelevant und häufig nur eine Aneinanderreihung zusammenhangsloser Definitionen (Ausnahme 2.3). löschen?}
-
 \section{Definition und Gestalt von Geodaten}
 Geodaten sind digitale Informationen, welche Sachdaten mit Geometriedaten\footnote{https://www.hdm-stuttgart.de/~riekert/lehre gis.pdf} (und Chronometriedaten) vereinen , z.B. \{Luftdruck 1 bar, Ort Düsseldorf, Datum 26.11.2017\}. 
-Die räumliche Information kann in unterschiedlichen Formen vorliegen, z.B. symbolisch als Ortsname oder Postleitzahl, aber auch als mathematisch atomare Referenz auf Positionen der Erde mittels Koordinaten. Diese können in unterschiedlichster Dimensionalität vorliegen\footnote{http://www.mathematik.uni-ulm.de/sai/ws04/biosem/GIS.pdf}
+Die räumliche Information kann in unterschiedlichen Formen vorliegen, z.B. symbolisch als Ortsname oder Postleitzahl, aber auch als mathematisch atomare Referenz auf Positionen der Erde mittels Koordinaten. Diese können in unterschiedlichster Dimensionalität vorliegen\footnote{http://www.mathematik.uni-ulm.de/sai/ws04/biosem/GIS.pdf}:
 \begin{itemize}
 \item Ein Objekt ohne bestimmte Länge (0D)
 \item Ein Linienstück (1D)
@@ -131,11 +125,12 @@ Zusätzlich zu den 3 Koordinaten im Raum wird eine vierte
 Information mitgeführt, die sich aus dem zeitlichen Ablauf ergibt (4D)
 \end{itemize}
 
+Im Anhang wird in den Zeilen 2-4 ein solcher Datensatz mittels \textit{pyplot} visualisiert.
 
 \newpage
 
 \section{Geografische Koordinaten}
-Ein geeignetes und weit verbreitetes Koordinatensystem zur verzerrungsarmen Darstellung sind die Geografischen Koordinaten. 
+Ein geeignetes und weit verbreitetes Koordinatensystem für die verzerrungsarme Darstellung von Geodaten sind die geografischen Koordinaten. 
 
 \begin{figure}[H]
 \centering
@@ -143,19 +138,19 @@ Ein geeignetes und weit verbreitetes Koordinatensystem zur verzerrungsarmen Dars
 \caption{Das Gradnetz der Erde}\label{gradnetz}
 \end{figure}
 
-Beschrieben wird ein Punkt auf der Erde durch gedachte Kreise um den Globus, welche Senkrecht zueinander stehen. Insgesamt existieren 180 Breitenkreise (Richtung Ost-West) und 360 Längenkreise (Richtung Nord-Süd). Die Abweichung von den beiden Referenzkreisen Äquator und Nullmeridian wird in Grad östlicher/westlicher Länge und nördlicher/südlicher Breite angegeben. Als Äquator ($0^\circ$ nördliche/südliche Breite) wird der Breitenkreis bezeichnet, auf welchem die Erdachse senkrecht steht. Der Nullmeridian ($0^\circ$ westliche/östliche Länge) ist der Längenkreis, welcher durch die britische Stadt Greenwich verläuft.\newline Weitere wichtige Koordinatensysteme sind die Gauß-Krüger und UTM-Koordinaten. Die Vorteile dieser Systeme ist, dass sich eine geografische Position direkt ablesen lässt. Geografische Koordinaten erschweren dies bedingt durch die sich verändernden Abstände zwischen den Längenkreisen in zunehmender Nord- oder Südrichtung.
+Beschrieben wird ein Punkt auf der Erde durch gedachte Kreise um den Globus, welche senkrecht zueinander stehen. Insgesamt existieren 180 Breitenkreise (Richtung Ost-West) und 360 Längenkreise (Richtung Nord-Süd). Die Abweichung von den beiden Referenzkreisen Äquator und Nullmeridian, wird in Grad östlicher/westlicher Länge und nördlicher/südlicher Breite angegeben. Als Äquator ($0^\circ$ nördliche/südliche Breite) wird der Breitenkreis bezeichnet, auf dem die Erdachse senkrecht steht. Der Nullmeridian ($0^\circ$ westliche/östliche Länge) ist der Längenkreis, der durch die britische Stadt Greenwich verläuft.\newline Weitere wichtige Koordinatensysteme sind die Gauß-Krüger und UTM-Koordinaten. Ein Vorteil dieser Systeme ist, dass sich geografische Positionen direkt ablesen lassen. Geografische Koordinaten hingegen erschweren dies bedingt durch die sich verändernden Abstände zwischen den Längenkreisen in zunehmender Nord- oder Südrichtung.
 
 
 \section{Qualitätsmerkmale}
 Ein wichtiger Forschungszweig ist die automatische Beurteilung von Qualitätsmerkmalen von Geodaten hinsichtlich einer bestimmten Fragestellung.
-Ein geeignetes Maß ist die gewichtete Summe verschiedener Datenmerkmale, welche in der aktuellen ISO-Norm \textit{ISO 19157:2013}\footnote{https://www.iso.org/standard/32575.html} spezifiziert sind.
+Ein geeignetes Maß für die Datenqualität ist die gewichtete Summe verschiedener Merkmale, welche in der aktuellen ISO-Norm \textit{ISO 19157:2013}\footnote{https://www.iso.org/standard/32575.html} spezifiziert sind.
 
-Die Beurteilung der Datenqualität ist ebenfalls in sämtlichen Verarbeitungsschritten des KDD-Prozessmodells \cite{kddmod} erforderlich. Das KDD-(Knowledge Discovery in Databases-)Prozessmodell  beschreibt, wie aus einer unstrukturierten Datensammlung neues, relevantes Wissen extrahiert werden kann. Es umfasst folgende Schritte:
+Die Beurteilung der Datenqualität ist ebenfalls in sämtlichen Verarbeitungsschritten des KDD-Prozessmodells \cite{kddmod} erforderlich. Das KDD-(Knowledge Discovery in Databases-)Prozessmodell beschreibt, wie aus einer unstrukturierten Datensammlung neues, relevantes Wissen extrahiert werden kann. Es umfasst folgende Schritte:
 \begin{enumerate}
-\item \textbf{Fokussieren/Selektieren} Die Daten werden zusammengetragen, in Form einer Datenbank strukturiert und irrelevante Einträge gelöscht. Relevante Daten haben das Potenzial hinsichtlich eines vorgegebenen Ziels vielversprechende Erkenntnisse zu liefern.
-\item \textbf{Vorverarbeitung} Es wird überprüft, ob die Datenbank konsistent ist und ob es fehlende Einträge gibt. Die Konsistenz wird verletzt, wenn zum Beispiel einer Koordinate ein Land zugeordnet wird, welches den umgebenen Datenpunkten nicht zugeordnet wurde. Die Wahrscheinlichkeit einer Fehlzuordnung ist dann groß. Die Datenbank hat fehlende Einträge, wenn es Attribute mit nicht existierenden Werten gibt. Strategien zum Umgang mit fehlerhaften Datensätzen beim Clustering werden im Kapitel über Clusteringverfahren erläutert.
+\item \textbf{Fokussieren/Selektieren} Die Daten werden zusammengetragen, in Form einer Datenbank strukturiert und irrelevante Einträge werden gelöscht. Relevante Daten können bezüglich einer bestimmten Fragestellung potentiell vielversprechende Erkenntnisse liefern.
+\item \textbf{Vorverarbeitung} Es wird überprüft, ob die Datenbank konsistent ist und ob es fehlende Einträge gibt. Die Konsistenz wird verletzt, wenn zum Beispiel einer Koordinate ein Land zugeordnet wird, welches den umgebenen Datenpunkten nicht zugeordnet wurde. Die Wahrscheinlichkeit einer Fehlzuordnung ist dann groß. Die Datenbank hat fehlende Einträge, wenn es Attribute mit nicht existierenden Werten gibt. Strategien zum Umgang mit fehlerhaften Datensätzen beim Clustering werden in Kapitel 4 erläutert.
 \item \textbf{Transformation} Wurde ein komplexes Objekt in die Datensammlung aufgenommen, so müssen seine Merkmale zuerst numerisch diskretisiert werden. Beispielsweise hat ein Reisfeld eine Länge und Breite, aber auch eine Vegetationsdichte und einen Erntestatus. All diese Merkmale müssen vermessen und in die Datenbank aufgenommen werden. Merkmale, welche nach der Transformation in mangelhafter Qualität vorliegen, können entfernt werden.
-\item \textbf{Data Mining} Methoden zur Mustererkennung. Dazu gehören sowohl Neuronale Netze und Clusteringverfahren, als auch Assoziationsregeln. In folgenden Kapiteln werden diese erklärt.
+\item \textbf{Data Mining} Methoden zur Mustererkennung. Dazu gehören sowohl Neuronale Netze und Clusteringverfahren, als auch Assoziationsregeln.
 \item \textbf{Evaluation} Ergebnisse der Mustererkennung werden statistisch überprüft und die Nützlichkeit vom Nutzer bewertet.
 \end{enumerate}~\\
 
@@ -180,11 +175,11 @@ Enthält der Datensatz mehr Objekte und Beziehungen als angegeben?
 \item \textbf{Logische Konsistenz}
 \begin{itemize}
 \item \textbf{Konzeptuelle Konsistenz} - 
-Wurde die Gestalt des Datenmodells bei Aktualisierungen nicht verändert?
+Ist die Gestalt des Datenmodells nach Aktualisierungen gleich geblieben?
 \item \textbf{Wertekonsistenz} - Sind alle Werte sinnvoll?
 \item \textbf{Formatkonsistenz} Passen die Daten zu angegebenen physikalischen Einheiten?
 \item \textbf{Topologische Konsistenz} 
-Bleiben topologische Beziehungen bei Änderungen des Datensatzes bestehen (Der botanische Garten befindet sich im Umkreis von 1km von der HHU)?
+Bleiben topologische Beziehungen bei Änderungen des Datensatzes bestehen (Der botanische Garten befindet sich im Umkreis von 1km um die HHU)?
 \item \textbf{Geometrische Konsistenz} - Ist der digitalisierte Datensatz geometrisch sinnvoll und widerspruchsfrei?
 \end{itemize}
 \item \textbf{Positionsgenauigkeit}
@@ -206,38 +201,38 @@ Wie genau ist die Zeitangabe (minutengenau, taggenau)?
 \item \textbf{Thematische Genauigkeit}
 \begin{itemize}
 \item
-\textbf{Richtigkeit der Klassifikation} - Stimmen Objekte, oder ihre Attribute mit den zugewiesenen Klassen überein, z. B. Zuordnung zu Fluss, statt zu Weg
+\textbf{Richtigkeit der Klassifikation} - Stimmen Objekte oder ihre Attribute mit den zugewiesenen Klassen überein?
 \item \textbf{Richtigkeit nichtquantitativer Attribute} - Beispiel: Ist das Grundstück wirklich eine Bananenplantage?
 \item \textbf{Genauigkeit quantitativer Attribute} - Beispiel: Ist die Fläche des Grundstücks korrekt?
 \end{itemize}
 \end{itemize}
 
-Viele der oben genannten Punkte lassen einen subjektiven Spielraum für die Bewertung zu. Sowohl Skalierungen als auch Gewichtungen sind nicht eindeutig definiert, was einen Vergleich verschiedener Datensätze erschwert. Aus diesem Grund ist eine algorithmische Interpretation in Kombination mit verfahren der künstlichen Intelligenz hilfreich. So ließe sich aus der Norm ein universeller und allgemeingültiger Indikator zur Bewertung der Datenqualität ermitteln.
+Viele der oben genannten Punkte lassen einen subjektiven Spielraum für die Bewertung zu. Sowohl Skalierungen als auch Gewichtungen sind nicht eindeutig definiert, was einen Vergleich verschiedener Datensätze erschwert. Aus diesem Grund könnte eine algorithmische Interpretation in Kombination mit Verfahren der künstlichen Intelligenz hilfreich sein. Im besten Fall ließe sich aus der oben genannten Norm ein universeller und allgemeingültiger Indikator zur Bewertung der Datenqualität ableiten.
 
 
 \section{Georeferenzierung}
 \subsubsection{Definition}
-Unter dem Vorgang der Georeferenzierung,versteht man die Zuweisung raumbezogener Informationen, auch Georeferenz genannt, zu einem Datensatz.
+Unter dem Vorgang der Georeferenzierung,versteht man die Zuweisung raumbezogener Informationen (auch Georeferenz genannt) zu einem Datensatz.
 
 Es gibt folgende vier Arten der Georeferenzierung:
 
 \begin{itemize}
-\item Bei der \textbf{Adresskodierung} wird dem Datensatz eine Postanschrift zugewiesen und somit ein indirekter Raumbezug hergestellt. Mithilfe geokodierter Adressen lassen sich funktionale zusammenhänge zwischen Daten, Postanschrift und Adresse herstellen und somit ressourcenschonende und schnelle Zugriffe ermöglichen.
+\item Bei der \textbf{Adresskodierung} wird dem Datensatz eine Postanschrift zugewiesen und somit ein indirekter Raumbezug hergestellt. Mithilfe geokodierter Adressen lassen sich funktionale zusammenhänge zwischen Daten, Postanschrift und Adresse herstellen. Auf diese Weise können ressourcenschonende und schnelle Zugriffe ermöglicht werden.
 \item Als \textbf{Geotagging} bezeichnet man das Einfügen eines Attributes (Geotag) inkl. Realweltkoordinate in einen raumbezogenen Datensatz wie ein Bild oder eine Website. Dies ist bei der räumlichen Einordnung der Information hilfreich.
 \item Bei der \textbf{Kartenkalibrierung} wird ein räumlicher Datensatz ohne Realkoordinatenbezug mithilfe einer Transformationsvorschrift im Bezug auf die Realwelt so orientiert, dass sich die Koordinaten des Bildes in Realweltkoordinaten einfach umrechnen lassen.
-\item Bei der \textbf{Rektfizierung} werden geometrische Verzerrungen in räumlichen Daten entzerrt, indem jedem Datum eine Realweltkoordinate zugeordnet wird.
+\item Bei der \textbf{Rektifizierung} werden geometrische Verzerrungen in räumlichen Daten entzerrt, indem jedem Datum eine Realweltkoordinate zugeordnet wird.
 \end{itemize}
 
 
 \subsubsection{Bestimmung einer Transformationsvorschrift}
 
-Um eine Transformationsgleichung zu finden, werden in der Regel Passpunkte verwendet. Die Passpunkte müssen im Datensatz eindeutig zu erkennen sein. Die Koordinaten der Passpunkte im Realweltkoordinatensystem sind entweder bekannt oder werden einem Referenzdatensatz entnommen. Bei Vektordaten werden die Koordinaten abgegriffen oder interpoliert. Bei Bilddaten werden die Bildkoordinaten der Passpunkte gemessen. Die Transformation sollte unter Berücksichtigung der Abbildungsgeometrie bestimmt werden. Bei Fotos ist somit die Zentralprojektion zu berücksichtigen, bei Karten der entsprechende Kartennetzentwurf. Das automatische Finden von Gemeinsamkeiten in digitalen Bildern und die Bestimmung der Transformation wird in der Bildverarbeitung Bildregistrierung genannt. Die Registrierung von Laserscanning-Punktwolken kann mit dem ICP-Algorithmus erfolgen.\footnote{https://de.wikipedia.org/wiki/Georeferenzierung}
+Um eine Transformationsgleichung zu finden, werden in der Regel Passpunkte verwendet. Passpunkte müssen im Datensatz eindeutig zu erkennen sein. Die Koordinaten der Passpunkte im Realweltkoordinatensystem sind entweder bekannt oder werden einem Referenzdatensatz entnommen. Bei Vorliegen von Vektordaten werden die Koordinaten abgegriffen oder interpoliert. Bei Bilddaten hingegen werden die Bildkoordinaten der Passpunkte gemessen. Die Transformation sollte unter Berücksichtigung der Abbildungsgeometrie bestimmt werden. Bei Fotos ist somit die Zentralprojektion zu berücksichtigen, bei Karten der entsprechende Kartennetzentwurf. Das automatische Finden von Gemeinsamkeiten in digitalen Bildern und die Bestimmung der Transformation wird in der Bildverarbeitung Bildregistrierung genannt. Die Registrierung von Laserscanning-Punktwolken kann mit dem ICP-Algorithmus durchgeführt werden.\footnote{https://de.wikipedia.org/wiki/Georeferenzierung}
 
 
 \section{Geoinformationssysteme}
 Ein Geoinformationssystem ist eine Software, mit welcher Geodaten erfasst, verwaltet, analysiert und ausgegeben werden können.
 
-Man unterscheidet bei der Abfrage von Daten unter folgenden verschiedenen Typen:
+Man unterscheidet bei der Abfrage von Daten zwischen folgenden Typen:
 \begin{itemize}
 \item Alphanumerische Daten (Attribute als Text oder Zahlen)
 \item Text-Dokumente 
@@ -245,19 +240,19 @@ Man unterscheidet bei der Abfrage von Daten unter folgenden verschiedenen Typen:
 \item Fotos, Scans, Satellitenbilder
 \end{itemize}
 
-Der Unterschied zu einer Datenbank ist, dass jedes Sachdatum einen expliziten Raumbezug hat, über welchen die Selektion erfolgt. In einer Datenbank erfolgen Zugriffe stattdessen über Schlüsselattribute. Eine weitere Stärke eines GIS ist die grafische Aufbereitung der Daten zur anschaulich-interaktiven Analyse.
+Der Unterschied zu einer Datenbank ist, dass jedes Sachdatum einen expliziten Raumbezug hat, über den die Selektion erfolgt. In einer Datenbank erfolgen Zugriffe stattdessen über Schlüsselattribute. Eine weitere Stärke von GIS ist die grafische Aufbereitung der Daten zur anschaulich-interaktiven Analyse.
 
-Beispiele für solche räumlichen Analysewerkzeuge sind Routenfindung, räumliche Suche. Ein implementiertes Kartografiesystem ermöglicht zudem das markieren von Punkten und Linien, färben von Flächen und die Anzeige und Überlagerung verschiedener Ebenen.
+Beispiele für solche räumlichen Analysewerkzeuge sind die Routenfindung und räumliche Suche. Ein Kartografiesystem ermöglicht zudem das Markieren von Punkten und Linien, Färben von Flächen und die Anzeige und Überlagerung verschiedener Ebenen.
 
 \subsection{Geoobjekte}
-Ein Geoobjekt ist ein tatsächlich auf der Erde vorhandenes Objekt, welches durch Geodaten eindeutig referenziert wurde. Man unterscheidet zwischen Gegenständen und Sachverhalten. Gegenstände sind konkrete, visuell wahrnehmbare Erscheinungen auf der Erdoberfläche. Sachverhalte dagegen sind nicht sofort visuell wahrnehmbar, sondern bezeichnen Beziehungen zwischen Gegenständen oder die Interaktion mit der Umwelt und Oberflächengestalt.
+Ein Geoobjekt ist ein tatsächlich auf der Erde vorhandenes Objekt, das durch Geodaten eindeutig referenziert wurde. Man unterscheidet zwischen Gegenständen und Sachverhalten. Gegenstände sind konkrete, visuell wahrnehmbare Erscheinungen auf der Erdoberfläche. Sachverhalte dagegen sind nicht visuell wahrnehmbar, sondern stehen für Beziehungen zwischen Gegenständen oder Interaktionen mit der Umwelt und Oberflächengestalt der Erde.
 Außerdem unterscheidet man zwischen verschiedenen Arten der Datenspeicherung:
 \begin{itemize}
 \item Flächenhafte Daten
 \item Linienhafte Daten
 \item Punkthafte Daten
 \end{itemize}
-Je nach Kartenmaßstab, Auflösungstyp und Speichertyp (digital/analog) werden Daten unterschiedlich repräsentiert. So wird beispielsweise ein flächenhafter quadratischer Gebäudekomplex (10*10 Meter) auf einem Satellitenfoto mit dem Maßstab 1:10.000 nur noch als Punkt wahrgenommen. Linienhafte Daten bieten sich vor allem bei Flüssen, Straßen, Wasser-Land-Grenzen, starken Flankensteigungen usw. an.
+Je nach Kartenmaßstab, Auflösungstyp und Speichertyp (digital/analog) werden Daten unterschiedlich repräsentiert. So wird beispielsweise ein flächenhafter quadratischer Gebäudekomplex ($10 \times 10$ Meter) auf einem Satellitenfoto mit dem Maßstab $1:10000$ nur noch als Punkt wahrgenommen. Linienhafte Daten bieten sich vor allem zur Speicherung von Flüssen, Straßen, Wasser-Land-Grenzen, starken Flankensteigungen usw. an.
 
 \subsubsection{Modellierung von Geoobjekten}
 Die vier informationstechnischen Dimensionen zur Modellierung von geografischen Informationssystemen sind:
@@ -267,11 +262,11 @@ Die vier informationstechnischen Dimensionen zur Modellierung von geografischen 
 \item Semantik (Bedeutung des Objekts im fachspezifischen Kontext, z.B. gut-schlecht, viel-wenig, groß-klein)
 \item Dynamik (Änderung des Objekts im zeitlichen Verlauf)
 \end{itemize}
-Jedes unikate Objekt gehört zu einer Objektklasse, in welcher es nach den oben genannten vier Kriterien beschrieben und mit anderen Objekten der Klasse verglichen wird. Jedes der Objekte besitzt einen eindeutigen Schlüssel zur Identifikation. Möglichkeiten zur Klassifizierung und Clustering von Geoobjekten werden in den folgenden Kapiteln vorgestellt.\newline
-Der Ort eines Geoobjektes kann auf folgende zwei verschiedene Arten beschrieben werden.
+Jedes unikate Objekt gehört zu einer Objektklasse, in der es nach den oben genannten vier Kriterien beschrieben und mit anderen Objekten der Klasse verglichen wird. Jedes der Objekte besitzt einen eindeutigen Schlüssel zur Identifikation. Möglichkeiten zur Klassifizierung und Gruppierung von Geoobjekten werden in den folgenden Kapiteln vorgestellt.\newline
+Der Ort eines Geoobjekts kann im Raster- oder Vektormodell beschrieben werden:
 
 \subsection{Rastermodell}
-Eine analoge topografische Karte oder Zeichnung digitalisiert und in quadratische Gitterzellen aufgeteilt, welche alle über die gleiche Semantik verfügen. Diese Semantik wird stellvertretend durch eine Matrix beschrieben, welche für jede Gitterzelle eine numerische Pixelwertinformation enthält.\footnote{https://de.wikipedia.org/wiki/Geoobjekt}
+Eine analoge topografische Karte oder Zeichnung digitalisiert und in quadratische Gitterzellen aufgeteilt, welche alle über die gleiche Semantik verfügen. Diese Semantik wird stellvertretend durch eine Matrix beschrieben, die für jede Gitterzelle eine numerische Pixelwertinformation enthält.\footnote{https://de.wikipedia.org/wiki/Geoobjekt}
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.5]{raster.jpg}
@@ -279,20 +274,20 @@ Eine analoge topografische Karte oder Zeichnung digitalisiert und in quadratisch
 \end{figure}
 \footnotetext{http://desktop.arcgis.com/de/arcmap/10.3/manage-data/raster-and-images/what-is-raster-data.htm}
 
-Diese Pixelinformationen repräsentieren Daten wie  Temperatur, Höhe, Vegetationsdichte, Landnutzung, Bodenbeschaffenheit. Rasterdaten werden in der Regel als Bilddatei gespeichert (BMP, GIF, JPEG).
+Pixelwerte repräsentieren Daten wie Temperatur, Höhe, Vegetationsdichte, Landnutzung und Bodenbeschaffenheit. Rasterdaten werden in der Regel als Bilddatei gespeichert (BMP, GIF, JPEG, PNG).
 \newline
-Die Rastergeometrie eignet sich gut zur Beschreibung flächiger, homogener Sachverhalte. Die einfache Struktur bietet viele Vorteile, aber auch Nachteile: \newline
-\textbf{Vorteile}
+Die Rastergeometrie eignet sich gut zur Beschreibung flächiger, homogener Sachverhalte. Die einfache Struktur bietet viele Vorteile, aber auch Nachteile. \newline
+\textbf{Vorteile:}
 \begin{itemize}
 \item Einfache Datenstruktur 
 \item Geeignet für räumliche und statistische Analyse
 \item Alles ist einheitlich speicherbar (Punkte, Linien, Polygone)
 \item Überlagerung von Ebenen sehr schnell und einfach
 \end{itemize}
-\textbf{Nachteile}
+\textbf{Nachteile:}
 \begin{itemize}
 \item Genauigkeitsverlust beim Scannen und Neustrukturieren
-\item Endliche Auflösung => räumliche Ungenauigkeit
+\item Endliche Auflösung $\Rightarrow$ räumliche Ungenauigkeit
 \item Pixelwerte haben keine Beziehung zueinander
 \item Hoher Speicheraufwand bei Hoher Auflösung, keine Kompression möglich.
 \end{itemize}
@@ -300,7 +295,7 @@ Die Rastergeometrie eignet sich gut zur Beschreibung flächiger, homogener Sachv
 \subsection{Vektormodell}
 Im Gegensatz zu Rasterdaten werden Vektordaten bei linien- und punkthaften Informationen eingesetzt, also Informationen, die sich nicht mit homogener Eigenschaft über die gesamte Karte verteilen. Man nennt solche Informationen auch Features. Beispiele hierfür sind Straßen, Staatsgrenzen, Gewässergrenzen, Höhenlinien, Flüsse, Bäume.
 \newline
-Eine Punkthafte Vektorinformation wird auch als Vertex bezeichnet. Dieser beschreibt eine Raumlage durch Angabe einer (x,y,z)-Koordinate und ein dazugehöriges Attribut, welches die Art des Punktes beschreibt, z.B. Baum oder Laterne:
+Eine punkthafte Vektorinformation wird auch als Vertex bezeichnet. Dieser beschreibt eine Raumlage durch Angabe einer (x,y,z)-Koordinate und ein dazugehöriges Attribut, das die Art des Punktes beschreibt (z.B. Baum oder Laterne):
 
 \begin{figure}[H]
 \centering
@@ -320,7 +315,7 @@ Punkteverläufe wie Straßen werden durch sogenannte Polylinien beschrieben. Die
 
 \footnotetext{https://docs.qgis.org/2.8/de/docs/gentle\_gis\_introduction/vector\_data.html}
 
-Wie auch bei Rasterdaten gibt es bei Vektordaten nicht nur Vorteile, sondern auch Nachteile.\footnote{http://romanharcke.de/geoinformationssysteme-geodaten-kapitel-4/}\newline
+Vektordaten haben wie die Rasterdaten sowohl Vorteile, als auch Nachteile.\footnote{http://romanharcke.de/geoinformationssysteme-geodaten-kapitel-4/}\newline
 \textbf{Vorteile:}
 \begin{itemize}
 \item Unendliche Linienauflösung und sehr hohe Genauigkeit
@@ -337,11 +332,11 @@ Wie auch bei Rasterdaten gibt es bei Vektordaten nicht nur Vorteile, sondern auc
 \item Hoher Rechenaufwand bei Verschneidungen
 \end{itemize}
 
-\subsection{Beispiele von Raster und Vektordaten}
-Geodaten müssen heutzutage nicht mehr selbständig erstellt werden. Es gibt eine Vielzahl an staatlichen und privaten Institutionen, welche Ihre Daten kostenlos bereitstellen. So lassen sich zahlreiche Inhalte im ESRI Shapefile Vektordateiformat finden, welches als Quasi-Standard für Desktop-GIS gilt.\footnote{\url{http://webhelp.esri.com/arcgisdesktop/9.3/index.cfm?TopicName=Geoprocessing\%20considerations\%20for\%20shapefile\%20output}}
-Der Datensatz \textit{Natural Earth}\footnote{http://www.naturalearthdata.com/} ist eine Abbildung der Erde im Maßstab 1:10 Millionen. Er ist sowohl als SHP-Vektordatei als auch als Tiff-Rasterbild verfügbar.
+\subsection{Beispiele für Raster und Vektordaten}
+Geodaten müssen heutzutage nicht mehr selbständig erstellt werden. Es gibt eine Vielzahl an staatlichen und privaten Institutionen, welche ihre Daten kostenlos bereitstellen. So lassen sich zahlreiche Inhalte im ESRI-Shapefile Vektordateiformat finden, das als Quasi-Standard für Desktop-GIS gilt.\footnote{\url{http://webhelp.esri.com/arcgisdesktop/9.3/index.cfm?TopicName=Geoprocessing\%20considerations\%20for\%20shapefile\%20output}}
+Der Datensatz \textit{Natural Earth}\footnote{http://www.naturalearthdata.com/} ist eine Abbildung der Erde im Maßstab $1:10$ Millionen. Er ist sowohl als SHP-Vektordatei als auch als Tiff-Rasterbild verfügbar.
 
-Ein ESRI Shapefile besteht aus mindestens drei Dateien zur Speicherung der Geometriedaten, Sachdaten und der Geometrieindizierung zur Verknüpfung von Geometrie und Sachdaten (.shp, .dbf, .shx). Die Geometrie eines Shapefile definiert sich aus nur 4 verschiedenen Formdatenstrukturen: Punkte, Linien, Flächen (Polygone) und Multipunkte.\footnote{http://www.esri.com/library/whitepapers/pdfs/shapefile.pdf}
+Ein ESRI-Shapefile besteht aus mindestens drei Dateien. Diese speichern Geometriedaten, Sachdaten und die Geometrieindizierung zur Verknüpfung von Geometrie und Sachdaten (.shp, .dbf, .shx). Die Geometrie eines Shapefile definiert sich aus nur vier verschiedenen Formdatenstrukturen: Punkte, Linien, Flächen (Polygone) und Multipunkte.\footnote{http://www.esri.com/library/whitepapers/pdfs/shapefile.pdf}
 
 \begin{figure}[H]
 \centering
@@ -349,7 +344,7 @@ Ein ESRI Shapefile besteht aus mindestens drei Dateien zur Speicherung der Geome
 \caption{.shp-Geometriedatei in dem Geoinformationssystem QGIS dargestellt \protect\footnotemark}
 \end{figure}
 \footnotetext{https://www.qgis.org/de/site/}
-Leider eignen sich Vektordaten nicht zur Klassifikation von Features mit Hilfe von Deep Learning wie z.B. Convolutional Neural Networks (CNN), sondern stellen viel mehr das Ergebnis einer Rasterbildanalyse dar. Aus diesem Grund beziehen sich folgende Kapitel im Kontext von Geodaten immer auf Rasterdaten und Bildausschnitte.
+Leider eignen sich Vektordaten nicht zur Klassifikation von Features mithilfe von z.B. Convolutional Neural Networks (CNN), sondern stellen vielmehr das Ergebnis einer Rasterbildanalyse dar. Aus diesem Grund beziehen sich folgende Kapitel im Kontext von Geodaten immer auf Rasterdaten und Bildausschnitte.
 \newline
 Das dem Datensatz zugehörige farbige Rasterbild inklusive Schummerung (räumliche Schattierung), Wasser und Flüssen sieht so aus:
 
@@ -724,14 +719,14 @@ Die Forschung der letzten Jahre hat gezeigt, dass weder ein reiner Datenansatz n
 \chapter{Clusteringverfahren}
 ~
 \section{Definition und Anwendungszweck}
-Ziel des Data Mining Prozesses ist es, Muster in Datenbanken zu erkennen und diese in Form von Wissen aufzubereiten. Im Falle des Clusterings werden Datenpunkte in Gruppen (Cluster) eingeteilt,so dass Daten mit ähnlichen Eigenschaften dem gleichen Cluster und Daten mit unterschiedlichen Eigenschaften verschiedenen Clustern zugeordnet werden. Im Bezug auf Geodaten wären zum Beispiel alle Punkte mit Farbwerten dunkelblau dem Cluster Wasser zugeordnet und alle Daten mit grüner Farbe dem Cluster Vegetation. Auf diese Weise lassen sich topologische Grenzen finden. Eine andere Möglichkeit bietet die gewichtete n-dimensionale Clusteranalyse. Sie ermöglicht die Zuordnung komplexer Daten zu komplexen Klassen. Wurde nach der numerischen Diskretisierung eines Objekts eine hohe Anzahl an Eigenschaften gefunden, so müssen Clusteringverfahren angewandt werden, welche unterschiedlich dichte Cluster unterschiedlichster Form erkennen können. Unter Umständen müssen die Daten mittels Hauptkomponentenanalyse auf Unterräume transformiert werden oder die Relevanz und Unabhängigkeit einzelner Attribute mittels Entropieanalyse bestimmt werden. Ein Beispiel hierfür ist die Analyse von Spektralklassen des von Geoobjekten reflektierten Lichts. Da das Reflektionsverhalten vieler Objekte für jeden Wellenlängenbereich characteristisch ist, kann mittels 7D-Clustering (dem Clustering nach Einteilung der Wellenlängen in 7 Bereiche, auch Spektralkanäle genannt) bestimmt werden, um welches Objekt es sich handelt, oder wie eine Landfläche genutzt wird. \newpage
+Ziel des Data Mining Prozesses ist es, Muster in Datenbanken zu erkennen und diese in Form von Wissen aufzubereiten. Im Falle des Clusterings werden Datenpunkte in Gruppen (Cluster) eingeteilt, sodass Daten mit ähnlichen Eigenschaften dem gleichen Cluster und Daten mit unterschiedlichen Eigenschaften verschiedenen Clustern zugeordnet werden. Im Bezug auf Geodaten wären zum Beispiel alle Punkte mit Farbwerten dunkelblau dem Cluster Wasser zugeordnet und alle Daten mit grüner Farbe dem Cluster Vegetation. Auf diese Weise lassen sich topologische Grenzen finden. Eine andere Möglichkeit bietet die gewichtete n-dimensionale Clusteranalyse. Sie ermöglicht die Zuordnung komplexer Daten zu komplexen Klassen. Wurde nach der numerischen Diskretisierung eines Objekts eine hohe Anzahl an Eigenschaften gefunden, so müssen Clusteringverfahren angewandt werden, die unterschiedlich dichte Cluster unterschiedlichster Form erkennen können. Unter Umständen müssen die Daten mittels Hauptkomponentenanalyse auf Unterräume transformiert werden oder die Relevanz und Unabhängigkeit einzelner Attribute mittels Entropieanalyse bestimmt werden. Ein Beispiel hierfür ist die Analyse von Spektralklassen des von Geoobjekten reflektierten Lichts. Da das Reflektionsverhalten vieler Objekte für jeden Wellenlängenbereich charakteristisch ist, kann mittels 7D-Clustering (dem Clustering nach Einteilung der Wellenlängen in 7 Bereiche, auch Spektralkanäle genannt) bestimmt werden, um welches Objekt es sich handelt, oder wie eine Landfläche genutzt wird. \newpage
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.55]{spektral.jpg}
 \caption{Landsat Spektralklassen \protect\footnotemark}
 \end{figure}
 \footnotetext{\url{https://player.slideplayer.org/3/1324211}}
-Zu neuronalen Netzwerken, deren Funktionsweise nach dem Trainingsprozess nicht mehr mathematisch nachvollzogen werden kann, bieten Clusteringverfahren eine konkrete, statistische Alternative. Wird ein neuronales Netzwerk hinsichtlich einer Aufgabe angepasst, so ist eine Verbesserung nur durch Ausprobieren verschiedener Architekturen und Kernels verifizierbar. Optimierungen an Clusteringverfahren können jedoch meist als Anpassung einer Optimierungsfunktion formal mathematisch nachvollzogen werden.
+Zu neuronalen Netzwerken, deren Funktionsweise nach dem Trainingsprozess nicht mehr mathematisch nachvollzogen werden kann, bieten Clusteringverfahren eine konkrete, statistische Alternative. Wird ein neuronales Netzwerk hinsichtlich einer Aufgabe angepasst, so ist eine Verbesserung nur über das Ausprobieren verschiedener Architekturen und Parameter verifizierbar. Optimierungen an Clusteringverfahren können jedoch meist als Anpassung einer Optimierungsfunktion formal mathematisch nachvollzogen werden.
 
 \begin{figure}[H]
 \centering
@@ -739,16 +734,16 @@ Zu neuronalen Netzwerken, deren Funktionsweise nach dem Trainingsprozess nicht m
 \caption{Geclusterter Datensatz: Jedes Datum (blaue Punkte) hat 3 Attribute. Jedes Kreuz ist das Zentrum eines gefundenen Clusters. Die optimale Clusteranzahl wurde mithilfe von Cluster Validity Indizes bestimmt.}\label{cluster}
 \end{figure}
 
-Man unterscheidet zwischen harten (crisp) und weichen (fuzzy) Clusteringverfahren. Harte Methoden ordnen jedes Datum einer Datenbank einem Cluster eindeutig zu. Häufig kollidiert dieser Ansatz mit dem intuitiven Verständnis eines Menschen. Beispielsweise kann nicht gesagt werden, dass ein 49-jähriger Mensch jung ist und 50-Jähriger alt. Der Übergang von jung nach alt ist fließend. Aus diesem Grund gibt es weiche Methoden, die jedem Datum einen Grad der Zuordnung zu einem Cluster geben. Beispielsweise ist ein 70-Jähriger zu $80\%$ alt und zu $20\%$ jung. Der Grad der Zuordnung erhält jedes Datum also für jeden Cluster. Die Summer dieser Zuordnungsgrade beträgt meistens $100\%$.
+Man unterscheidet zwischen harten (crisp) und weichen (fuzzy) Clusteringverfahren. Harte Methoden ordnen jedes Datum einer Datenbank einem Cluster eindeutig zu. Häufig kollidiert dieser Ansatz mit dem intuitiven Verständnis eines Menschen. Beispielsweise kann nicht gesagt werden, dass ein 49-jähriger Mensch jung ist und ein 50-Jähriger alt. Der Übergang von jung nach alt ist fließend. Aus diesem Grund gibt es weiche Methoden, die für jedes Datum einen Grad der Zuordnung zu jedem Cluster errechnen. Beispielsweise ist ein 70-Jähriger zu $80\%$ alt und zu $20\%$ jung. Die Summe der Zuordnungsgrade beträgt meistens $100\%$.
 \\
 \subsection{Die fünf Hauptschritte des Datenclustering}
-Der Prozess des Clusterings ist wie das Data Mining in Hauptschritte unterteilt\cite{csteps}. Sie lauten:
+Der Prozess des Clusterings ist wie beim Data Mining in Hauptschritte unterteilt\cite{csteps}. Sie lauten:
 \begin{itemize}
-\item \textbf{Feature Extraction} Seien $n$ Objekte ${o_1, o_2, \dots, o_n}$ gegeben. Im ersten Schritt werden die relevanten Features extrahiert, welche die Menge der Objekte am besten beschreiben. Formal lassen sich die Objekte durch die Menge folgender Feature-Vektoren beschreiben: $$S =  p_1, p_2, p_3, \dots, p_n  \forall p_i \in R^m$$
+\item \textbf{Feature Extraction} Seien $n$ Objekte ${o_1, o_2, \dots, o_n}$ gegeben. Im ersten Schritt werden diejenigen Features extrahiert, welche die Menge der Objekte am besten beschreiben. Formal lassen sich die Objekte durch die Menge folgender Feature-Vektoren ausdrücken: $$S =  p_1, p_2, p_3, \dots, p_n  \forall p_i \in R^m$$
 \item \textbf{Aufstellen der Ähnlichkeitsmatrix} Die Ähnlichkeitsmatrix $P(S)$ der Dimension $C \times n$ repräsentiert ein Clustering in $C$-viele Cluster, wobei jeder Eintrag $u_{ij}, \forall i=1, \dots, n$ und $j=1, \dots, C$ dem Grad der Zugehörigkeit des $i$-ten Objekts zum $j$-ten Cluster entspricht.
-\item \textbf{Berechnung der Gruppierungen} Anwenden eines harten oder weichen Clusteringalgorithmus
+\item \textbf{Berechnung der Gruppierungen} Anwenden eines harten oder weichen Clusteringalgorithmus.
 \item \textbf{Datenabstraktion} Finden einer anschaulichen Repräsentation der Clusteringergebnisse, meistens auf Basis der Clusterzentroide.
-\item \textbf{Evaluation der Ergebnisse} Wie gut ist das Clustering im Vergleich zu anderen Algorithmen? Hat der Algorithmus Cluster gefunden, wo gar keine sind? Wie ist die Clustertendenz zu bewerten, d.h. gibt es bevorzugte Cluster? Schneidet das Clustering für andere Werte $C$  besser ab?
+\item \textbf{Evaluation der Ergebnisse} Wie gut ist das Clustering im Vergleich zu anderen Algorithmen? Hat der Algorithmus Cluster gefunden, die gar nicht existieren? Wie ist die Clustertendenz zu bewerten, d.h. gibt es bevorzugte oder benachteiligte Cluster? Schneidet das Clustering für andere Werte $C$ besser ab?
 \end{itemize}
 
 \section{Crisp Clustering}
@@ -756,15 +751,15 @@ Der Prozess des Clusterings ist wie das Data Mining in Hauptschritte unterteilt\
 \subsection{Partitionierende Verfahren und ihre Nachteile}
 Einem partitionierenden Clusteringalgorithmus wird die feste Anzahl $k$ an Clustern und die Kostenfunktion übergeben, welche für eine optimale Zuordnung einen kleinen Wert zurück gibt.
 \subsubsection{Clustering durch Varianzminimierung}
-Das einfachste Verfahren basiert auf der Idee, dass die Zuordnung genau dann optimal ist, wenn die Summe der Abstände zwischen Datenpunkten und ihren sogenannten Clusterrepräsentanten möglichst klein wird. Ein Clusterrepräsentant $\mu_{C_i}$ eines Clusters $C_i$ ist der Mittelwert aller Punkte $p = (x_1,\dots,x_d)$ (Dimensionalität $d$ ist die Anzahl der Attribute von $p$), die $C_i$ zugeordnet wurden. Zu Beginn des Algorithmus werden die Clusterprototypen (initiale Repräsentanten) entweder zufällig initialisiert, oder auf Basis einer Wahrscheinlichkeitsfunktion gewählt, so dass sie möglichst weit voneinander entfernt sind (k-means++\cite{kmplus}). Dies reduziert die Anzahl der Iterationen bei Optimierung der Kostenfunktion. Anschließend wird jeder Punkt dem Cluster zugeordnet, dessen Repräsentant den kleinsten Abstand zu diesem Punkt hat $(1)$. Auf Basis dieser Zuordnung werden die Repräsentanten erneut berechnet $(2)$. Dabei wird die Kostenfunktion für das gesamte Clustering berücksichtigt:
+Das einfachste Verfahren basiert auf der Idee, dass die Zuordnung genau dann optimal ist, wenn die Summe der Abstände zwischen Datenpunkten und ihren sogenannten Clusterrepräsentanten möglichst klein wird. Ein Clusterrepräsentant $\mu_{C_i}$ eines Clusters $C_i$ ist der Mittelwert aller Punkte $p = (x_1,\dots,x_d)$ (Dimensionalität $d$ ist die Anzahl der Attribute von $p$), die $C_i$ zugeordnet wurden. Zu Beginn des Algorithmus werden die Clusterprototypen (initiale Repräsentanten) entweder zufällig initialisiert oder auf Basis einer Wahrscheinlichkeitsfunktion so gewählt, dass sie möglichst weit voneinander entfernt sind (k-means++\cite{kmplus}). Dies reduziert die Anzahl der Iterationen bei Optimierung der Kostenfunktion. Anschließend wird jeder Punkt dem Cluster zugeordnet, dessen Repräsentant den kleinsten Abstand zu diesem Punkt hat $(1)$. Auf Basis dieser Zuordnung werden die Repräsentanten erneut berechnet $(2)$. Dabei wird die Kostenfunktion für das gesamte Clustering berücksichtigt:
 
 $$\sum_{i=1}^{k}\sum_{p \in C_i}^{} dist(p,\mu_{C_i})^2$$
 
-Die Distanzfunktion hängt von der Dimensionalität des Datensatzes ab. Die Neuberechnung von Zuordnung $(1)$ und Repräsentanten $(2)$ wird solange wiederholt, bis keine ausreichende Änderung mehr auftritt.
+Die Distanzfunktion hängt von der Dimensionalität des Datensatzes ab. Die Neuberechnung von Zuordnung $(1)$ und Repräsentanten $(2)$ wird solange wiederholt, bis keine signifikante Änderung mehr auftritt.
 
 \subsubsection{k-means}
 
-Eine beschleunigte Version der Varianzminimierung ist der \textbf{k-means-Algorithmus} \cite{forgy}. Wenn ein Datenpunkt $p$ vom Cluster $C_1$ seine Zugehörigkeit an den Cluster $C_2$ verliert, dann wird nicht auf die restlichen Punkte bei der Neuzuordnung gewartet. Stattdessen werden die Clusterzentroide der betreffenden Cluster $C_1$ und $C_2$ wie folgt sofort aktualisiert:
+Eine beschleunigte Version der Varianzminimierung ist der \textbf{k-means-Algorithmus} \cite{forgy}. Wenn ein Datenpunkt $p$ von Cluster $C_1$ seine Zugehörigkeit an den Cluster $C_2$ verliert, dann wird nicht auf die restlichen Punkte bei der Neuzuordnung gewartet. Stattdessen werden die Clusterzentroide der betreffenden Cluster $C_1$ und $C_2$ wie folgt sofort aktualisiert:
 $$\mu_j^{' C_1} = \frac{1}{|C_1|-1}\cdot(|C_1|\cdot \mu_j^{C_1} - x_j^p)$$ und $$\mu_j^{' C_2} = \frac{1}{|C_1|+1}\cdot(|C_2|\cdot \mu_j^{C_2} + x_j^p)$$ 
 
 \begin{figure}[H]
@@ -776,7 +771,7 @@ $$\mu_j^{' C_1} = \frac{1}{|C_1|-1}\cdot(|C_1|\cdot \mu_j^{C_1} - x_j^p)$$ und $
 Leider erkennt der k-means-Algorithmus weder Cluster unterschiedlicher Dichte, noch unterschiedlicher Form. Auch werden sich überlappende Cluster nicht erkannt. Zudem ist die Qualität des Endergebnisses stark von der initialen Wahl der Clusterprototypen abhängig.
 
 \subsubsection{EM-Algorithmus}
-Ein anderer Ansatz der alternierenden Optimierung ist die Erwartungsmaximierung \cite{emalg}. Ihr Vorteil ist, dass auch unterschiedlich geformte und dichte Cluster berücksichtigt werden können. Dabei wird jeder Cluster durch eine Wahrscheinlichkeitsverteilung beschrieben, welche aus der Erzeugung aller Datenpunkte eines Clusters $C$ mittels Kovarianzmatrix $\sum_C$ der Dimension $d \times d$ resultiert. Wie bei der Varianzminimierung bezeichnet $\mu_C$ auch hier den Mittelpunkt aller Daten, die dem Cluster C zugeordnet wurden. Die Wahrscheinlichkeit, mit der bei einer einzigen Normalverteilung $C$ das Datum $x$ erzeugt wurde, beträgt:
+Ein anderer Ansatz der alternierenden Optimierung ist die Erwartungsmaximierung \cite{emalg}. Ihr Vorteil ist, dass auch unterschiedlich geformte und dichte Cluster berücksichtigt werden können. Dabei wird jeder Cluster durch eine Wahrscheinlichkeitsverteilung beschrieben, welche aus der Erzeugung aller Datenpunkte eines Clusters $C$ mittels Kovarianzmatrix $\sum_C$ der Dimension $d \times d$ resultiert. Wie bei der Varianzminimierung bezeichnet $\mu_C$ auch hier den Mittelpunkt aller Daten, die dem Cluster $C$ zugeordnet wurden. Die Wahrscheinlichkeit, mit der bei einer einzigen Normalverteilung $C$ das Datum $x$ erzeugt wurde, beträgt:
 
 $$P(x|C) = \frac{1}{\sqrt{(2\cdot \pi)^d \cdot |\sum_C|}} \cdot e^{-\frac{1}{2}(x - \mu_C)^{\top} \cdot \left(\sum_C\right)^{-1}(x - \mu_C)}$$ 
 
@@ -784,15 +779,15 @@ Da es mehrere Cluster gibt und alle den Punkt $x$ mit einer unterschiedlichen Wa
 Wobei $W_i$ der relative Anteil der Datenpunkte ist, die zu Cluster $C_i$ gehören, was der Gesamtwahrscheinlichkeit des Clusters $C_i$ entspricht. Der Satz von Bayes ($P(A|B) = \frac{P(B|A)\cdot P(A)}{P(B)}$) ermöglicht nun die Berechnung der Wahrscheinlichkeit, mit der $x$ zum Cluster $C_i$ gehört:
 $$P(C_i|x) = W_i \cdot \frac{P(x|C_i)}{P(x)}$$
 
-Durch abwechselnde Berechnung von Zugehörigkeiten $P(C_i|x)$ und Schätzung neuer Verteilungsparameter $\mu_C$, $\sum_C$ und $W_i$ kann das Gütemaß des Clusterings maximiert werden. Es lautet:
+Durch die alternierende Berechnung von Zugehörigkeiten $P(C_i|x)$ und Schätzung neuer Verteilungsparameter $\mu_C$, $\sum_C$ und $W_i$ kann das Gütemaß des Clusterings maximiert werden. Es lautet:
 $$E(M) = log\left(\prod_{x \in D} P(x)\right)$$
 
 Wobei $M$ die Menge aller Cluster ist: $M = \{C_1, \dots, C_k\}$. Die Optimierung wird abgebrochen, wenn $E(M)-E(M')<\epsilon$, das Gütemaß also nicht mehr in ausreichendem Maße kleiner wird.
 
 \subsection{Silhouettenkoeffizient - Wahl der Clusteranzahl}
 Beide vorgestellten Varianten haben die Eigenschaft, das Gütemaß für größere Werte des Parameters $k$ immer weiter zu verbessern. Das Optimum wird erreicht, wenn jedes Datenobjekt genau einen Cluster darstellt, dessen Repräsentant das Datum selbst ist. Um dies zu vermeiden, braucht es ein Gütemaß, welches das Clustering unabhängig von der gewählten Clusteranzahl bewertet. Dieses Gütemaß ist der Silhouettenkoeffizient \cite{silh}.\\
-Sei $dist(o,C_i)$ der Abstand eines Punktes $o$ von Cluster $C_i$, also der gemittelte Abstand zwischen $o$ und allen Punkten im Cluster $C_i$. Sei $a(o)$ der Abstand von o zum Cluster, dem $o$ zugeordnet ist und $b(o)$ der Abstand zwischen $o$ und dem nächstgelegenen Cluster (nicht der Cluster, der in $a(o)$ betrachtet wird!).
-Dann ist die Silhouette eines Objekts $o$o:
+Sei $dist(o,C_i)$ der Abstand eines Punktes $o$ von Cluster $C_i$, also der gemittelte Abstand zwischen $o$ und allen Punkten im Cluster $C_i$. Sei $a(o)$ der Abstand von $o$ zum Cluster, dem $o$ zugeordnet ist und $b(o)$ der Abstand zwischen $o$ und dem nächstgelegenen Cluster (nicht der Cluster, der in $a(o)$ betrachtet wird).
+Dann ist die Silhouette eines Objekts $o$:
 \begin{equation}
    s(o) =
    \begin{cases}
@@ -803,23 +798,24 @@ Dann ist die Silhouette eines Objekts $o$o:
 
 Ist der Wert $s(o) = 1$, dann wurde $o$ seinem Cluster korrekt zugeordnet, ist $s(o) = -1$, dann ist die Zuordnung sehr schlecht.
 
-Der Silhouettenkoeffizient ist dann die durchschnittliche Silhouette aller Datenobjekte aller Cluster des Clusterings $C_M = \{C_1, \dots, C_k\}$:
+Der Silhouettenkoeffizient ist dann die durchschnittliche Silhouette aller Datenobjekte aller Cluster im Clustering $C_M = \{C_1, \dots, C_k\}$:
 $$s(C_M) = \frac{\sum\limits_{C \in C_M} \sum\limits_{o \in C} s(o)} {|O|}$$
 
-Der Koeffizient nimmt Werte zwischen $0$ und $1$ an, wobei Werte über 0.75 darauf hindeuten, dass eine sehr gute Zuordnung gefunden wurde. Werte unter 0.25 deuten auf ein unbrauchbares Clustering hin.
+Der Koeffizient nimmt Werte zwischen $0$ und $1$ an, wobei Werte über $0.75$ darauf hindeuten, dass eine sehr gute Zuordnung gefunden wurde. Werte unter $0.25$ deuten auf ein unbrauchbares Clustering hin.
 
-Die optimale Clusteranzahl $k$ kann jetzt bestimmt werden, indem der Silhouettenkoeffizient für verschiedene Clusterings $k = 2, \dots, n-1$ berechnet wird, und dann der Wert $k$ ausgewählt wird, für den der Koeffizient den höchsten Wert hat.
+Die optimale Clusteranzahl $k$ kann jetzt bestimmt werden, indem der Silhouettenkoeffizient für verschiedene Clusterings $k = 2, \dots, n-1$ berechnet wird und dann der Wert $k$ ausgewählt wird, für den der Koeffizient den höchsten Wert hat.
 
 
 \subsection{Dichtebasiertes Clustering (OPTICS)}
 Einer der bedeutendsten Clusteringalgorithmen ist das dichtebasierte DBSCAN-Verfahren. Es ist neben seiner Abwandlungen und Optimierungen (OPTICS und HDBSCAN) in vielen Geoinformationssystemen, wie z.B. arcGIS implementiert\footnote{http://pro.arcgis.com/de/pro-app/tool-reference/spatial-statistics/densitybasedclustering.htm}. 
 
-DBSCAN nimmt an, dass Cluster Punktregionen mit höherer Dichte sind, die durch Regionen mit geringerer Dichte (Noise) voneinander getrennt werden. Es kann ausschließlich Cluster desselben Dichteniveaus erkennen. Seine Optimierung OPTICS, welches als hierarchisches dichtebasiertes Clusteringverfahren zählt, kann dagegen auch unterschiedlich dichte Cluster und Subcluster erkennen.
+DBSCAN nimmt an, dass Cluster Punktregionen mit höherer Dichte sind, die durch Regionen mit geringerer Dichte (Noise) voneinander getrennt werden. Es kann ausschließlich Cluster desselben Dichteniveaus erkennen. Seine Optimierung OPTICS, welches zu den hierarchischen, dichtebasierten Clusteringverfahren gehört, kann dagegen auch unterschiedlich dichte Cluster und Subcluster erkennen.
 
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.35]{dbscanprob.jpg}
-\caption{Probleme von DBSCAN bei Erkennung von Clustern mit unterschiedlicher Dichte}\label{cluster}
+\caption{Probleme von DBSCAN bei Erkennung von Clustern mit unterschiedlicher Dichte}
+\label{dbscan_problems}
 \end{figure}
 
 \subsubsection{Erreichbarkeitseigenschaften \cite{dbscan}}
@@ -852,7 +848,7 @@ Zwei Objekte $p$ und $q$ sind \textbf{dichte-verbunden}, wenn es einen gemeinsam
 \includegraphics[width=\linewidth]{dichteverbunden.jpg}
 \end{minipage}
 \\~\\
-Im Folgenden beschränke ich mich auf die hierarchische Variante des DBSCAN-Algorithmus, da Sie in der Praxis besonders auf Geodatensätzen bessere Ergebnisse erzielt und das Problem aus Abbildung 4.4 löst. Gegenüber der Grundvariante ist OPTICS allerdings rechenintensiver.
+Im Folgenden beschränke ich mich auf die hierarchische Variante des DBSCAN-Algorithmus, da sie in der Praxis besonders auf Geodatensätzen bessere Ergebnisse erzielt und das Problem aus Abbildung \ref{dbscan_problems} löst. Gegenüber der Grundvariante ist OPTICS allerdings rechenintensiver.
 
 \subsubsection{Erweiterte Grundbegriffe}~
 \begin{minipage}{0.50\textwidth}\raggedright
@@ -876,7 +872,7 @@ Der OPTICS(Ordering Points To Identify the Clustering Structure)-Algorithmus \ci
 
 \subsubsection{OPTICS-Algorithmus}
 
-Die äußere Schleife iteriert über jedes Objekt der Datenmenge $D$, welches noch nicht als Bearbeitet markiert wurde und ruft ExpandClusterOrder auf. Die Öffnung und Schließung des OrderedFiles dient dem Erstellen des Erreichbarkeitsdiagramms.
+Die äußere Schleife betrachtet jedes Objekt der Datenmenge $D$, welches noch nicht als bearbeitet markiert wurde und ruft \textit{ExpandClusterOrder} auf. Die Datei \textit{OrderedFiles} codiert das Erreichbarkeitsdiagramm.
 \begin{minipage}{\linewidth} %Vermeidung von Seitenumbruch! 
 \begin{lstlisting}[frame=single,mathescape=true]
 OPTICS(Objektmenge D, Real $\epsilon$, Integer MinPts, OutputFile OrderedFile)
@@ -890,9 +886,8 @@ OrderedFile.close();
 \end{minipage}
 
 
-\textit{ExpandClusterOrder} ist der eigentliche Algorithmus. Er bestimmt für den aktuell betrachteten Datenpunkt $O$ die $\epsilon$-Nachbarschaft und Kerndistanz, markiert $O$ als bearbeitet und fügt es dem Erreichbarkeitsdiagramm hinzu. Die zuvor definierte Undefinierteit der Erreichbarkeit des ersten Punktes im \textit{ExpandClusterOrder} wird als maximaler Wert (z.B. $\infty$)interpretiert.
-Wenn $O$ ein Kernobjekt ist, wird $update(Nachbarn, O)$ aufgerufen. Das bedeutet, dass auf der sogenannten Seeds-Liste, einer Pufferdatei, in welcher die Nachbarn des Zentrumsobjekt für Ihre Abarbeitung vorsortiert werden, operiert wird. Alle $\epsilon$-Nachbarn von $O$ werden dieser Liste hinzugefügt, sofern sie noch nicht enthalten sind und aufsteigend nach ihrer Erreichbarkeitsdistanz zu $O$ sortiert. Ist ein Nachbar schon enthalten, so wird sein Erreichbarkeitswert aktualisiert, wenn die neue Erreichbarkeitsdistanz kleiner ist als die Vorherige.
-Anschließend wird über eine innere Schleife iteriert. Hier werden alle Objekte der Pufferdatei ähnlich wie das Zentrumsobjekt abgearbeitet, bis kein Element mehr übrig ist. Wird \textit{ExpandClusterOrder} verlassen, kann kein weiteres Objekt dem aktuellen Cluster zugeordnet werden und der Algorithmus wird mit einem zufälligen anderen Objekt fortgesetzt, das noch nicht bearbeitet wurde. Anschließend wird auch dessen Cluster expandiert.
+\textit{ExpandClusterOrder} ist der eigentliche Algorithmus. Er bestimmt für den aktuell betrachteten Datenpunkt $O$ die $\epsilon$-Nachbarschaft und Kerndistanz, markiert ihn als bearbeitet und fügt ihn dem Erreichbarkeitsdiagramm hinzu. Die zuvor definierte Undefiniertheit der Erreichbarkeit des ersten Punktes im \textit{ExpandClusterOrder} wird als maximaler Wert (z.B. $\infty$) interpretiert. Wenn $O$ ein Kernobjekt ist, wird $update(Nachbarn, O)$ aufgerufen. Das bedeutet, dass in der Pufferdatei \textit{OrderSeeds}, in welcher die Nachbarn des Zentrumsobjekt für ihre Abarbeitung vorsortiert werden, operiert wird. Alle $\epsilon$-Nachbarn von $O$ werden dieser Liste hinzugefügt, sofern sie noch nicht enthalten sind und aufsteigend nach ihrer Erreichbarkeitsdistanz zu $O$ sortiert. Ist ein Nachbar schon enthalten, so wird sein Erreichbarkeitswert aktualisiert, wenn die neue Erreichbarkeitsdistanz kleiner ist als die Vorherige.
+Anschließend wird eine innere Schleife ausgeführt. In dieser werden alle Objekte der Pufferdatei ähnlich wie das Zentrumsobjekt abgearbeitet, bis kein Element mehr übrig ist. Wird \textit{ExpandClusterOrder} verlassen, kann kein weiteres Objekt dem aktuellen Cluster zugeordnet werden und der Algorithmus wird mit einem zufälligen anderen Objekt fortgesetzt, das noch nicht bearbeitet wurde. Anschließend wird auch dessen Cluster expandiert.
 
 \begin{minipage}{\linewidth}
 \begin{lstlisting}[frame=single,mathescape=true]
@@ -933,14 +928,14 @@ OrderSeeds :: update(Nachbarn, ZentrumsObjekt):
 \end{lstlisting}
 \end{minipage}
 \\~\\
-Es folgt eine Erklärung des Algorithmus in Form eines Beispiels:
+Folgendes Beispiel soll den Ablauf des Algorithmus veranschaulichen:
 
 Sei $\epsilon = 44$ und $minPts = 3$. Die betrachtete Datenbank hat 16 zweidimensionale Punkte (von A - H). Zu Beginn sind alle Objekte unbearbeitet und das Erreichbarkeitsdiagramm ist leer. 
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.15]{opt1.jpg}
 \end{figure}
-Sei $A$ der erste Punkt. Die Erreichbarkeitsdistanz ist somit undefiniert. Die Kerndistanz ist definiert, da innerhalb des Radius $44$ die $minPts = 3$ Punkte $A$, $B$ und $I$ liegen. Die Kerndistanz von $A$ ist die Distanz zum am weitesten entfernten Punkte in der $\epsilon$-Nachbarschaft, also $40$. Jetzt wird der Punkt $A$ dem Erreichbarkeitsdiagramm mit dem Wert $\infty$ hinzugefügt und als bearbeitet markiert. Anschließend werden alle $\epsilon$-Nachbarn von $A$ inklusive ihrer Erreichbarkeitsdistanzen der Seeds-Liste hinzugefügt (Zeile 9, \textit{ExpandClusterOrder} erreicht).
+Sei $A$ der erste Punkt. Die Erreichbarkeitsdistanz ist somit undefiniert. Die Kerndistanz ist definiert, da innerhalb des Radius $44$ die $minPts = 3$ Punkte $A$, $B$ und $I$ liegen. Die Kerndistanz von $A$ ist die Distanz zum am weitesten entfernten Punkt in der $\epsilon$-Nachbarschaft, also $40$. Jetzt wird der Punkt $A$ dem Erreichbarkeitsdiagramm mit dem Wert $\infty$ hinzugefügt und als bearbeitet markiert. Anschließend werden alle $\epsilon$-Nachbarn von $A$ inklusive ihrer Erreichbarkeitsdistanzen der Seeds-Liste hinzugefügt (Zeile 9, \textit{ExpandClusterOrder} erreicht).
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.15]{opt2.jpg}
@@ -956,7 +951,7 @@ Das nächste Objekt der Seeds-Liste ist der Punkt $I$. Auch dieser ist wieder ei
 \includegraphics[scale=0.15]{opt4.jpg}
 \end{figure}
 
-Der Algorithmus setzt sich fort, bis ein Objekt bearbeitet wurde, für welches keine weiteren unbearbeiteten $\epsilon$-Nachbarn hinzugefügt werden konnte. In diesem Fall kommt es zu einem Peak im Erreichbarkeitsdiagramm, welcher den Beginn eines Subclusters kennzeichnet. Wird die Seeds-Liste leer und muss die äußere Schleife einen neuen zufälligen Startpunkt auswählen, beginnt ein neuer Cluster. 
+Der Algorithmus setzt sich fort, bis ein Objekt bearbeitet wurde, für das kein weiterer unbearbeiteter $\epsilon$-Nachbar hinzugefügt werden konnte. In diesem Fall kommt es zu einem Peak im Erreichbarkeitsdiagramm, welcher den Beginn eines Subclusters kennzeichnet. Wird die Seeds-Liste leer und muss die äußere Schleife einen neuen zufälligen Startpunkt auswählen, beginnt ein neuer Cluster. 
 In diesem Fall jedoch wird die innere Schleife fortgesetzt, da das Objekt $C$ noch in der Seeds-Liste steht.
 \begin{figure}[H]
 \centering
@@ -979,27 +974,26 @@ Im Diagramm können nun Cluster und Subcluster verschiedener Dichte, also versch
 \end{figure}
 
 \subsubsection{Wahl der Parameter $\epsilon$ und $minPts$}
-Die Wahl der Parameter $\epsilon$ und $minPts$ sollte so erfolgen, dass die Cluster im Diagramm vertikal zentriert sind. Es dürfen also nur wenige Erreichbarkeitsdistanzen $\infty$ sein. Außerdem darf die Varianz der Erreichbarkeitsdistanzen zwischen zwei benachbarten Punkten nicht zu groß werden. Um dies zu garantieren, wird $\epsilon$ entweder so gewählt, dass die $minPts$-Eigenschaft bezüglich einer kleinen Punktestrichprobe immer erfüllt ist oder es wird die durchschnittliche $minPts$-Distanz berechnet. Es wird also diejenige $\epsilon$-Distanz gewählt, welche im Durchschnitt von allen Punkten aus $minPts$-viele Punkte einschließt.
-Der Wert für $minPts$ muss in Abhängigkeit der Größe des Datensatzes gewählt werden. Je feiner die Auflösung der Datenbank, desto größer muss der Wert sein.
+Die Wahl der Parameter $\epsilon$ und $minPts$ sollte so erfolgen, dass die Cluster im Diagramm vertikal zentriert sind. Es dürfen also nur wenige Erreichbarkeitsdistanzen $\infty$ sein. Außerdem darf die Varianz der Erreichbarkeitsdistanzen zwischen zwei benachbarten Punkten nicht zu groß werden. Um dies zu garantieren, wird $\epsilon$ entweder so gewählt, dass die $minPts$-Eigenschaft bezüglich einer kleinen Punktestichprobe immer erfüllt ist oder es wird die durchschnittliche $minPts$-Distanz berechnet. Es wird also diejenige $\epsilon$-Distanz gewählt, die im Durchschnitt von allen Punkten aus $minPts$-viele Punkte einschließt. Der Wert für $minPts$ muss in Abhängigkeit der Größe des Datensatzes gewählt werden. Je feiner die Auflösung der Datenbank, desto größer muss der Wert sein.
 
 \subsubsection{Anwendungsgebiete}
-Die Werkzeugreferenz von \textbf{ArcGIS Pro}\footnote{\url{https://pro.arcgis.com/de/pro-app/tool-reference/spatial-statistics/how-density-based-clustering-works.htm}} gibt folgende Anwendungsszenarien für das Werkzeug \textit{Dichte-basierte Cluster-Bildung} an:
+Die Werkzeugreferenz von \textbf{ArcGIS Pro}\footnote{\url{https://pro.arcgis.com/de/pro-app/tool-reference/spatial-statistics/how-density-based-clustering-works.htm}} gibt folgende Anwendungsszenarien für das Werkzeug \textit{Dichte-basierte Clusterbildung} an:
 
 \begin{itemize}
-\item Clustering von Rohrbrüchen und Rissen städtischer Wasserversorgungssysteme kann auf bevorstehende Probleme hinweisen. Je nach Größe und Diche eines Clusters können Gefahrenpotentiale abgeschätzt und vorbeugende Maßnahmen getroffen werden.
+\item Clustering von Rohrbrüchen und Rissen städtischer Wasserversorgungssysteme kann auf bevorstehende Probleme hinweisen. Je nach Größe und Dichte eines Clusters können Gefahrenpotentiale abgeschätzt und vorbeugende Maßnahmen getroffen werden.
 \item Positionsdaten von erfolgreichen und nicht erfolgreichen Sportlern z.B. Torschützen beim Fußball clustern, um Muster zu erkennen und daraus neue Spielstrategien ableiten zu können.
-\item Angenommen es liegt ein Datensatz vor, der für ein begrenztes Untersuchtungsgebiet (z.B. für eine Stadt) aufführt, ob ein Haushalt unter Schädlingsbefall leidet oder nicht. Mittels Clusterbildung können die größten und dichtesten Cluster betroffener Haushaltsgruppen identifiziert und behandelt werden. Dies steigert die Effizienz der Schädlingsbekämpfung.
+\item Angenommen es liegt ein Datensatz vor, der für ein begrenztes Untersuchungsgebiet (z.B. für eine Stadt) aufführt, ob ein Haushalt unter Schädlingsbefall leidet oder nicht. Mittels Clusterbildung können die größten und dichtesten Cluster betroffener Haushaltsgruppen identifiziert und behandelt werden. Dies steigert die Effizienz der Schädlingsbekämpfung.
 \item Das Verorten von Tweets infolge von Naturgefahren oder Terroranschlägen kann geclustert und notwendige Rettungsmaßnahmen und Evakuierungen können basierend auf der Größe und Position des identifizierten Clusters vermittelt werden.
 \end{itemize}
 
 
 \subsection{Outlier Detection - Local Outlier Factor}
-Ein Problem der dichtebasierten Clusteringverfahren ist, dass manche Punkte entweder als Outlier oder als Clusterpunkt markiert werden. Manchmal möchte man jedoch aus analytischen Gründen selbständig beurteilen und steuern können, was als Outlier markiert werden soll. Aus diesem Grund wurde der Local Outlier Factor (LOF) erfunden, welcher für Punkt den Grad seiner Zuordenbarkeit berechnet \cite{lof}.
+Ein Problem der dichtebasierten Clusteringverfahren ist, dass manche Punkte entweder als Outlier oder als Clusterpunkt markiert werden. Manchmal möchte man jedoch aus analytischen Gründen selbständig beurteilen und steuern können, was als Outlier markiert werden soll. Aus diesem Grund wurde der Local Outlier Factor (LOF) erfunden, welcher für einen Punkt den Grad seiner Zuordenbarkeit berechnet \cite{lof}.
 
 \subsubsection{Grundbegriffe}
 Die $k$-Distanz eines Punktes $p$ ist der Radius $kd(p)$, für den mindestens $k$ Punkte innerhalb oder auf ihm liegen müssen, aber maximal $k-1$ Punkte innerhalb liegen dürfen. \\
 
-Die $k$-Distanz-Nachbarschaft $N_{kd(p)} (p)$ ist die Menge aller Punkte, welche maximal den Abstand $kd(p)$ von $p$ haben.
+Die $k$-Distanz-Nachbarschaft $N_{kd(p)} (p)$ ist die Menge aller Punkte, die maximal den Abstand $kd(p)$ von $p$ haben.
 
 Die Erreichbarkeitsdistanz $rd(o,p)$ ist die $k$-Distanz von $p$, aber mindestens der Abstand $dist(p,o)$.
 
@@ -1011,30 +1005,28 @@ $$Ird_{minPts}(p) = \left(\frac{\sum\limits_{o \in N_{minPts}(p)} rd_{minPts}(p,
 
 Je höher der Wert, desto besser ist $p$ von seinen Nachbarn aus erreichbar. Die Wahrscheinlichkeit, dass $p$ ein Outlier ist, sinkt.
 
-Auch die lokalen Erreichbarkeitsdichten der Nachbarn von $p$ müssen mit einfließen, um beurteilen zu können, wie gut der Erreichbarkeit von $p$ im Verhältnis zu seiner Nachbarschaft ist. Sind die Nachbarn viel besser zu erreichen als $p$, dann ist $p$ ein starker Outlier:
+Auch die lokalen Erreichbarkeitsdichten der Nachbarn von $p$ müssen mit einfließen, um beurteilen zu können, wie gut die Erreichbarkeit von $p$ im Verhältnis zu seiner Nachbarschaft ist. Sind die Nachbarn viel besser zu erreichen als $p$, dann ist $p$ ein starker Outlier:
 
 $$LOF_{minPts}(p) = \frac{\sum\limits_{o \in N_{minPts}(p)}\frac{Ird_{minPts}(o)}{Ird_{minPts}(p)}}{|N_{minPts}(p)|}$$
 
-Ist der Wert von $LOF$ in etwa $1$, handelt es sich bei dem betrachteten Objekt um einen durchschnittlich ähnlich gut erreichbaren Punkt (im Vergleich zu seinen Nachbarn) und somit um einen Clusterpunkt. Für Werte, die größer als $1$ sind, ist der Punkt deutlich schlechter erreichbar als seine Nachbarn und somit ein Outlier.
+Ist der Wert von $LOF$ in etwa $1$, handelt es sich bei dem betrachteten Objekt um einen durchschnittlich ähnlich gut erreichbaren Punkt (im Vergleich zu seinen Nachbarn) und somit um einen Clusterpunkt. Für Werte, die größer als $1$ sind, ist der Punkt schlechter erreichbar als seine Nachbarn und somit ein Outlier.
 
 \subsection{Lineare Separation - Support Vector Machine}
 Die Support Vector Machine ist ein Klassifikator für linear und nichtlinear separierbare Daten. Er kommt in Geoinformationssystemen häufig zum Einsatz, da er besonders robust gegenüber Rauschen und Variabilität raumbezogener Daten ist \cite{svmingeo}.
 
 Die Grundidee der SVM ist es, ähnlich der Klassifikatoren neuronaler Netze eine optimal separierende Hyperebene zu finden. Ist der Datensatz nicht linear separierbar, so kann er mittels Kernelfunktion in einen Raum transformiert werden, für den eine linear separierende Hyperebene gefunden werden kann \cite{svm}. \\
 
-Im Folgenden erkläre ich anhand eines Beispiels den zweidimensionalen Fall zur Berechnung der optimal separierenden Gerade.
-
-
+Im Folgenden wird anhand eines Beispiels der zweidimensionalen Fall zur Berechnung der optimal separierenden Gerade erklärt.
 
 \begin{minipage}{0.4\textwidth}\raggedright
-Seien die roten und grünen Punkte in der Abbildung rechts die Objekte, welche den Klassen rot und grün zugehörig sind. Die Herausforderung ist jetzt, die Parameter der Gerade $H_0$ (y-Achsenabschnitt und Steigung) so zu bestimmen, dass der Abstand zu den Randpunkten der beiden Klassen maximal wird. Zur Vereinfachung werden zwei weitere Geraden durch die Randpunkte beider Klassen gelegt, welche parallel zueinander stehen ($H_1$ und $H_2$). Die optimal separierende Gerade ist dann der Median beider Randgeraden.
+Seien die roten und grünen Punkte in der Abbildung rechts die Objekte, welche den Klassen rot und grün zugehörig sind. Die Herausforderung ist es, die Parameter der Gerade $H_0$ (y-Achsenabschnitt und Steigung) so zu bestimmen, dass der Abstand zu den Randpunkten der beiden Klassen maximal wird. Zur Vereinfachung werden zwei weitere Geraden durch die Randpunkte beider Klassen gelegt. Diese Geraden ($H_1$ und $H_2$) stehen parallel zueinander. Die optimal separierende Gerade ist dann der Median beider Randgeraden.
 \end{minipage}
 \hfill
 \begin{minipage}{0.5\textwidth}
 \includegraphics[width=\linewidth]{svm.jpg}
 \end{minipage}
 
-Die Klassenlabels der Punkte oberhalb der Geraden $H_1$ sind $y_+ = +1$ bzw. unterhalb der Geraden $H_2$ $y_- = -1$. Sie sind also ein Teil ihrer Koordinate. Dies funktioniert, da sich die y-Werte für das Einstzen der Punkte $x_+$ und $x_-$ in die Geradengleichung von $H_0$ mithilfe der Signumfunktion transformieren lassen. Gilt für einen Punkt $x_i$, dass $\omega \cdot x_i + b \geqslant 0$, dann gehört dieser zur Klasse rot. Es gilt gleichzeitig für alle Werte $H_0(x_i) \geqslant 0$, dass $sign(H_0(x_i)) = +1 = y_i$.
+Die Klassenlabels der Punkte oberhalb der Geraden $H_1$ sind $y_+ = +1$ und $y_- = -1$ unterhalb der Geraden $H_2$. Sie sind also ein Teil ihrer Koordinate. Dies funktioniert, da sich die y-Werte für das Einsetzen der Punkte $x_+$ und $x_-$ in die Geradengleichung von $H_0$ mithilfe der Signumfunktion transformieren lassen. Gilt für einen Punkt $x_i$, dass $\omega \cdot x_i + b \geqslant 0$, dann gehört dieser zur Klasse rot. Es gilt gleichzeitig für alle Werte $H_0(x_i) \geqslant 0$, dass $sign(H_0(x_i)) = +1 = y_i$.
 
 Setzt man die Labels in die Geradengleichungen der Geraden $H_1$ und $H_2$ ein, so erhält man die Ungleichungen
 \begin{equation} \label{hplus}
@@ -1103,30 +1095,29 @@ Im Folgenden habe ich einen Optimierer (scipy.optimize.minimize) zur Maximierung
 
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.45]{svm1.jpg}
+\includegraphics[scale=0.43]{svm1.jpg}
 \includegraphics[scale=0.45]{svm2.jpg}
 \end{figure}
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.45]{svm3.jpg}
+\includegraphics[scale=0.47]{svm3.jpg}
 \end{figure}
-
 
 \hfill
 
 \section{Fuzzy-Clustering}
 
 \subsection{Fuzzy C-Means (FCM)}
-Neuere Methoden der letzten Jahre verwenden häufig modifizierte Versionen des FCM(Fuzzy C-Means)-Algorithmus\cite{clustgis}. Dieser berechnet für jeden Punkt den Grad seiner Zuordnung zu allen Clustern. Er gehört zu den probabilistischen partitionierenden Clusteringverfahren.
+Neuere Clusteringverfahren verwenden häufig modifizierte Versionen des FCM(Fuzzy C-Means)-Algorithmus\cite{clustgis}. Dieser berechnet für jeden Punkt den Grad seiner Zuordnung zu allen Clustern. Er gehört zu den probabilistischen, partitionierenden Clusteringverfahren.
 Die zu minimierende Kostenfunktion lautet:
 
 $$J_m(X,U,V) = \sum_{i=1}^{c} \sum_{k=1}^{n} u_{ik}^m \cdot d^2(v_i,x_k) \quad \forall i,k \in [0,1]$$
 
-Wobei $u_ik$ die Eingangs beschriebene Zugehörigkeitsmatrix ist und $d^2$ ein Abstandsmaß zur Gewichtung der Zugehörigkeit in Abhängigkeit des Abstandes zwischen Punkt $x_k$ und Clusterzentroid $v_i$. Parameter $m>1$ ist die Vagheit der Zerlegung und gibt an, wie stark die Zugehörigkeitsgrade abfallen. In der Regel wird hier der Wert $m=2$ verwendet.
+Wobei $u_ik$ die eingangs beschriebene Zugehörigkeitsmatrix ist und $d^2$ ein Abstandsmaß zur Gewichtung der Zugehörigkeit in Abhängigkeit des Abstandes zwischen Punkt $x_k$ und Clusterzentroid $v_i$. Parameter $m>1$ ist die Vagheit der Zerlegung und gibt an, wie stark die Zugehörigkeitsgrade abfallen. In der Regel wird hier der Wert $m=2$ verwendet.
 \\
 Dabei sind folgende Nebenbedingungen Einzuhalten:
 $$\forall k \in {1, \dots, n} : \sum_{i=1}^c u_{ik} = 1$$
-Dies sorgt dafür, dass jedes Objekt das Gesamtgewicht 1 erhält und somit kein Punkt bevorzugt wird.
+Dies sorgt dafür, dass jedes Objekt das Gesamtgewicht $1$ erhält und somit kein Punkt bevorzugt wird.
 $$\forall i \in \{1, \dots, c\} : \sum_{i=1}^n u_{ik} > 0$$
 Dies garantiert, dass es keinen Cluster gibt, dem nichts zugeordnet wurde. Es muss also mindestens ein Objekt geben, das eine positive Zugehörigkeit zu Cluster $i$ hat.
 \\
@@ -1143,8 +1134,8 @@ v_i = \frac{\sum\limits_{k=1}^n u_{ik}^m \cdot x_k}{\sum\limits_{k=1}^n u_{ik}^m
 \end{equation}
 
 
-Der Algorithmus zum Finden der besten Clusterzentroiden ist wie beim $k$-means Verfahren ein alternierendes Programm.
-%http://tug.ctan.org/macros/latex/contrib/algorithmicx/algorithmicx.pdf
+Der Algorithmus zum Finden der besten Clusterzentroide ist wie beim k-means Verfahren ein alternierendes Programm.
+%http://tug.ctan.org/macros/latex/contrib/algorithmicx/algorithmicx.pdf <- für Syntax!
 \begin{algorithm}[H]
 \caption{$FCM(X,c,m,\epsilon)$}\label{fcm}
 \begin{algorithmic}[1]
@@ -1161,7 +1152,7 @@ c \leqslant n$ ist die Clusteranzahl, $m > 1$ ist  die Vagheit und $ \epsilon > 
 \end{algorithmic}
 \end{algorithm}
 
-Leider hat das urspüngliche FCM-Verfahren viele Nachteile. Man weiß leider nie, ob ein lokales oder ein globales Minimum für die Kostenfunktion gefunden wurde. Je nach Initialisierungsmethode muss FCM unter Umständen mehrmals mit unterschiedlichen Parametern ausgeführt werden, um das beste Ergebnis zu finden. Wird für das Distanzmaß die euklidische Distanzfunktion verwendet, können nur gleich große, sphärische Cluster gefunden werden. Aus diesem Grund wurden viele weitere Fuzzy-Clusteringalgorithmen entwickelt, die auf dem gleichen Grundprinzip basieren, jedoch andere Kostenfunktionen minimieren.
+Leider hat das ursprüngliche FCM-Verfahren viele Nachteile. Man weiß leider nie, ob ein lokales oder ein globales Minimum für die Kostenfunktion gefunden wurde. Je nach Initialisierungsmethode muss FCM unter Umständen mehrmals mit unterschiedlichen Parametern ausgeführt werden, um das beste Ergebnis zu finden. Wird für das Distanzmaß die euklidische Distanzfunktion verwendet, können nur gleich große, sphärische Cluster gefunden werden. Aus diesem Grund wurden viele weitere Fuzzy-Clusteringalgorithmen entwickelt, die auf dem gleichen Grundprinzip basieren, jedoch andere Kostenfunktionen minimieren.
 \\
 Da die Zugehörigkeiten der Datenobjekte relativ sind, können Outlier fälschlicherweise überberücksichtigt werden:
 
@@ -1188,7 +1179,7 @@ Die Kostenfunktion für PCM lautet insgesamt:
 
 $$J_m(T,V,X,\gamma) = \sum_{i=1}^{c} \sum_{k=1}^{n} t_{ik}^m \cdot d^2(v_i,x_k) + \sum_{i=1}^c  \gamma_i \sum_{k=1}^n (1-t_{ik})^m,\quad \gamma_i>0 \forall i$$
 
-Leider führt auch diese Funktion je nach Initialisierung der Clusterprototypen zu einer trivialen Lösung, bei der nur noch ein einziger Cluster erkannt wird. Mögliche Lösungen sind die Initialisierung mit der Ausgabe eines zuvor ausgelösten FCM-Durchlaufs oder das Hinzufügen eines weiteren Bestrafungsterms, der Clusterabstoßung. Je näher sich die Clusterzentroiden im Laufe der Optimierung kommen, desto größer soll die Kostenfunktion werden. Gleichzeitig sollen die Punkte nicht nur einem Cluster zugeordnet und alle anderen Cluster möglichst weit weg sein. Zwei Abstoßungsfunktionen\cite{cabstossung}, die solche Kriterien erfüllen, sind: $f(x) = \frac{1}{x^2}$ und $g(x) = \frac{1}{e^{x^2}}$.
+Leider führt auch diese Funktion je nach Initialisierung der Clusterprototypen zu einer trivialen Lösung, bei der nur noch ein einziger Cluster erkannt wird. Mögliche Lösungen sind die Initialisierung mit der Ausgabe eines zuvor ausgelösten FCM-Durchlaufs oder das Hinzufügen eines weiteren Bestrafungsterms, der Clusterabstoßung. Je näher sich die Clusterzentroide im Laufe der Optimierung kommen, desto größer soll die Kostenfunktion werden. Gleichzeitig sollen die Punkte nicht nur einem Cluster zugeordnet werden und alle anderen Cluster möglichst weit weg sein. Zwei Abstoßungsfunktionen\cite{cabstossung}, die solche Kriterien erfüllen, sind: $f(x) = \frac{1}{x^2}$ und $g(x) = \frac{1}{e^{x^2}}$.
 
 \begin{figure}[H]
 \centering
@@ -1223,7 +1214,7 @@ und $\gamma_i$ wird auf die intra-cluster Distanz gesetzt:
 $$\gamma_i = K\cdot \frac{\sum\limits_{k=1}^n u_{ik}^m d^2 (x_k, v_i)}{\sum\limits_{k=1}^n u_{ik}^m},\quad K>0$$
 
 \subsection{Possibilistic Fuzzy C-Means (PFCM)}
-Eine erweiterte Kombination aus den FCM und PCM Algorithmen kommt ganz ohne Clusterabstoßung aus und verhindert, dass die absoluten Zugehörigkeitsgrade bei großen Datensätzen zu klein werden und ihre Aussagekraft verlieren. Die Zielfunktion von PFCM\cite{pfcmpaper} lautet:
+Eine erweiterte Kombination aus den FCM und PCM Algorithmen kommt ganz ohne Clusterabstoßung aus und verhindert, dass die absoluten Zugehörigkeitsgrade bei großen Datensätzen zu klein werden und ihre Aussagekraft verlieren. Die Zielfunktion von PFCM \cite{pfcmpaper} lautet:
 
 \begin{equation}
 \begin{split}
@@ -1234,11 +1225,11 @@ J_{m,\eta}(U,T,V,X,\gamma) = \sum_{i=1}^{c} \sum_{k=1}^{n} \left(a\cdot u_{ik}^m
 Dabei steuern $a$ und $b$ den relativen Einfluss der verschiedenen Arten von Zugehörigkeitsgraden. Je ungeeigneter die typicality Values ($t_ik$) in Anbetracht der Größe des Datensatzes sind, desto stärker wird die Gewichtung bei den Zugehörigkeitsgraden ($u_{ik}$). Mit $a=0$ wird PFCM zu PCM und mit $b=0$ zu FCM.
 
 \subsection{Scale Space Filter Clustering}
-Eine weitere Variante des FCM-Algorithmus, der Selective Scale Space based FCM wurde entworfen, um den Clusteringprozess raumbezogener Daten zu verbessern. 
+Eine weitere Variante des FCM-Algorithmus, der Selective Scale Space based FCM \cite{scalespacefcm}, wurde entworfen, um den Clusteringprozess raumbezogener Daten zu verbessern. \\
 
-Gegeben einer Menge von Objekten kann es vorkommen, dass sich bestimmte Objektfeatures nicht clustern lassen. Dies ist der Fall, wenn sich die Werte eines Featurevektors zu ähnlich sind und keine deutlichen Cluster bilden. Man sagt, dass die Cluster nicht linear separabel sind. Der Scale Space Filter löst dieses Problem, indem er mithilfe einer Transformationsvorschrift nah beieinander liegende Punkte weiter zusammen schiebt und weiter entfernte Punkte voneinander abstößt. Wird der Filter jedoch auf bereits für das Clustering geeignete Parameter angewendet, kann der Informationsgehalt verschlechtert werden. Aus diesem Grund müssen zuerst Features selektiert werden, welche für eine Vorverarbeitung geeignet sind und somit das Potential haben, nach ihrer Transformation die Clusteringgenauigkeit zu verbessern. Ein weiterer Vorteil des Selektionsprozesses ist die Optimierung der Laufzeiteffizienz. Ein Parameter ist genau dann geeignet, wenn seine Standardabweichung einen bestimmten Schwellwert unterschreitet.
+In einer Menge von Objekten kann es vorkommen, dass sich bestimmte Objektfeatures nicht clustern lassen. Dies ist der Fall, wenn sich die Werte eines Featurevektors zu ähnlich sind und keine deutlichen Cluster bilden. Man sagt, dass die Cluster nicht linear separabel sind. Der Scale Space Filter löst dieses Problem, indem er mithilfe einer Transformationsvorschrift nahe beieinander liegende Punkte weiter zusammen schiebt und weiter entfernte Punkte voneinander abstößt. Wird der Filter jedoch auf bereits für das Clustering geeignete Parameter angewandt, kann der Informationsgehalt verschlechtert werden. Aus diesem Grund müssen zuerst diejenigen Features selektiert werden, welche das Potential haben, nach ihrer Transformation die Clusteringgenauigkeit zu verbessern. Ein weiterer Vorteil des Selektionsprozesses ist die Optimierung der Laufzeiteffizienz. Ein Parameter ist genau dann geeignet, wenn seine Standardabweichung einen bestimmten Schwellwert unterschreitet.
 \\
-Das Maß für die Separation und Ähnlichkeit bietet der Xie Beni Cluster Validity Index. Er setzt die Distanzen zwischen Datenpunkten und Clusterzentroiden ins Verhältnis zu den Distanzen zwischen den Clustern:
+Das Maß für die Separation und Ähnlichkeit bietet der Xie-Beni Cluster Validity Index. Er setzt die Distanzen zwischen Datenpunkten und Clusterzentroiden ins Verhältnis zu den Distanzen zwischen den Clustern:
 
 $$V_{XB}(U,X,V)= \frac{\sum\limits_{i=1}^c \sum\limits_{k=1}^n u_{ik}^2 \cdot ||x_k-v_i||^2}{n \cdot \min\limits_{1\leqslant i,j \leqslant c, i \neq j}||v_i-v_j||^2}$$
 
@@ -1249,7 +1240,7 @@ Sei $X$ eine Datenmatrix der Dimensionalität $m\times n$. Es gibt also $n$ Obje
 Ein Parameter $j$ ist genau dann krank, wenn für den Feature-Vektor $x_{ij} \forall i\in \{1,\dots, n\}$ gilt:
 
 $$\theta-\epsilon\leqslant x_{ij} \leqslant\theta+\epsilon$$ 
-für ein $\theta$ und einen sehr kleinen Wert $\epsilon>0$. In diesem Fall wird der Parameter mit einer Transformationsfunktion modifiziert. Möglich sind hier eine vielzahl von Funktionen. In der Publikation beschränken sich die Autoren jedoch auf die Gaußsche Transformationsformel:
+für ein $\theta$ und einen sehr kleinen Wert $\epsilon>0$. In diesem Fall wird der Parameter mit einer Transformationsfunktion modifiziert. Möglich sind hier eine Vielzahl von Funktionen. In der Publikation beschränken sich die Autoren jedoch auf die Gaußsche Transformationsformel:
 
 $$f(x,\sigma) = \frac{1}{(\sigma \cdot \sqrt{2\pi})^2}e^{-\frac{||x-x_j||^2}{2\sigma^2}}$$
 
@@ -1262,12 +1253,12 @@ Hierbei ist x[j] der $j$-te Featurevektor, $x_{ij}$ der Wert von Parameter $j$ v
 Der Pseudocode für den gesamten Algorithmus sieht dann folgendermaßen aus:
 
 \begin{algorithm}[H]
-\caption{ S.D. based Selective Scale Spaced FCM}\label{sdbsssfcm}
+\caption{S.D. based Selective Scale Spaced FCM}\label{sdbsssfcm}
 \hspace*{\algorithmicindent} \textbf{Input:} $X=\{x_1,\dots,x_n\}$, standardAbweichungGrenzwert\\
  \hspace*{\algorithmicindent} \textbf{Output:} Clustering $C$ 
 \begin{algorithmic}[1]
 \State Deklariere Zugehörigkeitsmatrix $u_{ik}$ mit $i\in \{1,\dots,c\}$ und $k \in \{1,\dots,n\}$.
-\State Deklariere Clustervaliditätsindex (Hier $V_{XB}$)
+\State Deklariere Clustervaliditätsindex (hier $V_{XB}$)
 \For{$j$ in $X_i$}
 	\State $sd \gets berechneStandardabweichung(j)$
 	\If {$sd<standardAbweichungGrenzwert$}
@@ -1286,17 +1277,17 @@ Der Pseudocode für den gesamten Algorithmus sieht dann folgendermaßen aus:
 \clearpage
 
 \subsection{Graphbasiertes Clustering I (NSCABDT)}
-Eine weitere FCM-Variante, die speziell zum Clustering von geographischen Strukturen entwickelt wurde, basiert auf der Delaunay Triangulation, also der planaren Dekomposition einer Punktemenge \cite{nscabdt}. Dies war nötig, da bisherige Entwicklungen es nicht geschafft hatten, räumliche Abhängigkeiten und Heterogenitäten zu erkennen. Beide gelten als starke Indikatoren für geographische Prozesse. Dabei bezeichnet die räumliche Abhängkeit die Tendenz zweier Punkte, sich mit zunehmender räumlicher Nähe gegenseitig zu beeinflussen oder ähnliche Attributwerte anzunehmen \cite{dependency}. Räumliche Heterogenenität bezeichnet die Ungleichverteilung von Populationen auf einem bestimmten Gebiet. Ein weiterer Vorteil der Methode ist, dass nun auch Cluster erkannt werden können, die durch eine schmale Brücke verbunden sind. Da eine Delaunay-Triangulation viele Ähnlichkeitsinformationen implizit speichert, eignet sie sich für eine robuste Clusteranalyse. Außerdem werden Delaunay-Triangulationen bei der Analyse von Topologieproblemen, Autokonturierung, der Visualisierung von 2.5D Geodaten, Oberflächencharakterisierung und in vielen weiteren raumbezogenen Analysewerkzeugen eingesetzt.
+Eine weitere FCM-Variante, die speziell zum Clustering von geographischen Strukturen entwickelt wurde, basiert auf der Delaunay Triangulation, also der planaren Dekomposition einer Punktemenge \cite{nscabdt}. Dies war nötig, da bisherige Entwicklungen es nicht geschafft hatten, räumliche Abhängigkeiten und Heterogenitäten zu erkennen. Beide gelten als starke Indikatoren für geographische Prozesse. Dabei bezeichnet die räumliche Abhängkeit die Tendenz zweier Punkte, sich mit zunehmender räumlicher Nähe gegenseitig zu beeinflussen oder ähnliche Attributwerte anzunehmen \cite{dependency}. Räumliche Heterogenität bezeichnet die Ungleichverteilung von Populationen auf einem bestimmten Gebiet. Ein weiterer Vorteil der Methode ist, dass nun auch Cluster erkannt werden können, die durch eine schmale Brücke verbunden sind. Da eine Delaunay-Triangulation viele Ähnlichkeitsinformationen implizit speichert, eignet sie sich für eine robuste Clusteranalyse. Außerdem werden Delaunay-Triangulationen bei der Analyse von Topologieproblemen, Autokonturierung, der Visualisierung von 2.5D-Geodaten, Oberflächencharakterisierung und in vielen weiteren raumbezogenen Analysewerkzeugen eingesetzt.
 \\~\\
 Eine Delaunay-Triangulation $D(X)$ ist eine Vernetzung aller Punkte aus $X$ zu Dreiecken, so dass kein Punkt $p\in X$ innerhalb des Umkreises eines dieser Dreiecke liegt. Dabei wird der kleinste Innenwinkel über alle Dreiecke maximiert.
-\\
-Ein einfacher Algorithmus zur Erzeugung der Delaunay-Triangulation ist die inkrementelle Konstruktion:
+\\~\\
+Ein einfacher Algorithmus zur Erzeugung der Delaunay-Triangulation ist die \textit{inkrementelle Konstruktion}:\\
 Zu Beginn muss ein Dreieck gefunden werden, welches die Delaunay-Bedingung (DB) erfüllt. Anschließend werden alle anderen Punkte inkrementell hinzugefügt. Der nächste Punkte aus $X$ wird $D(X)$ hinzugefügt und mit allen Punkten des initialen Dreiecks verbunden. Es entstehen drei weitere Dreiecke, die die DB eventuell verletzen. Jedes der Dreiecke wird auf die Umkreisbedingung getestet. Schließt ein Umkreis einen Punkt eines angrenzenden Dreiecks ein, so wird die gemeinsame Kante gelöscht und eine Kante zwischen den beiden Punkten erzeugt, die vorher nicht verbunden waren:
 
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.4]{umkreis.jpg}
-\caption{Flip einer gemeinsamen Kante zur Erfüllung der Delaunay-Bedingung}
+\caption{Flip einer gemeinsamen Kante, damit Delaunay-Bedingung erfüllt wird}
 \end{figure}
 
 Anschließend existieren weitere Dreiecke, welche die Bedingung nicht erfüllen könnten. Es werden nacheinander alle Dreiecke überprüft und gegebenenfalls Flips durchgeführt, bis die Bedingung global erfüllt ist.
@@ -1311,19 +1302,19 @@ Während der Triangulierung werden Informationen zu Knoten, Kanten und Oberfläc
 \end{figure}
 
 Die Knotentabelle enthält zu jedem der 15 Punkte die Koordinaten, den Knotengrad und die Kategorie bzw. die Clusternummer ($-1 = Outlier$).\\
-Die Kantentabelle enthält Infos zur Richtung der Kanten, wobei $Start=1$ und $End=8$ bedeutet, dass von Knoten $1$ eine gerichtete Kante Richtung Knoten 8 zeigt. Außerdem besitzt sie die Länge $76$.
+Die Kantentabelle enthält Infos zur Richtung der Kanten, wobei $Start=1$ und $End=8$ bedeutet, dass von Knoten $1$ eine gerichtete Kante in Richtung des Knoten $8$ zeigt. Außerdem besitzt sie die Länge $76$.
 \\
-Die Oberflächentabelle enthält alle Knoten und Kanten, welche an den jeweiligen Ebenen (Dreiecken) beteiligt sind.
+Die Oberflächentabelle enthält alle Knoten und Kanten, die an den jeweiligen Ebenen (Dreiecken) beteiligt sind.
 
-Im Gegensatz zur gewöhnlichen Delaunay Triangulation sollen in diesem Verfahren nur solche Knoten verbunden werden, die näher beieinander liegen, als ein vorgegebenes Ähnlichkeitsmaß.
+Im Gegensatz zur gewöhnlichen Delaunay Triangulation sollen in diesem Verfahren nur solche Knoten verbunden werden, welche näher beieinander liegen, als ein vorgegebenes Ähnlichkeitsmaß.
 \\
 
 \subsubsection{Bezeichnungen}
-Im Folgenen werden Kanten $e_k$ geschrieben als $(p_i,p_j)$, wobei $p_i$ der Startpunkt ist und $p_j$ der Endpunkt. $N(p_i)$ bezeichnet die Menge aller eingehenden und Ausgehenden Kanten von Knoten $p_i$. Die lokale Durchschnittslänge $local_mean(p_i)$ ist die durchschnittliche Länge aller Kanten in $N(p_i)$:
+Im Folgenden werden Kanten $e_k$ geschrieben als $(p_i,p_j)$, wobei $p_i$ der Startpunkt ist und $p_j$ der Endpunkt. $N(p_i)$ bezeichnet die Menge aller eingehenden und ausgehenden Kanten von Knoten $p_i$. Die lokale Durchschnittslänge $local_mean(p_i)$ ist die durchschnittliche Länge aller Kanten in $N(p_i)$:
 
 $$local\_mean(p_i) =\frac{\sum\limits_{j=1}^{deg(p_i)} len(e_j)}{deg(p_i)}$$
 
-Die globale durchschnittslänge ist definiert als Durchschnittslänge aller Kanten in $E$.
+Die globale Durchschnittslänge ist definiert als Durchschnittslänge aller Kanten in $E$.
 
 $$global\_mean(X) =\frac{\sum\limits_{j=1}^{|E|} len(e_j)}{|E|}$$
 
@@ -1335,7 +1326,7 @@ Der relative Durchschnitt ist das Verhältnis von lokalem zu globalem Durchschni
 
 $$relative\_mean(p_i) = \frac{local\_mean(p_i)}{global\_mean(X)}$$
 
-Eine Kante wird als positive Kante bezeichnet, wenn sie kleiner ist als das Kriterium $F(p_i)$. Positive Kanten und dazu inzidente Punkte formen einen neuen Wahrscheinlichkeitsgraphen, der gleichzeitig Subgraph der Delaunay-Triangulation ist. Das Kriterium berechnet sich wie folgt:
+Eine Kante wird als positive Kante bezeichnet, wenn sie kleiner ist, als das Kriterium $F(p_i)$. Positive Kanten und dazu inzidente Punkte formen einen neuen Wahrscheinlichkeitsgraphen, der gleichzeitig Subgraph der Delaunay-Triangulation ist. Das Kriterium berechnet sich wie folgt:
 
 $$F(p_i) = global\_mean(X) + global\_sta\_dev(X) \times \frac{global\_mean(X)}{local\_mean(p_i)}$$
 
@@ -1405,23 +1396,28 @@ Im direkten Vergleich mit DBSCAN ist der NSCABDT-Algorithmus zwar viel langsamer
 
 
 
-\clearpage
-\vspace*{\fill}
-\begin{center}
-\begin{minipage}{1\textwidth}
+%\clearpage
+%\vspace*{\fill}
+%\begin{center}
+%\begin{minipage}{1\textwidth}
+\pagebreak
+\hspace{0pt}
+\vfill
 \subsection{Graphbasiertes Clustering II (NSFCDT)}
 
-Eine weitere Optimierung, die zwei Jahre später vorgestellt wurde, basiert ebenfalls auf der Delaunay-Triangulation mit anschließendem Fuzzy Refinement. Ein Hauptvorteil gegenüber NSCABDT ist eine deutlich verbesserte Laufzeiteffizienz bei gleichwertigen Ergebnissen \cite{nsfcdt}. Die Methode wurde speziell für sehr große Datensätze entworfen, wie es bei Geodaten gewöhnlich ist.\\
+Eine weitere Optimierung, die zwei Jahre später vorgestellt wurde, basiert ebenfalls auf der Delaunay-Triangulation mit anschließendem Fuzzy Refinement. Ein Hauptvorteil gegenüber NSCABDT ist eine deutlich verbesserte Laufzeiteffizienz bei gleichwertigen Ergebnissen \cite{nsfcdt}. Die Methode wurde speziell für sehr große Datensätze entworfen, wie es bei Geodaten gewöhnlich ist.\\~\\
 
-Das Verfahren besteht aus zwei Schritten. Im ersten Schritt wird die Delaunay Triangulation berechnet und ein ähnlichkeitsbasiertes Clustering gebildet. Im zweiten Schritt wird eine Fuzzy Logik zur Verfeinerung der Ergebnisse angewandt.\\
+Das Verfahren besteht aus zwei Schritten. Im ersten Schritt wird die Delaunay Triangulation berechnet und ein ähnlichkeitsbasiertes Clustering gebildet. Im zweiten Schritt wird eine Fuzzy Logik zur Verfeinerung der Ergebnisse angewandt.\\~\\
 
 
-Der folgende Algorithmus beschreibt den ersten Schritt des Verfahrens. Er nimmt einen Datensatz $X$ mit $n$ Punkten entgegen und clustert ihn auf Basis der Delaunay-Triangulation.
+Der folgende Algorithmus beschreibt den ersten Schritt des Verfahrens. Er nimmt einen Datensatz $X$ mit $n$ Punkten entgegen und clustert ihn auf Basis der Delaunay-Triangulation. In der Originalpublikation wird für die Erzeugung der $DT$ der Bowyer-Watson Algorithmus empfohlen, der nur $\mathcal{O}(n\log{}n)$ Operationen benötigt, um $n$ Punkte zu triangulieren und somit besonders effizient ist. Anschließend startet in Zeile $5$ die harte Partitionierung. Dabei wird für ein Initialdreieck aus $DT$ geprüft, ob es größer ist, als ein bestimmter Schwellwert und ob es noch nicht besucht wurde. Wurde ein Initialdreieck gefunden, das klein genug ist, werden von ihm aus alle Nachbarn (Dreiecke, die sich mit dem Initialdreieck eine Kante teilen) betrachtet. Für jedes Nachbardreieck wird geprüft, ob es klein genug ist. Ist dies der Fall, wird es auf einem Stack gespeichert. Alle zu großen Nachbardreiecke werden hingegen ignoriert. Der Algorithmus wird solange fortgesetzt, bis alle Elemente auf dem Stack abgearbeitet wurden und kein gültiger Nachbar eines Stackelements mehr gefunden werden konnte. Die Menge der gültigen Nachbardreiecke inklusive Initialdreieck bilden dann einen Cluster. Der Algorithmus wird danach für alle unbesuchten Initialdreiecke aus $DT$ fortgesetzt. Zum Schluss enthält die Menge $ClusterSet$ Mengen von Dreiecken, die die Cluster des Datensatzes bilden.
 
-In der Originalpublikation wird für die Erzeugung der $DT$ der Bowyer-Watson Algorithmus empfohlen, der nur $\mathcal{O}(n\log{}n)$ Operationen benötigt, um $n$ Punkte zu triangulieren und somit besonders effizient ist. Anschließend startet in Zeile $5$ die harte Partitionierung. Dabei wird für ein Initialdreieck aus $DT$ geprüft, ob es größer ist, als ein bestimmter Schwellwert und ob es noch nicht besucht wurde. Wurde ein Initialdreieck gefunden, das klein genug ist, werden von ihm aus alle Nachbarn (Dreiecke, die sich mit dem Initialdreieck eine Kante teilen) betrachtet. Für jedes Nachbardreieck wird geprüft, ob es klein genug ist. Ist dies der Fall, wird es auf einem Stack gespeichert. Alle zu großen Nachbardreiecke werden hingegen ignoriert. Der Algorithmus wird solange fortgesetzt, bis alle Elemente auf dem Stack abgearbeitet wurden und kein gültiger Nachbar eines Stackelements mehr gefunden werden konnte. Die Menge der gültigen Nachbardreiecke inklusive Initialdreieck bilden dann einen Cluster. Der Algorithmus wird danach für alle unbesuchten Initialdreiecke aus $DT$ fortgesetzt. Zum Schluss enthält die Menge $ClusterSet$ Mengen von Dreiecken, die die Cluster des Datensatzes bilden.
-\end{minipage}
-\end{center}
-
+\vfill
+\hspace{0pt}
+\pagebreak
+%\end{minipage}
+%\end{center}
+%\vspace*{\fill}
 
 
 
@@ -1960,21 +1956,21 @@ $$u_{ikj} = \left(\sum_{l=1}^c \sum_{r=1}^d \left(\frac{(x_{kj}-v_{ij})^2}{(x_{k
 und
 $$v_{ij} = \frac{\sum\limits_{k=1}^n u_{ikj}^m x_{kj}}{\sum\limits_{k=1}^n u_{ikj}^m},\ 1\leqslant i\leqslant c,1\leqslant j\leqslant d$$
 
-\chapter{Implementierungen}
-
-%----------------------------------------------------------------------------------------
-%	CHAPTER 5
-%----------------------------------------------------------------------------------------
-Dieses Kapitel soll eine Auswahl der kennengelernten Algorithmen in Form konkreter Python-Implementierungen vorstellen und ihren Nutzen demonstrieren.
-
-\includepdf[pages=-,scale=0.85]{jupyter.pdf}
-
 
 \chapter{Fazit und Ausblick}
 \section{Mein Thema für die Masterarbeit}
-
-
 \printbibliography
+
+\renewcommand\appendixname{Anhang}
+\renewcommand\appendixpagename{Anhang}
+\appendixpage
+\begin{appendices}
+%Dieses Kapitel soll eine Auswahl der kennengelernten Algorithmen in Form konkreter Python-Implementierungen vorstellen und ihren Nutzen demonstrieren.
+
+\includepdf[pages=-,scale=0.85]{jupyter.pdf}
+
+\end{appendices}
+
 
 \end{document}
 

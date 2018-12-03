@@ -30,7 +30,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.5.3}Vektormodell}{15}{subsection.2.5.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.5.4}Beispiele von Raster und Vektordaten}{17}{subsection.2.5.4}
+\contentsline {subsection}{\numberline {2.5.4}Beispiele f\IeC {\"u}r Raster und Vektordaten}{17}{subsection.2.5.4}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {2.6}Algorithmen in der Geoinformatik}{18}{section.2.6}
 \defcounter {refsection}{0}\relax 
@@ -180,13 +180,9 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {4.7.4}Multivariate Fuzzy C-Means (MFCM)}{85}{subsection.4.7.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {5}Implementierungen}{87}{chapter.5}
+\contentsline {chapter}{\numberline {5}Fazit und Ausblick}{87}{chapter.5}
 \ttl@stoptoc {default@4}
 \ttl@starttoc {default@5}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {6}Fazit und Ausblick}{115}{chapter.6}
-\ttl@stoptoc {default@5}
-\ttl@starttoc {default@6}
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.1}Mein Thema f\IeC {\"u}r die Masterarbeit}{115}{section.6.1}
+\contentsline {section}{\numberline {5.1}Mein Thema f\IeC {\"u}r die Masterarbeit}{87}{section.5.1}
 \contentsfinish 

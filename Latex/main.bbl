@@ -1072,6 +1072,7 @@
       \strng{authorbibnamehash}{4deda1ed85b234395ac8a3bd278cf9e5}
       \strng{authornamehash}{4deda1ed85b234395ac8a3bd278cf9e5}
       \strng{authorfullhash}{4deda1ed85b234395ac8a3bd278cf9e5}
+      \field{extraname}{1}
       \field{labelalpha}{RM12}
       \field{sortinit}{R}
       \field{sortinithash}{da6b42bd3ab22fee61abed031ee405f7}
@@ -1082,6 +1083,38 @@
       \field{volume}{6}
       \field{year}{2012}
       \field{pages}{452\bibrangedash 459}
+      \range{pages}{8}
+    \endentry
+    \entry{scalespacefcm}{article}{}
+      \name{author}{2}{}{%
+        {{hash=0ea5d144f202173579a66b2542a2139c}{%
+           family={Roy},
+           familyi={R\bibinitperiod},
+           given={Parthajit},
+           giveni={P\bibinitperiod}}}%
+        {{hash=40520e31f0a84b794f8cac8fa2270bf0}{%
+           family={Mandal},
+           familyi={M\bibinitperiod},
+           given={J.K.},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{4deda1ed85b234395ac8a3bd278cf9e5}
+      \strng{fullhash}{4deda1ed85b234395ac8a3bd278cf9e5}
+      \strng{bibnamehash}{4deda1ed85b234395ac8a3bd278cf9e5}
+      \strng{authorbibnamehash}{4deda1ed85b234395ac8a3bd278cf9e5}
+      \strng{authornamehash}{4deda1ed85b234395ac8a3bd278cf9e5}
+      \strng{authorfullhash}{4deda1ed85b234395ac8a3bd278cf9e5}
+      \field{extraname}{2}
+      \field{labelalpha}{RM13}
+      \field{sortinit}{R}
+      \field{sortinithash}{da6b42bd3ab22fee61abed031ee405f7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Procedia Technology}
+      \field{title}{A Novel Selective Scale Space Based Fuzzy C-Means Model for Spatial Clustering}
+      \field{volume}{10}
+      \field{year}{2013}
+      \field{pages}{596\bibrangedash 603}
       \range{pages}{8}
     \endentry
     \entry{gdalg}{online}{}

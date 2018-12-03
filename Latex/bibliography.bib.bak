@@ -192,6 +192,16 @@ year = {2012},
 pages = {452 – 459}
 }
 
+@article{scalespacefcm,
+author = {Parthajit Roy and J.K. Mandal},
+title = {A Novel Selective Scale Space Based Fuzzy C-Means Model for
+Spatial Clustering},
+journal = {Procedia Technology},
+volume  = {10},
+year = {2013},
+pages = {596 – 603}
+}
+
 
 @conference{fgwc,
   author       = {G. A. Mason and R. D. Jacobson},
@@ -357,4 +367,20 @@ journal = {Applied Soft Computing},
 volume = {13},
 year = {2013},
 pages = {1592-1607}
+}
+
+@article{pca,
+author = {A.R. Webb},
+title = {Statistical Pattern Recognition},
+journal = {Wiley-Blackwell},
+volume = {2},
+year = {2002},
+}
+
+@article{ebdimred,
+author = {Manoranjan Dash and Huan Liu},
+title = {Feature Selection for Clustering},
+journal = {Proceedings of the 4th Pacific-Asia Conference on Knowledge Discovery and Data Mining, Current Issues and New Applications},
+year = {2000},
+pages = {110-121}
 }
