@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6880 64-bit) (preloaded format=pdflatex 2018.11.17)  3 DEC 2018 23:47
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6880 64-bit) (preloaded format=pdflatex 2018.11.17)  13 DEC 2018 02:22
 entering extended mode
 **./main.tex
 (main.tex
@@ -2059,515 +2059,518 @@ Package pdftex.def Info: Pictures/fcmnachteil.jpg  used on input line 1161.
 <Pictures/abstossung.jpg, id=929, 1410.4695pt x 396.2805pt>
 File: Pictures/abstossung.jpg Graphic file (type jpg)
 <use Pictures/abstossung.jpg>
-Package pdftex.def Info: Pictures/abstossung.jpg  used on input line 1186.
+Package pdftex.def Info: Pictures/abstossung.jpg  used on input line 1188.
 (pdftex.def)             Requested size: 423.14412pt x 118.88506pt.
  [57 <./Pictures/abstossung.jpg>]
 [58]
 
-LaTeX Warning: Command \" invalid in math mode on input line 1269.
+LaTeX Warning: Command \" invalid in math mode on input line 1273.
 
 
-LaTeX Warning: Command \" invalid in math mode on input line 1270.
+LaTeX Warning: Command \" invalid in math mode on input line 1274.
 
-[59]
-<Pictures/umkreis.jpg, id=955, 653.87143pt x 315.75107pt>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [59]
+[60]
+<Pictures/umkreis.jpg, id=959, 653.87143pt x 315.75107pt>
 File: Pictures/umkreis.jpg Graphic file (type jpg)
 <use Pictures/umkreis.jpg>
-Package pdftex.def Info: Pictures/umkreis.jpg  used on input line 1289.
+Package pdftex.def Info: Pictures/umkreis.jpg  used on input line 1293.
 (pdftex.def)             Requested size: 261.54393pt x 126.29817pt.
-<Pictures/delaunayinfo.jpg, id=956, 1180.41pt x 770.88pt>
+<Pictures/delaunayinfo.jpg, id=960, 1180.41pt x 770.88pt>
 File: Pictures/delaunayinfo.jpg Graphic file (type jpg)
 <use Pictures/delaunayinfo.jpg>
-Package pdftex.def Info: Pictures/delaunayinfo.jpg  used on input line 1300.
+Package pdftex.def Info: Pictures/delaunayinfo.jpg  used on input line 1304.
 (pdftex.def)             Requested size: 354.12573pt x 231.26578pt.
- [60
+ [61
 
- <./Pictures/umkreis.jpg>] [61 <./Pictures/delaunayinfo.jpg>] [62]
-<Pictures/polygone.jpg, id=976, 582.46179pt x 425.87679pt>
+ <./Pictures/umkreis.jpg>] [62 <./Pictures/delaunayinfo.jpg>] [63]
+<Pictures/polygone.jpg, id=980, 582.46179pt x 425.87679pt>
 File: Pictures/polygone.jpg Graphic file (type jpg)
 <use Pictures/polygone.jpg>
-Package pdftex.def Info: Pictures/polygone.jpg  used on input line 1384.
+Package pdftex.def Info: Pictures/polygone.jpg  used on input line 1388.
 (pdftex.def)             Requested size: 216.09877pt x 158.00082pt.
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 1385.
+(caption)                particular \caption on input line 1389.
 See the caption package documentation for explanation.
 
-<Pictures/nscabdtaccuracy.jpg, id=977, 1264.725pt x 203.04428pt>
+<Pictures/nscabdtaccuracy.jpg, id=981, 1264.725pt x 203.04428pt>
 File: Pictures/nscabdtaccuracy.jpg Graphic file (type jpg)
 <use Pictures/nscabdtaccuracy.jpg>
-Package pdftex.def Info: Pictures/nscabdtaccuracy.jpg  used on input line 1393.
+Package pdftex.def Info: Pictures/nscabdtaccuracy.jpg  used on input line 1397.
 
 (pdftex.def)             Requested size: 442.66039pt x 71.06656pt.
 
-Overfull \hbox (10.46283pt too wide) in paragraph at lines 1393--1394
+Overfull \hbox (10.46283pt too wide) in paragraph at lines 1397--1398
  [][] 
  []
 
-[63 <./Pictures/polygone.jpg> <./Pictures/nscabdtaccuracy.jpg>] [64] [65]
-<Pictures/nsfcomp.jpg, id=1006, 966.18108pt x 431.89929pt>
+[64 <./Pictures/polygone.jpg> <./Pictures/nscabdtaccuracy.jpg>] [65] [66]
+<Pictures/nsfcomp.jpg, id=1010, 966.18108pt x 431.89929pt>
 File: Pictures/nsfcomp.jpg Graphic file (type jpg)
 <use Pictures/nsfcomp.jpg>
-Package pdftex.def Info: Pictures/nsfcomp.jpg  used on input line 1493.
+Package pdftex.def Info: Pictures/nsfcomp.jpg  used on input line 1496.
 (pdftex.def)             Requested size: 318.84073pt x 142.52719pt.
 
-[66 <./Pictures/nsfcomp.jpg>]
-<Pictures/nsfcdtres.jpg, id=1014, 1025.11554pt x 329.94696pt>
+[67 <./Pictures/nsfcomp.jpg>]
+<Pictures/nsfcdtres.jpg, id=1019, 1025.11554pt x 329.94696pt>
 File: Pictures/nsfcdtres.jpg Graphic file (type jpg)
 <use Pictures/nsfcdtres.jpg>
-Package pdftex.def Info: Pictures/nsfcdtres.jpg  used on input line 1501.
+Package pdftex.def Info: Pictures/nsfcdtres.jpg  used on input line 1504.
 (pdftex.def)             Requested size: 410.03896pt x 131.97644pt.
- [67 <./Pictures/nsfcdtres.jpg>] [68
+ [68 <./Pictures/nsfcdtres.jpg>] [69
 
-] [69]
-[70] [71] [72]
-<Pictures/vatalg.jpg, id=1058, 739.04678pt x 696.88928pt>
+] [70]
+[71] [72]
+Underfull \vbox (badness 2521) has occurred while \output is active []
+
+ [73]
+<Pictures/vatalg.jpg, id=1062, 739.04678pt x 696.88928pt>
 File: Pictures/vatalg.jpg Graphic file (type jpg)
 <use Pictures/vatalg.jpg>
-Package pdftex.def Info: Pictures/vatalg.jpg  used on input line 1651.
+Package pdftex.def Info: Pictures/vatalg.jpg  used on input line 1662.
 (pdftex.def)             Requested size: 259.32117pt x 244.53165pt.
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 1652.
+(caption)                particular \caption on input line 1663.
 See the caption package documentation for explanation.
 
-[73 <./Pictures/vatalg.jpg>] [74]
-<Pictures/tnorms.jpg, id=1075, 1238.4841pt x 579.8807pt>
+
+Underfull \vbox (badness 8000) has occurred while \output is active []
+
+ [74 <./Pictures/vatalg.jpg>] [75] [76]
+<Pictures/tnorms.jpg, id=1084, 1238.4841pt x 579.8807pt>
 File: Pictures/tnorms.jpg Graphic file (type jpg)
 <use Pictures/tnorms.jpg>
-Package pdftex.def Info: Pictures/tnorms.jpg  used on input line 1715.
+Package pdftex.def Info: Pictures/tnorms.jpg  used on input line 1727.
 (pdftex.def)             Requested size: 371.5481pt x 173.96555pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [75]
-[76 <./Pictures/tnorms.jpg>] [77] [78] [79]
-<Pictures/him08ergebnisse.jpg, id=1116, 1015.65161pt x 1213.10358pt>
+ [77 <./Pictures/tnorms.jpg>] [78] [79] [80]
+<Pictures/him08ergebnisse.jpg, id=1120, 1015.65161pt x 1213.10358pt>
 File: Pictures/him08ergebnisse.jpg Graphic file (type jpg)
 <use Pictures/him08ergebnisse.jpg>
-Package pdftex.def Info: Pictures/him08ergebnisse.jpg  used on input line 1840.
+Package pdftex.def Info: Pictures/him08ergebnisse.jpg  used on input line 1853.
 
 (pdftex.def)             Requested size: 432.19756pt x 516.21931pt.
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [80]
-[81 <./Pictures/him08ergebnisse.jpg>] [82] [83] [84] [85] [86
-
-]
+[81] [82 <./Pictures/him08ergebnisse.jpg>] [83] [84] [85] [86]
 Kapitel 5.
 File: Pictures/head8.jpg Graphic file (type jpg)
 <use Pictures/head8.jpg>
-Package pdftex.def Info: Pictures/head8.jpg  used on input line 1951.
+Package pdftex.def Info: Pictures/head8.jpg  used on input line 1963.
 (pdftex.def)             Requested size: 614.295pt x 319.29547pt.
-[87] [88
+[87
+
+] [88
 
 ]
 File: Pictures/head8.jpg Graphic file (type jpg)
 <use Pictures/head8.jpg>
-Package pdftex.def Info: Pictures/head8.jpg  used on input line 1953.
+Package pdftex.def Info: Pictures/head8.jpg  used on input line 1972.
 (pdftex.def)             Requested size: 614.295pt x 319.29547pt.
  [89] [90] [91] [92] [93
 
 ] [94]
-<jupyter.pdf, id=1250, 614.295pt x 794.97pt>
+<jupyter.pdf, id=1252, 614.295pt x 794.97pt>
 File: jupyter.pdf Graphic file (type pdf)
 <use jupyter.pdf>
-Package pdftex.def Info: jupyter.pdf  used on input line 1961.
+Package pdftex.def Info: jupyter.pdf  used on input line 1980.
 (pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
 File: jupyter.pdf Graphic file (type pdf)
 <use jupyter.pdf>
-Package pdftex.def Info: jupyter.pdf  used on input line 1961.
+Package pdftex.def Info: jupyter.pdf  used on input line 1980.
 (pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
-<jupyter.pdf, id=1253, page=1, 614.295pt x 794.97pt>
+<jupyter.pdf, id=1255, page=1, 614.295pt x 794.97pt>
 File: jupyter.pdf Graphic file (type pdf)
 <use jupyter.pdf, page 1>
-Package pdftex.def Info: jupyter.pdf , page1 used on input line 1961.
+Package pdftex.def Info: jupyter.pdf , page1 used on input line 1980.
 (pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
 File: jupyter.pdf Graphic file (type pdf)
 <use jupyter.pdf, page 1>
-Package pdftex.def Info: jupyter.pdf , page1 used on input line 1961.
+Package pdftex.def Info: jupyter.pdf , page1 used on input line 1980.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
 File: jupyter.pdf Graphic file (type pdf)
 <use jupyter.pdf, page 1>
-Package pdftex.def Info: jupyter.pdf , page1 used on input line 1961.
+Package pdftex.def Info: jupyter.pdf , page1 used on input line 1980.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
 File: jupyter.pdf Graphic file (type pdf)
 <use jupyter.pdf, page 1>
-Package pdftex.def Info: jupyter.pdf , page1 used on input line 1961.
+Package pdftex.def Info: jupyter.pdf , page1 used on input line 1980.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
 File: jupyter.pdf Graphic file (type pdf)
 <use jupyter.pdf, page 1>
-Package pdftex.def Info: jupyter.pdf , page1 used on input line 1961.
+Package pdftex.def Info: jupyter.pdf , page1 used on input line 1980.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
  [95 <./jupyter.pdf>]
-<jupyter.pdf, id=1447, page=2, 614.295pt x 794.97pt>
+<jupyter.pdf, id=1449, page=2, 614.295pt x 794.97pt>
 File: jupyter.pdf Graphic file (type pdf)
 <use jupyter.pdf, page 2>
-Package pdftex.def Info: jupyter.pdf , page2 used on input line 1961.
+Package pdftex.def Info: jupyter.pdf , page2 used on input line 1980.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
 File: jupyter.pdf Graphic file (type pdf)
 <use jupyter.pdf, page 2>
-Package pdftex.def Info: jupyter.pdf , page2 used on input line 1961.
+Package pdftex.def Info: jupyter.pdf , page2 used on input line 1980.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
 File: jupyter.pdf Graphic file (type pdf)
 <use jupyter.pdf, page 2>
-Package pdftex.def Info: jupyter.pdf , page2 used on input line 1961.
+Package pdftex.def Info: jupyter.pdf , page2 used on input line 1980.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
  [96 <./jupyter.pdf>]
-<jupyter.pdf, id=1455, page=3, 614.295pt x 794.97pt>
+<jupyter.pdf, id=1457, page=3, 614.295pt x 794.97pt>
 File: jupyter.pdf Graphic file (type pdf)
 <use jupyter.pdf, page 3>
-Package pdftex.def Info: jupyter.pdf , page3 used on input line 1961.
+Package pdftex.def Info: jupyter.pdf , page3 used on input line 1980.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
 File: jupyter.pdf Graphic file (type pdf)
 <use jupyter.pdf, page 3>
-Package pdftex.def Info: jupyter.pdf , page3 used on input line 1961.
+Package pdftex.def Info: jupyter.pdf , page3 used on input line 1980.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
 File: jupyter.pdf Graphic file (type pdf)
 <use jupyter.pdf, page 3>
-Package pdftex.def Info: jupyter.pdf , page3 used on input line 1961.
+Package pdftex.def Info: jupyter.pdf , page3 used on input line 1980.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
  [97 <./jupyter.pdf>]
-<jupyter.pdf, id=1461, page=4, 614.295pt x 794.97pt>
+<jupyter.pdf, id=1463, page=4, 614.295pt x 794.97pt>
 File: jupyter.pdf Graphic file (type pdf)
 <use jupyter.pdf, page 4>
-Package pdftex.def Info: jupyter.pdf , page4 used on input line 1961.
+Package pdftex.def Info: jupyter.pdf , page4 used on input line 1980.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
 File: jupyter.pdf Graphic file (type pdf)
 <use jupyter.pdf, page 4>
-Package pdftex.def Info: jupyter.pdf , page4 used on input line 1961.
+Package pdftex.def Info: jupyter.pdf , page4 used on input line 1980.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
 File: jupyter.pdf Graphic file (type pdf)
 <use jupyter.pdf, page 4>
-Package pdftex.def Info: jupyter.pdf , page4 used on input line 1961.
+Package pdftex.def Info: jupyter.pdf , page4 used on input line 1980.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
  [98 <./jupyter.pdf>]
-<jupyter.pdf, id=1466, page=5, 614.295pt x 794.97pt>
+<jupyter.pdf, id=1468, page=5, 614.295pt x 794.97pt>
 File: jupyter.pdf Graphic file (type pdf)
 <use jupyter.pdf, page 5>
-Package pdftex.def Info: jupyter.pdf , page5 used on input line 1961.
+Package pdftex.def Info: jupyter.pdf , page5 used on input line 1980.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
 File: jupyter.pdf Graphic file (type pdf)
 <use jupyter.pdf, page 5>
-Package pdftex.def Info: jupyter.pdf , page5 used on input line 1961.
+Package pdftex.def Info: jupyter.pdf , page5 used on input line 1980.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
 File: jupyter.pdf Graphic file (type pdf)
 <use jupyter.pdf, page 5>
-Package pdftex.def Info: jupyter.pdf , page5 used on input line 1961.
+Package pdftex.def Info: jupyter.pdf , page5 used on input line 1980.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
  [99 <./jupyter.pdf>]
-<jupyter.pdf, id=1474, page=6, 614.295pt x 794.97pt>
+<jupyter.pdf, id=1476, page=6, 614.295pt x 794.97pt>
 File: jupyter.pdf Graphic file (type pdf)
 <use jupyter.pdf, page 6>
-Package pdftex.def Info: jupyter.pdf , page6 used on input line 1961.
+Package pdftex.def Info: jupyter.pdf , page6 used on input line 1980.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
 File: jupyter.pdf Graphic file (type pdf)
 <use jupyter.pdf, page 6>
-Package pdftex.def Info: jupyter.pdf , page6 used on input line 1961.
+Package pdftex.def Info: jupyter.pdf , page6 used on input line 1980.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
 File: jupyter.pdf Graphic file (type pdf)
 <use jupyter.pdf, page 6>
-Package pdftex.def Info: jupyter.pdf , page6 used on input line 1961.
+Package pdftex.def Info: jupyter.pdf , page6 used on input line 1980.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
  [100 <./jupyter.pdf>]
-<jupyter.pdf, id=1482, page=7, 614.295pt x 794.97pt>
+<jupyter.pdf, id=1484, page=7, 614.295pt x 794.97pt>
 File: jupyter.pdf Graphic file (type pdf)
 <use jupyter.pdf, page 7>
-Package pdftex.def Info: jupyter.pdf , page7 used on input line 1961.
+Package pdftex.def Info: jupyter.pdf , page7 used on input line 1980.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
 File: jupyter.pdf Graphic file (type pdf)
 <use jupyter.pdf, page 7>
-Package pdftex.def Info: jupyter.pdf , page7 used on input line 1961.
+Package pdftex.def Info: jupyter.pdf , page7 used on input line 1980.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
 File: jupyter.pdf Graphic file (type pdf)
 <use jupyter.pdf, page 7>
-Package pdftex.def Info: jupyter.pdf , page7 used on input line 1961.
+Package pdftex.def Info: jupyter.pdf , page7 used on input line 1980.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
  [101 <./jupyter.pdf>]
-<jupyter.pdf, id=1487, page=8, 614.295pt x 794.97pt>
+<jupyter.pdf, id=1489, page=8, 614.295pt x 794.97pt>
 File: jupyter.pdf Graphic file (type pdf)
 <use jupyter.pdf, page 8>
-Package pdftex.def Info: jupyter.pdf , page8 used on input line 1961.
+Package pdftex.def Info: jupyter.pdf , page8 used on input line 1980.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
 File: jupyter.pdf Graphic file (type pdf)
 <use jupyter.pdf, page 8>
-Package pdftex.def Info: jupyter.pdf , page8 used on input line 1961.
+Package pdftex.def Info: jupyter.pdf , page8 used on input line 1980.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
 File: jupyter.pdf Graphic file (type pdf)
 <use jupyter.pdf, page 8>
-Package pdftex.def Info: jupyter.pdf , page8 used on input line 1961.
+Package pdftex.def Info: jupyter.pdf , page8 used on input line 1980.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
  [102 <./jupyter.pdf>]
-<jupyter.pdf, id=1492, page=9, 614.295pt x 794.97pt>
+<jupyter.pdf, id=1494, page=9, 614.295pt x 794.97pt>
 File: jupyter.pdf Graphic file (type pdf)
 <use jupyter.pdf, page 9>
-Package pdftex.def Info: jupyter.pdf , page9 used on input line 1961.
+Package pdftex.def Info: jupyter.pdf , page9 used on input line 1980.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
 File: jupyter.pdf Graphic file (type pdf)
 <use jupyter.pdf, page 9>
-Package pdftex.def Info: jupyter.pdf , page9 used on input line 1961.
+Package pdftex.def Info: jupyter.pdf , page9 used on input line 1980.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
 File: jupyter.pdf Graphic file (type pdf)
 <use jupyter.pdf, page 9>
-Package pdftex.def Info: jupyter.pdf , page9 used on input line 1961.
+Package pdftex.def Info: jupyter.pdf , page9 used on input line 1980.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
  [103 <./jupyter.pdf>]
-<jupyter.pdf, id=1498, page=10, 614.295pt x 794.97pt>
+<jupyter.pdf, id=1500, page=10, 614.295pt x 794.97pt>
 File: jupyter.pdf Graphic file (type pdf)
 <use jupyter.pdf, page 10>
-Package pdftex.def Info: jupyter.pdf , page10 used on input line 1961.
+Package pdftex.def Info: jupyter.pdf , page10 used on input line 1980.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
 File: jupyter.pdf Graphic file (type pdf)
 <use jupyter.pdf, page 10>
-Package pdftex.def Info: jupyter.pdf , page10 used on input line 1961.
+Package pdftex.def Info: jupyter.pdf , page10 used on input line 1980.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
 File: jupyter.pdf Graphic file (type pdf)
 <use jupyter.pdf, page 10>
-Package pdftex.def Info: jupyter.pdf , page10 used on input line 1961.
+Package pdftex.def Info: jupyter.pdf , page10 used on input line 1980.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
 
 [104 <./jupyter.pdf>]
-<jupyter.pdf, id=1503, page=11, 614.295pt x 794.97pt>
+<jupyter.pdf, id=1505, page=11, 614.295pt x 794.97pt>
 File: jupyter.pdf Graphic file (type pdf)
 <use jupyter.pdf, page 11>
-Package pdftex.def Info: jupyter.pdf , page11 used on input line 1961.
+Package pdftex.def Info: jupyter.pdf , page11 used on input line 1980.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
 File: jupyter.pdf Graphic file (type pdf)
 <use jupyter.pdf, page 11>
-Package pdftex.def Info: jupyter.pdf , page11 used on input line 1961.
+Package pdftex.def Info: jupyter.pdf , page11 used on input line 1980.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
 File: jupyter.pdf Graphic file (type pdf)
 <use jupyter.pdf, page 11>
-Package pdftex.def Info: jupyter.pdf , page11 used on input line 1961.
+Package pdftex.def Info: jupyter.pdf , page11 used on input line 1980.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
  [105 <./jupyter.pdf>]
-<jupyter.pdf, id=1511, page=12, 614.295pt x 794.97pt>
+<jupyter.pdf, id=1513, page=12, 614.295pt x 794.97pt>
 File: jupyter.pdf Graphic file (type pdf)
 <use jupyter.pdf, page 12>
-Package pdftex.def Info: jupyter.pdf , page12 used on input line 1961.
+Package pdftex.def Info: jupyter.pdf , page12 used on input line 1980.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
 File: jupyter.pdf Graphic file (type pdf)
 <use jupyter.pdf, page 12>
-Package pdftex.def Info: jupyter.pdf , page12 used on input line 1961.
+Package pdftex.def Info: jupyter.pdf , page12 used on input line 1980.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
 File: jupyter.pdf Graphic file (type pdf)
 <use jupyter.pdf, page 12>
-Package pdftex.def Info: jupyter.pdf , page12 used on input line 1961.
+Package pdftex.def Info: jupyter.pdf , page12 used on input line 1980.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
  [106 <./jupyter.pdf>]
-<jupyter.pdf, id=1524, page=13, 614.295pt x 794.97pt>
+<jupyter.pdf, id=1526, page=13, 614.295pt x 794.97pt>
 File: jupyter.pdf Graphic file (type pdf)
 <use jupyter.pdf, page 13>
-Package pdftex.def Info: jupyter.pdf , page13 used on input line 1961.
+Package pdftex.def Info: jupyter.pdf , page13 used on input line 1980.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
 File: jupyter.pdf Graphic file (type pdf)
 <use jupyter.pdf, page 13>
-Package pdftex.def Info: jupyter.pdf , page13 used on input line 1961.
+Package pdftex.def Info: jupyter.pdf , page13 used on input line 1980.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
 File: jupyter.pdf Graphic file (type pdf)
 <use jupyter.pdf, page 13>
-Package pdftex.def Info: jupyter.pdf , page13 used on input line 1961.
+Package pdftex.def Info: jupyter.pdf , page13 used on input line 1980.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
  [107 <./jupyter.pdf>]
-<jupyter.pdf, id=1529, page=14, 614.295pt x 794.97pt>
+<jupyter.pdf, id=1531, page=14, 614.295pt x 794.97pt>
 File: jupyter.pdf Graphic file (type pdf)
 <use jupyter.pdf, page 14>
-Package pdftex.def Info: jupyter.pdf , page14 used on input line 1961.
+Package pdftex.def Info: jupyter.pdf , page14 used on input line 1980.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
 File: jupyter.pdf Graphic file (type pdf)
 <use jupyter.pdf, page 14>
-Package pdftex.def Info: jupyter.pdf , page14 used on input line 1961.
+Package pdftex.def Info: jupyter.pdf , page14 used on input line 1980.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
 File: jupyter.pdf Graphic file (type pdf)
 <use jupyter.pdf, page 14>
-Package pdftex.def Info: jupyter.pdf , page14 used on input line 1961.
+Package pdftex.def Info: jupyter.pdf , page14 used on input line 1980.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
  [108 <./jupyter.pdf>]
-<jupyter.pdf, id=1534, page=15, 614.295pt x 794.97pt>
+<jupyter.pdf, id=1536, page=15, 614.295pt x 794.97pt>
 File: jupyter.pdf Graphic file (type pdf)
 <use jupyter.pdf, page 15>
-Package pdftex.def Info: jupyter.pdf , page15 used on input line 1961.
+Package pdftex.def Info: jupyter.pdf , page15 used on input line 1980.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
 File: jupyter.pdf Graphic file (type pdf)
 <use jupyter.pdf, page 15>
-Package pdftex.def Info: jupyter.pdf , page15 used on input line 1961.
+Package pdftex.def Info: jupyter.pdf , page15 used on input line 1980.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
 File: jupyter.pdf Graphic file (type pdf)
 <use jupyter.pdf, page 15>
-Package pdftex.def Info: jupyter.pdf , page15 used on input line 1961.
+Package pdftex.def Info: jupyter.pdf , page15 used on input line 1980.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
  [109 <./jupyter.pdf>]
-<jupyter.pdf, id=1540, page=16, 614.295pt x 794.97pt>
+<jupyter.pdf, id=1542, page=16, 614.295pt x 794.97pt>
 File: jupyter.pdf Graphic file (type pdf)
 <use jupyter.pdf, page 16>
-Package pdftex.def Info: jupyter.pdf , page16 used on input line 1961.
+Package pdftex.def Info: jupyter.pdf , page16 used on input line 1980.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
 File: jupyter.pdf Graphic file (type pdf)
 <use jupyter.pdf, page 16>
-Package pdftex.def Info: jupyter.pdf , page16 used on input line 1961.
+Package pdftex.def Info: jupyter.pdf , page16 used on input line 1980.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
 File: jupyter.pdf Graphic file (type pdf)
 <use jupyter.pdf, page 16>
-Package pdftex.def Info: jupyter.pdf , page16 used on input line 1961.
+Package pdftex.def Info: jupyter.pdf , page16 used on input line 1980.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
  [110 <./jupyter.pdf>]
-<jupyter.pdf, id=1548, page=17, 614.295pt x 794.97pt>
+<jupyter.pdf, id=1550, page=17, 614.295pt x 794.97pt>
 File: jupyter.pdf Graphic file (type pdf)
 <use jupyter.pdf, page 17>
-Package pdftex.def Info: jupyter.pdf , page17 used on input line 1961.
+Package pdftex.def Info: jupyter.pdf , page17 used on input line 1980.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
 File: jupyter.pdf Graphic file (type pdf)
 <use jupyter.pdf, page 17>
-Package pdftex.def Info: jupyter.pdf , page17 used on input line 1961.
+Package pdftex.def Info: jupyter.pdf , page17 used on input line 1980.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
 File: jupyter.pdf Graphic file (type pdf)
 <use jupyter.pdf, page 17>
-Package pdftex.def Info: jupyter.pdf , page17 used on input line 1961.
+Package pdftex.def Info: jupyter.pdf , page17 used on input line 1980.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
 
 [111 <./jupyter.pdf>]
-<jupyter.pdf, id=1556, page=18, 614.295pt x 794.97pt>
+<jupyter.pdf, id=1558, page=18, 614.295pt x 794.97pt>
 File: jupyter.pdf Graphic file (type pdf)
 <use jupyter.pdf, page 18>
-Package pdftex.def Info: jupyter.pdf , page18 used on input line 1961.
+Package pdftex.def Info: jupyter.pdf , page18 used on input line 1980.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
 File: jupyter.pdf Graphic file (type pdf)
 <use jupyter.pdf, page 18>
-Package pdftex.def Info: jupyter.pdf , page18 used on input line 1961.
+Package pdftex.def Info: jupyter.pdf , page18 used on input line 1980.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
 File: jupyter.pdf Graphic file (type pdf)
 <use jupyter.pdf, page 18>
-Package pdftex.def Info: jupyter.pdf , page18 used on input line 1961.
+Package pdftex.def Info: jupyter.pdf , page18 used on input line 1980.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
  [112 <./jupyter.pdf>]
-<jupyter.pdf, id=1564, page=19, 614.295pt x 794.97pt>
+<jupyter.pdf, id=1566, page=19, 614.295pt x 794.97pt>
 File: jupyter.pdf Graphic file (type pdf)
 <use jupyter.pdf, page 19>
-Package pdftex.def Info: jupyter.pdf , page19 used on input line 1961.
+Package pdftex.def Info: jupyter.pdf , page19 used on input line 1980.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
 File: jupyter.pdf Graphic file (type pdf)
 <use jupyter.pdf, page 19>
-Package pdftex.def Info: jupyter.pdf , page19 used on input line 1961.
+Package pdftex.def Info: jupyter.pdf , page19 used on input line 1980.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
 File: jupyter.pdf Graphic file (type pdf)
 <use jupyter.pdf, page 19>
-Package pdftex.def Info: jupyter.pdf , page19 used on input line 1961.
+Package pdftex.def Info: jupyter.pdf , page19 used on input line 1980.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
  [113 <./jupyter.pdf>]
-<jupyter.pdf, id=1572, page=20, 614.295pt x 794.97pt>
+<jupyter.pdf, id=1574, page=20, 614.295pt x 794.97pt>
 File: jupyter.pdf Graphic file (type pdf)
 <use jupyter.pdf, page 20>
-Package pdftex.def Info: jupyter.pdf , page20 used on input line 1961.
+Package pdftex.def Info: jupyter.pdf , page20 used on input line 1980.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
 File: jupyter.pdf Graphic file (type pdf)
 <use jupyter.pdf, page 20>
-Package pdftex.def Info: jupyter.pdf , page20 used on input line 1961.
+Package pdftex.def Info: jupyter.pdf , page20 used on input line 1980.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
 File: jupyter.pdf Graphic file (type pdf)
 <use jupyter.pdf, page 20>
-Package pdftex.def Info: jupyter.pdf , page20 used on input line 1961.
+Package pdftex.def Info: jupyter.pdf , page20 used on input line 1980.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
  [114 <./jupyter.pdf>]
-<jupyter.pdf, id=1580, page=21, 614.295pt x 794.97pt>
+<jupyter.pdf, id=1582, page=21, 614.295pt x 794.97pt>
 File: jupyter.pdf Graphic file (type pdf)
 <use jupyter.pdf, page 21>
-Package pdftex.def Info: jupyter.pdf , page21 used on input line 1961.
+Package pdftex.def Info: jupyter.pdf , page21 used on input line 1980.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
 File: jupyter.pdf Graphic file (type pdf)
 <use jupyter.pdf, page 21>
-Package pdftex.def Info: jupyter.pdf , page21 used on input line 1961.
+Package pdftex.def Info: jupyter.pdf , page21 used on input line 1980.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
 File: jupyter.pdf Graphic file (type pdf)
 <use jupyter.pdf, page 21>
-Package pdftex.def Info: jupyter.pdf , page21 used on input line 1961.
+Package pdftex.def Info: jupyter.pdf , page21 used on input line 1980.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
  [115 <./jupyter.pdf>]
-<jupyter.pdf, id=1589, page=22, 614.295pt x 794.97pt>
+<jupyter.pdf, id=1591, page=22, 614.295pt x 794.97pt>
 File: jupyter.pdf Graphic file (type pdf)
 <use jupyter.pdf, page 22>
-Package pdftex.def Info: jupyter.pdf , page22 used on input line 1961.
+Package pdftex.def Info: jupyter.pdf , page22 used on input line 1980.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
 File: jupyter.pdf Graphic file (type pdf)
 <use jupyter.pdf, page 22>
-Package pdftex.def Info: jupyter.pdf , page22 used on input line 1961.
+Package pdftex.def Info: jupyter.pdf , page22 used on input line 1980.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
 File: jupyter.pdf Graphic file (type pdf)
 <use jupyter.pdf, page 22>
-Package pdftex.def Info: jupyter.pdf , page22 used on input line 1961.
+Package pdftex.def Info: jupyter.pdf , page22 used on input line 1980.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
  [116 <./jupyter.pdf>]
-<jupyter.pdf, id=1597, page=23, 614.295pt x 794.97pt>
+<jupyter.pdf, id=1599, page=23, 614.295pt x 794.97pt>
 File: jupyter.pdf Graphic file (type pdf)
 <use jupyter.pdf, page 23>
-Package pdftex.def Info: jupyter.pdf , page23 used on input line 1961.
+Package pdftex.def Info: jupyter.pdf , page23 used on input line 1980.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
 File: jupyter.pdf Graphic file (type pdf)
 <use jupyter.pdf, page 23>
-Package pdftex.def Info: jupyter.pdf , page23 used on input line 1961.
+Package pdftex.def Info: jupyter.pdf , page23 used on input line 1980.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
 File: jupyter.pdf Graphic file (type pdf)
 <use jupyter.pdf, page 23>
-Package pdftex.def Info: jupyter.pdf , page23 used on input line 1961.
+Package pdftex.def Info: jupyter.pdf , page23 used on input line 1980.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
  [117 <./jupyter.pdf>]
-<jupyter.pdf, id=1602, page=24, 614.295pt x 794.97pt>
+<jupyter.pdf, id=1604, page=24, 614.295pt x 794.97pt>
 File: jupyter.pdf Graphic file (type pdf)
 <use jupyter.pdf, page 24>
-Package pdftex.def Info: jupyter.pdf , page24 used on input line 1961.
+Package pdftex.def Info: jupyter.pdf , page24 used on input line 1980.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
 File: jupyter.pdf Graphic file (type pdf)
 <use jupyter.pdf, page 24>
-Package pdftex.def Info: jupyter.pdf , page24 used on input line 1961.
+Package pdftex.def Info: jupyter.pdf , page24 used on input line 1980.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
 File: jupyter.pdf Graphic file (type pdf)
 <use jupyter.pdf, page 24>
-Package pdftex.def Info: jupyter.pdf , page24 used on input line 1961.
+Package pdftex.def Info: jupyter.pdf , page24 used on input line 1980.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
 
 [118 <./jupyter.pdf>]
-<jupyter.pdf, id=1610, page=25, 614.295pt x 794.97pt>
+<jupyter.pdf, id=1612, page=25, 614.295pt x 794.97pt>
 File: jupyter.pdf Graphic file (type pdf)
 <use jupyter.pdf, page 25>
-Package pdftex.def Info: jupyter.pdf , page25 used on input line 1961.
+Package pdftex.def Info: jupyter.pdf , page25 used on input line 1980.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
 File: jupyter.pdf Graphic file (type pdf)
 <use jupyter.pdf, page 25>
-Package pdftex.def Info: jupyter.pdf , page25 used on input line 1961.
+Package pdftex.def Info: jupyter.pdf , page25 used on input line 1980.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
 File: jupyter.pdf Graphic file (type pdf)
 <use jupyter.pdf, page 25>
-Package pdftex.def Info: jupyter.pdf , page25 used on input line 1961.
+Package pdftex.def Info: jupyter.pdf , page25 used on input line 1980.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
  [119 <./jupyter.pdf>]
-<jupyter.pdf, id=1615, page=26, 614.295pt x 794.97pt>
+<jupyter.pdf, id=1617, page=26, 614.295pt x 794.97pt>
 File: jupyter.pdf Graphic file (type pdf)
 <use jupyter.pdf, page 26>
-Package pdftex.def Info: jupyter.pdf , page26 used on input line 1961.
+Package pdftex.def Info: jupyter.pdf , page26 used on input line 1980.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
 File: jupyter.pdf Graphic file (type pdf)
 <use jupyter.pdf, page 26>
-Package pdftex.def Info: jupyter.pdf , page26 used on input line 1961.
+Package pdftex.def Info: jupyter.pdf , page26 used on input line 1980.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
 File: jupyter.pdf Graphic file (type pdf)
 <use jupyter.pdf, page 26>
-Package pdftex.def Info: jupyter.pdf , page26 used on input line 1961.
+Package pdftex.def Info: jupyter.pdf , page26 used on input line 1980.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
  [120 <./jupyter.pdf>]
 \tf@ptc=\write7
 \openout7 = `main.ptc'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1966.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1966.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1983.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1983.
  (main.aux
 ([.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1966.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1966.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1983.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1983.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 39BD1D9648584658E6B44A1EAFA94521;5614.
+(rerunfilecheck)             Checksum: 9659DCE15BF402A4424B95988C7B03DD;5614.
 
 
 LaTeX Warning: There were multiply-defined labels.
@@ -2577,11 +2580,11 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 42517 strings out of 492969
- 781377 string characters out of 3135846
- 1335428 words of memory out of 3000000
+ 42518 strings out of 492969
+ 781378 string characters out of 3135846
+ 1336427 words of memory out of 3000000
  45166 multiletter control sequences out of 15000+200000
- 644061 words of font info for 155 fonts, out of 3000000 for 9000
+ 643978 words of font info for 154 fonts, out of 3000000 for 9000
  1143 hyphenation exceptions out of 8191
  57i,19n,92p,1604b,2847s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.enc}{C:/Program Files/M
@@ -2608,9 +2611,9 @@ ic/amsfonts/symbols/msam10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/
 amsfonts/symbols/msam7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsf
 onts/symbols/msbm10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/palatino/u
 plr8a.pfb>
-Output written on main.pdf (120 pages, 17915846 bytes).
+Output written on main.pdf (120 pages, 17917524 bytes).
 PDF statistics:
- 1789 PDF objects out of 2073 (max. 8388607)
- 405 named destinations out of 1000 (max. 500000)
+ 1791 PDF objects out of 2073 (max. 8388607)
+ 408 named destinations out of 1000 (max. 500000)
  37324 words of extra memory for PDF output out of 42996 (max. 10000000)
 

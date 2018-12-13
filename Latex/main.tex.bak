@@ -99,7 +99,7 @@
 
 \chapterimage{head8} % Chapter heading image
 \chapter{Motivation}
-Die folgende Projektarbeit liefert einen groben Überblick über Methoden und Algorithmen im Bereich der geoinformationsverarbeitenden Systeme in Verbindung mit Machine Learning (ML). Darunter werden sämtliche Verfahren verstanden, die auf Basis von Datenbeständen  Fähigkeiten erlernen, mithilfe derer abstraktere Probleme automatisiert gelöst werden können. Die Projektarbeit beschränkt sich auf die ML-Teilbereiche Deep Learning und Data Mining, welche sich mit der Wissensextraktion (Assoziationsmustererkennung),der Klassifikation und dem Clustering von Datenpunkten auseinandersetzen. Die Auswertung geowissenschaftlicher Fachliteratur soll zudem Erkenntnisse über weitere Einsatzbereiche von Machine Learning liefern. Außerdem soll recherchiert werden, worin die Herausforderungen bestehen und welche offenen Probleme es gibt.
+Die folgende Projektarbeit liefert einen groben Überblick über Methoden und Algorithmen im Bereich der geoinformationsverarbeitenden Systeme in Verbindung mit Machine Learning (ML). Darunter werden sämtliche Verfahren verstanden, die auf Basis von Datenbeständen Fähigkeiten erlernen, mithilfe derer abstraktere Probleme automatisiert gelöst werden können. Die Projektarbeit beschränkt sich auf die ML-Teilbereiche Deep Learning und Data Mining, welche sich mit der Wissensextraktion (Assoziationsmustererkennung), der Klassifikation und dem Clustering von Datenpunkten auseinandersetzen. Die Auswertung geowissenschaftlicher Fachliteratur soll zudem Erkenntnisse über weitere Einsatzbereiche von Machine Learning liefern. Außerdem soll recherchiert werden, worin die Herausforderungen bestehen und welche offenen Probleme es gibt.
 \\~\\
 Ziel der Arbeit ist die Eingrenzung der Themenbereiche auf Fragestellungen, die sich für eine wissenschaftlichen Ausarbeitung im Rahmen der sich anschließenden Masterarbeit eignen.
 
@@ -1161,6 +1161,8 @@ Da die Zugehörigkeiten der Datenobjekte relativ sind, können Outlier fälschli
 \includegraphics[scale=0.35]{fcmnachteil.jpg}
  \caption{Punkt $X_1$ hat den gleichen Zugehörigkeitsgrad wie der Outlier $X_2$}
 \end{figure}
+~\\
+Im Anhang wird FCM ab Zeile 9 anhand eines Beispiels demonstriert.
 
 \subsection{Possibilistic C-Means (PCM)}
 Eine Lösung bieten possibilistische Clusteringverfahren. Werden die relativen Zugehörigkeiten $u_{ik}$ durch absolute Ähnlichkeitswerte $t_{ik}$ (typicality values) ersetzt, so fällt die Nebenbedingung $\sum\limits_{i=1}^c u_{ik} = 1$ weg. Die Gesamtzugehörigkeit jedes Datums zu allen Clustern wird also nicht mehr auf alle Cluster verteilt. Stattdessen soll ein Wert zwischen $0$ und $c$ gewählt werden:
@@ -1222,10 +1224,12 @@ J_{m,\eta}(U,T,V,X,\gamma) = \sum_{i=1}^{c} \sum_{k=1}^{n} \left(a\cdot u_{ik}^m
 \end{split}
 \end{equation}
 
-Dabei steuern $a$ und $b$ den relativen Einfluss der verschiedenen Arten von Zugehörigkeitsgraden. Je ungeeigneter die typicality Values ($t_ik$) in Anbetracht der Größe des Datensatzes sind, desto stärker wird die Gewichtung bei den Zugehörigkeitsgraden ($u_{ik}$). Mit $a=0$ wird PFCM zu PCM und mit $b=0$ zu FCM.
+Dabei steuern $a$ und $b$ den relativen Einfluss der verschiedenen Arten von Zugehörigkeitsgraden. Je ungeeigneter die Ähnlichkeitswerte ($t_ik$) in Anbetracht der Größe des Datensatzes sind, desto stärker wird die Gewichtung der Zugehörigkeitsgrade ($u_{ik}$). Mit $a=0$ wird PFCM zu PCM und mit $b=0$ zu FCM.
+\\~\\
+Im Anhang wird PFCM ab Zeile 12 anhand eines Beispiels demonstriert.
 
 \subsection{Scale Space Filter Clustering}
-Eine weitere Variante des FCM-Algorithmus, der Selective Scale Space based FCM \cite{scalespacefcm}, wurde entworfen, um den Clusteringprozess raumbezogener Daten zu verbessern. \\
+Eine weitere Variante des FCM-Algorithmus, der Selective Scale Space based FCM \cite{scalespacefcm}, wurde entworfen, um die Gruppierung raumbezogener Daten zu verbessern. \\
 
 In einer Menge von Objekten kann es vorkommen, dass sich bestimmte Objektfeatures nicht clustern lassen. Dies ist der Fall, wenn sich die Werte eines Featurevektors zu ähnlich sind und keine deutlichen Cluster bilden. Man sagt, dass die Cluster nicht linear separabel sind. Der Scale Space Filter löst dieses Problem, indem er mithilfe einer Transformationsvorschrift nahe beieinander liegende Punkte weiter zusammen schiebt und weiter entfernte Punkte voneinander abstößt. Wird der Filter jedoch auf bereits für das Clustering geeignete Parameter angewandt, kann der Informationsgehalt verschlechtert werden. Aus diesem Grund müssen zuerst diejenigen Features selektiert werden, welche das Potential haben, nach ihrer Transformation die Clusteringgenauigkeit zu verbessern. Ein weiterer Vorteil des Selektionsprozesses ist die Optimierung der Laufzeiteffizienz. Ein Parameter ist genau dann geeignet, wenn seine Standardabweichung einen bestimmten Schwellwert unterschreitet.
 \\
@@ -1277,12 +1281,12 @@ Der Pseudocode für den gesamten Algorithmus sieht dann folgendermaßen aus:
 \clearpage
 
 \subsection{Graphbasiertes Clustering I (NSCABDT)}
-Eine weitere FCM-Variante, die speziell zum Clustering von geographischen Strukturen entwickelt wurde, basiert auf der Delaunay Triangulation, also der planaren Dekomposition einer Punktemenge \cite{nscabdt}. Dies war nötig, da bisherige Entwicklungen es nicht geschafft hatten, räumliche Abhängigkeiten und Heterogenitäten zu erkennen. Beide gelten als starke Indikatoren für geographische Prozesse. Dabei bezeichnet die räumliche Abhängkeit die Tendenz zweier Punkte, sich mit zunehmender räumlicher Nähe gegenseitig zu beeinflussen oder ähnliche Attributwerte anzunehmen \cite{dependency}. Räumliche Heterogenität bezeichnet die Ungleichverteilung von Populationen auf einem bestimmten Gebiet. Ein weiterer Vorteil der Methode ist, dass nun auch Cluster erkannt werden können, die durch eine schmale Brücke verbunden sind. Da eine Delaunay-Triangulation viele Ähnlichkeitsinformationen implizit speichert, eignet sie sich für eine robuste Clusteranalyse. Außerdem werden Delaunay-Triangulationen bei der Analyse von Topologieproblemen, Autokonturierung, der Visualisierung von 2.5D-Geodaten, Oberflächencharakterisierung und in vielen weiteren raumbezogenen Analysewerkzeugen eingesetzt.
+Eine weitere FCM-Variante, die speziell zum Clustering von geographischen Strukturen entwickelt wurde, basiert auf der Delaunay Triangulation, also der planaren Dekomposition einer Punktemenge \cite{nscabdt}. Dies war nötig, da bisherige Entwicklungen es nicht geschafft hatten, räumliche Abhängigkeiten und Heterogenitäten zu erkennen. Beide gelten als starke Indikatoren für geographische Prozesse. Dabei bezeichnet die räumliche Abhängkeit die Tendenz zweier Punkte, sich mit zunehmender räumlicher Nähe gegenseitig zu beeinflussen oder ähnliche Attributwerte anzunehmen \cite{dependency}. Räumliche Heterogenität bezeichnet die Ungleichverteilung von Populationen auf einem bestimmten Gebiet. Ein weiterer Vorteil der Methode ist, dass nun auch Cluster erkannt werden können, die durch eine schmale Brücke verbunden sind. Da eine Delaunay-Triangulation viele Ähnlichkeitsinformationen implizit speichert, eignet sie sich für eine robuste Clusteranalyse. Außerdem werden Delaunay-Triangulationen bei der Analyse von Topologieproblemen, Autokonturierung, der Visualisierung von $2.5$D-Geodaten, Oberflächencharakterisierung und in vielen weiteren raumbezogenen Analysewerkzeugen eingesetzt.
 \\~\\
 Eine Delaunay-Triangulation $D(X)$ ist eine Vernetzung aller Punkte aus $X$ zu Dreiecken, so dass kein Punkt $p\in X$ innerhalb des Umkreises eines dieser Dreiecke liegt. Dabei wird der kleinste Innenwinkel über alle Dreiecke maximiert.
 \\~\\
 Ein einfacher Algorithmus zur Erzeugung der Delaunay-Triangulation ist die \textit{inkrementelle Konstruktion}:\\
-Zu Beginn muss ein Dreieck gefunden werden, welches die Delaunay-Bedingung (DB) erfüllt. Anschließend werden alle anderen Punkte inkrementell hinzugefügt. Der nächste Punkte aus $X$ wird $D(X)$ hinzugefügt und mit allen Punkten des initialen Dreiecks verbunden. Es entstehen drei weitere Dreiecke, die die DB eventuell verletzen. Jedes der Dreiecke wird auf die Umkreisbedingung getestet. Schließt ein Umkreis einen Punkt eines angrenzenden Dreiecks ein, so wird die gemeinsame Kante gelöscht und eine Kante zwischen den beiden Punkten erzeugt, die vorher nicht verbunden waren:
+Zu Beginn muss ein Dreieck gefunden werden, welches die Delaunay-Bedingung (DB) erfüllt. Anschließend werden alle anderen Punkte inkrementell hinzugefügt. Der nächste Punkt aus $X$ wird $D(X)$ hinzugefügt und mit allen Punkten des initialen Dreiecks verbunden. Es entstehen drei weitere Dreiecke, welche die Delaunay-Bedingung potentiell verletzen. Jedes der Dreiecke wird auf die Umkreisbedingung getestet. Schließt ein Umkreis einen Punkt eines angrenzenden Dreiecks ein, so wird die gemeinsame Kante gelöscht und eine Kante zwischen den beiden Punkten erzeugt, die vorher nicht verbunden waren:
 
 \begin{figure}[H]
 \centering
@@ -1290,7 +1294,7 @@ Zu Beginn muss ein Dreieck gefunden werden, welches die Delaunay-Bedingung (DB) 
 \caption{Flip einer gemeinsamen Kante, damit Delaunay-Bedingung erfüllt wird}
 \end{figure}
 
-Anschließend existieren weitere Dreiecke, welche die Bedingung nicht erfüllen könnten. Es werden nacheinander alle Dreiecke überprüft und gegebenenfalls Flips durchgeführt, bis die Bedingung global erfüllt ist.
+Anschließend existieren weitere Dreiecke, die DB potentiell verletzen könnten. Es werden nacheinander alle Dreiecke überprüft und gegebenenfalls Flips durchgeführt, bis die Bedingung global erfüllt ist.
 \\
 
 Während der Triangulierung werden Informationen zu Knoten, Kanten und Oberflächen in einer Datenbank für das spätere Clustering gespeichert:
@@ -1301,7 +1305,7 @@ Während der Triangulierung werden Informationen zu Knoten, Kanten und Oberfläc
 \caption{Beispiel einer DT von 15 Datenpunkten mit Tabellen für sämtliche Informationen}
 \end{figure}
 
-Die Knotentabelle enthält zu jedem der 15 Punkte die Koordinaten, den Knotengrad und die Kategorie bzw. die Clusternummer ($-1 = Outlier$).\\
+Die Knotentabelle enthält zu jedem der $15$ Punkte die Koordinaten, den Knotengrad und die Kategorie bzw. die Clusternummer ($-1 = Outlier$).\\
 Die Kantentabelle enthält Infos zur Richtung der Kanten, wobei $Start=1$ und $End=8$ bedeutet, dass von Knoten $1$ eine gerichtete Kante in Richtung des Knoten $8$ zeigt. Außerdem besitzt sie die Länge $76$.
 \\
 Die Oberflächentabelle enthält alle Knoten und Kanten, die an den jeweiligen Ebenen (Dreiecken) beteiligt sind.
@@ -1358,9 +1362,9 @@ Der Algorithmus für NSCABDT kann wie folgt beschrieben werden:
 
 Zu Beginn gehört kein Punkt einer gegebenen Punktemenge $S$ zu einem Cluster. Außerdem ist die Menge der Punkte des ersten Clusters $C$ leer: $C=\emptyset$
 \begin{enumerate}
-\item Delaunay-Triangulation berechnen und dabei die Knoten, Kanten und Flächentabellen ausfüllen
+\item Delaunay-Triangulation berechnen und dabei die Knoten, Kanten und Flächentabellen ausfüllen.
 \item Für jeden Punkt $p_i \in S$ alle inzidenten Kanten $N(p_i)$ finden, $local_mean(p_i)$ und $F(p_i)$ berechnen.
-\item Für jede Kante $e \in N(p_i)$: Wenn $len(e) \geqslant F(p_i)$, dann Kante aus DT entfernen
+\item Für jede Kante $e \in N(p_i)$: Wenn $len(e) \geqslant F(p_i)$, dann Kante aus DT entfernen.
 \item Wenn $deg(p_i)=0$, Knoten $p_i$ löschen, ansonsten zu $C$ hinzufügen.
 \item Iterativ für alle Knoten durchführen, mit denen $p_i$ verbunden ist.
 \item Grenze von Cluster C extrahieren und alle Brücken eliminieren. Dies erfolgt per Hauptkurvenanalyse, welche eine Generalisierung der Hauptachsenanalyse ist. Wenn für einen Cluster zwei verschiedene Grenzen gefunden werden kann, ist dies ein Indiz dafür, dass es zwei kleinere Cluster gibt, die über eine Brücke verbunden sind. Der Algorithmus zur Eliminierung von Brücken lautet wie folgt:
@@ -1370,14 +1374,14 @@ Zu Beginn gehört kein Punkt einer gegebenen Punktemenge $S$ zu einem Cluster. A
 \item Berechne die $\gamma$-Grenze von $V$
 \item Berechne die $\gamma$-Kurve von $V$
 \end{enumerate}
-\item Gibt es noch unbearbeitete Knoten, obwohl im Iterationsprozess alle Knoten positiver Pfade betrachtet wurden, dann konnten nicht alle Knoten erreicht werden und es mussten zu lange Kanten gelöscht werden (negative Pfade). Es wird ein neuer Cluster $C'$ erstellt und die Iteration mit einem beliebigen unbearbeiteten Punkt forgesetzt.
+\item Gibt es noch unbearbeitete Knoten, obwohl im Iterationsprozess alle Knoten positiver Pfade betrachtet wurden, dann konnten nicht alle Knoten erreicht werden und es mussten zu lange Kanten gelöscht werden (negative Pfade). Es wird ein neuer Cluster $C'$ erstellt und die Iteration mit einem beliebigen unbearbeiteten Punkt fortgesetzt.
 \end{enumerate}
 
 
 
 \begin{minipage}{0.45\textwidth}\raggedright
 \subsubsection{Clusteringergebnisse} ~\\
-In der Originalpublikation wird untersucht, wie sich der NSCABDT-Algorithmus beim Clustern von drei verschieden geformten Polygonen verhält. Diese sollen aus mehreren Hundert Punkten bestehen und von Outliern umgegeben sind. Außerdem sind zwei Polygone über mehrere Brücken verbunden.
+In der Originalpublikation wird untersucht, wie sich der NSCABDT-Algorithmus beim Clustern von drei verschieden geformten Polygonen verhält. Diese bestehen aus mehreren Hundert Punkten und sind von Outliern umgeben. Außerdem sind zwei Polygone über mehrere Brücken verbunden.
 \end{minipage}
 \hfill
 \begin{minipage}{0.5\textwidth}
@@ -1387,7 +1391,7 @@ In der Originalpublikation wird untersucht, wie sich der NSCABDT-Algorithmus bei
 
 \vspace{\belowdisplayskip}
 
-Im direkten Vergleich mit DBSCAN ist der NSCABDT-Algorithmus zwar viel langsamer, findet jedoch in jedem Untersuchten Fall die korrekten Cluster mit etwas höherer Genauigkeit.
+Im direkten Vergleich mit DBSCAN ist der NSCABDT-Algorithmus zwar viel langsamer, findet jedoch in jedem untersuchten Fall die korrekten Cluster mit etwas höherer Genauigkeit.
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.35]{nscabdtaccuracy.jpg}
@@ -1396,30 +1400,20 @@ Im direkten Vergleich mit DBSCAN ist der NSCABDT-Algorithmus zwar viel langsamer
 
 
 
-%\clearpage
-%\vspace*{\fill}
-%\begin{center}
-%\begin{minipage}{1\textwidth}
 \pagebreak
 \hspace{0pt}
 \vfill
 \subsection{Graphbasiertes Clustering II (NSFCDT)}
 
-Eine weitere Optimierung, die zwei Jahre später vorgestellt wurde, basiert ebenfalls auf der Delaunay-Triangulation mit anschließendem Fuzzy Refinement. Ein Hauptvorteil gegenüber NSCABDT ist eine deutlich verbesserte Laufzeiteffizienz bei gleichwertigen Ergebnissen \cite{nsfcdt}. Die Methode wurde speziell für sehr große Datensätze entworfen, wie es bei Geodaten gewöhnlich ist.\\~\\
+Eine weitere Optimierung, die zwei Jahre später vorgestellt wurde, basiert ebenfalls auf der Delaunay-Triangulation mit anschließendem Fuzzy Refinement. Ein Hauptvorteil gegenüber NSCABDT ist eine deutlich verbesserte Laufzeiteffizienz bei gleichwertigen Ergebnissen \cite{nsfcdt}. Die Methode wurde speziell für Datensätze mit vielen Einträgen entwickelt. Daher eignet sie sich besonders zum Clustern von Rasterbildern.\\~\\
 
-Das Verfahren besteht aus zwei Schritten. Im ersten Schritt wird die Delaunay Triangulation berechnet und ein ähnlichkeitsbasiertes Clustering gebildet. Im zweiten Schritt wird eine Fuzzy Logik zur Verfeinerung der Ergebnisse angewandt.\\~\\
+Das Verfahren besteht aus zwei Schritten. Im ersten Schritt wird die Delaunay Triangulation berechnet und ein ähnlichkeitsbasiertes Clustering gebildet. Im zweiten Schritt wird eine Fuzzy-Logik zur Verfeinerung der Ergebnisse angewandt.\\~\\
 
-
-Der folgende Algorithmus beschreibt den ersten Schritt des Verfahrens. Er nimmt einen Datensatz $X$ mit $n$ Punkten entgegen und clustert ihn auf Basis der Delaunay-Triangulation. In der Originalpublikation wird für die Erzeugung der $DT$ der Bowyer-Watson Algorithmus empfohlen, der nur $\mathcal{O}(n\log{}n)$ Operationen benötigt, um $n$ Punkte zu triangulieren und somit besonders effizient ist. Anschließend startet in Zeile $5$ die harte Partitionierung. Dabei wird für ein Initialdreieck aus $DT$ geprüft, ob es größer ist, als ein bestimmter Schwellwert und ob es noch nicht besucht wurde. Wurde ein Initialdreieck gefunden, das klein genug ist, werden von ihm aus alle Nachbarn (Dreiecke, die sich mit dem Initialdreieck eine Kante teilen) betrachtet. Für jedes Nachbardreieck wird geprüft, ob es klein genug ist. Ist dies der Fall, wird es auf einem Stack gespeichert. Alle zu großen Nachbardreiecke werden hingegen ignoriert. Der Algorithmus wird solange fortgesetzt, bis alle Elemente auf dem Stack abgearbeitet wurden und kein gültiger Nachbar eines Stackelements mehr gefunden werden konnte. Die Menge der gültigen Nachbardreiecke inklusive Initialdreieck bilden dann einen Cluster. Der Algorithmus wird danach für alle unbesuchten Initialdreiecke aus $DT$ fortgesetzt. Zum Schluss enthält die Menge $ClusterSet$ Mengen von Dreiecken, die die Cluster des Datensatzes bilden.
+Der folgende Algorithmus beschreibt den ersten Schritt des Verfahrens. Er nimmt einen Datensatz $X$ mit $n$ Punkten entgegen und clustert ihn auf Basis der Delaunay-Triangulation ($DT$). In der Originalpublikation wird für die Erzeugung der $DT$ der Bowyer-Watson Algorithmus empfohlen, der nur $\mathcal{O}(n\log{}n)$ Operationen benötigt, um $n$ Punkte zu triangulieren und somit besonders effizient ist. Anschließend startet in Zeile $5$ die harte Partitionierung. Dabei wird für ein Initialdreieck aus $DT$ geprüft, ob es größer ist, als ein bestimmter Schwellwert und ob es noch nicht besucht wurde. Wurde ein Initialdreieck gefunden, das klein genug ist, werden von ihm aus alle Nachbarn (Dreiecke, die sich mit dem Initialdreieck eine Kante teilen) betrachtet. Für jedes Nachbardreieck wird geprüft, ob es klein genug ist. Ist dies der Fall, wird es auf einen Stack gelegt. Alle zu großen Nachbardreiecke werden hingegen ignoriert. Der Algorithmus wird solange fortgesetzt, bis alle Elemente auf dem Stack abgearbeitet wurden und kein gültiger Nachbar eines Stackelements mehr gefunden werden konnte. Die Menge der gültigen Nachbardreiecke inklusive Initialdreieck bilden dann einen Cluster. Der Algorithmus wird danach für alle unbesuchten Initialdreiecke aus $DT$ fortgesetzt. Zum Schluss enthält die Menge $ClusterSet$ Mengen von Dreiecken, die die Cluster des Datensatzes bilden.
 
 \vfill
 \hspace{0pt}
 \pagebreak
-%\end{minipage}
-%\end{center}
-%\vspace*{\fill}
-
-
 
 
 \begin{algorithm}[H]
@@ -1464,9 +1458,9 @@ $\mu(x:\alpha,\beta) = \left\{
 \end{array}
 \right. $
 
-Es handelt sich hierbei um eine Sigmoidfunktion. Der Parameter $\alpha$ gibt den Wendepunkt der Kurve an, der Parameter $\beta$ bestimmt die Neigung der Kurve, welche mit zunehmendem $\beta$ immer flacher wird. Je nach Klasseneigenschaft können die Fuzzy Parameter variiert werden. Beispielsweise könnte die Baumart Buche, die einem Nadelwald steht, eine steilere Zugehörigkeitskurve besitzen, als die Baumart Tanne. Das bedeutet, dass eine Buche gegenüber einer Tanne viel näher an einem Nadelkernwald stehen muss, um mit einer hohen Zugehörigkeit klassifiziert zu werden. 
+Es handelt sich hierbei um eine Sigmoidfunktion. Der Parameter $\alpha$ gibt den Wendepunkt der Kurve an, der Parameter $\beta$ bestimmt die Neigung der Kurve, welche mit zunehmendem $\beta$ immer flacher wird. Je nach Klasseneigenschaft können die Fuzzy-Parameter variiert werden. Beispielsweise könnte die Baumart Buche, die einem Nadelwald steht, eine steilere Zugehörigkeitskurve besitzen, als die Baumart Tanne. Dies bedeutet, dass eine Buche gegenüber einer Tanne viel näher an einem Nadelkernwald stehen muss, um mit einer hohen Zugehörigkeit klassifiziert zu werden. 
 \\
-Der Funktionswert $\mu$ wird als Stärke der Inklusion bezeichnet. Je größer dieser Wert wird, desto wird der Randbereich, in dem weitere Punkte berücksichtigt werden.\\
+Der Funktionswert $\mu$ wird als Stärke der Inklusion bezeichnet. Je größer dieser Wert wird, desto größer wird der Randbereich, in dem weitere Punkte berücksichtigt werden.\\
 Der Gesamtalgorithmus inklusive Triangulation und Fuzzy Refinement sieht dann folgendermaßen aus:
 
 \begin{algorithm}[H]
@@ -1495,7 +1489,7 @@ Der Gesamtalgorithmus inklusive Triangulation und Fuzzy Refinement sieht dann fo
 \end{algorithm} 
 
 \subsubsection{Ergebnisse}
-Die Untersuchung hat gezeigt, dass NSFCDT gegenüber NSCABDT bei größeren Datensätzen eine bessere Laufzeit besitzt, vor allem, wenn der Refinement-Schritt weggelassen wird. Bei kleineren Datensätzen ist das Fuzzy-NSFCDT etwas langsamer, erzielt jedoch bessere Ergebnisse, da manche Cluster sinnvollerweise verschmolzen werden können.
+Die Untersuchung hat gezeigt, dass NSFCDT gegenüber NSCABDT bei größeren Datensätzen eine bessere Laufzeit besitzt, vor allem, wenn der Refinement-Schritt weggelassen wird. Bei kleineren Datensätzen ist das fuzzy NSFCDT etwas langsamer, erzielt jedoch bessere Ergebnisse, da manche Cluster sinnvollerweise verschmolzen werden können.
 
 \begin{figure}[H]
 \centering
@@ -1503,7 +1497,7 @@ Die Untersuchung hat gezeigt, dass NSFCDT gegenüber NSCABDT bei größeren Date
 \caption{Laufzeiten von NSFCDT und NSCABDT bei verschieden großen Datensätzen}
 \end{figure}
 
-So wurde zum Beispiel ein Graustufenbild einer indischen Stadt mit NSFCDT sowohl mit als auch ohne Refinement geclustert. Die Fuzzy-Methode fand dabei vier Gebiete mit Baumbestand. Die harte Methode jedoch unterteilte zwei der Gebiete in zwei weitere Cluster, obwohl dies zu sinnlosen Ergebnissen führte. Die Untersuchung zeigt, welch hohes Potential das Fuzzy basierte NSFCDT beim Clustern von großen Datensätzen mit vielseitigen Eigenschaften besitzt. So ist es von zentraler Bedeutung, dass je nach Geländeart eine individuelle Fuzzy-Kurve gefunden wird. So führt die Unterscheidung zwischen Gebäuden, Flüssen und Wäldern bei der Berechnung des Inklusionsfaktors dazu, dass für jede Klasse sehr präzise Clusteringergebnisse gefunden werden kann, welche die Präzisium des NSCABDT-Algorithmus deutlich übertrifft.
+So wurde zum Beispiel ein Graustufenbild einer indischen Stadt mit NSFCDT sowohl mit als auch ohne Refinement geclustert. Die Fuzzy-Methode fand dabei vier Gebiete mit Baumbestand. Die harte Methode jedoch unterteilte zwei der Gebiete in zwei weitere Cluster, obwohl dies zu fragwürdigen Ergebnissen führte. Die Untersuchung zeigt, welch hohes Potential das fuzzy-basierte NSFCDT beim Clustern von großen Datensätzen mit variablen Eigenschaften besitzt. So führt die Unterscheidung zwischen Gebäuden, Flüssen und Wäldern bei der Berechnung des Inklusionsfaktors  (jeweils individuelle Fuzzy-Kurve) dazu, dass für jede Klasse sehr präzise Clusteringergebnisse gefunden werden können, welche die Präzision des NSCABDT-Algorithmus deutlich übertreffen.
 
 \begin{figure}[H]
 \centering
@@ -1512,18 +1506,21 @@ So wurde zum Beispiel ein Graustufenbild einer indischen Stadt mit NSFCDT sowohl
 \end{figure}
 
 
-Als Vorteil sehen die Autoren, dass die Gesamtlaufzeit des Algorithmus mit $\mathcal{O}n\sqrt{n}$ sehr klein ist. Trotzdem fügen Sie hinzu, dass es noch viel Spielraum für Verbesserungen gibt. So können zwei benachbarte Dreiecke nicht berücksichtigt werden, wenn sie anstelle einer gemeinsamen Kante einen gemeinsamen Knoten haben. Dieses Problem kann nur durch einem weiteren Teilalgorithmus gelöst werden. Außerdem könnten noch effizientere Datenstrukturen oder statistische Modelle zu einer weiteren Verbesserung der Laufzeit führen.
+Als Vorteil sehen die Autoren, dass die Gesamtlaufzeit des Algorithmus mit $\mathcal{O}n\sqrt{n}$ sehr klein ist. Trotzdem fügen Sie hinzu, dass es noch viel Spielraum für Verbesserungen gibt. So können zwei benachbarte Dreiecke nicht berücksichtigt werden, wenn sie anstelle einer gemeinsamen Kante einen gemeinsamen Knoten haben. Dieses Problem kann nur durch einen weiteren Teilalgorithmus gelöst werden. Außerdem könnten noch effizientere Datenstrukturen oder statistische Modelle zu einer weiteren Verbesserung der Laufzeit führen.
+~\\
+
+Eine vollständige Implementierung und Demonstration des Algorithmus anhand zweier Beispiele ist im Anhang ab Zeile 15 zu finden.
  
 \clearpage
 
 \subsection{Kontextbasiertes geographisch gewichtetes Fuzzy-Clustering (CFGWC)}
-Eine weiteres FCM-basiertes Clusteringverfahren wurde im Hinblick auf die geodemografische Analyse entwickelt, das CFGWC \cite{cfgwc}. Die Geodemografie beschäftigt sich mit dem Verständnis von der Entstehung von menschlichen Populationszentren (i.d.R. Städte). Sie verbindet die Demographie, also die Wissenschaft von menschlichen Populationsströmen, mit der Geographie, der Wissenschaft von der physischen Gestalt der Erdoberfläche, dessen Variation und Veränderung. Fuzzy-basierte Clusteringalgorithmen kommen in der Geodemografie häufig zum Einsatz, da Sie das Problem des ökologischen Fehlschlusses vermeiden. Ein ökologischer (oder kollektiver) Fehlschluss ist ein unzulässiger Vergleich von Durchschnittswerten.
+Eine weiteres FCM-basiertes Clusteringverfahren wurde im Hinblick auf die geodemografische Analyse entwickelt, das CFGWC \cite{cfgwc}. Die Geodemografie ist die Wissenschaft von der Entstehung von menschlichen Populationszentren (i.d.R. Städte). Sie verbindet die Demografie, also die Wissenschaft von menschlichen Populationsströmen, mit der Geografie, der Wissenschaft von der physischen Gestalt der Erdoberfläche, dessen Variation und Veränderung. Fuzzy-basierte Clusteringalgorithmen kommen in der Geodemografie häufig zum Einsatz, da Sie das Problem des ökologischen Fehlschlusses vermeiden. Ein ökologischer (oder kollektiver) Fehlschluss ist ein unzulässiger Vergleich von Durchschnittswerten.
 Ein Beispiel dafür ist die Reichtumsverteilung in einem Dorf und einer Großstadt. Zwar ist der durchschnittliche Stadtbewohner reicher als der durchschnittliche Dorfbewohner, jedoch kann es trotzdem sein, dass der ärmste Dorfbewohner reicher ist, als der ärmste Stadtbewohner, da Städte eine anziehende Wirkung auf arme Menschen haben. Gleichzeitig ist es durch eine stark komprimierte Reichtumsanhäufung einer Elite auch möglich, dass es mehr arme Stadtbewohner als arme Dorfbewohner gibt.
-Obwohl der FCM-Algorithmus dieses Problem im Gegensatz zu harten Clusteringalgorithmen verhindert, fehlt ihm eine geographische Komponente. Zum Beispiel kann die Interpretation eines Wohngebiets trotz identischer Clusterattribute abhängig von seinem Standtort unterschiedlich ausfallen. Aus diesem Grund wurde eine Modifikation für die Berechnung der Zugehörigkeitsmatrix in FCM entwickelt, welche den sogenannten Nachbarschaftseffekt berücksichtigt. Als Nachbarschaftseffekt bezeichnet man die Art der Beeinflussung des Verhaltens eines Menschen in Abhängigkeit von seiner Wohnlage und Nachbarschaft:
+Obwohl der FCM-Algorithmus dieses Problem im Gegensatz zu harten Clusteringalgorithmen verhindert, fehlt ihm eine geografische Komponente. Zum Beispiel können zwei Wohngebiete mit gleichen Populationsdaten, aber unterschiedlicher Lage vollkommen unterschiedlich interpretiert werden. Aus diesem Grund wurde eine Modifikation für die Berechnung der Zugehörigkeitsmatrix in FCM entwickelt, die den sogenannten Nachbarschaftseffekt berücksichtigt. Als Nachbarschaftseffekt bezeichnet man die Art der Beeinflussung des Verhaltens eines Menschen in Abhängigkeit von seiner Wohnlage und Nachbarschaft:
 
 $$u_{jk}^{\prime} = \alpha \times u_{jk}+\beta \times \frac{1}{A} \times \sum\limits_{i=1}^c \omega_{ji} \times u _{ik}$$
 
-Dieser dritte Schritt erfolgt unmittelbar nach der Aktualisierung von Zugehörigkeitsmatrix, Clusterzentroiden noch in der Repeat-Schleife des oben beschriebenen FCM-Algorithmus. Dabei ist $u_{jk}$ die alte Zugehörigkeitsmatrix aus dem vorherigen Schritt und $u_{jk}^{\prime}$ die geographisch gewichtete neue Zugehörigkeitsmatrix. Die Parameter $\alpha$ und $\beta$ legen fest, wie stark die alten Zugehörigkeiten in die Berechnung einfließen sollen, wobei $\alpha + \beta = 1$. Parameter $A$ sorgt dafür, dass die Summe der Zugehörigkeiten eines Punktes zu einem Gebiet für alle Gebiete stets dem Kontextgrad $f_k$ (wird später erklärt) entspricht. Die gewichtete Zugehörigkeit wird folgendermaßen berechnet:
+Dieser dritte Schritt erfolgt unmittelbar nach der Aktualisierung von Zugehörigkeitsmatrix und Clusterzentroiden noch in der Repeat-Schleife des oben beschriebenen FCM-Algorithmus. Dabei ist $u_{jk}$ die alte Zugehörigkeitsmatrix aus dem vorherigen Schritt und $u_{jk}^{\prime}$ die geografisch gewichtete neue Zugehörigkeitsmatrix. Die Parameter $\alpha$ und $\beta$ legen fest, wie stark die alten Zugehörigkeiten in die Berechnung einfließen sollen, wobei $\alpha + \beta = 1$. Parameter $A$ sorgt dafür, dass die Summe der Zugehörigkeiten eines Punktes zu einem Gebiet für alle Gebiete stets dem Kontextgrad $f_k$ (wird später erklärt) entspricht. Die gewichtete Zugehörigkeit wird folgendermaßen berechnet:
 
 $$\omega_{ji} = \frac{\left(m_j \times m_i\right)^b}{d_{ji}^{a}}$$
 
@@ -1590,6 +1587,8 @@ Da das Ergebnis aber von der Clusteranzahl $c$ abhängig ist und große Clustera
 $$V_{NPC}(U,c) = 1- \frac{c}{c-1}\left(1-V_{PC}\right)$$
 
 $V_{NPC}$ nimmt Werte zwischen $0$ und $1$ an, wobei ein möglichst großer Wert auf eine gute Zerlegung hindeutet.
+\\~\\
+Die Implementierung ist im Anhang in Zeile 37 zu finden, eine Demonstration in den Zeilen 39 und 40.
 
 \subsection{Kim-Kim-Lee-Lee Index (KKLL)}
 Eine andere Variante, die ebenfalls nur auf den relativen Zugehörigkeiten der Daten beruht, ist der Kim-Kim-Lee-Lee Index \cite{kkll}. Er berechnet die durchschnittliche Überlappung zwischen den Clusterpaaren als relativen Grad der Teilung der Datenpunkte in der Überlappung. Die Partitionierung ist optimal, wenn der Überlappungsgrad am Kleinsten ist.
@@ -1628,7 +1627,8 @@ Da eine Kovarianzmatrix sowohl die Ausdehnung und Richtung einer Punktwolke besc
 $$V_{PD}=\frac{\sum\limits_{i=1}^c \sum\limits_{k=1}^n u_{ik}}{V_{FHV}},\quad \forall x_k \in \{x_k|(x_k-v_i)^{\top}\cdot Cov_i^{-1}\cdot(x_k-v_i)<1\}$$
 
 Diese basiert auf dem physikalischen Prinzip \textit{Dichte ist Masse pro Volumen} ($\rho = \frac{m}{V}$). Die Zerlegung ist optimal, wenn die Cluster möglichst dicht sind, also $V_{PD}$ einen großen Wert hat. Partition Density erhält alle Eigenschaften von Fuzzy Hypervolume, verringert aber die Präferenz für kleine Cluster. Da die monoton fallende Tendenz für $c \rightarrow n$ noch verschärft wird, muss auch hier manuell evaluiert werden, ab wann eine weitere Inkrementierung der Clusteranzahl nicht mehr sinnvoll ist.
-
+\\~\\
+Die Implementierung ist im Anhang in Zeile 38 zu finden, eine Demonstration in den Zeilen 39 und 40.
 
 \subsection{Zahid-Limouri-Essaid Index (ZLE)}
 Eine weitere Klasse von Clustervaliditätsindizes basiert auf der gleichzeitigen Optimierung von Kompaktheit und Separation \cite{zle}:
@@ -1643,7 +1643,7 @@ Funktion $SC_1$ berechnet die geometrische Struktur als das Verhältnis von der 
 
 $$SC_1(X,U,V) = \frac{\frac{\sum\limits_{i=1}^c ||v_i-\overline{x}||_A^2}{c}}{\sum\limits_{i=1}^c\left(\frac{\sum\limits_{k=1}^n u_{ik}^2 \cdot ||x_k-v_i||^2}{\sum\limits_{k=1}^n u_{ik}}\right)}$$
 
-Die Funktion $SC_2$ ermittelt die Partitionierungsstruktur wieder als das Verhältnis von Separations zu Kompaktheitsmaßen. Die Separation ist hierbei durch die Überlappung zwischen den Clusterpaaren gegeben (Kim-Kim-Lee-Lee Index). Das Kompaktheitsmaß ist die Summe aller Kompaktheitsmaße aller Datenpunkte, wobei das Kompaktheitsmaß eines Datenpunktes als größter Zugehörigkeitsgrad unter den Clustern definiert ist: 
+Die Funktion $SC_2$ ermittelt die Partitionierungsstruktur wieder als das Verhältnis von Separations- zu Kompaktheitsmaßen. Die Separation ist hierbei durch die Überlappung zwischen den Clusterpaaren gegeben (Kim-Kim-Lee-Lee Index). Das Kompaktheitsmaß ist die Summe aller Kompaktheitsmaße aller Datenpunkte, wobei das Kompaktheitsmaß eines Datenpunktes als größter Zugehörigkeitsgrad unter den Clustern definiert ist: 
 
 $$SC_2(U) = \frac{\sum\limits_{i=1}^{c-1} \sum\limits_{j=i+1}^c\frac{\sum\limits_{k=1}^n \min(u_{ik},u_{jk})^2}{\sum\limits_{k=1}^n \min(u_{ik},u_{jk})}}{\frac{\sum\limits_{k=1}^n \max_{1\leqslant i \leqslant c}(u_{ik})^2}{\sum\limits_{k=1}^n \max_{1\leqslant i \leqslant c}u_{ik}}}$$ 
 
@@ -1651,6 +1651,8 @@ ZLE kombiniert beide Funktionen, wobei $SC_1$ maximiert und $SC_2$ minimiert wir
 $$V_{ZLE}(U,V,X) = SC_1(U,V,X)-SC_2(U)$$
 Die optimale Clusteranzahl wird durch Maximierung von
 $V_{ZLE}$ über dem Intervall $\left[c_{min},\dots,c_{max}\right]$ berechnet.
+
+
 \subsection{Visual Assessment for Cluster Tendency (VAT)}
 \begin{minipage}{0.35\textwidth}\raggedright
 Neben der automatischen Bestimmung der optimalen Clusteranzahl gibt es auch diverse semiautomatische Verfahren, die es dem Benutzer möglich machen, die korrekte Clusteranzahl einfach abzulesen. Der VAT-Algorithmus erreicht dies, indem er die paarweisen Unähnlichkeiten zwischen den Daten als Graustufenbild visualisiert und so umsortiert, dass die Cluster entlang der Hauptdiagonalen als dunkle Blöcke zu erkennen sind.
@@ -1680,18 +1682,19 @@ Der Sortierprozess kann wie folgt beschrieben werden:
 \end{algorithmic}
 \end{algorithm}
 
-Die Matrix $r_{ij}$ enthält die Unähnlichkeiten der Punkte $x_i$ und $x_j$ als auf das Intervall $\left[0,1\right]$ normalisiertes Abstandsmaß. Zu Beginn werden die Indizes des größten Unähnlichkeitswertes gesucht, wobei alle Zeilen und Spalten erlaubt sind. Anschließend wird der erste Eintrag des Permutationsvektors $P$ auf den Spaltenindex des gefundenen Eintrags gesetzt. Der Menge der noch zu bearbeitenden Indizes $J$ wird $j$ entzogen, während die Menge der schon bearbeiteten Indizes $I$ $j$ hinzugefügt wird. In einer Schleife wird dieser Vorgang für alle Permutationseinträge von $2$ bis $n$ wiederholt. Im Unterschied zur Initialisierung wird jedoch immer nach den Indizes der kleinsten Unähnlichkeit gesucht und es sind nur solche Spalten und Zeilen erlaubt, die durch Mengen $I$ (erlaubte Zeilen) und $J$ (erlaubte Spalten) gekennzeichnet werden. Die Vertauschung der Matrixwerte mit den Einträgen des Permutationsvektors an den Indizes dieser Werte ergibt letztendlich die umsortierte Ergebnismatrix. Diese kann als Graustufenbild visualisiert werden, so dass Ähnlichkeiten möglichst dunkel und Unähnlichkeiten möglichst hell dargestellt werden. Die Anzahl der Quadrate entlang der Hauptdiagonalen entspricht der Clusteranzahl des Datensatzes.
+Die Matrix $r_{ij}$ enthält die Unähnlichkeiten der Punkte $x_i$ und $x_j$ als auf das Intervall $\left[0,1\right]$ normalisiertes Abstandsmaß. Zu Beginn werden die Indizes des größten Unähnlichkeitswertes gesucht, wobei alle Zeilen und Spalten erlaubt sind. Anschließend wird der erste Eintrag des Permutationsvektors $P$ auf den Spaltenindex des gefundenen Eintrags gesetzt. Der Menge der noch zu bearbeitenden Indizes $J$ wird $j$ entzogen, während die Menge der schon bearbeiteten Indizes $I$ $j$ hinzugefügt wird. In einer Schleife wird dieser Vorgang für alle Permutationseinträge von $2$ bis $n$ wiederholt. Im Unterschied zur Initialisierung wird jedoch immer nach den Indizes der kleinsten Unähnlichkeit gesucht und es sind nur solche Spalten und Zeilen erlaubt, die durch Mengen $I$ (erlaubte Zeilen) und $J$ (erlaubte Spalten) gekennzeichnet werden. Die Vertauschung der Matrixwerte mit den Einträgen des Permutationsvektors an den Indizes dieser Werte ergibt schließlich die umsortierte Ergebnismatrix. Diese kann als Graustufenbild visualisiert werden, sodass Ähnlichkeiten möglichst dunkel und Unähnlichkeiten möglichst hell dargestellt werden. Die Anzahl der Quadrate entlang der Hauptdiagonalen entspricht der Clusteranzahl des Datensatzes.
 \\
-Die Erkennung der Clusteranzahl möchte man jedoch keinem Menschen überlassen, da Datensätze sehr groß werden können und Menschen zu unterschiedlichen Ergebnissen kommen. Eine Lösung bietet die automatische Cluster Count Extraction (CCE) \cite{cce}.
-
+Die Erkennung der Clusteranzahl möchte man unter Umständen keinem Menschen überlassen, da Datensätze sehr groß werden können und Menschen zu unterschiedlichen Ergebnissen kommen. Eine Lösung bietet die automatische Cluster Count Extraction (CCE) \cite{cce}.
+\\~\\
+Eine Implementierung und Anwendung des VAT-Algorithmus ist im Anhang ab Zeile 41 zu finden.
 
 \section{Vergleich von Clusteringergebnissen}
-Partitionierende Clusteringverfahren liefern bei zufälligen Initialisierungen oft sehr unterschiedliche Clusteringergebnisse auf dem gleichen Datensatz. Da sich stark schwankende Ergebnisse schlecht zum Vergleich mit anderen Clusteringverfahren eignen, will man immer nur jeweils die beste Partitionierung finden und mit der besten Partitionierung des anderen Verfahrens vergleichen. Eine weitere Herausforderung stellt der Vergleich der Ausreißersensitivität dar. Während ein Ausreißer beim einen Verfahren kaum eine Auswirkung auf das Endergebnis hat, führt er bei dem anderen Algorithmus zu einer starken Verschlechterung der Ergebnisse. Die folgenden Methoden sollen diese Probleme beheben. 
+Partitionierende Clusteringverfahren liefern bei zufälligen Initialisierungen oft sehr unterschiedliche Clusteringergebnisse auf dem gleichen Datensatz. Da sich stark schwankende Ergebnisse schlecht zum Vergleich mit anderen Clusteringverfahren eignen, will man immer nur jeweils die beste Partitionierung finden und mit der besten Partitionierung des anderen Verfahrens vergleichen. Eine weitere Herausforderung stellt der Vergleich der Ausreißersensitivität dar. Während ein Ausreißer beim einen Verfahren kaum eine Auswirkung auf das Endergebnis hat, führt er bei dem anderen Algorithmus zu einer starken Verschlechterung der Ergebnisse. Die folgenden Methoden sollen solche Probleme erkennen. 
 
 
 \subsection{Rand-Index}
-Eine der ersten Methoden zum Vergleich von harten Partitionierungen wurde bereits 1971 von William M. Rand \cite{rand} vorgestellt. Diese misst die Ähnlichkeit zweier Zerlegungen anhand der Anzahl der Datenpunkte, die in den Clustern beider Zerlegungen gemeinsam vorkommen. \\~\\
-Seien $P = \{P_1, \dots, P_k\} \subset 2^X$ und  $Q = \{P_1, \dots, P_l\} \subset 2^X$ zwei harte Partitionierungen von Datensatz $X=\{x_1,\dots,x_n\}$ mit $n$ Datenpunkten. Sowohl in $P$ als auch in $Q$ überschneiden sich zwei verschiedene Cluster nie. Außerdem gibt es keine leeren Cluster und die Vereinigung aller Cluster ergibt den Datensatz. Es sind alle also Datenpunkte einem Cluster zugeordnet. Zwei Elemente $x$ und $x'$ bilden ein gepaartes Elementtupel in $P$, wenn sie zum gleichen Cluster gehören. Es gilt also: $\exists i \in \left[1,\dots,k\right] \text{ mit } x \in P_i \text{ und } x' \in P_i$. Man unterscheidet zwischen vier verschiedenen Paarungsarten:
+Eine der ersten Methoden zum Vergleichen von harten Partitionierungen wurde bereits 1971 von William M. Rand \cite{rand} vorgestellt. Diese misst die Ähnlichkeit zweier Zerlegungen anhand der Anzahl der Datenpunkte, die in den Clustern beider Zerlegungen gemeinsam vorkommen. \\~\\
+Seien $P = \{P_1, \dots, P_k\} \subset 2^X$ und  $Q = \{P_1, \dots, P_l\} \subset 2^X$ zwei harte Partitionierungen von Datensatz $X=\{x_1,\dots,x_n\}$ mit $n$ Datenpunkten. Sowohl in $P$ als auch in $Q$ überschneiden sich zwei verschiedene Cluster nie. Außerdem gibt es keine leeren Cluster und die Vereinigung aller Cluster ergibt den Datensatz. Es sind also alle Datenpunkte einem Cluster zugeordnet. Zwei Elemente $x$ und $x'$ bilden ein gepaartes Elementtupel in $P$, wenn sie zum gleichen Cluster gehören. Es gilt also: $\exists i \in \left[1,\dots,k\right] \text{ mit } x \in P_i \text{ und } x' \in P_i$. Man unterscheidet zwischen vier verschiedenen Paarungsarten:
 
 \begin{itemize}
 \item $C_1 \equiv \{(x,x')|  x \text{ und } x' \text{ sind sowohl in } P \text{ als auch in } Q \text{ gepaart}\}$
@@ -1709,15 +1712,15 @@ Die zugehörige Distanzfunktion zum Berechnen des Abstands zwischen den beiden P
 Für den Vergleich zweier Fuzzy-Zerlegungen eignet sich dagegen die Variante \textit{Campello's Fuzzy Rand Index}.
 
 \subsection{Subset Similarity Index}
-Eine weitere Methode, die eine besonders gute Laufzeit besitzt und somit auf großen Datensätzen zum Einsatz kommt, ist der Subset Similarity Index \cite{subsim}. Dieser basiert auf dem Vergleich von Fuzzy Clustern aus Partitionierungen $U_{k\times x}$ und $\tilde{U}_{l\times n}$ des Datensatzes $X=\{x_1,\dots,x_n\}$. Angewandt werden kann die Methode sowohl auf harte als auch auf weiche Paritionierungen. Die Ähnlichkeit zwischen zwei crisp Clustern ist definiert als Anteil des Schnittes zweier Cluster an ihrer Vereinigung:
+Eine weitere Methode, die eine besonders gute Laufzeit besitzt und somit auf großen Datensätzen zum Einsatz kommt, ist der Subset Similarity Index \cite{subsim}. Dieser basiert auf dem Vergleich von Fuzzy-Clustern aus Partitionierungen $U_{k\times x}$ und $\tilde{U}_{l\times n}$ des Datensatzes $X=\{x_1,\dots,x_n\}$. Angewandt werden kann die Methode sowohl auf harte als auch auf weiche Paritionierungen. Die Ähnlichkeit zwischen zwei Crisp-Clustern ist definiert als Anteil des Schnittes zweier Cluster an ihrer Vereinigung:
 
 $$s_{ij} = \frac{||C_i \cap \tilde{C}_j||}{||C_i \cup \tilde{C}_j||},  \, \forall i \in \left[1,k\right]\text{ und } j \in \left[1,l\right] $$
 
-Die Ähnlichkeit zwischen zwei fuzzy Clustern dagegen ist definiert, als der Anteil der T-Normen aller Punktepaare beider Cluster an den T-Conormen dieser Punktepaare:
+Die Ähnlichkeit zwischen zwei Fuzzy-Clustern dagegen ist definiert als der Anteil der T-Normen aller Punktepaare beider Cluster an den T-Conormen dieser Punktepaare:
 
 $$s_{ij} = \frac{\sum\limits_{r=1}^n \top(u_{ir},\tilde{u}_{jr})}{\sum\limits_{r=1}^n \bot (u_{ir},\tilde{u}_{jr})},\, \forall i \in \left[1,k\right]\text{ und } j \in \left[1,l\right]$$
 
-Für $\top$ wird in der Regel die Minimumsfunktion und für $\bot$ die Maximumsfunktion eingesetzt (Standardnorm). Weitere Normen sind z.B. die algebraische Norm, Lukasiewicz Norm, Hamacher Norm und die Dombi Norm:
+Für $\top$ wird in der Regel die Minimumsfunktion und für $\bot$ die Maximumsfunktion eingesetzt (Standardnorm). Weitere Normen sind z.B. die algebraische Norm, Lukasiewicz-Norm, Hamacher-Norm und die Dombi-Norm:
 
 \begin{figure}[H]
 \centering
@@ -1725,7 +1728,7 @@ Für $\top$ wird in der Regel die Minimumsfunktion und für $\bot$ die Maximumsf
 \caption{Verschiedene T-Normen und T-Conormen auf Zugehörigkeitsgrade a und b}\label{tnorms}
 \end{figure}
 
-Die Partitionierungen $U$ und $\tilde{U}$ sind ähnlich, wenn $U$ in hohem Maße eine Teilmenge von $\tilde{U}$ ist oder umgekehrt. Dieser Grad der Ähnlichkeit lässt sich anhand von Ober -und Untermengenmaßen erfassen:
+Die Partitionierungen $U$ und $\tilde{U}$ sind ähnlich, wenn $U$ in hohem Maße eine Teilmenge von $\tilde{U}$ ist oder umgekehrt. Dieser Ähnlichkeitsgrad lässt sich anhand von Ober -und Untermengenmaßen erfassen:
 
 \begin{align*}
 S_{\subseteq} = \top( 
@@ -1751,26 +1754,28 @@ S_{\supseteq} = \top(
 Der Subset Similarity Index ist definiert als die Anwendung der T-Conorm auf die Ober- und Untermengenmaße:
 
 $$S(U,\tilde{U}) = \bot(S_{\subseteq}(U,\tilde{U}),S_{\supseteq}(U,\tilde{U}))$$
-Im Falle der Standardnorm (S) wird für jeden Cluster einer Partitionierung jeweils die beste Ähnlichkeit zu einem Cluster in der anderen Partitionierung gesucht. Anschließend wird aus der Menge dieser besten Ähnlichkeiten die Schlechteste Ähnlichkeit genommen. Nun existiert ein Indikator dafür, wie sehr die eine Partitionierung eine Unter- oder Obermenge der anderen Zerlegung ist. Der beste Wert dieser beiden Indikatoren ist der Subset Similarity Index.
+Im Falle der Standardnorm (S) wird für jeden Cluster einer Partitionierung jeweils die beste Ähnlichkeit zu einem Cluster in der anderen Partitionierung gesucht. Anschließend wird aus der Menge dieser besten Ähnlichkeiten die schlechteste Ähnlichkeit genommen. Nun existiert ein Indikator dafür, wie sehr die eine Partitionierung eine Unter- oder Obermenge der anderen Zerlegung ist. Der beste Wert dieser beiden Indikatoren ist der Subset Similarity Index.
+\\~\\
+Eine Implementierung und Demonstration ist im Anhang ab Zeile 46 zu finden.
 
 \subsection{Partitionierungsstabilität}
 
-Andere andere sehr einfache Methode geht davon aus, dass diejenige Zerlegung die Beste ist, welche sich von allen anderen Zerlegungen der gleichen Initialvoraussetzung am wenigsten unterscheidet \cite{partstab}. Eine solche Partitionierung wird auch \textbf{stabil} genannt. Die folgenden Schritte sollen den Algorithmus zur Bestimmung der besten Zerlegung mittels Partitionierungsstabilität informell beschreiben:
+Eine Möglichkeit zur Bestimmug der Besten Zerlegung bietet die Beurteilung der Partitionierungsstabilität. Dabei wird davon ausgegangen, dass diejenige Zerlegung die Beste ist, welche sich von allen anderen Zerlegungen der gleichen Initialvoraussetzung am wenigsten unterscheidet \cite{partstab}. Eine solche Partitionierung wird auch \textbf{stabil} genannt. Die folgenden Schritte sollen den Algorithmus zur Bestimmung der besten Zerlegung mittels Partitionierungsstabilität informell beschreiben:
 
 \begin{enumerate}
-\item Clustere Datensatz $X=\{x_1, x_2, \dots, x_n\}$ für jedes $c \in \left[c_{min},c_{max}\right]$ genau $m \in \mathbb{N}$ mal, so dass $(c_{max}-c_{min}+1)\cdot m$ Partitionierungen $U_{ci}, i\in \left[1,m\right]$ entstehen.
+\item Clustere Datensatz $X=\{x_1, x_2, \dots, x_n\}$ für jedes $c \in \left[c_{min},c_{max}\right]$ genau $m \in \mathbb{N}$ mal, sodass $(c_{max}-c_{min}+1)\cdot m$ Partitionierungen $U_{ci}, i\in \left[1,m\right]$ entstehen.
 \item Vergleiche die $m$ Partitionierungen $\forall c$ mit einem geeigneten Index $d(U_{ci},U_{cj}) \text{ mit } i<j \text{ und } i,j \in \left[1,m\right]$ paarweise untereinander und berechne die Partitionierungsstabilität:
 
 $$s(c)=\frac{\sum\limits_{i=1}^{m-1}\sum\limits_{j=i+1}^m d(U_{ci},U_{cj})}{\frac{m \cdot (m-1)}{2}}.$$
 \item Bestimme die optimale Clusteranzahl $c_{opt} = \argmin \limits_{c\in \left[c_{min},c_{max}\right]} s(c)$ .
-
 \end{enumerate}
-
+~\\
+Eine Implementierung und Demonstration dieser Methode ist im Anhang ab Zeile 49 zu finden.
 
 \section{Clustering auf unvollständigen Daten}
 Im optimalen Fall enthalten alle gesammelten Daten Werteeinträge. Je größer und komplexer die Datenbank jedoch wird, desto größer ist für jeden einzelnen Eintrag die Wahrscheinlichkeit, dass er fehlerhaft oder gar nicht erst vorhanden ist. Datenfehler können bei der Erfassung, Übertragung und Bereinigung von Daten entstehen. Auch das Migrieren mehrerer Datenbanken ist fehleranfällig. \\
 
-Leider lassen sich distanzbasierte Clusteringverfahren nicht einfach auf solche Datensätze anwenden, da es ansonsten zu stark verfälschten Ergebnissen kommen kann. Es braucht also alternative Ansätze.
+Leider lassen sich distanzbasierte Clusteringverfahren nicht einfach auf solche Datensätze anwenden, da es ansonsten zu stark verfälschten Ergebnissen kommen kann. Es braucht also alternative Ansätze.\\
 
 Die Voraussetzung der im Folgenden vorgestellten Methoden basiert auf der Annahme, dass ein Wert fehlt, wenn er sinnvollerweise existieren kann, aber unbekannt ist. Beispielsweise ist ein sinnvoller Eintrag zum Attribut Maximalhöhe kein Blutdruckwert, sondern eine Meterangabe. Leider ist der Wert dieser Angabe aber unbekannt.\\
 
@@ -1800,10 +1805,10 @@ Missing Data Mechanismen (MDM) deuten darauf hin, wie fehlende Werte in der Date
 \end{itemize}
 
 \subsection{Strategien zum Umgang mit fehlenden Werten}
-Ziel von Strategien zum Umgang mit fehlenden Werten ist es, die Datenmatrix so zu verändern, dass Clusteringverfahren darauf angewandt werden können. Die trivialste Lösung ist es, fehlende Werte zu identifizieren und entsprechende Zeilen und Spalten zu löschen. Im schlimmsten Fall kommt es zu starken Verzerrungen, falls repräsentative Attribute gelöscht werden müssen oder es starke Abhängigkeiten gibt. Eine weitere Variante ist die sogenannte Datenimputation. Bei dieser werden fehlende Werte in einem Vorverarbeitungsschritt geschätzt (z.B. durch das Einsetzen von Durchschnittswerten, Regressionsanalyse, Erwartungsmaximierung). Auch hier kommt es unter Umständen zu Verzerrungen. Außerdem ist der Rechenaufwand besonders groß. In der Literatur wurden aus diesem Grund spezielle adaptive Clusteringverfahren für unvollständige Daten vorgestellt. Die Meisten basieren auf dem FCM-Algorithmus
+Ziel von Strategien zum Umgang mit fehlenden Werten ist es, die Datenmatrix so zu verändern, dass Clusteringverfahren darauf angewandt werden können. Die trivialste Lösung ist es, fehlende Werte zu identifizieren und entsprechende Zeilen und Spalten zu löschen. Im schlimmsten Fall kommt es zu Verzerrungen, falls repräsentative Attribute gelöscht werden müssen oder es starke Abhängigkeiten gibt. Eine weitere Variante ist die sogenannte Datenimputation. Bei dieser werden fehlende Werte in einem Vorverarbeitungsschritt geschätzt (z.B. durch das Einsetzen von Durchschnittswerten, Regressionsanalyse, Erwartungsmaximierung). Auch hier kommt es unter Umständen zu Verzerrungen. Außerdem ist der Rechenaufwand besonders groß. In der Literatur wurden aus diesem Grund spezielle adaptive Clusteringverfahren für unvollständige Daten vorgestellt. Die Meisten basieren auf dem FCM-Algorithmus
 
 \subsubsection{FCM mit Whole Data Strategy (WDSFCM)}
-Bei der Whole Data Strategy \cite{wdsfcm} werden initial alle Datenpuntke ignoriert, bei denen ein Wert fehlt. Nach dem Clustering mit den vollständigen Datenpunkten werden die unvollständigen Datenpunkte unter Berechnung der partiellen Distanzen dem Cluster des jeweils nächsten Clusterprototypen zugeordnet. Die partielle Distanzfunktion berechnet sich wie folgt:
+Bei der Whole Data Strategy \cite{wdsfcm} werden initial alle Datenpunkte ignoriert, bei denen ein Wert fehlt. Nach dem Clustern mit den vollständigen Datenpunkten werden die unvollständigen Datenpunkte unter Berechnung der partiellen Distanzen dem Cluster des jeweils nächsten Clusterprototypen zugeordnet. Die partielle Distanzfunktion berechnet sich wie folgt:
 
 $$D_{part}(x_k,v_i) = \frac{d}{\sum\limits_{j=1}^d i_{kj}} \sum\limits_{j=1}^d (x_{kj}-v_{ij})^2 \cdot i_{kj}, \text{wobei}$$
 $$i_{kj} = \begin{cases}
@@ -1825,12 +1830,11 @@ Die Optimal Completion Strategy \cite{wdsfcm}\cite{pdsfcm} versucht die fehlende
 
 $$x_{kj} = \frac{\sum\limits_{i=1}^c (u_{ik})^m v_{ij}}{\sum\limits_{i=1}^c (u_{ik})^m}, \text{ für } 1 \leqslant k \leqslant n \text{ und } 1 \leqslant j \leqslant d$$
 
-Vorteilhaft ist, dass OCSFCM auch verwendet werden kann, wenn sowohl in allen Attributen, als auch allen Datenpunkten Werte fehlen. Leider ist der Rechenaufwand durch den dritten Iterationsschritt etwas größer. Außerdem können sich Clusterprototypen und die fehlenden Werte bei der Schätzung gegenseitig beeinflussen. Eine Variante der OCSFCM, die Nearest Prototype Strategy (NPSFCM) ersetzt in jeder Iteration von FCM die fehlenden Werte, durch die Werte des nächstgelegenden Clusterzentroiden ($x_{kj} = v_{ij}$). Die Partielle Distanzfunktion wird dann zu:
+Vorteilhaft ist, dass OCSFCM auch verwendet werden kann, wenn sowohl in allen Attributen, als auch allen Datenpunkten Werte fehlen. Leider ist der Rechenaufwand durch den dritten Iterationsschritt etwas größer. Außerdem können sich Clusterprototypen und die fehlenden Werte bei der Schätzung gegenseitig beeinflussen. Eine Variante der OCSFCM, die Nearest Prototype Strategy (NPSFCM), ersetzt in jeder Iteration von FCM die fehlenden Werte durch die Werte des nächstgelegenen Clusterzentroiden ($x_{kj} = v_{ij}$). Die Partielle Distanzfunktion wird dann zu:
 
 $$D_{part}(x_k,v_i) = \min\{D_{part}(x_k,v1),D_{part}(x_k,v_2),\dots,D_{part}(x_k,v_c)\}$$
 
 Auf diese Weise kann der Rechenaufwand von OCSFCM reduziert werden. 
-
 
 \subsection{Distance Estimation Strategy (DESFCM)}
 Ein anderer Ansatz \cite{desfcm} geht davon aus, dass die konkreten Werte gar nicht so wichtig sind, da die Berechnung der Zugehörigkeitsmatrix ausschließlich auf den Distanzen zwischen unvollständigen Daten und den Clusterzentroiden basiert. Die Datenmenge wird zu Beginn unterteilt in die vollständigen Datenpunkte $X_{obs}$ und die Menge der Datenpunkte mit fehlenden Werten $X_{mis}$. Im ersten Iterationsschritt werden die Clusterzentroide wie in FCM berechnet. Allerdings wird dabei nur über $x_k \in X_{obs}$ summiert. Im zweiten Iterationsschritt bleibt die Berechnung der Zugehörigkeitsgrade ebenfalls erhalten. Die Distanzfunktion muss allerdings angepasst werden, da die Distanzen für fehlende Werte nicht existieren:
@@ -1849,10 +1853,9 @@ In einer Untersuchung wurde ermittelt, wie sich oben beschriebene Strategien geg
 \includegraphics[width=\linewidth]{him08ergebnisse.jpg}
 \end{minipage}
 
-\subsection{Fuzzy c-Means clustering of Incomplete Date using
-Dimension-wise Fuzzy Variance of Clusters (FCMDFVC)}
+\subsection{Fuzzy c-Means clustering of Incomplete Data using Dimension-wise Fuzzy Variance of Clusters (FCMDFVC)}
 
-Eine 2016 vorgestellte Strategie soll sämtliche Nachteile der vorherigen Methoden vermeiden \cite{fcmdfvc}. Zum einen sollen Cluster unterschiedlicher Dichte, unterschiedlicher Ausdehnung und Richtung erkannt werden. Dazu werden die Streuung der Cluster und die dimensionsweise Fuzzy-Varianz in die Schätzung der fehlenden Werte mit einbezogen. 
+Eine 2016 vorgestellte Strategie soll sämtliche Nachteile der vorherigen Methoden vermeiden \cite{fcmdfvc}. Zum einen sollen Cluster unterschiedlicher Dichte, unterschiedlicher Ausdehnung und Richtung erkannt werden. Dazu werden die Streuung der Cluster und die dimensionsweise Fuzzy-Varianz in die Schätzung der fehlenden Werte mit einbezogen.\\
 
 Dazu wird für jeden Cluster $C_i$ ($i\in \left[1,c \right]$) die Fuzzy-Varianz $w_{ij}$ ($j\in\left[1,d \right])$ in jeder Dimension $j$ als durchschnittliche quadratische Distanz zwischen den vorhandenen Datenpunkten und den Clusterzentroiden berechnet:
 
@@ -1875,20 +1878,20 @@ $$v_{ij}^{\prime} = \frac{\sum\limits_{k=1}^n (u_{ik})^m i_{kj} x_{kj}}{\sum\lim
 Es konnte experimentell belegt werden, dass FCMDFVC bessere Endcluster findet als OCSFCM. Gegenüber der Methode, welche zusätzlich die geschätzten Feature-Werte mit in die Berechnung der Clusterzentroide einbezieht, ist FCMDFVC deutlich überlegen.
 
 \section{Hochdimensionale Daten}
-Leider eignen sich nicht alle vorgestellten Clusteringalgorithmen zur Anwendung auf Datensätzen mit sehr vielen Attributen, wie sie in der Geoinformatik vorkommen. Mit steigender Dimensionsanzahl nähern sich Distanzen zwischen den nächsten Nachbarn den Distanzen zwischen den am weitesten entfernten Datenpunkten an. Während harte Clusteringalgorithmen trotz zunehmender Fuzzyness der Punktewolke noch brauchbare Zuordnungsergebnisse erzielen, werden die Zugehörigkeitsgrade bei fuzzy Verfahren immer unbrauchbarer.
-Mögliche Lösungsstrategien sind das reduzieren von Dimensionen vor der Clusterung (Feature Transformation und Feature Selection) und speziell angepasste Clusteringalgorithmen, wie Attribute Weighting Fuzzy Clustering und Multivariate Fuzzy c-means.
+Leider eignen sich nicht alle vorgestellten Clusteringalgorithmen zur Anwendung auf Datensätzen mit sehr vielen Attributen, wie sie in der Geoinformatik üblich sind. Mit steigender Dimensionsanzahl nähern sich Distanzen zwischen den nächsten Nachbarn den Distanzen zwischen den am weitesten entfernten Datenpunkten an. Während harte Clusteringalgorithmen trotz zunehmender Fuzzyness der Punktewolke noch brauchbare Zuordnungsergebnisse erzielen, werden die Zugehörigkeitsgrade bei Fuzzy-Verfahren immer unbrauchbarer.
+Mögliche Lösungsstrategien sind das reduzieren von Dimensionen vor dem Clustern (Feature Transformation und Feature Selection) und speziell angepasste Clusteringalgorithmen, wie Attribute Weighting Fuzzy Clustering und Multivariate Fuzzy c-means.
 \\~\\
 \subsection{Dimensionsreduktion}
 Ziel von Dimensionsreduktionsverfahren ist es, Daten in einer reduzierten Anzahl an Dimensionen bzw. mit weniger Attributen so zu repräsentieren, das möglichst viele relevante Informationen für die Anwendung eines Clusterings erhalten bleiben. Dabei unterscheidet man zwischen den Vorgehensweisen \textit{Feature Extraction}, der Attributauswahl im zuvor transformierten Datenraum und der \textit{Feature Selection}, der Attributselektion im unveränderten Messraum.
 
 \subsubsection{Hauptkomponentenanalyse}
-Ziel der Hauptkomponentenanalyse \cite{pca} (principal component analysis (PCA)) ist es, aus den Attributwerten neue unkorrelierte Variablen abzuleiten und nach ihrer Wichtigkeit absteigend zu sortieren. Geometrisch entspricht dies einer Axenrotation des Ursprungskoordinatensystems zur neuen Menge der orthogonalen Axen (gefundene Variablen), die nach dem Anteil der Variation in den Originaldaten sortiert sind.\\
+Ziel der Hauptkomponentenanalyse \cite{pca} (principal component analysis (PCA)) ist es, aus den Attributwerten neue unkorrelierte Variablen abzuleiten und nach ihrer Wichtigkeit absteigend zu sortieren. Geometrisch entspricht dies einer Achsenrotation des Ursprungskoordinatensystems zur neuen Menge der orthogonalen Achsen (gefundene Variablen), die nach dem Anteil der Variation in den Originaldaten sortiert sind.\\
 
-Je größer die Variation der Daten, desto besser funktioniert das Clustering. Aus diesem Grund bietet es sich an, eine feste Anzahl $p<d$ von Hauptkomponenten mit der größten Variation auszuwählen und den daraus resultierenden Datensatz zu clustern.
+Je größer die Variation der Daten, desto besser funktioniert das Clustern. Aus diesem Grund bietet es sich an, eine feste Anzahl $p<d$ von Hauptkomponenten mit der größten Variation auszuwählen und den daraus resultierenden Datensatz zu clustern.
 \\~\\
 
 Sei $X$ eine Datenmatrix mit $n$ Datenpunkten und $d$ Attributen.
-Zuerst wird zur Zentrierung der Datenmatrix der Durchschnittsvektor $\overline{m} = \frac{1}{n}\sum\limits_{i=1}^n \vec{x_i}$ berechnet, dann von allen Datenpunkten $x_i$ subtrahiert: $\hat{X} = X - 1_n \cdot \overline{m}$. Im nächsten Schritt werden die Richtungen mit der größten Varianz bestimmt. Dazu wird die $d\times d$ Kovarianzmatrix $\sum=\frac{1}{n-1}\hat{X}^\top \hat{X}$ berechnet und anschließend ihre Eigenvektorzerlegung $V \Lambda V^\top$, wobei $\Lambda$ eine Diagonalmatrix mit Eigenwerten auf der Hauptdiagonale in absteigender Reihenfolge ist. Die Matrix $V$ dagegen besteht aus den zugehörigen Eigenvektoren in den Spalten. Im nächsten Schritt werden die $p$ größten Eigenwerte berechnet und die Matrix $V_p$ erstellt, die nur noch aus den zugehörigen $p$ Eigenvektoren besteht. Nun kann die Datenmatrix $\hat{X}$ mit Hilfe von $V_p$ auf die reduzierte Matrix $Z$ projiziert werden:
+Zuerst wird zur Zentrierung der Datenmatrix der Durchschnittsvektor $\overline{m} = \frac{1}{n}\sum\limits_{i=1}^n \vec{x_i}$ berechnet und dann von allen Datenpunkten $x_i$ subtrahiert: $\hat{X} = X - 1_n \cdot \overline{m}$. Im nächsten Schritt werden die Richtungen mit der größten Varianz bestimmt. Dazu wird die $d\times d$ Kovarianzmatrix $\sum=\frac{1}{n-1}\hat{X}^\top \hat{X}$ berechnet und anschließend ihre Eigenvektorzerlegung $V \Lambda V^\top$, wobei $\Lambda$ eine Diagonalmatrix mit Eigenwerten auf der Hauptdiagonale in absteigender Reihenfolge ist. Die Matrix $V$ dagegen besteht aus den zugehörigen Eigenvektoren in den Spalten. Im nächsten Schritt werden die $p$ größten Eigenwerte berechnet und die Matrix $V_p$ erstellt, die nur noch aus den zugehörigen $p$ Eigenvektoren besteht. Nun kann die Datenmatrix $\hat{X}$ mit Hilfe von $V_p$ auf die reduzierte Matrix $Z$ projiziert werden:
 
 $$Z = \hat{X} V_p$$ 
 
@@ -1959,6 +1962,13 @@ $$v_{ij} = \frac{\sum\limits_{k=1}^n u_{ikj}^m x_{kj}}{\sum\limits_{k=1}^n u_{ik
 
 \chapter{Fazit und Ausblick}
 \section{Mein Thema für die Masterarbeit}
+\begin{enumerate}
+\item polygon. Triangulation + hochdim. NSFCDT?
+\item PCA auf sel. SSF-FCM + CVI entwickeln?
+\item Hybride Algorithmen?
+
+\end{enumerate}
+
 \printbibliography
 
 \renewcommand\appendixname{Anhang}
