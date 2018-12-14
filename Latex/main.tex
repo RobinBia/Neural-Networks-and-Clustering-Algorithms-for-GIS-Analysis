@@ -379,24 +379,24 @@ Ein Computerprogramm lernt also genau dann dazu, wenn es sich hinsitlich seiner 
 Ziel von Machine Learning in den Geowissenschaften ist es, Muster in Geodaten zu erkennen, Vorhersagen zu machen und Phänomene besser erkennen und verstehen zu können.
 
 \bigskip
-
-Eine Stadt ist ein Komplexes System, das aus vielen kleineren interagierenden Subsystemen besteht. Diese werden durch Faktoren wie Politik, Bevölkerungswachstum, Verkehrsinfrastruktur und den Arbeitsmarkt beeinflusst.
-Um zu verstehen, welche Kräfte strukturelle Änderungen von Städten vorantreiben, werden sowohl Satellitenbilder als auch nutzerbezogene Positionsdaten aus sozialen Netzwerken wie Facebook und Twitter und Attributierte Markierungen auf Geoinformationssystemen wie OpenStreetMap\footnote{https://www.openstreetmap.org} verwendet, um Langzeitvorhersagen zur erstellen.
+\textbf{Beispiel:}\\
+Eine Stadt ist ein komplexes System, das aus vielen kleineren interagierenden Subsystemen besteht. Diese werden durch Faktoren wie Politik, Bevölkerungswachstum, Verkehrsinfrastruktur und den Arbeitsmarkt beeinflusst.
+Um zu verstehen, welche Kräfte strukturelle Änderungen von Städten vorantreiben, werden sowohl Satellitenbilder als auch nutzerbezogene Positionsdaten aus sozialen Netzwerken wie Facebook und Twitter verwendet. Ebenfalls werden attributierte Markierungen auf Geoinformationssystemen wie OpenStreetMap\footnote{https://www.openstreetmap.org} verwendet, um Langzeitvorhersagen zur erstellen.
 Außerdem helfen diese Modelle und Simulationen dabei, die Mechanismen der urbanen Evolution zu erforschen und Städteplanung zu optimieren.
 
 
-\clearpage
+%\clearpage
 \vspace*{\fill}
 \begin{center}
 \begin{minipage}{1\textwidth}
-Im Folgenden eine Auflistung verschiedener Probleme, für deren Lösung sich die Anwendung eines Neuronalen Netzwerks eignet:
+Es folgt eine Auflistung verschiedener Probleme, für deren Lösung sich die Anwendung eines Neuronalen Netzwerks eignet:
 
 \begin{itemize}
 \item Klassifizierung - Was ist auf einem Bild zu sehen?
 \item Lokalisation - Wo ist das Objekt auf dem Bild?
 \item Segmentierung - Klassifizierung jedes Pixels
 \item Lineare Regression - Lässt sich ein funktionaler Zusammenhang zwischen den Daten des Datensatzes finden, welcher eine Vorhersage zum weiteren Verlauf der Daten ermöglicht?
-\item Clustering - Wie lassen sich Daten vergleichen und in Gruppierungen bei gewisser Ähnlichkeit Ihrer Attribute zusammenfassen?
+\item Clustering - Wie lassen sich Daten vergleichen und in Anbetracht ihrer Attributähnlichkeiten in Gruppen zusammenfassen?
 \item Image Captioning - Wie lassen sich die klassifizierten Objekte in Beziehung setzen? 
 \end{itemize}
 
@@ -404,15 +404,12 @@ Im Folgenden eine Auflistung verschiedener Probleme, für deren Lösung sich die
 \end{center}
 \vfill
 \clearpage
-
 \clearpage
-
-
 
 \begin{figure}[h]
 \centering
 \vfill
-\includegraphics[scale=0.73]{anwendungen.jpg}
+\includegraphics[scale=0.77]{anwendungen.jpg}
 \caption{Vergleich verschiedener Anwendungszwecke von Deep Learning}
 \vfill
 \end{figure}
@@ -423,7 +420,7 @@ Im Folgenden eine Auflistung verschiedener Probleme, für deren Lösung sich die
 Um bestimmen zu können, wie gut ein Bild $x$ ($x_i$ sind die einzelnen Pixelwerte) zu einer Klasse $k_j$ passt, muss mithilfe einer Funktion $f$ ein numerischer Vergleichswert bestimmt werden. Die Funktion $f$ wird auch Score-Funktion genannt:
 $$f(x_i, W, b) = W \cdot x_i + b$$
 Der Parameter $W$ ist die sogenannte Gewichtsmatrix. Sie besitzt die Dimensionalität $i_{max} \times k_{max}$.
-Der Parameter $b$ heißt Bias und besitzt die Dimensionalität $k_{max} \times 1$. Er hat die gleiche Funktion wie die Gewichtsmatrix, ermöglicht aber eine zusätzliche additive Änderung beim Lernen. Im nächsten Unterkapitel wird die genauer Erläutert, wie dies zu interpretieren ist.
+Der Parameter $b$ heißt Bias und besitzt die Dimensionalität $k_{max} \times 1$. Er hat die gleiche Funktion wie die Gewichtsmatrix, ermöglicht aber eine zusätzliche additive Änderung beim Lernen. Im nächsten Unterkapitel wird genauer Erläutert, wie dies zu interpretieren ist.
 
 \begin{figure}[H]
 \centering
@@ -431,7 +428,7 @@ Der Parameter $b$ heißt Bias und besitzt die Dimensionalität $k_{max} \times 1
 \caption{Interpretation der Score-Funktion anhand eines Beispiels}
 \end{figure}
 
-Wenn man ein Bild mit $i_{max}$ Pixeln als $i_{max}$-dimensionalen Vektor auffasst, dann lässt sich ein Classifier als Hyperebenenseparator dieses Vektorraumes interpretieren. Je höher die Score Funktion für eine Klasse, desto geringer ist der Abstand zum Untervektorraum mit entsprechenden zur Klasse zugehörigen Mustern.
+Wenn man ein Bild mit $i_{max}$ Pixeln als $i_{max}$-dimensionalen Vektor auffasst, dann lässt sich ein Classifier als Hyperebenenseparator dieses Vektorraumes interpretieren. Je höher die Score-Funktion für eine Klasse, desto geringer ist der Abstand zum Untervektorraum mit entsprechenden zur Klasse gehörenden Mustern.
 
 \begin{figure}[H]
 \centering
@@ -439,7 +436,7 @@ Wenn man ein Bild mit $i_{max}$ Pixeln als $i_{max}$-dimensionalen Vektor auffas
 \caption{Hirsch-Auto-Flugzeug-Hyperraum mit Ebenenseparatoren}
 \end{figure}
 
-Äquivalent zur Score-Funktion definiert man auch eine sogenannte Loss-Funktion. Je besser ein Datum einer bestimmten Klasse zugeordnet werden kann, desto besser sind die Parameter der Gewichtsmatrix und des Bias und desto kleiner der Wert der Loss-Funktion. Im Rahmen eines Optimierungsprozesses soll die Loss-Funktion durch Änderung der Gewichte minimiert werden.
+Äquivalent zur Score-Funktion definiert man auch eine sogenannte Loss-Funktion. Je besser ein Datum einer bestimmten Klasse zugeordnet werden kann, desto besser sind die Parameter der Gewichtsmatrix und des Bias und desto kleiner ist der Wert der Loss-Funktion. Im Rahmen eines Optimierungsprozesses soll die Loss-Funktion durch Änderung der Gewichte minimiert werden.
 \bigskip
 Zwei häufig verwendete Loss-Funktionen für Daten sind:
 \begin{itemize}
@@ -447,24 +444,24 @@ Zwei häufig verwendete Loss-Funktionen für Daten sind:
 \item \textbf{Softmax-Loss} $L_i = -\log\left(\frac{e^{s_{y_i}}}{\sum_{j} e^{s_j}}\right) \Rightarrow$ Minimieren der negativen logarithmischen Wahrscheinlichkeit für die korrekte Klasse
 \end{itemize}
 
-Der gesamte Loss eines Optimierungsproblems besteht jedoch nicht nur aus dem oben genannten Datenloss, sondern des Weiteren aus dem Regularisierungs-Loss.
+Der gesamte Loss eines Optimierungsproblems besteht jedoch nicht nur aus dem oben genannten Data-Loss, sondern des Weiteren aus dem Regularisierungs-Loss.
 
 \subsection{Regularisierer}
-Ein Regularisierer soll verhindern, dass sich die Gewichte immer nur hinsichtlich einer bestimmten Klasse verändern. Zum Beispiel kann es sein, dass ein Netzwerk, das ohne Regularisierer trainiert wurde zwar gut Katzen erkennen kann, jedoch keine Hunde. Das Ziel ist hierbei also, ein Netzwerk zu erzeugen, dass die Generalisierung "Tier" versteht und darüber hinaus zwischen verschiedenen Tierarten unterscheiden kann. Eine Möglichkeit, dies zu realisieren, bieten Bestrafungsterme:
+Ein Regularisierer soll verhindern, dass sich die Gewichte immer nur hinsichtlich einer bestimmten Klasse verändern. Zum Beispiel kann es sein, dass ein Netzwerk, das ohne Regularisierer trainiert wurde, zwar gut Katzen erkennen kann, jedoch keine Hunde. Das Ziel ist hierbei also, ein Netzwerk zu erzeugen, das die Generalisierung "Tier" versteht und darüber hinaus zwischen verschiedenen Tierarten unterscheiden kann. Eine Möglichkeit, dies zu realisieren, bieten Bestrafungsterme:
 
 \[R(W) = \sum_{k}\sum_{l} W_{k,l}^2\]
 
-Dieser Bestrafungsterm geht ebenfalls in die Loss-Funktion mit ein. Die Quadrierung der Gewichte sorgt dafür, dass zuvor bereits deutlich größere Gewichte in der Loss-Funktion umso mehr berücksichtigt werden. Im Laufe des künftigen Trainingsprozesses können Ausreißer effektiv erkannt und vermieden werden. Die Loss-Funktion wird nur dann minimal sein, wenn sich die Gewichte nicht zu stark voneinander unterscheiden.
+Dieser Bestrafungsterm geht ebenfalls in die Loss-Funktion mit ein. Die Quadrierung der Gewichte sorgt dafür, dass zuvor bereits deutlich größere Gewichte in der Loss-Funktion umso mehr berücksichtigt werden. Im Laufe des Trainingsprozesses können Ausreißer effektiv erkannt und vermieden werden. Die Loss-Funktion wird nur dann minimal sein, wenn sich die Gewichte nicht zu stark voneinander unterscheiden.
 \\
 Die gesamte Loss-Funktion lautet also:
 \[L_{ges} = \frac{1}{N} \sum_{i} L_i + \lambda R(W)\]
 
 \subsection{Gradientenabstieg}
-Um die Loss-Funktion zu minimieren, müssen die Gewichte $W$ aktualisiert werden. Hierzu berechnet man den negativen Gradienten (Partielle Ableitungen der Loss-Funktion nach den Gewichten). Auf der Ebene, welche die Loss-Funktion aufspannt, zeigt der Gradient in Richtung des steilsten Abstiegs.
+Um die Loss-Funktion zu minimieren, müssen die Gewichte $W$ aktualisiert werden. Hierzu berechnet man den negativen Gradienten, also die partiellen Ableitungen der Loss-Funktion nach den Gewichten. Auf der Ebene, welche die Loss-Funktion aufspannt, zeigt der Gradient in Richtung des steilsten Abstiegs.
 
 
 \subsection{Multi-Layer Neural Network}
-Ein Multi-Layer Neuronales Netzwerk ist ein gerichteter azyklischer Graph, wobei die Knoten in Ebenen angeordnet werden. Die erste Knotenebene besteht aus den Eingabedaten. Im Bildbeispiel wäre jeder Knoten ein Pixelwert. Die Kanten des Graphen entsprechen den Werten der Gewichtsmatrix $W$. Die Knoten der Hidden-Layers under der Output-Layer lassen sich als Neuronen interpretieren, welche durch Aktivierung oder Deaktivierung bestimmte Muster der Eingabedaten lernen. Ob ein Neuron aktiviert wird oder nicht, bestimmt die Aktivierungsfunktion $g$. Das Ergebnis wird an eine weitere Neuronenschicht weitergeleitet und die gelernten Muster somit weiter verfeinert.
+Ein Multi-Layer Neuronales Netzwerk ist ein gerichteter azyklischer Graph, wobei die Knoten in Ebenen angeordnet werden. Die erste Knotenebene besteht aus den Eingabedaten. Im Bildbeispiel wäre jeder Knoten ein Pixelwert. Die Kanten des Graphen entsprechen den Werten der Gewichtsmatrix $W$. Die Knoten der Hidden-Layers unter der Output-Layer lassen sich als Neuronen interpretieren, welche durch Aktivierung oder Deaktivierung bestimmte Muster der Eingabedaten lernen. Ob ein Neuron aktiviert wird oder nicht, bestimmt die Aktivierungsfunktion $g$. Das Ergebnis wird an eine weitere Neuronenschicht weitergeleitet und die gelernten Muster somit weiter verfeinert.
 
 \begin{figure}[H]
 \centering
@@ -482,7 +479,7 @@ Sei $f$ eine Score-Funktion für ein Single Layer Neural Network mit nur einer A
 
 \[f(x,w) = \frac{1}{1+e^{-(w_0x_0+w_1x_1+w_2)}}\]
 
-Diese Aktivierungsfunktion nennt sich auch Sigmoidfunktion. Sie transformiert relle Zahlen auf ein Intervall $\left[0, 1\right]$.
+Diese Aktivierungsfunktion nennt sich auch Sigmoidfunktion. Sie transformiert reelle Zahlen auf ein Intervall $\left[0, 1\right]$.
 
 \begin{figure}[H]
 \centering
@@ -490,9 +487,9 @@ Diese Aktivierungsfunktion nennt sich auch Sigmoidfunktion. Sie transformiert re
 \caption{Beispiel für Backpropagation anhand der Sigmoid-Funktion}
 \end{figure}
 
-Das Ergebnis von $f(x,w)$ mit $w = (2,-1,-3)$ und $x = (-1,-2)$ ist $0.73$. Die Ableitung von  $\frac{1}{x}$ ist $-\frac{1}{x^2}$. Anschließend rechnet man $-\frac{1}{1.37^2}\cdot 1 = -0.53$. Die Ableitung von $x+1$ ist $1$. Also rechnet man $1\cdot -0.53=-0.53$. Die Ableitung von $e^x$ ist $e^x$. Man rechnet $e^{-1}\cdot 0.53=-0.2$. Diese Vorgehensweise entspricht der Anwendung der Kettenregel. Fährt man fort, erhält man Gewichtsänderungen $W_{exch}=(-0.2,-0.4,0.2)$. Diese Änderungen subtrahiert man von den alten Gewichten mit einem Parameter $step$: $W \minuseq step \cdot W_{exch}$. Dabei gibt Lernrate $step$ an, wie stark die Änderung der Gewichte ausfallen soll. Eine zu große Änderung kann bedeuten, dass man über das Minimum der Loss-Funktion hinaus springt. Sind die Änderungen zu klein, so muss der Gradient oft berechnet werden, was sehr lange dauern kann. Das Ergebnis der Score-Funktion für $W' = (1.8,-3.4,-2.8)$ ist $0.9$. Das Netzwerk klassifiziert nun also besser.\\
-\bigskip
-Neben der Sigmoidfunktion gibt es noch viele andere Aktivierungsfunktionen. So hat die Maximumsfunktion (Rectifier Linear Unit - ReLU) gegenüber der Sigmoidfunktion den Vorteil, dass bei relativ hohen Werten nicht alle Neuronen aktiviert werden und es somit weiterhin zu einem Lerneffekt kommt. Ein weiterer Vorteil des Rectifiert ist die schnellere Konvergenz des Gradienten. So stellt sich bereits nach wenigen Trainings ein starker Lerneffekt ein. Sind die gewichte jedoch zu Beginn sehr klein, so ist die Gefahr groß, dass bei einer weiteren Verkleinerung alle Neuronen deaktiviert werden.
+Das Ergebnis von $f(x,w)$ mit $w = (2,-1,-3)$ und $x = (-1,-2)$ ist $0.73$. Die Ableitung von  $\frac{1}{x}$ ist $-\frac{1}{x^2}$. Anschließend rechnet man $-\frac{1}{1.37^2}\cdot 1 = -0.53$. Die Ableitung von $x+1$ ist $1$. Also rechnet man $1\cdot -0.53=-0.53$. Die Ableitung von $e^x$ ist $e^x$. Man rechnet $e^{-1}\cdot 0.53=-0.2$. Diese Vorgehensweise entspricht der Anwendung der Kettenregel. Fährt man fort, erhält man Gewichtsänderungen $W_{exch}=(-0.2,-0.4,0.2)$. Diese Änderungen subtrahiert man von den alten Gewichten mit einem Parameter $step$: $W \minuseq step \cdot W_{exch}$. Dabei gibt die Lernrate $step$ an, wie stark die Änderung der Gewichte ausfallen soll. Eine zu große Änderung kann bedeuten, dass man über das Minimum der Loss-Funktion hinaus springt. Sind die Änderungen zu klein, so muss der Gradient oft berechnet werden, was sehr lange dauern kann. Das Ergebnis der Score-Funktion für $W' = (1.8,-3.4,-2.8)$ ist $0.9$. Das Netzwerk klassifiziert nun also besser.\\
+
+Neben der Sigmoidfunktion gibt es noch viele andere Aktivierungsfunktionen. So hat die Maximumsfunktion (Rectifier Linear Unit - ReLU) gegenüber der Sigmoidfunktion den Vorteil, dass bei relativ hohen Werten nicht alle Neuronen aktiviert werden und es somit weiterhin zu einem Lerneffekt kommt. Ein weiterer Vorteil des Rectifier ist die schnellere Konvergenz des Gradienten. So stellt sich bereits nach wenigen Trainings ein starker Lerneffekt ein. Sind die Gewichte jedoch zu Beginn sehr klein, so ist die Gefahr groß, dass bei einer weiteren Verkleinerung alle Neuronen deaktiviert werden.
 
 \begin{figure}[H]
 \centering
@@ -515,7 +512,7 @@ In diesem Fall werden die Gewichte nach jedem Trainingsbeispiel aktualisiert. Di
 \bigskip
 Zur Beschleunigung des Gradientenabstiegs wurden ebenfalls Verfahren entwickelt:
 \begin{itemize}
-\item \textbf{Momentum} Falls der Gradient zu groß ist, wird das Ziel beim aktualisieren der Gewichte übersprungen. Diese Methode beschleungigt den Gradientenabstieg, indem die Anzahl der übersprungenen Minima reduziert wird (quantitative Oszillationsreduktion). Hierzu wird der Update-Vektor des vorherigen Schrittes durch einen Paramter $\gamma$ gewichtet und zum neuen Update-Vektor addiert:
+\item \textbf{Momentum} Falls der Gradient zu groß ist, wird das Ziel beim Aktualisieren der Gewichte übersprungen. Diese Methode beschleunigt den Gradientenabstieg, indem die Anzahl der übersprungenen Minima reduziert wird (quantitative Oszillationsreduktion). Hierzu wird der Update-Vektor des vorherigen Schrittes durch einen Parameter $\gamma$ gewichtet und zum neuen Update-Vektor addiert:
 
 \[v_t=\gamma v_{t-1}+\eta \nabla_WL(W)\]
 \[W=W-v_t\]
@@ -536,7 +533,7 @@ Wobei $G_{t}$ eine Diagonalmatrix ist und das Element $i,i$ ist die Summe der Qu
 \end{itemize}
 
 \subsection{Convolutional Neural Network}
-Ein Convnet ist ein Neuronales Netzwerk, das speziell für das Klassifizierungproblem geeignet ist. Ein Standardnetzwerk besteht aus folgenden vier Layern:
+Ein \textit{Convnet} ist ein Neuronales Netzwerk, das speziell für das Klassifizierungsproblem geeignet ist. Ein Standardnetzwerk besteht aus folgenden vier Schichten:
 
 \begin{itemize}
 \item \textbf{1. Convolution Layer} Dies ist ein Filter $W$, der Dimension $F \times F\times c$, wobei das Bild $P$ die Dimension $N\times N\times c$ hat und $N>F$. Die neue Größe (Höhe/Breite $N$) des Ausgabebildes nach der Convolution beträgt $\frac{N-F}{stride+1}$, wobei der Stride die Anzahl der Gitterzellen ist, die der Filter jedes mal weiter springt. Als Padding bezeichnet man die Anzahl der Gitterreihen, die um das Ursprungsbild herum virtuell angefügt werden, um zu verhindern, dass das Bild durch die Convolution kleiner wird. Zu Beginn wird der Filter an die linke obere Ecke angesetzt. Anschließend wird der erste Wert des neuen Bildes berechnet.
@@ -551,11 +548,11 @@ Danach wird der Filter um $stride$ Gitterzellen nach rechts verschoben und es wi
 \caption{Convolution eines $7 \times 7$ Bildes mittels $3 \times 3$ Eins-Filter ($w_{i,k} = 1$), Padding = 1 und Stride = 2}
 \end{figure}
 
-Jeder Filter erstreckt sich über die gesamte Tiefe des Bildes. Wird also ein $B\times B\times 3$ Filter auf ein $A\times A\times 3$ Bild angewandt, so hat das Ausgabebild die Dimension $C\times C\times 1$ mit $C = \frac{A-B}{stride+1}$. Werden $10$ Filter der größe $B\times B\times 3$ angewandt, so hat die Ausgabe die Dimension $C\times C\times 10$. Je mehr Filter angewandt werden, desto besser können Muster gelernt werden. Zu große und zu kleine Filter führen zu Over- und zu Underfitting.
+Jeder Filter erstreckt sich über die gesamte Tiefe des Bildes. Wird also ein $B\times B\times 3$ Filter auf ein $A\times A\times 3$ Bild angewandt, so hat das Ausgabebild die Dimension $C\times C\times 1$ mit $C = \frac{A-B}{stride+1}$. Werden $10$ Filter der Größe $B\times B\times 3$ angewandt, so hat die Ausgabe die Dimension $C\times C\times 10$. Je mehr Filter angewandt werden, desto besser können Muster gelernt werden. Zu große und zu kleine Filter führen zu Over- und zu Underfitting.
 
-\item \textbf{2. ReLU Layer} Diese Layer übernimmt das Aktivieren der einzelnen Gewichte mit z.B. max(0,x).
+\item \textbf{2. ReLU Layer} Diese Schicht übernimmt das Aktivieren der einzelnen Gewichte mit z.B. max(0,x).
 
-\item \textbf{3. Pooling Layer} Diese Layer reduziert die Ausgabe nach der Filterung und Aktivierung auf wesentliche Merkmale des Bildes und verkleinert die Anzahl der Pixel, die für die Speicherung dieser Merkmale notwendig sind. Zum Einsatz kommt meistens das Max-Pooling. Hierbei wird wie bei der Convolution eine Maske auf das Bild gesetzt. Das Maximum aller Bildwerte, die sich hinter der Maske befinden, ist der Wert des neuen Bildes nach dem Pooling. 
+\item \textbf{3. Pooling Layer} Diese Schicht reduziert die Ausgabe nach der Filterung und Aktivierung auf wesentliche Merkmale des Bildes und verkleinert die Anzahl der Pixel, die für die Speicherung dieser Merkmale notwendig sind. Zum Einsatz kommt meistens das Max-Pooling. Hierbei wird wie bei der Convolution eine Maske auf das Bild gesetzt. Das Maximum aller Bildwerte, die sich hinter der Maske befinden, ist der Wert des neuen Bildes nach dem Pooling. 
 
 \begin{figure}[H]
 \centering
@@ -563,11 +560,11 @@ Jeder Filter erstreckt sich über die gesamte Tiefe des Bildes. Wird also ein $B
 \caption{Pooling mit stride = 2}
 \end{figure}
 
-\item \textbf{4. Fully Connected Layer} Diese Neuronen-Schicht soll die Ausgabe nach den oben genannten Schritten interpretierbar machen und auf Klassen-Scores abbilden. Jedes Neuron ist mit jedem aktivierten Gewicht davor liegenden Schicht verbunden.
+\item \textbf{4. Fully Connected Layer} Diese Neuronen-Schicht soll die Ausgabe nach den oben genannten Schritten interpretierbar machen und auf Klassen-Scores abbilden. Jedes Neuron ist mit jedem aktivierten Gewicht der davor liegenden Schicht verbunden.
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.1]{conv-construction.jpg}
-\caption{Gewöhnliches Convnet mit Fully-Connected-Layers zum Schluss}
+\caption{Gewöhnliches Convnet mit Fully Connected Layers zum Schluss}
 \end{figure}
 
 \end{itemize}
@@ -587,7 +584,7 @@ Ein Recurrent Neural Network (RNN) ist ein zeitabhängiges neuronales Netz, mit 
 \item Image Captioning
 \item Sentimentanalyse (Stimmungserkennung im Text Mining)
 \item Sprachübersetzung, Textproduktion und Vorhersage von Worten
-\item Videoklassifikatio
+\item Videoklassifikation
 \item Vorhersage von geologischen Aktivitäten
 \end{itemize}
 
@@ -596,18 +593,18 @@ Ein Zustand $h_t$ und eine Ausgabe $y_t$ eines RNN zu einem bestimmten Zeitpunkt
 \[h_t = f(W_{xh} x_t + W_{hh} h_{t-1} + b1)\]
 \[y_t = g(W_{hy} h_t + b2)\]
 
-Hierbei enthalten die Gewichtsmatritzen $W_{xh}$, $W_{hh}$, $W_{hy}$ die zu lernenden Parameter zwischen Input Layer, Hidden Layer und Output Layer. Die Funktionen $f$ und $g$ sind Nichtlinearitäten.
+Hierbei enthalten die Gewichtsmatrizen $W_{xh}$, $W_{hh}$, $W_{hy}$ die zu lernenden Parameter zwischen Input Layer, Hidden Layer und Output Layer. Die Funktionen $f$ und $g$ sind Nichtlinearitäten.
 \\~\\
 \textbf{Beispiel:}\\
 Ein RNN wird mit einer gegebenen Sequenz ('h' 'e' 'l' 'l' 'o') 
-trainiert, so dass es bei der Eingabesequenz x = ('h' 'e' 'l' 'l') die Sequenz ('e' 'l' 'l' 'o') und somit den Buchstaben 'o' korrekt vorhersagt. 
+trainiert, sodass es bei der Eingabesequenz x = ('h' 'e' 'l' 'l') die Sequenz ('e' 'l' 'l' 'o') und somit den Buchstaben 'o' korrekt vorhersagt. 
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.15]{RNN.jpg}
 \caption{RNN vervollständigt das Wort \textit{hello}}
 \end{figure}
 
-Die Gewichtsmatrix $W_{xh}$ speichert, wie Buchstaben zu Hidden States umgewandelt und inkrementiert werden. $W_{hy}$ lernt, welcher Ausgabebuchstabe zu gegebenem Hidden State passt und die Matrix $W_{hh}$ akkumuliert und migriert alle bisherigen Eingaben im zeitlichen Verlauf zu einem gemeinsamen Hidden State.
+Die Gewichtsmatrix $W_{xh}$ speichert, wie Buchstaben zu Hidden States umgewandelt und inkrementiert werden. $W_{hy}$ lernt, welcher Ausgabebuchstabe zu dem gegebenen Hidden State passt und die Matrix $W_{hh}$ akkumuliert und migriert alle bisherigen Eingaben im zeitlichen Verlauf zu einem gemeinsamen Hidden State.
 
 \newpage
 \section{Machine Learning in Geowissenschaften}
@@ -1977,7 +1974,7 @@ $$v_{ij} = \frac{\sum\limits_{k=1}^n u_{ikj}^m x_{kj}}{\sum\limits_{k=1}^n u_{ik
 \begin{appendices}
 %Dieses Kapitel soll eine Auswahl der kennengelernten Algorithmen in Form konkreter Python-Implementierungen vorstellen und ihren Nutzen demonstrieren.
 
-\includepdf[pages=-,scale=0.85]{jupyter.pdf}
+\includepdf[pages=-,scale=0.85]{anhang.pdf}
 
 \end{appendices}
 \end{document}
