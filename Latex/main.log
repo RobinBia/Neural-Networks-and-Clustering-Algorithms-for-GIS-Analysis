@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6880 64-bit) (preloaded format=pdflatex 2018.11.17)  14 DEC 2018 01:15
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6880 64-bit) (preloaded format=pdflatex 2018.11.17)  14 DEC 2018 02:01
 entering extended mode
 **./main.tex
 (main.tex
@@ -1437,21 +1437,21 @@ LaTeX Warning: Label `nsfcdt' multiply defined.
 )
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Try loading font information for T1+lmr on input line 52.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Try loading font information for T1+lmr on input line 54.
  ("C:\Program Files\MiKTeX 2.9\tex\latex\lm\t1lmr.fd"
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
@@ -1520,7 +1520,7 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Info: Redefining \microtypecontext on input line 52.
+LaTeX Info: Redefining \microtypecontext on input line 54.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
@@ -1542,8 +1542,8 @@ Package biblatex Info: Automatic encoding selection.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'main.bbl' found.
  (main.bbl)
-Package biblatex Info: Reference section=0 on input line 52.
-Package biblatex Info: Reference segment=0 on input line 52.
+Package biblatex Info: Reference section=0 on input line 54.
+Package biblatex Info: Reference segment=0 on input line 54.
 \AtBeginShipoutBox=\box70
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\pdflscape.sty"
@@ -1555,7 +1555,7 @@ Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
 Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 )
 ABD: EveryShipout initializing macros
-Package hyperref Info: Link coloring OFF on input line 52.
+Package hyperref Info: Link coloring OFF on input line 54.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\nameref.sty"
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
@@ -1565,9 +1565,9 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count474
 )
-LaTeX Info: Redefining \ref on input line 52.
-LaTeX Info: Redefining \pageref on input line 52.
-LaTeX Info: Redefining \nameref on input line 52.
+LaTeX Info: Redefining \ref on input line 54.
+LaTeX Info: Redefining \pageref on input line 54.
+LaTeX Info: Redefining \nameref on input line 54.
 
 (main.out) (main.out)
 \@outlinefile=\write5
@@ -1577,7 +1577,7 @@ LaTeX Info: Redefining \nameref on input line 52.
 
 
 No file [.tex.
-LaTeX Font Info:    Try loading font information for T1+lmss on input line 63.
+LaTeX Font Info:    Try loading font information for T1+lmss on input line 65.
 ("C:\Program Files\MiKTeX 2.9\tex\latex\lm\t1lmss.fd"
 File: t1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
@@ -1588,7 +1588,7 @@ Package microtype Info: Loading generic protrusion settings for font family
 <Pictures/head1.jpg, id=278, 3854.4pt x 2168.1pt>
 File: Pictures/head1.jpg Graphic file (type jpg)
 <use Pictures/head1.jpg>
-Package pdftex.def Info: Pictures/head1.jpg  used on input line 74.
+Package pdftex.def Info: Pictures/head1.jpg  used on input line 76.
 (pdftex.def)             Requested size: 1426.10571pt x 802.18446pt.
  [1
 
@@ -1600,12 +1600,7 @@ Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/lmr/m/sc/10.95'.
 (microtype)             Ignoring protrusion settings for this character.
 
-Underfull \hbox (badness 10000) in paragraph at lines 79--80
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 79--80
+Underfull \hbox (badness 10000) in paragraph at lines 81--82
 
  []
 
@@ -1614,11 +1609,16 @@ Underfull \hbox (badness 10000) in paragraph at lines 81--82
 
  []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 83--84
+
+ []
+
 [2]
 <Pictures/head8.jpg, id=293, 2890.8pt x 1502.61375pt>
 File: Pictures/head8.jpg Graphic file (type jpg)
 <use Pictures/head8.jpg>
-Package pdftex.def Info: Pictures/head8.jpg  used on input line 92.
+Package pdftex.def Info: Pictures/head8.jpg  used on input line 94.
 (pdftex.def)             Requested size: 614.295pt x 319.29547pt.
  (main.toc [3
 
@@ -1633,7 +1633,7 @@ Kapitel 1.
 \c@ttl@toc@default=\count475
 File: Pictures/head8.jpg Graphic file (type jpg)
 <use Pictures/head8.jpg>
-Package pdftex.def Info: Pictures/head8.jpg  used on input line 101.
+Package pdftex.def Info: Pictures/head8.jpg  used on input line 103.
 (pdftex.def)             Requested size: 614.295pt x 319.29547pt.
 [7] [8
 
@@ -1641,38 +1641,38 @@ Package pdftex.def Info: Pictures/head8.jpg  used on input line 101.
 Kapitel 2.
 File: Pictures/head8.jpg Graphic file (type jpg)
 <use Pictures/head8.jpg>
-Package pdftex.def Info: Pictures/head8.jpg  used on input line 109.
+Package pdftex.def Info: Pictures/head8.jpg  used on input line 111.
 (pdftex.def)             Requested size: 614.295pt x 319.29547pt.
-LaTeX Font Info:    Try loading font information for OT1+lmr on input line 112.
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 114.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\lm\ot1lmr.fd"
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 112.
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 114.
 
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\lm\omllmm.fd"
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 112
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 114
 .
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\lm\omslmsy.fd"
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 112
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 114
 .
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\lm\omxlmex.fd"
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 112.
+(Font)              <10.95> on input line 114.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 112.
+(Font)              <8> on input line 114.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 112.
-LaTeX Font Info:    Try loading font information for U+msa on input line 112.
+(Font)              <6> on input line 114.
+LaTeX Font Info:    Try loading font information for U+msa on input line 114.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
@@ -1680,7 +1680,7 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 ("C:\Program Files\MiKTeX 2.9\tex\latex\microtype\mt-msa.cfg"
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 112.
+LaTeX Font Info:    Try loading font information for U+msb on input line 114.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -1689,30 +1689,30 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <9> on input line 112.
+(Font)              <9> on input line 114.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 112.
-LaTeX Font Info:    Try loading font information for OMS+lmr on input line 115.
+(Font)              <5> on input line 114.
+LaTeX Font Info:    Try loading font information for OMS+lmr on input line 117.
 
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\lm\omslmr.fd"
 File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 115.
+(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 117.
  [9]
 <Pictures/gradnetz.jpg, id=470, 252.945pt x 263.0628pt>
 File: Pictures/gradnetz.jpg Graphic file (type jpg)
 <use Pictures/gradnetz.jpg>
-Package pdftex.def Info: Pictures/gradnetz.jpg  used on input line 137.
+Package pdftex.def Info: Pictures/gradnetz.jpg  used on input line 139.
 (pdftex.def)             Requested size: 177.06029pt x 184.1427pt.
  [10 <./Pictures/gradnetz.jpg>]
 <Pictures/kdd.jpg, id=482, 770.88pt x 479.7925pt>
 File: Pictures/kdd.jpg Graphic file (type jpg)
 <use Pictures/kdd.jpg>
-Package pdftex.def Info: Pictures/kdd.jpg  used on input line 160.
+Package pdftex.def Info: Pictures/kdd.jpg  used on input line 162.
 (pdftex.def)             Requested size: 269.81204pt x 167.92987pt.
-LaTeX Font Info:    Try loading font information for T1+lmtt on input line 163.
+LaTeX Font Info:    Try loading font information for T1+lmtt on input line 165.
 
  ("C:\Program Files\MiKTeX 2.9\tex\latex\lm\t1lmtt.fd"
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
@@ -1722,13 +1722,13 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 
-Underfull \hbox (badness 10000) in paragraph at lines 163--163
+Underfull \hbox (badness 10000) in paragraph at lines 165--165
 [][][][]$\T1/lmtt/m/n/9 http : / / www . enzyklopaedie-[]der-[]wirtschaftsinfor
 matik . de / lexikon / daten-[]wissen /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 163--163
+Underfull \hbox (badness 10000) in paragraph at lines 165--165
 \T1/lmtt/m/n/9 Business-[]Intelligence / Analytische-[]Informationssysteme-[]-[
 ]Methoden-[]der-[] / Data-[]Mining / index .
  []
@@ -1740,7 +1740,7 @@ Underfull \vbox (badness 1158) has occurred while \output is active []
 <Pictures/raster.jpg, id=515, 369.38pt x 231.86626pt>
 File: Pictures/raster.jpg Graphic file (type jpg)
 <use Pictures/raster.jpg>
-Package pdftex.def Info: Pictures/raster.jpg  used on input line 272.
+Package pdftex.def Info: Pictures/raster.jpg  used on input line 274.
 (pdftex.def)             Requested size: 184.68954pt x 115.93283pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -1749,7 +1749,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 <Pictures/vertex.jpg, id=524, 641.39626pt x 595.22375pt>
 File: Pictures/vertex.jpg Graphic file (type jpg)
 <use Pictures/vertex.jpg>
-Package pdftex.def Info: Pictures/vertex.jpg  used on input line 302.
+Package pdftex.def Info: Pictures/vertex.jpg  used on input line 304.
 (pdftex.def)             Requested size: 192.42035pt x 178.5685pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -1758,10 +1758,10 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 <Pictures/poly.jpg, id=533, 1327.96124pt x 636.3775pt>
 File: Pictures/poly.jpg Graphic file (type jpg)
 <use Pictures/poly.jpg>
-Package pdftex.def Info: Pictures/poly.jpg  used on input line 312.
+Package pdftex.def Info: Pictures/poly.jpg  used on input line 314.
 (pdftex.def)             Requested size: 398.39145pt x 190.91472pt.
  [16 <./Pictures/vertex.jpg> <./Pictures/poly.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 336--336
+Underfull \hbox (badness 10000) in paragraph at lines 338--338
 [][][][]$\T1/lmtt/m/n/9 http : / / webhelp . esri . com / arcgisdesktop / 9 . 3
  / index . cfm ? TopicName = Geoprocessing %
  []
@@ -1769,20 +1769,20 @@ Underfull \hbox (badness 10000) in paragraph at lines 336--336
 <Pictures/gis.jpg, id=550, 1651.88571pt x 887.88857pt>
 File: Pictures/gis.jpg Graphic file (type jpg)
 <use Pictures/gis.jpg>
-Package pdftex.def Info: Pictures/gis.jpg  used on input line 343.
+Package pdftex.def Info: Pictures/gis.jpg  used on input line 345.
 (pdftex.def)             Requested size: 379.92572pt x 204.21007pt.
 [17 <./Pictures/gis.jpg>]
 <Pictures/raster_nat_earth.jpg, id=563, 464.59285pt x 232.29643pt>
 File: Pictures/raster_nat_earth.jpg Graphic file (type jpg)
 <use Pictures/raster_nat_earth.jpg>
-Package pdftex.def Info: Pictures/raster_nat_earth.jpg  used on input line 353.
+Package pdftex.def Info: Pictures/raster_nat_earth.jpg  used on input line 355.
 
 (pdftex.def)             Requested size: 418.12968pt x 209.06483pt.
  [18 <./Pictures/raster_nat_earth.jpg>]
 Kapitel 3.
 File: Pictures/head8.jpg Graphic file (type jpg)
 <use Pictures/head8.jpg>
-Package pdftex.def Info: Pictures/head8.jpg  used on input line 365.
+Package pdftex.def Info: Pictures/head8.jpg  used on input line 367.
 (pdftex.def)             Requested size: 614.295pt x 319.29547pt.
 [19
 
@@ -1790,7 +1790,7 @@ Package pdftex.def Info: Pictures/head8.jpg  used on input line 365.
 <Pictures/anwendungen.jpg, id=587, 516.21428pt x 641.82643pt>
 File: Pictures/anwendungen.jpg Graphic file (type jpg)
 <use Pictures/anwendungen.jpg>
-Package pdftex.def Info: Pictures/anwendungen.jpg  used on input line 412.
+Package pdftex.def Info: Pictures/anwendungen.jpg  used on input line 414.
 (pdftex.def)             Requested size: 397.48622pt x 494.20787pt.
 
 
@@ -1800,12 +1800,12 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 <Pictures/wxplusb.jpg, id=593, 1566.28018pt x 636.66429pt>
 File: Pictures/wxplusb.jpg Graphic file (type jpg)
 <use Pictures/wxplusb.jpg>
-Package pdftex.def Info: Pictures/wxplusb.jpg  used on input line 427.
+Package pdftex.def Info: Pictures/wxplusb.jpg  used on input line 429.
 (pdftex.def)             Requested size: 391.56909pt x 159.16568pt.
 <Pictures/hyperraum.jpg, id=594, 853.90446pt x 658.6034pt>
 File: Pictures/hyperraum.jpg Graphic file (type jpg)
 <use Pictures/hyperraum.jpg>
-Package pdftex.def Info: Pictures/hyperraum.jpg  used on input line 435.
+Package pdftex.def Info: Pictures/hyperraum.jpg  used on input line 437.
 (pdftex.def)             Requested size: 256.17331pt x 197.58253pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -1818,21 +1818,21 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 <Pictures/mlnn.jpg, id=610, 793.96625pt x 389.455pt>
 File: Pictures/mlnn.jpg Graphic file (type jpg)
 <use Pictures/mlnn.jpg>
-Package pdftex.def Info: Pictures/mlnn.jpg  used on input line 468.
+Package pdftex.def Info: Pictures/mlnn.jpg  used on input line 470.
 (pdftex.def)             Requested size: 277.89235pt x 136.31128pt.
 <Pictures/sigmoid.jpg, id=611, 3205.9775pt x 1198.4775pt>
 File: Pictures/sigmoid.jpg Graphic file (type jpg)
 <use Pictures/sigmoid.jpg>
-Package pdftex.def Info: Pictures/sigmoid.jpg  used on input line 486.
+Package pdftex.def Info: Pictures/sigmoid.jpg  used on input line 488.
 (pdftex.def)             Requested size: 384.7007pt x 143.8111pt.
  [24 <./Pictures/mlnn.jpg>]
 <Pictures/aktf.jpg, id=618, 2932.9575pt x 1074.0125pt>
 File: Pictures/aktf.jpg Graphic file (type jpg)
 <use Pictures/aktf.jpg>
-Package pdftex.def Info: Pictures/aktf.jpg  used on input line 496.
+Package pdftex.def Info: Pictures/aktf.jpg  used on input line 498.
 (pdftex.def)             Requested size: 439.92465pt x 161.09492pt.
 
-Overfull \hbox (7.7271pt too wide) in paragraph at lines 496--497
+Overfull \hbox (7.7271pt too wide) in paragraph at lines 498--499
  [][] 
  []
 
@@ -1840,37 +1840,37 @@ Overfull \hbox (7.7271pt too wide) in paragraph at lines 496--497
 <Pictures/momentum.jpg, id=627, 798.985pt x 221.82875pt>
 File: Pictures/momentum.jpg Graphic file (type jpg)
 <use Pictures/momentum.jpg>
-Package pdftex.def Info: Pictures/momentum.jpg  used on input line 522.
+Package pdftex.def Info: Pictures/momentum.jpg  used on input line 524.
 (pdftex.def)             Requested size: 279.64894pt x 77.6412pt.
  [26 <./Pictures/momentum.jpg>]
 <Pictures/convolution.jpg, id=634, 2200.22pt x 1264.725pt>
 File: Pictures/convolution.jpg Graphic file (type jpg)
 <use Pictures/convolution.jpg>
-Package pdftex.def Info: Pictures/convolution.jpg  used on input line 547.
+Package pdftex.def Info: Pictures/convolution.jpg  used on input line 549.
 (pdftex.def)             Requested size: 330.01877pt x 189.70056pt.
  [27 <./Pictures/convolution.jpg>]
 <Pictures/pooling.jpg, id=640, 836.69733pt x 382.85893pt>
 File: Pictures/pooling.jpg Graphic file (type jpg)
 <use Pictures/pooling.jpg>
-Package pdftex.def Info: Pictures/pooling.jpg  used on input line 559.
+Package pdftex.def Info: Pictures/pooling.jpg  used on input line 561.
 (pdftex.def)             Requested size: 251.01114pt x 114.85855pt.
 <Pictures/conv-construction.jpg, id=641, 3778.115pt x 1414.28375pt>
 File: Pictures/conv-construction.jpg Graphic file (type jpg)
 <use Pictures/conv-construction.jpg>
-Package pdftex.def Info: Pictures/conv-construction.jpg  used on input line 566
+Package pdftex.def Info: Pictures/conv-construction.jpg  used on input line 568
 .
 (pdftex.def)             Requested size: 377.83363pt x 141.43666pt.
 <Pictures/conv-layers.jpg, id=642, 1433.78517pt x 520.94624pt>
 File: Pictures/conv-layers.jpg Graphic file (type jpg)
 <use Pictures/conv-layers.jpg>
-Package pdftex.def Info: Pictures/conv-layers.jpg  used on input line 574.
+Package pdftex.def Info: Pictures/conv-layers.jpg  used on input line 576.
 (pdftex.def)             Requested size: 358.44542pt x 130.23624pt.
  [28 <./Pictures/pooling.jpg> <./Pictures/conv-construction.jpg> <./Pictures/co
 nv-layers.jpg>]
 <Pictures/RNN.jpg, id=653, 1921.1775pt x 1549.79pt>
 File: Pictures/RNN.jpg Graphic file (type jpg)
 <use Pictures/RNN.jpg>
-Package pdftex.def Info: Pictures/RNN.jpg  used on input line 603.
+Package pdftex.def Info: Pictures/RNN.jpg  used on input line 605.
 (pdftex.def)             Requested size: 288.16418pt x 232.45847pt.
  [29 <./Pictures/RNN.jpg>]
 [30] [31] [32]
@@ -1878,7 +1878,7 @@ Package pdftex.def Info: Pictures/RNN.jpg  used on input line 603.
 File: Pictures/multi-task-learning.jpg Graphic file (type jpg)
 <use Pictures/multi-task-learning.jpg>
 Package pdftex.def Info: Pictures/multi-task-learning.jpg  used on input line 6
-63.
+65.
 (pdftex.def)             Requested size: 270.62685pt x 148.5637pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -1890,30 +1890,30 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Kapitel 4.
 File: Pictures/head8.jpg Graphic file (type jpg)
 <use Pictures/head8.jpg>
-Package pdftex.def Info: Pictures/head8.jpg  used on input line 716.
+Package pdftex.def Info: Pictures/head8.jpg  used on input line 718.
 (pdftex.def)             Requested size: 614.295pt x 319.29547pt.
 [37]
 <Pictures/spektral.jpg, id=700, 452.07191pt x 341.36043pt>
 File: Pictures/spektral.jpg Graphic file (type jpg)
 <use Pictures/spektral.jpg>
-Package pdftex.def Info: Pictures/spektral.jpg  used on input line 722.
+Package pdftex.def Info: Pictures/spektral.jpg  used on input line 724.
 (pdftex.def)             Requested size: 248.64032pt x 187.74881pt.
 <Pictures/3dcluster.jpg, id=704, 1271.75125pt x 726.715pt>
 File: Pictures/3dcluster.jpg Graphic file (type jpg)
 <use Pictures/3dcluster.jpg>
-Package pdftex.def Info: Pictures/3dcluster.jpg  used on input line 730.
+Package pdftex.def Info: Pictures/3dcluster.jpg  used on input line 732.
 (pdftex.def)             Requested size: 381.52832pt x 218.01617pt.
  [38 <./Pictures/spektral.jpg> <./Pictures/3dcluster.jpg>] [39]
 <Pictures/kmeans.jpg, id=721, 1981.4025pt x 1641.13126pt>
 File: Pictures/kmeans.jpg Graphic file (type jpg)
 <use Pictures/kmeans.jpg>
-Package pdftex.def Info: Pictures/kmeans.jpg  used on input line 764.
+Package pdftex.def Info: Pictures/kmeans.jpg  used on input line 766.
 (pdftex.def)             Requested size: 336.83397pt x 278.98862pt.
  [40 <./Pictures/kmeans.jpg>] [41]
 <Pictures/dbscanprob.jpg, id=740, 1180.84018pt x 479.64911pt>
 File: Pictures/dbscanprob.jpg Graphic file (type jpg)
 <use Pictures/dbscanprob.jpg>
-Package pdftex.def Info: Pictures/dbscanprob.jpg  used on input line 813.
+Package pdftex.def Info: Pictures/dbscanprob.jpg  used on input line 815.
 (pdftex.def)             Requested size: 413.30026pt x 167.87968pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -1922,23 +1922,23 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 <Pictures/neps.jpg, id=749, 1031.855pt x 513.92pt>
 File: Pictures/neps.jpg Graphic file (type jpg)
 <use Pictures/neps.jpg>
-Package pdftex.def Info: Pictures/neps.jpg  used on input line 828.
+Package pdftex.def Info: Pictures/neps.jpg  used on input line 830.
 (pdftex.def)             Requested size: 129.66058pt x 64.57703pt.
 <Pictures/dichteerreichbar.jpg, id=750, 875.27pt x 590.205pt>
 File: Pictures/dichteerreichbar.jpg Graphic file (type jpg)
 <use Pictures/dichteerreichbar.jpg>
-Package pdftex.def Info: Pictures/dichteerreichbar.jpg  used on input line 837.
+Package pdftex.def Info: Pictures/dichteerreichbar.jpg  used on input line 839.
 
 (pdftex.def)             Requested size: 129.66058pt x 87.42822pt.
 <Pictures/dichteverbunden.jpg, id=751, 1015.795pt x 581.17125pt>
 File: Pictures/dichteverbunden.jpg Graphic file (type jpg)
 <use Pictures/dichteverbunden.jpg>
-Package pdftex.def Info: Pictures/dichteverbunden.jpg  used on input line 845.
+Package pdftex.def Info: Pictures/dichteverbunden.jpg  used on input line 847.
 (pdftex.def)             Requested size: 129.66058pt x 74.18037pt.
 <Pictures/kdrd.jpg, id=753, 1806.75pt x 1632.0975pt>
 File: Pictures/kdrd.jpg Graphic file (type jpg)
 <use Pictures/kdrd.jpg>
-Package pdftex.def Info: Pictures/kdrd.jpg  used on input line 858.
+Package pdftex.def Info: Pictures/kdrd.jpg  used on input line 860.
 (pdftex.def)             Requested size: 194.48758pt x 175.67119pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -1948,7 +1948,7 @@ hbar.jpg> <./Pictures/dichteverbunden.jpg>]
 <Pictures/reachdiag.jpg, id=763, 3501.08pt x 1033.8625pt>
 File: Pictures/reachdiag.jpg Graphic file (type jpg)
 <use Pictures/reachdiag.jpg>
-Package pdftex.def Info: Pictures/reachdiag.jpg  used on input line 865.
+Package pdftex.def Info: Pictures/reachdiag.jpg  used on input line 867.
 (pdftex.def)             Requested size: 420.11148pt x 124.05814pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -1960,12 +1960,12 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 <Pictures/opt1.jpg, id=807, 2012.37535pt x 989.41072pt>
 File: Pictures/opt1.jpg Graphic file (type jpg)
 <use Pictures/opt1.jpg>
-Package pdftex.def Info: Pictures/opt1.jpg  used on input line 933.
+Package pdftex.def Info: Pictures/opt1.jpg  used on input line 935.
 (pdftex.def)             Requested size: 301.84328pt x 148.4052pt.
 <Pictures/opt2.jpg, id=808, 2006.35286pt x 991.13142pt>
 File: Pictures/opt2.jpg Graphic file (type jpg)
 <use Pictures/opt2.jpg>
-Package pdftex.def Info: Pictures/opt2.jpg  used on input line 938.
+Package pdftex.def Info: Pictures/opt2.jpg  used on input line 940.
 (pdftex.def)             Requested size: 300.93994pt x 148.6633pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -1974,41 +1974,41 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 <Pictures/opt3.jpg, id=827, 2052.81215pt x 979.08643pt>
 File: Pictures/opt3.jpg Graphic file (type jpg)
 <use Pictures/opt3.jpg>
-Package pdftex.def Info: Pictures/opt3.jpg  used on input line 943.
+Package pdftex.def Info: Pictures/opt3.jpg  used on input line 945.
 (pdftex.def)             Requested size: 307.90854pt x 146.85663pt.
 <Pictures/opt4.jpg, id=828, 2027.00143pt x 985.10893pt>
 File: Pictures/opt4.jpg Graphic file (type jpg)
 <use Pictures/opt4.jpg>
-Package pdftex.def Info: Pictures/opt4.jpg  used on input line 948.
+Package pdftex.def Info: Pictures/opt4.jpg  used on input line 950.
 (pdftex.def)             Requested size: 304.0371pt x 147.75996pt.
 <Pictures/opt5.jpg, id=829, 2020.11858pt x 979.08643pt>
 File: Pictures/opt5.jpg Graphic file (type jpg)
 <use Pictures/opt5.jpg>
-Package pdftex.def Info: Pictures/opt5.jpg  used on input line 955.
+Package pdftex.def Info: Pictures/opt5.jpg  used on input line 957.
 (pdftex.def)             Requested size: 303.00471pt x 146.85663pt.
  [47 <./Pictures/opt2.jpg> <./Pictures/opt3.jpg> <./Pictures/opt4.jpg>]
 <Pictures/opt6.jpg, id=837, 2032.16357pt x 967.90178pt>
 File: Pictures/opt6.jpg Graphic file (type jpg)
 <use Pictures/opt6.jpg>
-Package pdftex.def Info: Pictures/opt6.jpg  used on input line 960.
+Package pdftex.def Info: Pictures/opt6.jpg  used on input line 962.
 (pdftex.def)             Requested size: 304.81139pt x 145.179pt.
 <Pictures/opt7.jpg, id=838, 2027.00143pt x 973.92429pt>
 File: Pictures/opt7.jpg Graphic file (type jpg)
 <use Pictures/opt7.jpg>
-Package pdftex.def Info: Pictures/opt7.jpg  used on input line 965.
+Package pdftex.def Info: Pictures/opt7.jpg  used on input line 967.
 (pdftex.def)             Requested size: 304.0371pt x 146.08234pt.
 <Pictures/opt8.jpg, id=839, 1796.42572pt x 746.79pt>
 File: Pictures/opt8.jpg Graphic file (type jpg)
 <use Pictures/opt8.jpg>
-Package pdftex.def Info: Pictures/opt8.jpg  used on input line 970.
+Package pdftex.def Info: Pictures/opt8.jpg  used on input line 972.
 (pdftex.def)             Requested size: 269.45222pt x 112.01366pt.
  [48 <./Pictures/opt5.jpg> <./Pictures/opt6.jpg> <./Pictures/opt7.jpg>]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 973.
+(Font)              <10> on input line 975.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 973.
+(Font)              <7> on input line 975.
 
-Underfull \hbox (badness 10000) in paragraph at lines 977--977
+Underfull \hbox (badness 10000) in paragraph at lines 979--979
 [][][][]$\T1/lmtt/m/n/9 https : / / pro . arcgis . com / de / pro-[]app / tool-
 []reference / spatial-[]statistics /
  []
@@ -2017,23 +2017,23 @@ Underfull \hbox (badness 10000) in paragraph at lines 977--977
 <Pictures/svm.jpg, id=870, 1621.05624pt x 1396.21625pt>
 File: Pictures/svm.jpg Graphic file (type jpg)
 <use Pictures/svm.jpg>
-Package pdftex.def Info: Pictures/svm.jpg  used on input line 1023.
+Package pdftex.def Info: Pictures/svm.jpg  used on input line 1025.
 (pdftex.def)             Requested size: 216.09877pt x 186.11626pt.
  [51 <./Pictures/svm.jpg>]
 <Pictures/svm1.jpg, id=887, 799.27179pt x 623.75893pt>
 File: Pictures/svm1.jpg Graphic file (type jpg)
 <use Pictures/svm1.jpg>
-Package pdftex.def Info: Pictures/svm1.jpg  used on input line 1095.
+Package pdftex.def Info: Pictures/svm1.jpg  used on input line 1097.
 (pdftex.def)             Requested size: 343.68016pt x 268.2111pt.
 <Pictures/svm2.jpg, id=888, 810.45644pt x 832.82571pt>
 File: Pictures/svm2.jpg Graphic file (type jpg)
 <use Pictures/svm2.jpg>
-Package pdftex.def Info: Pictures/svm2.jpg  used on input line 1096.
+Package pdftex.def Info: Pictures/svm2.jpg  used on input line 1098.
 (pdftex.def)             Requested size: 364.70203pt x 374.76811pt.
 <Pictures/svm3.jpg, id=889, 868.96071pt x 480.93964pt>
 File: Pictures/svm3.jpg Graphic file (type jpg)
 <use Pictures/svm3.jpg>
-Package pdftex.def Info: Pictures/svm3.jpg  used on input line 1100.
+Package pdftex.def Info: Pictures/svm3.jpg  used on input line 1102.
 (pdftex.def)             Requested size: 408.41159pt x 226.04166pt.
  [52]
 Overfull \vbox (19.72575pt too high) has occurred while \output is active []
@@ -2041,26 +2041,26 @@ Overfull \vbox (19.72575pt too high) has occurred while \output is active []
 
 [53 <./Pictures/svm1.jpg> <./Pictures/svm2.jpg>] [54 <./Pictures/svm3.jpg>]
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
-put line 1137.
+put line 1139.
 <Pictures/fcmnachteil.jpg, id=914, 731.1315pt x 410.7345pt>
 File: Pictures/fcmnachteil.jpg Graphic file (type jpg)
 <use Pictures/fcmnachteil.jpg>
-Package pdftex.def Info: Pictures/fcmnachteil.jpg  used on input line 1158.
+Package pdftex.def Info: Pictures/fcmnachteil.jpg  used on input line 1160.
 (pdftex.def)             Requested size: 255.89986pt x 143.75922pt.
 
 [55] [56 <./Pictures/fcmnachteil.jpg>]
 <Pictures/abstossung.jpg, id=929, 1410.4695pt x 396.2805pt>
 File: Pictures/abstossung.jpg Graphic file (type jpg)
 <use Pictures/abstossung.jpg>
-Package pdftex.def Info: Pictures/abstossung.jpg  used on input line 1185.
+Package pdftex.def Info: Pictures/abstossung.jpg  used on input line 1187.
 (pdftex.def)             Requested size: 423.14412pt x 118.88506pt.
  [57 <./Pictures/abstossung.jpg>]
 [58]
 
-LaTeX Warning: Command \" invalid in math mode on input line 1270.
+LaTeX Warning: Command \" invalid in math mode on input line 1272.
 
 
-LaTeX Warning: Command \" invalid in math mode on input line 1271.
+LaTeX Warning: Command \" invalid in math mode on input line 1273.
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -2070,12 +2070,12 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 <Pictures/umkreis.jpg, id=959, 653.87143pt x 315.75107pt>
 File: Pictures/umkreis.jpg Graphic file (type jpg)
 <use Pictures/umkreis.jpg>
-Package pdftex.def Info: Pictures/umkreis.jpg  used on input line 1290.
+Package pdftex.def Info: Pictures/umkreis.jpg  used on input line 1292.
 (pdftex.def)             Requested size: 261.54393pt x 126.29817pt.
 <Pictures/delaunayinfo.jpg, id=960, 1180.41pt x 770.88pt>
 File: Pictures/delaunayinfo.jpg Graphic file (type jpg)
 <use Pictures/delaunayinfo.jpg>
-Package pdftex.def Info: Pictures/delaunayinfo.jpg  used on input line 1301.
+Package pdftex.def Info: Pictures/delaunayinfo.jpg  used on input line 1303.
 (pdftex.def)             Requested size: 354.12573pt x 231.26578pt.
  [61
 
@@ -2083,22 +2083,22 @@ Package pdftex.def Info: Pictures/delaunayinfo.jpg  used on input line 1301.
 <Pictures/polygone.jpg, id=980, 582.46179pt x 425.87679pt>
 File: Pictures/polygone.jpg Graphic file (type jpg)
 <use Pictures/polygone.jpg>
-Package pdftex.def Info: Pictures/polygone.jpg  used on input line 1385.
+Package pdftex.def Info: Pictures/polygone.jpg  used on input line 1387.
 (pdftex.def)             Requested size: 216.09877pt x 158.00082pt.
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 1386.
+(caption)                particular \caption on input line 1388.
 See the caption package documentation for explanation.
 
 <Pictures/nscabdtaccuracy.jpg, id=981, 1264.725pt x 203.04428pt>
 File: Pictures/nscabdtaccuracy.jpg Graphic file (type jpg)
 <use Pictures/nscabdtaccuracy.jpg>
-Package pdftex.def Info: Pictures/nscabdtaccuracy.jpg  used on input line 1394.
+Package pdftex.def Info: Pictures/nscabdtaccuracy.jpg  used on input line 1396.
 
 (pdftex.def)             Requested size: 442.66039pt x 71.06656pt.
 
-Overfull \hbox (10.46283pt too wide) in paragraph at lines 1394--1395
+Overfull \hbox (10.46283pt too wide) in paragraph at lines 1396--1397
  [][] 
  []
 
@@ -2106,14 +2106,14 @@ Overfull \hbox (10.46283pt too wide) in paragraph at lines 1394--1395
 <Pictures/nsfcomp.jpg, id=1010, 966.18108pt x 431.89929pt>
 File: Pictures/nsfcomp.jpg Graphic file (type jpg)
 <use Pictures/nsfcomp.jpg>
-Package pdftex.def Info: Pictures/nsfcomp.jpg  used on input line 1493.
+Package pdftex.def Info: Pictures/nsfcomp.jpg  used on input line 1495.
 (pdftex.def)             Requested size: 318.84073pt x 142.52719pt.
 
 [67 <./Pictures/nsfcomp.jpg>]
 <Pictures/nsfcdtres.jpg, id=1019, 1025.11554pt x 329.94696pt>
 File: Pictures/nsfcdtres.jpg Graphic file (type jpg)
 <use Pictures/nsfcdtres.jpg>
-Package pdftex.def Info: Pictures/nsfcdtres.jpg  used on input line 1501.
+Package pdftex.def Info: Pictures/nsfcdtres.jpg  used on input line 1503.
 (pdftex.def)             Requested size: 410.03896pt x 131.97644pt.
  [68 <./Pictures/nsfcdtres.jpg>] [69
 
@@ -2125,12 +2125,12 @@ Underfull \vbox (badness 2521) has occurred while \output is active []
 <Pictures/vatalg.jpg, id=1062, 739.04678pt x 696.88928pt>
 File: Pictures/vatalg.jpg Graphic file (type jpg)
 <use Pictures/vatalg.jpg>
-Package pdftex.def Info: Pictures/vatalg.jpg  used on input line 1659.
+Package pdftex.def Info: Pictures/vatalg.jpg  used on input line 1661.
 (pdftex.def)             Requested size: 259.32117pt x 244.53165pt.
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 1660.
+(caption)                particular \caption on input line 1662.
 See the caption package documentation for explanation.
 
 
@@ -2140,13 +2140,13 @@ Underfull \vbox (badness 8000) has occurred while \output is active []
 <Pictures/tnorms.jpg, id=1084, 1238.4841pt x 579.8807pt>
 File: Pictures/tnorms.jpg Graphic file (type jpg)
 <use Pictures/tnorms.jpg>
-Package pdftex.def Info: Pictures/tnorms.jpg  used on input line 1724.
+Package pdftex.def Info: Pictures/tnorms.jpg  used on input line 1726.
 (pdftex.def)             Requested size: 371.5481pt x 173.96555pt.
  [77 <./Pictures/tnorms.jpg>] [78] [79] [80]
 <Pictures/him08ergebnisse.jpg, id=1120, 1015.65161pt x 1213.10358pt>
 File: Pictures/him08ergebnisse.jpg Graphic file (type jpg)
 <use Pictures/him08ergebnisse.jpg>
-Package pdftex.def Info: Pictures/him08ergebnisse.jpg  used on input line 1850.
+Package pdftex.def Info: Pictures/him08ergebnisse.jpg  used on input line 1852.
 
 (pdftex.def)             Requested size: 432.19756pt x 516.21931pt.
 
@@ -2154,7 +2154,7 @@ Package pdftex.def Info: Pictures/him08ergebnisse.jpg  used on input line 1850.
 Kapitel 5.
 File: Pictures/head8.jpg Graphic file (type jpg)
 <use Pictures/head8.jpg>
-Package pdftex.def Info: Pictures/head8.jpg  used on input line 1960.
+Package pdftex.def Info: Pictures/head8.jpg  used on input line 1962.
 (pdftex.def)             Requested size: 614.295pt x 319.29547pt.
 [87
 
@@ -2163,7 +2163,7 @@ Package pdftex.def Info: Pictures/head8.jpg  used on input line 1960.
 ]
 File: Pictures/head8.jpg Graphic file (type jpg)
 <use Pictures/head8.jpg>
-Package pdftex.def Info: Pictures/head8.jpg  used on input line 1969.
+Package pdftex.def Info: Pictures/head8.jpg  used on input line 1971.
 (pdftex.def)             Requested size: 614.295pt x 319.29547pt.
  [89] [90] [91] [92] [93
 
@@ -2171,379 +2171,379 @@ Package pdftex.def Info: Pictures/head8.jpg  used on input line 1969.
 <anhang.pdf, id=1252, 614.295pt x 794.97pt>
 File: anhang.pdf Graphic file (type pdf)
 <use anhang.pdf>
-Package pdftex.def Info: anhang.pdf  used on input line 1977.
+Package pdftex.def Info: anhang.pdf  used on input line 1979.
 (pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
 File: anhang.pdf Graphic file (type pdf)
 <use anhang.pdf>
-Package pdftex.def Info: anhang.pdf  used on input line 1977.
+Package pdftex.def Info: anhang.pdf  used on input line 1979.
 (pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
 <anhang.pdf, id=1255, page=1, 614.295pt x 794.97pt>
 File: anhang.pdf Graphic file (type pdf)
 <use anhang.pdf, page 1>
-Package pdftex.def Info: anhang.pdf , page1 used on input line 1977.
+Package pdftex.def Info: anhang.pdf , page1 used on input line 1979.
 (pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
 File: anhang.pdf Graphic file (type pdf)
 <use anhang.pdf, page 1>
-Package pdftex.def Info: anhang.pdf , page1 used on input line 1977.
+Package pdftex.def Info: anhang.pdf , page1 used on input line 1979.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
 File: anhang.pdf Graphic file (type pdf)
 <use anhang.pdf, page 1>
-Package pdftex.def Info: anhang.pdf , page1 used on input line 1977.
+Package pdftex.def Info: anhang.pdf , page1 used on input line 1979.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
 File: anhang.pdf Graphic file (type pdf)
 <use anhang.pdf, page 1>
-Package pdftex.def Info: anhang.pdf , page1 used on input line 1977.
+Package pdftex.def Info: anhang.pdf , page1 used on input line 1979.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
 File: anhang.pdf Graphic file (type pdf)
 <use anhang.pdf, page 1>
-Package pdftex.def Info: anhang.pdf , page1 used on input line 1977.
+Package pdftex.def Info: anhang.pdf , page1 used on input line 1979.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
  [95 <./anhang.pdf>]
 <anhang.pdf, id=1448, page=2, 614.295pt x 794.97pt>
 File: anhang.pdf Graphic file (type pdf)
 <use anhang.pdf, page 2>
-Package pdftex.def Info: anhang.pdf , page2 used on input line 1977.
+Package pdftex.def Info: anhang.pdf , page2 used on input line 1979.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
 File: anhang.pdf Graphic file (type pdf)
 <use anhang.pdf, page 2>
-Package pdftex.def Info: anhang.pdf , page2 used on input line 1977.
+Package pdftex.def Info: anhang.pdf , page2 used on input line 1979.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
 File: anhang.pdf Graphic file (type pdf)
 <use anhang.pdf, page 2>
-Package pdftex.def Info: anhang.pdf , page2 used on input line 1977.
+Package pdftex.def Info: anhang.pdf , page2 used on input line 1979.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
  [96 <./anhang.pdf>]
 <anhang.pdf, id=1456, page=3, 614.295pt x 794.97pt>
 File: anhang.pdf Graphic file (type pdf)
 <use anhang.pdf, page 3>
-Package pdftex.def Info: anhang.pdf , page3 used on input line 1977.
+Package pdftex.def Info: anhang.pdf , page3 used on input line 1979.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
 File: anhang.pdf Graphic file (type pdf)
 <use anhang.pdf, page 3>
-Package pdftex.def Info: anhang.pdf , page3 used on input line 1977.
+Package pdftex.def Info: anhang.pdf , page3 used on input line 1979.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
 File: anhang.pdf Graphic file (type pdf)
 <use anhang.pdf, page 3>
-Package pdftex.def Info: anhang.pdf , page3 used on input line 1977.
+Package pdftex.def Info: anhang.pdf , page3 used on input line 1979.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
 [97 <./anhang.pdf>]
 <anhang.pdf, id=1462, page=4, 614.295pt x 794.97pt>
 File: anhang.pdf Graphic file (type pdf)
 <use anhang.pdf, page 4>
-Package pdftex.def Info: anhang.pdf , page4 used on input line 1977.
+Package pdftex.def Info: anhang.pdf , page4 used on input line 1979.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
 File: anhang.pdf Graphic file (type pdf)
 <use anhang.pdf, page 4>
-Package pdftex.def Info: anhang.pdf , page4 used on input line 1977.
+Package pdftex.def Info: anhang.pdf , page4 used on input line 1979.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
 File: anhang.pdf Graphic file (type pdf)
 <use anhang.pdf, page 4>
-Package pdftex.def Info: anhang.pdf , page4 used on input line 1977.
+Package pdftex.def Info: anhang.pdf , page4 used on input line 1979.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
  [98 <./anhang.pdf>]
 <anhang.pdf, id=1467, page=5, 614.295pt x 794.97pt>
 File: anhang.pdf Graphic file (type pdf)
 <use anhang.pdf, page 5>
-Package pdftex.def Info: anhang.pdf , page5 used on input line 1977.
+Package pdftex.def Info: anhang.pdf , page5 used on input line 1979.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
 File: anhang.pdf Graphic file (type pdf)
 <use anhang.pdf, page 5>
-Package pdftex.def Info: anhang.pdf , page5 used on input line 1977.
+Package pdftex.def Info: anhang.pdf , page5 used on input line 1979.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
 File: anhang.pdf Graphic file (type pdf)
 <use anhang.pdf, page 5>
-Package pdftex.def Info: anhang.pdf , page5 used on input line 1977.
+Package pdftex.def Info: anhang.pdf , page5 used on input line 1979.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
  [99 <./anhang.pdf>]
 <anhang.pdf, id=1475, page=6, 614.295pt x 794.97pt>
 File: anhang.pdf Graphic file (type pdf)
 <use anhang.pdf, page 6>
-Package pdftex.def Info: anhang.pdf , page6 used on input line 1977.
+Package pdftex.def Info: anhang.pdf , page6 used on input line 1979.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
 File: anhang.pdf Graphic file (type pdf)
 <use anhang.pdf, page 6>
-Package pdftex.def Info: anhang.pdf , page6 used on input line 1977.
+Package pdftex.def Info: anhang.pdf , page6 used on input line 1979.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
 File: anhang.pdf Graphic file (type pdf)
 <use anhang.pdf, page 6>
-Package pdftex.def Info: anhang.pdf , page6 used on input line 1977.
+Package pdftex.def Info: anhang.pdf , page6 used on input line 1979.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
  [100 <./anhang.pdf>]
 <anhang.pdf, id=1483, page=7, 614.295pt x 794.97pt>
 File: anhang.pdf Graphic file (type pdf)
 <use anhang.pdf, page 7>
-Package pdftex.def Info: anhang.pdf , page7 used on input line 1977.
+Package pdftex.def Info: anhang.pdf , page7 used on input line 1979.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
 File: anhang.pdf Graphic file (type pdf)
 <use anhang.pdf, page 7>
-Package pdftex.def Info: anhang.pdf , page7 used on input line 1977.
+Package pdftex.def Info: anhang.pdf , page7 used on input line 1979.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
 File: anhang.pdf Graphic file (type pdf)
 <use anhang.pdf, page 7>
-Package pdftex.def Info: anhang.pdf , page7 used on input line 1977.
+Package pdftex.def Info: anhang.pdf , page7 used on input line 1979.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
  [101 <./anhang.pdf>]
 <anhang.pdf, id=1488, page=8, 614.295pt x 794.97pt>
 File: anhang.pdf Graphic file (type pdf)
 <use anhang.pdf, page 8>
-Package pdftex.def Info: anhang.pdf , page8 used on input line 1977.
+Package pdftex.def Info: anhang.pdf , page8 used on input line 1979.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
 File: anhang.pdf Graphic file (type pdf)
 <use anhang.pdf, page 8>
-Package pdftex.def Info: anhang.pdf , page8 used on input line 1977.
+Package pdftex.def Info: anhang.pdf , page8 used on input line 1979.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
 File: anhang.pdf Graphic file (type pdf)
 <use anhang.pdf, page 8>
-Package pdftex.def Info: anhang.pdf , page8 used on input line 1977.
+Package pdftex.def Info: anhang.pdf , page8 used on input line 1979.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
  [102 <./anhang.pdf>]
 <anhang.pdf, id=1493, page=9, 614.295pt x 794.97pt>
 File: anhang.pdf Graphic file (type pdf)
 <use anhang.pdf, page 9>
-Package pdftex.def Info: anhang.pdf , page9 used on input line 1977.
+Package pdftex.def Info: anhang.pdf , page9 used on input line 1979.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
 File: anhang.pdf Graphic file (type pdf)
 <use anhang.pdf, page 9>
-Package pdftex.def Info: anhang.pdf , page9 used on input line 1977.
+Package pdftex.def Info: anhang.pdf , page9 used on input line 1979.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
 File: anhang.pdf Graphic file (type pdf)
 <use anhang.pdf, page 9>
-Package pdftex.def Info: anhang.pdf , page9 used on input line 1977.
+Package pdftex.def Info: anhang.pdf , page9 used on input line 1979.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
  [103 <./anhang.pdf>]
 <anhang.pdf, id=1499, page=10, 614.295pt x 794.97pt>
 File: anhang.pdf Graphic file (type pdf)
 <use anhang.pdf, page 10>
-Package pdftex.def Info: anhang.pdf , page10 used on input line 1977.
+Package pdftex.def Info: anhang.pdf , page10 used on input line 1979.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
 File: anhang.pdf Graphic file (type pdf)
 <use anhang.pdf, page 10>
-Package pdftex.def Info: anhang.pdf , page10 used on input line 1977.
+Package pdftex.def Info: anhang.pdf , page10 used on input line 1979.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
 File: anhang.pdf Graphic file (type pdf)
 <use anhang.pdf, page 10>
-Package pdftex.def Info: anhang.pdf , page10 used on input line 1977.
+Package pdftex.def Info: anhang.pdf , page10 used on input line 1979.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
  [104 <./anhang.pdf>]
 <anhang.pdf, id=1504, page=11, 614.295pt x 794.97pt>
 File: anhang.pdf Graphic file (type pdf)
 <use anhang.pdf, page 11>
-Package pdftex.def Info: anhang.pdf , page11 used on input line 1977.
+Package pdftex.def Info: anhang.pdf , page11 used on input line 1979.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
 File: anhang.pdf Graphic file (type pdf)
 <use anhang.pdf, page 11>
-Package pdftex.def Info: anhang.pdf , page11 used on input line 1977.
+Package pdftex.def Info: anhang.pdf , page11 used on input line 1979.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
 File: anhang.pdf Graphic file (type pdf)
 <use anhang.pdf, page 11>
-Package pdftex.def Info: anhang.pdf , page11 used on input line 1977.
+Package pdftex.def Info: anhang.pdf , page11 used on input line 1979.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
  [105 <./anhang.pdf>]
 <anhang.pdf, id=1509, page=12, 614.295pt x 794.97pt>
 File: anhang.pdf Graphic file (type pdf)
 <use anhang.pdf, page 12>
-Package pdftex.def Info: anhang.pdf , page12 used on input line 1977.
+Package pdftex.def Info: anhang.pdf , page12 used on input line 1979.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
 File: anhang.pdf Graphic file (type pdf)
 <use anhang.pdf, page 12>
-Package pdftex.def Info: anhang.pdf , page12 used on input line 1977.
+Package pdftex.def Info: anhang.pdf , page12 used on input line 1979.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
 File: anhang.pdf Graphic file (type pdf)
 <use anhang.pdf, page 12>
-Package pdftex.def Info: anhang.pdf , page12 used on input line 1977.
+Package pdftex.def Info: anhang.pdf , page12 used on input line 1979.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
  [106 <./anhang.pdf>]
 <anhang.pdf, id=1517, page=13, 614.295pt x 794.97pt>
 File: anhang.pdf Graphic file (type pdf)
 <use anhang.pdf, page 13>
-Package pdftex.def Info: anhang.pdf , page13 used on input line 1977.
+Package pdftex.def Info: anhang.pdf , page13 used on input line 1979.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
 File: anhang.pdf Graphic file (type pdf)
 <use anhang.pdf, page 13>
-Package pdftex.def Info: anhang.pdf , page13 used on input line 1977.
+Package pdftex.def Info: anhang.pdf , page13 used on input line 1979.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
 File: anhang.pdf Graphic file (type pdf)
 <use anhang.pdf, page 13>
-Package pdftex.def Info: anhang.pdf , page13 used on input line 1977.
+Package pdftex.def Info: anhang.pdf , page13 used on input line 1979.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
  [107 <./anhang.pdf>]
 <anhang.pdf, id=1525, page=14, 614.295pt x 794.97pt>
 File: anhang.pdf Graphic file (type pdf)
 <use anhang.pdf, page 14>
-Package pdftex.def Info: anhang.pdf , page14 used on input line 1977.
+Package pdftex.def Info: anhang.pdf , page14 used on input line 1979.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
 File: anhang.pdf Graphic file (type pdf)
 <use anhang.pdf, page 14>
-Package pdftex.def Info: anhang.pdf , page14 used on input line 1977.
+Package pdftex.def Info: anhang.pdf , page14 used on input line 1979.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
 File: anhang.pdf Graphic file (type pdf)
 <use anhang.pdf, page 14>
-Package pdftex.def Info: anhang.pdf , page14 used on input line 1977.
+Package pdftex.def Info: anhang.pdf , page14 used on input line 1979.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
  [108 <./anhang.pdf>]
 <anhang.pdf, id=1535, page=15, 614.295pt x 794.97pt>
 File: anhang.pdf Graphic file (type pdf)
 <use anhang.pdf, page 15>
-Package pdftex.def Info: anhang.pdf , page15 used on input line 1977.
+Package pdftex.def Info: anhang.pdf , page15 used on input line 1979.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
 File: anhang.pdf Graphic file (type pdf)
 <use anhang.pdf, page 15>
-Package pdftex.def Info: anhang.pdf , page15 used on input line 1977.
+Package pdftex.def Info: anhang.pdf , page15 used on input line 1979.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
 File: anhang.pdf Graphic file (type pdf)
 <use anhang.pdf, page 15>
-Package pdftex.def Info: anhang.pdf , page15 used on input line 1977.
+Package pdftex.def Info: anhang.pdf , page15 used on input line 1979.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
  [109 <./anhang.pdf>]
 <anhang.pdf, id=1541, page=16, 614.295pt x 794.97pt>
 File: anhang.pdf Graphic file (type pdf)
 <use anhang.pdf, page 16>
-Package pdftex.def Info: anhang.pdf , page16 used on input line 1977.
+Package pdftex.def Info: anhang.pdf , page16 used on input line 1979.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
 File: anhang.pdf Graphic file (type pdf)
 <use anhang.pdf, page 16>
-Package pdftex.def Info: anhang.pdf , page16 used on input line 1977.
+Package pdftex.def Info: anhang.pdf , page16 used on input line 1979.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
 File: anhang.pdf Graphic file (type pdf)
 <use anhang.pdf, page 16>
-Package pdftex.def Info: anhang.pdf , page16 used on input line 1977.
+Package pdftex.def Info: anhang.pdf , page16 used on input line 1979.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
  [110 <./anhang.pdf>]
 <anhang.pdf, id=1546, page=17, 614.295pt x 794.97pt>
 File: anhang.pdf Graphic file (type pdf)
 <use anhang.pdf, page 17>
-Package pdftex.def Info: anhang.pdf , page17 used on input line 1977.
+Package pdftex.def Info: anhang.pdf , page17 used on input line 1979.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
 File: anhang.pdf Graphic file (type pdf)
 <use anhang.pdf, page 17>
-Package pdftex.def Info: anhang.pdf , page17 used on input line 1977.
+Package pdftex.def Info: anhang.pdf , page17 used on input line 1979.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
 File: anhang.pdf Graphic file (type pdf)
 <use anhang.pdf, page 17>
-Package pdftex.def Info: anhang.pdf , page17 used on input line 1977.
+Package pdftex.def Info: anhang.pdf , page17 used on input line 1979.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
  [111 <./anhang.pdf>]
 <anhang.pdf, id=1554, page=18, 614.295pt x 794.97pt>
 File: anhang.pdf Graphic file (type pdf)
 <use anhang.pdf, page 18>
-Package pdftex.def Info: anhang.pdf , page18 used on input line 1977.
+Package pdftex.def Info: anhang.pdf , page18 used on input line 1979.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
 File: anhang.pdf Graphic file (type pdf)
 <use anhang.pdf, page 18>
-Package pdftex.def Info: anhang.pdf , page18 used on input line 1977.
+Package pdftex.def Info: anhang.pdf , page18 used on input line 1979.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
 File: anhang.pdf Graphic file (type pdf)
 <use anhang.pdf, page 18>
-Package pdftex.def Info: anhang.pdf , page18 used on input line 1977.
+Package pdftex.def Info: anhang.pdf , page18 used on input line 1979.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
 
 [112 <./anhang.pdf>]
 <anhang.pdf, id=1562, page=19, 614.295pt x 794.97pt>
 File: anhang.pdf Graphic file (type pdf)
 <use anhang.pdf, page 19>
-Package pdftex.def Info: anhang.pdf , page19 used on input line 1977.
+Package pdftex.def Info: anhang.pdf , page19 used on input line 1979.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
 File: anhang.pdf Graphic file (type pdf)
 <use anhang.pdf, page 19>
-Package pdftex.def Info: anhang.pdf , page19 used on input line 1977.
+Package pdftex.def Info: anhang.pdf , page19 used on input line 1979.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
 File: anhang.pdf Graphic file (type pdf)
 <use anhang.pdf, page 19>
-Package pdftex.def Info: anhang.pdf , page19 used on input line 1977.
+Package pdftex.def Info: anhang.pdf , page19 used on input line 1979.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
  [113 <./anhang.pdf>]
 <anhang.pdf, id=1570, page=20, 614.295pt x 794.97pt>
 File: anhang.pdf Graphic file (type pdf)
 <use anhang.pdf, page 20>
-Package pdftex.def Info: anhang.pdf , page20 used on input line 1977.
+Package pdftex.def Info: anhang.pdf , page20 used on input line 1979.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
 File: anhang.pdf Graphic file (type pdf)
 <use anhang.pdf, page 20>
-Package pdftex.def Info: anhang.pdf , page20 used on input line 1977.
+Package pdftex.def Info: anhang.pdf , page20 used on input line 1979.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
 File: anhang.pdf Graphic file (type pdf)
 <use anhang.pdf, page 20>
-Package pdftex.def Info: anhang.pdf , page20 used on input line 1977.
+Package pdftex.def Info: anhang.pdf , page20 used on input line 1979.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
  [114 <./anhang.pdf>]
 <anhang.pdf, id=1578, page=21, 614.295pt x 794.97pt>
 File: anhang.pdf Graphic file (type pdf)
 <use anhang.pdf, page 21>
-Package pdftex.def Info: anhang.pdf , page21 used on input line 1977.
+Package pdftex.def Info: anhang.pdf , page21 used on input line 1979.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
 File: anhang.pdf Graphic file (type pdf)
 <use anhang.pdf, page 21>
-Package pdftex.def Info: anhang.pdf , page21 used on input line 1977.
+Package pdftex.def Info: anhang.pdf , page21 used on input line 1979.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
 File: anhang.pdf Graphic file (type pdf)
 <use anhang.pdf, page 21>
-Package pdftex.def Info: anhang.pdf , page21 used on input line 1977.
+Package pdftex.def Info: anhang.pdf , page21 used on input line 1979.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
  [115 <./anhang.pdf>]
 <anhang.pdf, id=1587, page=22, 614.295pt x 794.97pt>
 File: anhang.pdf Graphic file (type pdf)
 <use anhang.pdf, page 22>
-Package pdftex.def Info: anhang.pdf , page22 used on input line 1977.
+Package pdftex.def Info: anhang.pdf , page22 used on input line 1979.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
 File: anhang.pdf Graphic file (type pdf)
 <use anhang.pdf, page 22>
-Package pdftex.def Info: anhang.pdf , page22 used on input line 1977.
+Package pdftex.def Info: anhang.pdf , page22 used on input line 1979.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
 File: anhang.pdf Graphic file (type pdf)
 <use anhang.pdf, page 22>
-Package pdftex.def Info: anhang.pdf , page22 used on input line 1977.
+Package pdftex.def Info: anhang.pdf , page22 used on input line 1979.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
  [116 <./anhang.pdf>]
 <anhang.pdf, id=1592, page=23, 614.295pt x 794.97pt>
 File: anhang.pdf Graphic file (type pdf)
 <use anhang.pdf, page 23>
-Package pdftex.def Info: anhang.pdf , page23 used on input line 1977.
+Package pdftex.def Info: anhang.pdf , page23 used on input line 1979.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
 File: anhang.pdf Graphic file (type pdf)
 <use anhang.pdf, page 23>
-Package pdftex.def Info: anhang.pdf , page23 used on input line 1977.
+Package pdftex.def Info: anhang.pdf , page23 used on input line 1979.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
 File: anhang.pdf Graphic file (type pdf)
 <use anhang.pdf, page 23>
-Package pdftex.def Info: anhang.pdf , page23 used on input line 1977.
+Package pdftex.def Info: anhang.pdf , page23 used on input line 1979.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
  [117 <./anhang.pdf>]
 <anhang.pdf, id=1600, page=24, 614.295pt x 794.97pt>
 File: anhang.pdf Graphic file (type pdf)
 <use anhang.pdf, page 24>
-Package pdftex.def Info: anhang.pdf , page24 used on input line 1977.
+Package pdftex.def Info: anhang.pdf , page24 used on input line 1979.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
 File: anhang.pdf Graphic file (type pdf)
 <use anhang.pdf, page 24>
-Package pdftex.def Info: anhang.pdf , page24 used on input line 1977.
+Package pdftex.def Info: anhang.pdf , page24 used on input line 1979.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
 File: anhang.pdf Graphic file (type pdf)
 <use anhang.pdf, page 24>
-Package pdftex.def Info: anhang.pdf , page24 used on input line 1977.
+Package pdftex.def Info: anhang.pdf , page24 used on input line 1979.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
  [118 <./anhang.pdf>]
 <anhang.pdf, id=1605, page=25, 614.295pt x 794.97pt>
 File: anhang.pdf Graphic file (type pdf)
 <use anhang.pdf, page 25>
-Package pdftex.def Info: anhang.pdf , page25 used on input line 1977.
+Package pdftex.def Info: anhang.pdf , page25 used on input line 1979.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
 File: anhang.pdf Graphic file (type pdf)
 <use anhang.pdf, page 25>
-Package pdftex.def Info: anhang.pdf , page25 used on input line 1977.
+Package pdftex.def Info: anhang.pdf , page25 used on input line 1979.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
 File: anhang.pdf Graphic file (type pdf)
 <use anhang.pdf, page 25>
-Package pdftex.def Info: anhang.pdf , page25 used on input line 1977.
+Package pdftex.def Info: anhang.pdf , page25 used on input line 1979.
 (pdftex.def)             Requested size: 522.15321pt x 675.72769pt.
  [119 <./anhang.pdf>]
 \tf@ptc=\write7
 \openout7 = `main.ptc'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1980.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1980.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1982.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1982.
  (main.aux ([.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1980.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1980.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1982.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1982.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 9659DCE15BF402A4424B95988C7B03DD;5614.
@@ -2587,7 +2587,7 @@ ic/amsfonts/symbols/msam10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/
 amsfonts/symbols/msam7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsf
 onts/symbols/msbm10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/palatino/u
 plr8a.pfb>
-Output written on main.pdf (119 pages, 17804791 bytes).
+Output written on main.pdf (119 pages, 22511849 bytes).
 PDF statistics:
  1779 PDF objects out of 2073 (max. 8388607)
  407 named destinations out of 1000 (max. 500000)

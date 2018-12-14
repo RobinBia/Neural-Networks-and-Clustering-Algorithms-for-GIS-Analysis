@@ -8,7 +8,8 @@
 
 
 
-
+\pdfcompresslevel=0
+\pdfobjcompresslevel=0
     
 \documentclass[12pt]{article}
 
