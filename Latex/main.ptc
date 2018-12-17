@@ -44,143 +44,143 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {3.2}Motivation und Anwendungsgebiete}{19}{section.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.1}Linear Classifier}{22}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.1}Linear Classifier}{21}{subsection.3.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.2}Regularisierer}{23}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.2}Regularisierer}{22}{subsection.3.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.3}Gradientenabstieg}{24}{subsection.3.2.3}
+\contentsline {subsection}{\numberline {3.2.3}Gradientenabstieg}{23}{subsection.3.2.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.4}Multi-Layer Neural Network}{24}{subsection.3.2.4}
+\contentsline {subsection}{\numberline {3.2.4}Multi-Layer Neural Network}{23}{subsection.3.2.4}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.2.5}Trainieren eines Netzwerks mittels Backpropagation}{24}{subsection.3.2.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.6}Parameterupdates}{26}{subsection.3.2.6}
+\contentsline {subsection}{\numberline {3.2.6}Parameterupdates}{25}{subsection.3.2.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.7}Convolutional Neural Network}{27}{subsection.3.2.7}
+\contentsline {subsection}{\numberline {3.2.7}Convolutional Neural Network}{26}{subsection.3.2.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.8}Recurrent Neural Network}{29}{subsection.3.2.8}
+\contentsline {subsection}{\numberline {3.2.8}Recurrent Neural Network}{28}{subsection.3.2.8}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.3}Machine Learning in Geowissenschaften}{31}{section.3.3}
+\contentsline {section}{\numberline {3.3}Machine Learning in Geowissenschaften}{30}{section.3.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.3.1}Herausforderungen und Chancen von Machine Learning }{31}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.1}Herausforderungen und Chancen von Machine Learning }{30}{subsection.3.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {4}Clusteringverfahren}{37}{chapter.4}
+\contentsline {chapter}{\numberline {4}Clusteringverfahren}{35}{chapter.4}
 \ttl@stoptoc {default@3}
 \ttl@starttoc {default@4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.1}Definition und Anwendungszweck}{37}{section.4.1}
+\contentsline {section}{\numberline {4.1}Definition und Anwendungszweck}{35}{section.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.1.1}Die f\IeC {\"u}nf Hauptschritte des Datenclustering}{39}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.1}Die f\IeC {\"u}nf Hauptschritte des Datenclustering}{37}{subsection.4.1.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.2}Crisp Clustering}{39}{section.4.2}
+\contentsline {section}{\numberline {4.2}Crisp Clustering}{37}{section.4.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.2.1}Partitionierende Verfahren und ihre Nachteile}{39}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.1}Partitionierende Verfahren und ihre Nachteile}{37}{subsection.4.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Clustering durch Varianzminimierung}{39}{section*.27}
+\contentsline {subsubsection}{Clustering durch Varianzminimierung}{37}{section*.28}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{k-means}{40}{section*.28}
+\contentsline {subsubsection}{k-means}{38}{section*.29}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{EM-Algorithmus}{41}{section*.30}
+\contentsline {subsubsection}{EM-Algorithmus}{39}{section*.31}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.2.2}Silhouettenkoeffizient - Wahl der Clusteranzahl}{41}{subsection.4.2.2}
+\contentsline {subsection}{\numberline {4.2.2}Silhouettenkoeffizient - Wahl der Clusteranzahl}{39}{subsection.4.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.2.3}Dichtebasiertes Clustering (OPTICS)}{42}{subsection.4.2.3}
+\contentsline {subsection}{\numberline {4.2.3}Dichtebasiertes Clustering (OPTICS)}{40}{subsection.4.2.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Erreichbarkeitseigenschaften \cite {dbscan}}{43}{section*.32}
+\contentsline {subsubsection}{Erreichbarkeitseigenschaften \cite {dbscan}}{41}{section*.33}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Erweiterte Grundbegriffe}{44}{section*.33}
+\contentsline {subsubsection}{Erweiterte Grundbegriffe}{42}{section*.34}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{OPTICS-Algorithmus}{44}{section*.35}
+\contentsline {subsubsection}{OPTICS-Algorithmus}{42}{section*.36}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Wahl der Parameter $\epsilon $ und $minPts$}{49}{section*.44}
+\contentsline {subsubsection}{Wahl der Parameter $\epsilon $ und $minPts$}{47}{section*.45}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Anwendungsgebiete}{49}{section*.45}
+\contentsline {subsubsection}{Anwendungsgebiete}{47}{section*.46}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.2.4}Outlier Detection - Local Outlier Factor}{50}{subsection.4.2.4}
+\contentsline {subsection}{\numberline {4.2.4}Outlier Detection - Local Outlier Factor}{48}{subsection.4.2.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Grundbegriffe}{50}{section*.46}
+\contentsline {subsubsection}{Grundbegriffe}{48}{section*.47}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Berechnung von LOF}{50}{section*.47}
+\contentsline {subsubsection}{Berechnung von LOF}{48}{section*.48}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.2.5}Lineare Separation - Support Vector Machine}{50}{subsection.4.2.5}
+\contentsline {subsection}{\numberline {4.2.5}Lineare Separation - Support Vector Machine}{48}{subsection.4.2.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.3}Fuzzy-Clustering}{54}{section.4.3}
+\contentsline {section}{\numberline {4.3}Fuzzy-Clustering}{52}{section.4.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.3.1}Fuzzy C-Means (FCM)}{54}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.1}Fuzzy C-Means (FCM)}{52}{subsection.4.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.3.2}Possibilistic C-Means (PCM)}{56}{subsection.4.3.2}
+\contentsline {subsection}{\numberline {4.3.2}Possibilistic C-Means (PCM)}{54}{subsection.4.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.3.3}Possibilistic Fuzzy C-Means (PFCM)}{58}{subsection.4.3.3}
+\contentsline {subsection}{\numberline {4.3.3}Possibilistic Fuzzy C-Means (PFCM)}{56}{subsection.4.3.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.3.4}Scale Space Filter Clustering}{58}{subsection.4.3.4}
+\contentsline {subsection}{\numberline {4.3.4}Scale Space Filter Clustering}{56}{subsection.4.3.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.3.5}Graphbasiertes Clustering I (NSCABDT)}{61}{subsection.4.3.5}
+\contentsline {subsection}{\numberline {4.3.5}Graphbasiertes Clustering I (NSCABDT)}{59}{subsection.4.3.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Bezeichnungen}{62}{section*.54}
+\contentsline {subsubsection}{Bezeichnungen}{60}{section*.55}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Clusteringergebnisse}{64}{section*.55}
+\contentsline {subsubsection}{Clusteringergebnisse}{62}{section*.56}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.3.6}Graphbasiertes Clustering II (NSFCDT)}{65}{subsection.4.3.6}
+\contentsline {subsection}{\numberline {4.3.6}Graphbasiertes Clustering II (NSFCDT)}{63}{subsection.4.3.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Ergebnisse}{67}{section*.57}
+\contentsline {subsubsection}{Ergebnisse}{65}{section*.58}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.3.7}Kontextbasiertes geographisch gewichtetes Fuzzy-Clustering (CFGWC)}{69}{subsection.4.3.7}
+\contentsline {subsection}{\numberline {4.3.7}Kontextbasiertes geographisch gewichtetes Fuzzy-Clustering (CFGWC)}{67}{subsection.4.3.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.4}Bestimmung der optimalen Clusteranzahl}{70}{section.4.4}
+\contentsline {section}{\numberline {4.4}Bestimmung der optimalen Clusteranzahl}{68}{section.4.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.4.1}Basisalgorithmus}{70}{subsection.4.4.1}
+\contentsline {subsection}{\numberline {4.4.1}Basisalgorithmus}{68}{subsection.4.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.4.2}Normalized Partition Coefficient (NPC)}{71}{subsection.4.4.2}
+\contentsline {subsection}{\numberline {4.4.2}Normalized Partition Coefficient (NPC)}{69}{subsection.4.4.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.4.3}Kim-Kim-Lee-Lee Index (KKLL)}{71}{subsection.4.4.3}
+\contentsline {subsection}{\numberline {4.4.3}Kim-Kim-Lee-Lee Index (KKLL)}{69}{subsection.4.4.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.4.4}Fuzzy Hypervolume/Partition Density (FHV/PD)}{72}{subsection.4.4.4}
+\contentsline {subsection}{\numberline {4.4.4}Fuzzy Hypervolume/Partition Density (FHV/PD)}{70}{subsection.4.4.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.4.5}Zahid-Limouri-Essaid Index (ZLE)}{73}{subsection.4.4.5}
+\contentsline {subsection}{\numberline {4.4.5}Zahid-Limouri-Essaid Index (ZLE)}{71}{subsection.4.4.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.4.6}Visual Assessment for Cluster Tendency (VAT)}{74}{subsection.4.4.6}
+\contentsline {subsection}{\numberline {4.4.6}Visual Assessment for Cluster Tendency (VAT)}{72}{subsection.4.4.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.5}Vergleich von Clusteringergebnissen}{75}{section.4.5}
+\contentsline {section}{\numberline {4.5}Vergleich von Clusteringergebnissen}{73}{section.4.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.5.1}Rand-Index}{76}{subsection.4.5.1}
+\contentsline {subsection}{\numberline {4.5.1}Rand Index}{74}{subsection.4.5.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.5.2}Subset Similarity Index}{76}{subsection.4.5.2}
+\contentsline {subsection}{\numberline {4.5.2}Subset Similarity Index}{74}{subsection.4.5.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.5.3}Partitionierungsstabilit\IeC {\"a}t}{78}{subsection.4.5.3}
+\contentsline {subsection}{\numberline {4.5.3}Partitionierungsstabilit\IeC {\"a}t}{76}{subsection.4.5.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.6}Clustering auf unvollst\IeC {\"a}ndigen Daten}{78}{section.4.6}
+\contentsline {section}{\numberline {4.6}Clustering auf unvollst\IeC {\"a}ndigen Daten}{76}{section.4.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.6.1}Missing Data Patterns}{79}{subsection.4.6.1}
+\contentsline {subsection}{\numberline {4.6.1}Missing Data Patterns}{77}{subsection.4.6.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.6.2}Missing Data Mechanisms}{79}{subsection.4.6.2}
+\contentsline {subsection}{\numberline {4.6.2}Missing Data Mechanisms}{77}{subsection.4.6.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.6.3}Strategien zum Umgang mit fehlenden Werten}{79}{subsection.4.6.3}
+\contentsline {subsection}{\numberline {4.6.3}Strategien zum Umgang mit fehlenden Werten}{77}{subsection.4.6.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{FCM mit Whole Data Strategy (WDSFCM)}{80}{section*.61}
+\contentsline {subsubsection}{FCM mit Whole Data Strategy (WDSFCM)}{78}{section*.62}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{FCM mit Partial Distance Strategy (PDSFCM)}{80}{section*.62}
+\contentsline {subsubsection}{FCM mit Partial Distance Strategy (PDSFCM)}{78}{section*.63}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{FCM mit Optimal Completion Strategy (OCSFCM)}{80}{section*.63}
+\contentsline {subsubsection}{FCM mit Optimal Completion Strategy (OCSFCM)}{78}{section*.64}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.6.4}Distance Estimation Strategy (DESFCM)}{81}{subsection.4.6.4}
+\contentsline {subsection}{\numberline {4.6.4}Distance Estimation Strategy (DESFCM)}{79}{subsection.4.6.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.6.5}Experimenteller Vergleich}{81}{subsection.4.6.5}
+\contentsline {subsection}{\numberline {4.6.5}Experimenteller Vergleich}{79}{subsection.4.6.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.6.6}Fuzzy c-Means clustering of Incomplete Data using Dimension-wise Fuzzy Variance of Clusters (FCMDFVC)}{82}{subsection.4.6.6}
+\contentsline {subsection}{\numberline {4.6.6}Fuzzy c-Means clustering of Incomplete Data using Dimension-wise Fuzzy Variance of Clusters (FCMDFVC)}{80}{subsection.4.6.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.7}Hochdimensionale Daten}{83}{section.4.7}
+\contentsline {section}{\numberline {4.7}Hochdimensionale Daten}{81}{section.4.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.7.1}Dimensionsreduktion}{84}{subsection.4.7.1}
+\contentsline {subsection}{\numberline {4.7.1}Dimensionsreduktion}{82}{subsection.4.7.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Hauptkomponentenanalyse}{84}{section*.64}
+\contentsline {subsubsection}{Hauptkomponentenanalyse}{82}{section*.65}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.7.2}Entropiebasierte Attributauswahl}{84}{subsection.4.7.2}
+\contentsline {subsection}{\numberline {4.7.2}Entropiebasierte Attributauswahl}{82}{subsection.4.7.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.7.3}Attribute Weighting Fuzzy Clustering (FCM-AW)}{85}{subsection.4.7.3}
+\contentsline {subsection}{\numberline {4.7.3}Attribute Weighting Fuzzy Clustering (FCM-AW)}{83}{subsection.4.7.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.7.4}Multivariate Fuzzy C-Means (MFCM)}{86}{subsection.4.7.4}
+\contentsline {subsection}{\numberline {4.7.4}Multivariate Fuzzy C-Means (MFCM)}{84}{subsection.4.7.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {5}Fazit und m\IeC {\"o}gliche Themen f\IeC {\"u}r die Masterarbeit}{87}{chapter.5}
+\contentsline {chapter}{\numberline {5}Fazit und Ausblick}{85}{chapter.5}
 \ttl@stoptoc {default@4}
 \ttl@starttoc {default@5}
 \contentsfinish 

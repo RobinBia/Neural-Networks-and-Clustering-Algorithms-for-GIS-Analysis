@@ -101,9 +101,9 @@
 
 \chapterimage{head8} % Chapter heading image
 \chapter{Motivation}
-Die folgende Projektarbeit liefert einen groben Überblick über Methoden und Algorithmen im Bereich der geoinformationsverarbeitenden Systeme in Verbindung mit Machine Learning (ML). Darunter werden sämtliche Verfahren verstanden, die auf Basis von Datenbeständen Fähigkeiten erlernen, mithilfe derer abstraktere Probleme automatisiert gelöst werden können. Die Projektarbeit beschränkt sich auf die ML-Teilbereiche Deep Learning und Data Mining, welche sich mit der Wissensextraktion (Assoziationsmustererkennung), der Klassifikation und dem Clustering von Datenpunkten auseinandersetzen. Die Auswertung geowissenschaftlicher Fachliteratur soll zudem Erkenntnisse über weitere Einsatzbereiche von Machine Learning liefern. Außerdem soll recherchiert werden, worin die Herausforderungen bestehen und welche offenen Probleme es gibt.
+Die folgende Projektarbeit liefert einen groben Überblick über Methoden und Algorithmen im Bereich der geoinformationsverarbeitenden Systeme in Verbindung mit Machine Learning (ML). Darunter werden sämtliche Verfahren verstanden, die auf Basis von Datenbeständen Fähigkeiten erlernen, mithilfe derer abstraktere Probleme automatisiert gelöst werden können. Die Projektarbeit beschränkt sich auf die ML-Teilbereiche Deep Learning und Data Mining, welche sich mit der Wissensextraktion (Assoziationsmustererkennung), der Klassifikation und dem Clustern von Datenpunkten befassen. Die Auswertung geowissenschaftlicher Fachliteratur soll zudem Erkenntnisse über weitere Einsatzbereiche von Machine Learning liefern. Außerdem soll recherchiert werden, worin die Herausforderungen bestehen und welche offenen Probleme es gibt.
 \\~\\
-Ziel der Arbeit ist die Eingrenzung der Themenbereiche auf Fragestellungen, die sich für eine wissenschaftlichen Ausarbeitung im Rahmen der sich anschließenden Masterarbeit eignen.
+Ziel der Arbeit ist die Eingrenzung der Themenbereiche auf Fragestellungen, die sich für eine wissenschaftliche Ausarbeitung im Rahmen der sich anschließenden Masterarbeit eignen.
 
 %----------------------------------------------------------------------------------------
 %	CHAPTER 2
@@ -126,7 +126,7 @@ Geoid oder Rotationsellipsoid (3D)
 Zusätzlich zu den 3 Koordinaten im Raum wird eine vierte
 Information mitgeführt, die sich aus dem zeitlichen Ablauf ergibt (4D)
 \end{itemize}
-
+~\\
 Im Anhang wird in den Zeilen 2-4 ein solcher Datensatz mittels \textit{pyplot} visualisiert.
 
 \newpage
@@ -387,9 +387,9 @@ Um zu verstehen, welche Kräfte strukturelle Änderungen von Städten vorantreib
 Außerdem helfen diese Modelle und Simulationen dabei, die Mechanismen der urbanen Evolution zu erforschen und Städteplanung zu optimieren.
 
 
-%\clearpage
-\vspace*{\fill}
-\begin{center}
+
+%\vspace*{\fill}
+
 \begin{minipage}{1\textwidth}
 Es folgt eine Auflistung verschiedener Probleme, für deren Lösung sich die Anwendung eines Neuronalen Netzwerks eignet:
 
@@ -401,21 +401,21 @@ Es folgt eine Auflistung verschiedener Probleme, für deren Lösung sich die Anw
 \item Clustering - Wie lassen sich Daten vergleichen und in Anbetracht ihrer Attributähnlichkeiten in Gruppen zusammenfassen?
 \item Image Captioning - Wie lassen sich die klassifizierten Objekte in Beziehung setzen? 
 \end{itemize}
-
 \end{minipage}
-\end{center}
-\vfill
-\clearpage
-\clearpage
 
-\begin{figure}[h]
+\begin{figure}[H]
 \centering
-\vfill
-\includegraphics[scale=0.77]{anwendungen.jpg}
-\caption{Vergleich verschiedener Anwendungszwecke von Deep Learning}
-\vfill
+\includegraphics[scale=0.77]{anwendungen1.jpg}
 \end{figure}
-\clearpage 
+
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.77]{anwendungen2.jpg}
+\caption{Vergleich verschiedener Anwendungszwecke von Deep Learning}
+\end{figure}
+
 
 
 \subsection{Linear Classifier}
@@ -475,7 +475,7 @@ Die Score-Funktion für dieses Netzwerk lautet:
 
 \[y(x) = W_3^{\top} \cdot g[W_2^{\top} \cdot g[W_1^{\top} \cdot x+b_1]+b_2]+b_3\]
 
-
+\newpage
 \subsection{Trainieren eines Netzwerks mittels Backpropagation}
 Sei $f$ eine Score-Funktion für ein Single Layer Neural Network mit nur einer Aktivierung.
 
@@ -657,7 +657,7 @@ Zwei weit entfernte Orte können ebenfalls stark korrelierte Eigenschaften besit
 Aus beiden oben genannten Gründen müssen Trainingsmodelle entwickelt werden, die mit kleineren Datensätzen zurecht kommen.
 \end{itemize}
 \bigskip
-Maschinelles Lernalgorithmen können dazu beitragen, Geowissenschaftliche Objekte und Ereignisse zu Charakterisieren und somit helfen, das Erdsystem besser zu verstehen. Während traditionelle Ansätze auf handgefertigten Algorithmen basieren, können Machine Learning Algorithmen mit ihrer automatischen Mustererkennung die Berechnungszeit deutlich verkürzen. Eine große Herausforderung stellt die Charakterisierung von physikalisch ungenau definierten Objekten dar. Unsupervised Learning kann dabei helfen, anomalische Objekte aufzuspüren (z.B. Landminen).\\
+Maschinelle Lernalgorithmen können dazu beitragen, geowissenschaftliche Objekte und Ereignisse zu charakterisieren und somit dabei helfen, das Erdsystem besser zu verstehen. Während traditionelle Ansätze auf handgefertigten Algorithmen basieren, können Machine Learning Algorithmen mit ihrer automatischen Mustererkennung die Berechnungszeit deutlich verkürzen. Eine große Herausforderung stellt die Charakterisierung von physikalisch ungenau definierten Objekten dar. Unsupervised Learning kann dabei helfen, anomalische Objekte aufzuspüren (z.B. Landminen).\\
 \bigskip
 Ein weiterer großer Vorteil von Machine Learning ist die Erzeugung von Geodaten aus nur schwer beobachtbaren Prozessen (z.B. Methanausstoß und Konzentration in der Atmosphäre). Supervised Learning kann verwendet werden, um Fernerkundungsdaten zu analysieren und daraus Aussagen über das Ökosystem abzuleiten (z.B. Gesundheit der Vegetation oder Wasserqualität). Eine besondere Herausforderung ist dabei die Heterogenität solcher Daten, wie bereits weiter oben beschrieben. Eine mögliche Lösung sind Multi-Task-Learning-Frameworks, welche Datensätze zuerst in homogene Partitionen unterteilen (hierarchisches Clustern), und dann auf jeder dieser Partitionen einzeln trainieren. Dieses Vorgehen ist eine Regularisierungstechnik, welche die Überanpassung des Modells verhindern soll. Folgende Abbildung zeigt die Verbesserung der Genauigkeit der geschätzten Waldbedeckung vier brasilianischer Staaten, wobei die rot markierten Bereiche die Residuen darstellen.
 \begin{figure}[H]
@@ -1691,7 +1691,7 @@ Eine Implementierung und Anwendung des VAT-Algorithmus ist im Anhang ab Zeile 41
 Partitionierende Clusteringverfahren liefern bei zufälligen Initialisierungen oft sehr unterschiedliche Clusteringergebnisse auf dem gleichen Datensatz. Da sich stark schwankende Ergebnisse schlecht zum Vergleich mit anderen Clusteringverfahren eignen, will man immer nur jeweils die beste Partitionierung finden und mit der besten Partitionierung des anderen Verfahrens vergleichen. Eine weitere Herausforderung stellt der Vergleich der Ausreißersensitivität dar. Während ein Ausreißer beim einen Verfahren kaum eine Auswirkung auf das Endergebnis hat, führt er bei dem anderen Algorithmus zu einer starken Verschlechterung der Ergebnisse. Die folgenden Methoden sollen solche Probleme erkennen. 
 
 
-\subsection{Rand-Index}
+\subsection{Rand Index}
 Eine der ersten Methoden zum Vergleichen von harten Partitionierungen wurde bereits 1971 von William M. Rand \cite{rand} vorgestellt. Diese misst die Ähnlichkeit zweier Zerlegungen anhand der Anzahl der Datenpunkte, die in den Clustern beider Zerlegungen gemeinsam vorkommen. \\~\\
 Seien $P = \{P_1, \dots, P_k\} \subset 2^X$ und  $Q = \{P_1, \dots, P_l\} \subset 2^X$ zwei harte Partitionierungen von Datensatz $X=\{x_1,\dots,x_n\}$ mit $n$ Datenpunkten. Sowohl in $P$ als auch in $Q$ überschneiden sich zwei verschiedene Cluster nie. Außerdem gibt es keine leeren Cluster und die Vereinigung aller Cluster ergibt den Datensatz. Es sind also alle Datenpunkte einem Cluster zugeordnet. Zwei Elemente $x$ und $x'$ bilden ein gepaartes Elementtupel in $P$, wenn sie zum gleichen Cluster gehören. Es gilt also: $\exists i \in \left[1,\dots,k\right] \text{ mit } x \in P_i \text{ und } x' \in P_i$. Man unterscheidet zwischen vier verschiedenen Paarungsarten:
 
@@ -1959,7 +1959,7 @@ und
 $$v_{ij} = \frac{\sum\limits_{k=1}^n u_{ikj}^m x_{kj}}{\sum\limits_{k=1}^n u_{ikj}^m},\ 1\leqslant i\leqslant c,1\leqslant j\leqslant d$$
 
 
-\chapter{Fazit und mögliche Themen für die Masterarbeit}
+\chapter{Fazit und Ausblick}
 
 Die Literaturrecherche hat gezeigt, dass es eine Vielzahl von Clusteringverfahren für unterschiedlichste Anwendungszwecke gibt. Keines der vorgestellten Verfahren ist gleichermaßen für alle Datensätze geeignet. Auch gibt es noch Verbesserungsbedarf hinsichtlich der Performance und Implementierung. Erweiterungen oder Kombinationen der vorgestellten Algorithmen könnten zudem neue Perspektiven eröffnen und speziell auf die Vielzahl geoinformatischer Probleme zugeschnitten werden. Die Autoren verweisen im Fazit ihrer Publikationen häufig auf die Vor- und Nachteile ihrer Ideen und liefern damit Motivation für künftige Forschungsarbeit. Im Rahmen der sich an diese Projektarbeit anschließende Masterarbeit könnten die Eigenschaften der vorgestellten Algorithmen genauer analysiert, hinsichtlich ihrer Laufzeiteffizienz geprüft und anschließend optimiert werden. Die folgende Zusammenstellung der wesentlichen Nachteile oben vorgestellter Algorithmen soll die Themenfindung vereinfachen.\\~\\
 

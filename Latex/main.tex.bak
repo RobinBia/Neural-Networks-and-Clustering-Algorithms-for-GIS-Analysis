@@ -387,9 +387,9 @@ Um zu verstehen, welche Kräfte strukturelle Änderungen von Städten vorantreib
 Außerdem helfen diese Modelle und Simulationen dabei, die Mechanismen der urbanen Evolution zu erforschen und Städteplanung zu optimieren.
 
 
-%\clearpage
-\vspace*{\fill}
-\begin{center}
+
+%\vspace*{\fill}
+
 \begin{minipage}{1\textwidth}
 Es folgt eine Auflistung verschiedener Probleme, für deren Lösung sich die Anwendung eines Neuronalen Netzwerks eignet:
 
@@ -401,21 +401,21 @@ Es folgt eine Auflistung verschiedener Probleme, für deren Lösung sich die Anw
 \item Clustering - Wie lassen sich Daten vergleichen und in Anbetracht ihrer Attributähnlichkeiten in Gruppen zusammenfassen?
 \item Image Captioning - Wie lassen sich die klassifizierten Objekte in Beziehung setzen? 
 \end{itemize}
-
 \end{minipage}
-\end{center}
-\vfill
-\clearpage
-\clearpage
 
-\begin{figure}[h]
+\begin{figure}[H]
 \centering
-\vfill
-\includegraphics[scale=0.77]{anwendungen.jpg}
-\caption{Vergleich verschiedener Anwendungszwecke von Deep Learning}
-\vfill
+\includegraphics[scale=0.77]{anwendungen1.jpg}
 \end{figure}
-\clearpage 
+
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.77]{anwendungen2.jpg}
+\caption{Vergleich verschiedener Anwendungszwecke von Deep Learning}
+\end{figure}
+
 
 
 \subsection{Linear Classifier}
@@ -475,7 +475,7 @@ Die Score-Funktion für dieses Netzwerk lautet:
 
 \[y(x) = W_3^{\top} \cdot g[W_2^{\top} \cdot g[W_1^{\top} \cdot x+b_1]+b_2]+b_3\]
 
-
+\newpage
 \subsection{Trainieren eines Netzwerks mittels Backpropagation}
 Sei $f$ eine Score-Funktion für ein Single Layer Neural Network mit nur einer Aktivierung.
 
@@ -657,7 +657,7 @@ Zwei weit entfernte Orte können ebenfalls stark korrelierte Eigenschaften besit
 Aus beiden oben genannten Gründen müssen Trainingsmodelle entwickelt werden, die mit kleineren Datensätzen zurecht kommen.
 \end{itemize}
 \bigskip
-Maschinelles Lernalgorithmen können dazu beitragen, Geowissenschaftliche Objekte und Ereignisse zu Charakterisieren und somit helfen, das Erdsystem besser zu verstehen. Während traditionelle Ansätze auf handgefertigten Algorithmen basieren, können Machine Learning Algorithmen mit ihrer automatischen Mustererkennung die Berechnungszeit deutlich verkürzen. Eine große Herausforderung stellt die Charakterisierung von physikalisch ungenau definierten Objekten dar. Unsupervised Learning kann dabei helfen, anomalische Objekte aufzuspüren (z.B. Landminen).\\
+Maschinelle Lernalgorithmen können dazu beitragen, geowissenschaftliche Objekte und Ereignisse zu charakterisieren und somit dabei helfen, das Erdsystem besser zu verstehen. Während traditionelle Ansätze auf handgefertigten Algorithmen basieren, können Machine Learning Algorithmen mit ihrer automatischen Mustererkennung die Berechnungszeit deutlich verkürzen. Eine große Herausforderung stellt die Charakterisierung von physikalisch ungenau definierten Objekten dar. Unsupervised Learning kann dabei helfen, anomalische Objekte aufzuspüren (z.B. Landminen).\\
 \bigskip
 Ein weiterer großer Vorteil von Machine Learning ist die Erzeugung von Geodaten aus nur schwer beobachtbaren Prozessen (z.B. Methanausstoß und Konzentration in der Atmosphäre). Supervised Learning kann verwendet werden, um Fernerkundungsdaten zu analysieren und daraus Aussagen über das Ökosystem abzuleiten (z.B. Gesundheit der Vegetation oder Wasserqualität). Eine besondere Herausforderung ist dabei die Heterogenität solcher Daten, wie bereits weiter oben beschrieben. Eine mögliche Lösung sind Multi-Task-Learning-Frameworks, welche Datensätze zuerst in homogene Partitionen unterteilen (hierarchisches Clustern), und dann auf jeder dieser Partitionen einzeln trainieren. Dieses Vorgehen ist eine Regularisierungstechnik, welche die Überanpassung des Modells verhindern soll. Folgende Abbildung zeigt die Verbesserung der Genauigkeit der geschätzten Waldbedeckung vier brasilianischer Staaten, wobei die rot markierten Bereiche die Residuen darstellen.
 \begin{figure}[H]
@@ -1961,7 +1961,7 @@ $$v_{ij} = \frac{\sum\limits_{k=1}^n u_{ikj}^m x_{kj}}{\sum\limits_{k=1}^n u_{ik
 
 \chapter{Fazit und mögliche Themen für die Masterarbeit}
 
-Die Literaturrecherche hat gezeigt, dass es eine Vielzahl von Clusteringverfahren für unterschiedlichste Anwendungszwecke gibt. Keines der vorgestellten Verfahren ist gleichermaßen für alle Datensätze geeignet. Auch gibt es noch Verbesserungsbedarf hinsichtlich der Performance und Implementierung. Erweiterungen oder Kombinationen der vorgestellten Algorithmen könnten zudem neue Perspektiven eröffnen und speziell auf die Vielzahl geoinformatischer Probleme zugeschnitten werden. Die Autoren verweisen im Fazit ihrer Publikationen häufig auf die Vor- und Nachteile ihrer Ideen und liefern damit Motivation für künftige Forschungsarbeit. Im Rahmen der sich an diese Projektarbeit anschließende Masterarbeit könnten die Eigenschaften der vorgestellten Algorithmen genauer analysiert, hinsichtlich ihrer Laufzeiteffizienz geprüft und anschließend optimiert werden. Die folgende Zusammenstellung der wesentlichen Nachteile oben vorgestellter Algorithmen soll die Themenfindung vereinfachen.
+Die Literaturrecherche hat gezeigt, dass es eine Vielzahl von Clusteringverfahren für unterschiedlichste Anwendungszwecke gibt. Keines der vorgestellten Verfahren ist gleichermaßen für alle Datensätze geeignet. Auch gibt es noch Verbesserungsbedarf hinsichtlich der Performance und Implementierung. Erweiterungen oder Kombinationen der vorgestellten Algorithmen könnten zudem neue Perspektiven eröffnen und speziell auf die Vielzahl geoinformatischer Probleme zugeschnitten werden. Die Autoren verweisen im Fazit ihrer Publikationen häufig auf die Vor- und Nachteile ihrer Ideen und liefern damit Motivation für künftige Forschungsarbeit. Im Rahmen der sich an diese Projektarbeit anschließende Masterarbeit könnten die Eigenschaften der vorgestellten Algorithmen genauer analysiert, hinsichtlich ihrer Laufzeiteffizienz geprüft und anschließend optimiert werden. Die folgende Zusammenstellung der wesentlichen Nachteile oben vorgestellter Algorithmen soll die Themenfindung vereinfachen.\\~\\
 
 \begin{enumerate}
 \item Der NSFCDT-Algorithmus wird in der Publikation nur auf Rasterbilder angewandt. Alternativ könnte er jedoch auch auf Dreidimensionale Daten angewandt werden. Dazu müsste eine Triangulation von je vier Punkten zu Tetraedern mittels Umkugelbedingung durchgeführt werden. In die Fuzzy-Funktion müssten die Höhendaten mit einfließen, damit Höhenkanten wie Klippen korrekt fuzzyfiziert und erkannt werden können. Darüber hinaus sollte die Definition der Nachbardreiecke aufgeweicht werden. Ein Dreieck soll nicht nur ein Nachbar sein, wenn es sich mit dem Initialdreieck eine Kante teilt, sondern auch, wenn es nur einen gemeinsamen Knoten gibt. Es kann überprüft werden, welchen Einfluss diese Definition auf Clusteringergebnisse und Performance hat. Statistische Modelle und alternative Datenstrukturen könnten die Performance ebenfalls verbessern. Zudem könnten spezielle Anwendungszwecke gefunden werden, auf die der NSFCDT-Algorithmus zugeschnitten wird. Ein Algorithmus für die automatische Bestimmung repräsentativer Punkte und die Triangulationsparameter könnte die Benutzerfreundlichkeit verbessern.
