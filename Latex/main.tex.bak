@@ -1959,12 +1959,15 @@ und
 $$v_{ij} = \frac{\sum\limits_{k=1}^n u_{ikj}^m x_{kj}}{\sum\limits_{k=1}^n u_{ikj}^m},\ 1\leqslant i\leqslant c,1\leqslant j\leqslant d$$
 
 
-\chapter{Fazit und Ausblick}
-\section{Mein Thema für die Masterarbeit}
+\chapter{Fazit und mögliche Themen für die Masterarbeit}
+
+Die Literaturrecherche hat gezeigt, dass es eine Vielzahl von Clusteringverfahren für unterschiedlichste Anwendungszwecke gibt. Keines der vorgestellten Verfahren ist gleichermaßen für alle Datensätze geeignet. Auch gibt es noch Verbesserungsbedarf hinsichtlich der Performance und Implementierung. Erweiterungen oder Kombinationen der vorgestellten Algorithmen könnten zudem neue Perspektiven eröffnen und speziell auf die Vielzahl geoinformatischer Probleme zugeschnitten werden. Die Autoren verweisen im Fazit ihrer Publikationen häufig auf die Vor- und Nachteile ihrer Ideen und liefern damit Motivation für künftige Forschungsarbeit. Im Rahmen der sich an diese Projektarbeit anschließende Masterarbeit könnten die Eigenschaften der vorgestellten Algorithmen genauer analysiert, hinsichtlich ihrer Laufzeiteffizienz geprüft und anschließend optimiert werden. Die folgende Zusammenstellung der wesentlichen Nachteile oben vorgestellter Algorithmen soll die Themenfindung vereinfachen.
+
 \begin{enumerate}
-\item polygon. Triangulation + hochdim. NSFCDT?
-\item PCA auf sel. SSF-FCM + CVI entwickeln?
-\item Hybride Algorithmen?
+\item Der NSFCDT-Algorithmus wird in der Publikation nur auf Rasterbilder angewandt. Alternativ könnte er jedoch auch auf Dreidimensionale Daten angewandt werden. Dazu müsste eine Triangulation von je vier Punkten zu Tetraedern mittels Umkugelbedingung durchgeführt werden. In die Fuzzy-Funktion müssten die Höhendaten mit einfließen, damit Höhenkanten wie Klippen korrekt fuzzyfiziert und erkannt werden können. Darüber hinaus sollte die Definition der Nachbardreiecke aufgeweicht werden. Ein Dreieck soll nicht nur ein Nachbar sein, wenn es sich mit dem Initialdreieck eine Kante teilt, sondern auch, wenn es nur einen gemeinsamen Knoten gibt. Es kann überprüft werden, welchen Einfluss diese Definition auf Clusteringergebnisse und Performance hat. Statistische Modelle und alternative Datenstrukturen könnten die Performance ebenfalls verbessern. Zudem könnten spezielle Anwendungszwecke gefunden werden, auf die der NSFCDT-Algorithmus zugeschnitten wird. Ein Algorithmus für die automatische Bestimmung repräsentativer Punkte und die Triangulationsparameter könnte die Benutzerfreundlichkeit verbessern.
+\newpage
+\item Der NSCABDT-Algorithmus bietet gegenüber DBSCAN viele Vorteile hinsichtlich der Erkennung von Clusterbrücken. Leider ist er jedoch viel langsamer. Ein hybrider Ansatz, wie z.B. das Clustern der Hauptbereiche mittels DBSCAN und der Randbreiche mit triangulationsbasierten Methoden, könnte die Geschwindigkeit erhöhen.
+\item Auch der Selective Scale Space basierte FCM-Algorithmus kann nach Einschätzung seiner Autoren verbessert werden. So sei die Performance schlechter als die des reinen FCM-Algorithmus. Außerdem müsse die Clusteranzahl im Voraus bekannt sein, welche sich z.B. durch speziell angepasste Clustervaliditätsindizes bestimmen ließe. Falls ein Cluster nicht wie eine Hyperkugel geformt sei, könne man durch eine Dimensionsreduktion mittels Hauptkomponentenanalyse (PCA) Berechnungszeit einsparen. Als alternative Suchtechnik geben die Autoren die Tabu-Suche an.
 
 \end{enumerate}
 
