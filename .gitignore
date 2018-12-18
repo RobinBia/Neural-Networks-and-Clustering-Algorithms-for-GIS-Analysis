@@ -37,6 +37,8 @@ wheels/
 *.lot
 *.lof
 *.run.xml
+*.pyc
+.ipynb_checkpoints/*
 MANIFEST
 
 # PyInstaller
